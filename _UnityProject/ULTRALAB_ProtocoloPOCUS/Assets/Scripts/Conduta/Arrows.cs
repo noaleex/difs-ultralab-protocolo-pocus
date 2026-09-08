@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 using FMODUnity;
 using FMOD.Studio;
 
@@ -13,42 +14,106 @@ public class Arrows : MonoBehaviour
     [SerializeField] private MedicalData medicalDataUI;
     [SerializeField] private PatientConductEvaluator conductEvaluator;
 
+    [Header("Input System")]
+    [SerializeField] private InputActionReference upPageAction;
+    [SerializeField] private InputActionReference downPageAction;
+
     [Header("FMOD - Sons")]
     [SerializeField] private EventReference somClick;
 
+
+    // =========================================================
+    // INPUT SYSTEM
+    // =========================================================
+
+    private void OnEnable()
+    {
+        if (upPageAction != null)
+        {
+            upPageAction.action.performed += OnUpPagePressed;
+            upPageAction.action.Enable();
+        }
+
+        if (downPageAction != null)
+        {
+            downPageAction.action.performed += OnDownPagePressed;
+            downPageAction.action.Enable();
+        }
+    }
+
+    private void OnDisable()
+    {
+        if (upPageAction != null)
+        {
+            upPageAction.action.performed -= OnUpPagePressed;
+            upPageAction.action.Disable();
+        }
+
+        if (downPageAction != null)
+        {
+            downPageAction.action.performed -= OnDownPagePressed;
+            downPageAction.action.Disable();
+        }
+    }
+
+    private void OnUpPagePressed(InputAction.CallbackContext context)
+    {
+        UpPage();
+    }
+
+    private void OnDownPagePressed(InputAction.CallbackContext context)
+    {
+        DownPage();
+    }
+
+
+    // =========================================================
+    // PÁGINAS
+    // =========================================================
+
     public void UpPage()
     {
-        if (pages == null ||
-            pages.Length == 0)
+        if (pages == null || pages.Length == 0)
             return;
 
-        pages[currentPageIndex]
-            .SetActive(false);
+        if (currentPageIndex < 0 ||
+            currentPageIndex >= pages.Length)
+        {
+            currentPageIndex = 0;
+        }
+
+        pages[currentPageIndex].SetActive(false);
 
         currentPageIndex =
-            (currentPageIndex + 1)
-            % pages.Length;
+            (currentPageIndex + 1) % pages.Length;
 
-        pages[currentPageIndex]
-            .SetActive(true);
+        pages[currentPageIndex].SetActive(true);
     }
+
 
     public void DownPage()
     {
-        if (pages == null ||
-            pages.Length == 0)
+        if (pages == null || pages.Length == 0)
             return;
 
-        pages[currentPageIndex]
-            .SetActive(false);
+        if (currentPageIndex < 0 ||
+            currentPageIndex >= pages.Length)
+        {
+            currentPageIndex = 0;
+        }
+
+        pages[currentPageIndex].SetActive(false);
 
         currentPageIndex =
-            (currentPageIndex - 1 + pages.Length)
-            % pages.Length;
+            (currentPageIndex - 1 + pages.Length) % pages.Length;
 
-        pages[currentPageIndex]
-            .SetActive(true);
+        pages[currentPageIndex].SetActive(true);
     }
+
+
+    // =========================================================
+    // CONFIRMAR CONDUTA
+    // =========================================================
 
     public void ConfirmConduct()
     {
@@ -58,16 +123,21 @@ public class Arrows : MonoBehaviour
             CurrentPatient.Object == null)
         {
             Debug.LogError(
-                "Nenhum paciente selecionado!"
+                "[Arrows] Nenhum paciente selecionado!"
             );
 
             return;
         }
 
+        Debug.Log(
+            $"[Arrows] Confirmando conduta do paciente: " +
+            $"{CurrentPatient.Data.patientName}"
+        );
+
         if (CurrentPatient.Object.ConductCompleted)
         {
             Debug.LogWarning(
-                $"A conduta do paciente " +
+                $"[Arrows] A conduta do paciente " +
                 $"{CurrentPatient.Data.patientName} " +
                 $"já foi realizada."
             );
@@ -78,7 +148,17 @@ public class Arrows : MonoBehaviour
         if (medicalDataUI == null)
         {
             Debug.LogError(
-                "MedicalData não foi atribuído no Arrows!"
+                "[Arrows] MedicalData não foi atribuído no Arrows!"
+            );
+
+            return;
+        }
+
+        if (conductEvaluator == null)
+        {
+            Debug.LogError(
+                "[Arrows] PatientConductEvaluator " +
+                "não foi atribuído no Arrows!"
             );
 
             return;
@@ -87,26 +167,53 @@ public class Arrows : MonoBehaviour
         if (!medicalDataUI.ValidateAllFields())
         {
             Debug.LogWarning(
-                "Por favor, preencha todos os campos antes de confirmar!"
+                "[Arrows] Por favor, preencha todos os campos " +
+                "antes de confirmar!"
             );
 
             return;
         }
 
-        // AVALIAR
-        conductEvaluator.EvaluatePatient(
-            CurrentPatient.Data,
-            medicalDataUI
-        );
-
-        // SALVAR ESTADO DO PACIENTE
-        CurrentPatient.Object
-            .CompleteConduct();
+        int welfareAntes =
+            GameSession.GetPatientWelfare(
+                CurrentPatient.Data
+            );
 
         Debug.Log(
-            $"Conduta de {CurrentPatient.Data.patientName} concluída."
+            $"[Arrows] Welfare antes da conduta: " +
+            $"{welfareAntes}"
+        );
+
+        bool condutaCorreta =
+            conductEvaluator.EvaluatePatient(
+                CurrentPatient.Data,
+                medicalDataUI
+            );
+
+        int welfareDepois =
+            GameSession.GetPatientWelfare(
+                CurrentPatient.Data
+            );
+
+        CurrentPatient.Object.CompleteConduct();
+
+        Debug.Log(
+            $"[Arrows] Conduta de " +
+            $"{CurrentPatient.Data.patientName} " +
+            $"concluída."
+        );
+
+        Debug.Log(
+            $"[Arrows] Welfare final do paciente " +
+            $"{CurrentPatient.Data.patientName}: " +
+            $"{GameSession.GetPatientWelfare(CurrentPatient.Data)}"
         );
     }
+
+
+    // =========================================================
+    // FECHAR CONDUTA
+    // =========================================================
 
     public void CloseConduct()
     {
@@ -122,7 +229,10 @@ public class Arrows : MonoBehaviour
             medicalDataUI.ResetForm();
         }
 
-        conductPanel.SetActive(false);
+        if (conductPanel != null)
+        {
+            conductPanel.SetActive(false);
+        }
 
         PauseController.SetPause(false);
 
@@ -137,13 +247,16 @@ public class Arrows : MonoBehaviour
         CurrentPatient.Object = null;
     }
 
+
+    // =========================================================
+    // SOM
+    // =========================================================
+
     private void TocarSomClick()
     {
         if (!somClick.IsNull)
         {
-            RuntimeManager.PlayOneShot(
-                somClick
-            );
+            RuntimeManager.PlayOneShot(somClick);
         }
     }
 }

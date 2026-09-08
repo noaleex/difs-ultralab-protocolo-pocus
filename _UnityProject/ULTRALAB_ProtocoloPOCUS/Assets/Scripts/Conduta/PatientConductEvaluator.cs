@@ -6,10 +6,14 @@ public class PatientConductEvaluator : MonoBehaviour
         PatientData npc,
         MedicalData medicalDataUI)
     {
+        // =====================================================
+        // VERIFICAÇÕES
+        // =====================================================
+
         if (npc == null)
         {
             Debug.LogError(
-                "PatientData não foi informado!"
+                "[PatientConductEvaluator] PatientData não foi informado!"
             );
 
             return false;
@@ -18,11 +22,16 @@ public class PatientConductEvaluator : MonoBehaviour
         if (medicalDataUI == null)
         {
             Debug.LogError(
-                "MedicalData não foi informado!"
+                "[PatientConductEvaluator] MedicalData não foi informado!"
             );
 
             return false;
         }
+
+        Debug.Log(
+            $"[PatientConductEvaluator] Iniciando avaliação do paciente: " +
+            $"{npc.patientName}"
+        );
 
         int acertos = 0;
         int erros = 0;
@@ -294,27 +303,53 @@ public class PatientConductEvaluator : MonoBehaviour
         // WELFARE
         // =====================================================
 
-        int novoWelfare =
-            npc.welfareScore
-            + acertos
-            - erros;
+        int welfareAnterior =
+            GameSession.GetPatientWelfare(npc);
 
-        npc.welfareScore =
+        int resultado =
+            acertos - erros;
+
+        int novoWelfare =
+            welfareAnterior + resultado;
+
+        novoWelfare =
             Mathf.Clamp(
                 novoWelfare,
                 0,
                 74
             );
 
+        // =====================================================
+        // SALVAR WELFARE NO GAMESESSION
+        // =====================================================
+
+        GameSession.SetPatientWelfare(
+            npc,
+            novoWelfare
+        );
+
+        // =====================================================
+        // DEBUG
+        // =====================================================
+
         Debug.Log(
+            $"===== AVALIAÇÃO DO PACIENTE =====\n" +
             $"Paciente: {npc.patientName}\n" +
-            $"Acertos: {acertos}\n" +
-            $"Erros: {erros}\n" +
-            $"Novo Welfare: {npc.welfareScore}"
+            $"Welfare inicial do PatientData: {npc.welfareScore}\n" +
+            $"Valor de acertos: {acertos}\n" +
+            $"Valor de erros: {erros}\n" +
+            $"Conta: {acertos} - {erros} = {resultado}\n" +
+            $"Novo Welfare da sessão: {novoWelfare}\n" +
+            $"Welfare no PatientData continua: {npc.welfareScore}\n" +
+            $"=================================="
         );
 
         return erros == 0;
     }
+
+    // =========================================================
+    // CONTABILIZAR
+    // =========================================================
 
     private void Contabilizar(
         string valorUI,

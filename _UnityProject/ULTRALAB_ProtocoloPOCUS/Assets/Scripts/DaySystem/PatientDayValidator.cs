@@ -9,8 +9,10 @@ public class PatientDayValidator : MonoBehaviour
     [Header("Referências")]
     [SerializeField] private MedicalData medicalDataUI;
 
+
     [Header("Configuração")]
     [SerializeField] private float messageTime = 1.5f;
+
 
     public enum PatientResult
     {
@@ -18,6 +20,7 @@ public class PatientDayValidator : MonoBehaviour
         Discharged,
         GameOver
     }
+
 
     // =====================================================
     // VERIFICAR SE TODOS FIZERAM A CONDUTA
@@ -34,9 +37,11 @@ public class PatientDayValidator : MonoBehaviour
             return false;
         }
 
+
         return PatientManager.Instance
             .AllPatientsCompletedConduct();
     }
+
 
     // =====================================================
     // VERIFICAR PACIENTES NO FIM DO DIA
@@ -57,6 +62,7 @@ public class PatientDayValidator : MonoBehaviour
             yield break;
         }
 
+
         // =================================================
         // TODOS FIZERAM?
         // =================================================
@@ -66,52 +72,81 @@ public class PatientDayValidator : MonoBehaviour
             messageText.text =
                 "Realize a conduta de todos os pacientes para terminar o dia";
 
-            messageText.gameObject.SetActive(true);
 
-            yield return new WaitForSecondsRealtime(
-                messageTime
-            );
+            messageText.gameObject
+                .SetActive(true);
 
-            messageText.gameObject.SetActive(false);
+
+            yield return
+                new WaitForSecondsRealtime(
+                    messageTime
+                );
+
+
+            messageText.gameObject
+                .SetActive(false);
+
 
             onFinished?.Invoke(false);
 
             yield break;
         }
 
+
         // =================================================
         // PEGAR PACIENTES
         // =================================================
 
         IReadOnlyList<OpenExams> patients =
-            PatientManager.Instance.GetPatients();
+            PatientManager.Instance
+                .GetPatients();
+
 
         List<OpenExams> patientsToDischarge =
             new List<OpenExams>();
 
+
         bool gameOver = false;
+
 
         // =================================================
         // AVALIAR CADA PACIENTE
         // =================================================
 
-        foreach (OpenExams patientObject in patients)
+        foreach (OpenExams patientObject
+                 in patients)
         {
             if (patientObject == null)
                 continue;
 
+
             PatientData patient =
-                patientObject.PatientDataReference;
+                patientObject
+                    .PatientDataReference;
+
 
             if (patient == null)
                 continue;
 
-            PatientResult result =
-                EvaluatePatient(patient);
 
             // ---------------------------------------------
-            // ALTA
+            // SALVAR ESTADO ATUAL
             // ---------------------------------------------
+
+            GameSession.SavePatient(
+                patient
+            );
+
+
+            PatientResult result =
+                EvaluatePatient(
+                    patient
+                );
+
+
+            // =============================================
+            // ALTA
+            // =============================================
 
             if (result ==
                 PatientResult.Discharged)
@@ -119,54 +154,91 @@ public class PatientDayValidator : MonoBehaviour
                 messageText.text =
                     $"O paciente {patient.patientName} ganhou alta";
 
-                messageText.gameObject.SetActive(true);
 
-                yield return new WaitForSecondsRealtime(
-                    messageTime
+                messageText.gameObject
+                    .SetActive(true);
+
+
+                yield return
+                    new WaitForSecondsRealtime(
+                        messageTime
+                    );
+
+
+                // -----------------------------------------
+                // REGISTRAR ALTA
+                // -----------------------------------------
+
+                GameSession.MarkPatientAsDischarged(
+                    patient
                 );
+
 
                 patientsToDischarge.Add(
                     patientObject
                 );
             }
 
-            // ---------------------------------------------
-            // GAME OVER
-            // ---------------------------------------------
 
-            else if (result ==
-                     PatientResult.GameOver)
+            // =============================================
+            // GAME OVER
+            // =============================================
+
+            else if (
+                result ==
+                PatientResult.GameOver)
             {
                 messageText.text =
                     $"O paciente {patient.patientName} piorou, game over";
 
-                messageText.gameObject.SetActive(true);
 
-                yield return new WaitForSecondsRealtime(
-                    messageTime
+                messageText.gameObject
+                    .SetActive(true);
+
+
+                yield return
+                    new WaitForSecondsRealtime(
+                        messageTime
+                    );
+
+
+                GameSession.SavePatient(
+                    patient
                 );
+
 
                 gameOver = true;
 
                 break;
             }
 
-            // ---------------------------------------------
+
+            // =============================================
             // CONTINUA
-            // ---------------------------------------------
+            // =============================================
 
             else
             {
                 messageText.text =
                     $"O paciente {patient.patientName} continua em tratamento";
 
-                messageText.gameObject.SetActive(true);
 
-                yield return new WaitForSecondsRealtime(
-                    messageTime
+                messageText.gameObject
+                    .SetActive(true);
+
+
+                yield return
+                    new WaitForSecondsRealtime(
+                        messageTime
+                    );
+
+
+                GameSession.SavePatient(
+                    patient
                 );
             }
         }
+
 
         // =================================================
         // REMOVER PACIENTES QUE TIVERAM ALTA
@@ -183,6 +255,7 @@ public class PatientDayValidator : MonoBehaviour
             }
         }
 
+
         // =================================================
         // GAME OVER
         // =================================================
@@ -196,37 +269,54 @@ public class PatientDayValidator : MonoBehaviour
             yield break;
         }
 
+
         // =================================================
         // FINALIZOU O DIA
         // =================================================
 
-        messageText.gameObject.SetActive(false);
+        messageText.gameObject
+            .SetActive(false);
+
 
         onFinished?.Invoke(true);
     }
 
+
     // =====================================================
-    // VERIFICAR ESTADO DO PACIENTE
+    // AVALIAR PACIENTE
     // =====================================================
 
     private PatientResult EvaluatePatient(
-        PatientData patient)
+    PatientData patient)
+{
+    int welfare =
+        GameSession.GetPatientWelfare(
+            patient
+        );
+
+    Debug.Log(
+        $"[PatientDayValidator] " +
+        $"Paciente: {patient.patientName} | " +
+        $"Welfare atual: {welfare} | " +
+        $"Welfare original: {patient.welfareScore}"
+    );
+
+    if (welfare >= 74)
     {
-        if (patient.welfareScore >= 74)
-        {
-            return PatientResult.Discharged;
-        }
-
-        if (patient.welfareScore <= 0)
-        {
-            return PatientResult.GameOver;
-        }
-
-        return PatientResult.Continuing;
+        return PatientResult.Discharged;
     }
 
+    if (welfare <= 0)
+    {
+        return PatientResult.GameOver;
+    }
+
+    return PatientResult.Continuing;
+}
+
+
     // =====================================================
-    // RESETAR CONDUTAS PARA O NOVO DIA
+    // RESETAR CONDUTAS
     // =====================================================
 
     public void ResetAllPatientsForNewDay()
@@ -240,16 +330,42 @@ public class PatientDayValidator : MonoBehaviour
             return;
         }
 
-        IReadOnlyList<OpenExams> patients =
-            PatientManager.Instance.GetPatients();
 
-        foreach (OpenExams patient in patients)
+        IReadOnlyList<OpenExams> patients =
+            PatientManager.Instance
+                .GetPatients();
+
+
+        foreach (OpenExams patient
+                 in patients)
         {
             if (patient == null)
                 continue;
 
+
+            // ---------------------------------------------
+            // RESETAR SOMENTE A CONDUTA
+            // ---------------------------------------------
+
             patient.ResetConductForNewDay();
+
+
+            // ---------------------------------------------
+            // GARANTIR QUE O WELFARE CONTINUE SALVO
+            // ---------------------------------------------
+
+            if (patient.PatientDataReference != null)
+            {
+                GameSession.SavePatient(
+                    patient.PatientDataReference
+                );
+            }
         }
+
+
+        // =================================================
+        // RESETAR UI
+        // =================================================
 
         if (medicalDataUI != null)
         {
@@ -262,10 +378,13 @@ public class PatientDayValidator : MonoBehaviour
             );
         }
 
+
         Debug.Log(
-            "Todas as condutas foram resetadas para o novo dia."
+            "Condutas resetadas para o novo dia. " +
+            "Pontuação dos pacientes mantida."
         );
     }
+
 
     // =====================================================
     // GAME OVER
@@ -273,7 +392,10 @@ public class PatientDayValidator : MonoBehaviour
 
     private void GameOver()
     {
-        Debug.Log("GAME OVER");
+        Debug.Log(
+            "GAME OVER"
+        );
+
         // SceneManager.LoadScene("GameOver");
     }
 }

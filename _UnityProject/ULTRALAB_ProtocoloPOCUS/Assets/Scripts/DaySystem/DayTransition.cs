@@ -8,21 +8,48 @@ public class DayTransition : MonoBehaviour
 {
     public static DayTransition Instance;
 
+
     [Header("UI")]
     [SerializeField] private Image blackPanel;
     [SerializeField] private TextMeshProUGUI dayText;
+
 
     [Header("Configuração da Transição")]
     [SerializeField] private float fadeTime = 1f;
     [SerializeField] private float textTime = 1.5f;
 
+
     [Header("Verificação dos Pacientes")]
     [SerializeField] private PatientDayValidator patientDayValidator;
 
+
+    // =====================================================
+    // AWAKE
+    // =====================================================
+
     private void Awake()
     {
+        if (Instance != null &&
+            Instance != this)
+        {
+            Debug.LogWarning(
+                "Existe mais de um DayTransition na cena."
+            );
+        }
+
+
         Instance = this;
     }
+
+
+    private void OnDestroy()
+    {
+        if (Instance == this)
+        {
+            Instance = null;
+        }
+    }
+
 
     // =====================================================
     // COMEÇAR DIA
@@ -40,31 +67,54 @@ public class DayTransition : MonoBehaviour
         );
     }
 
+
     private IEnumerator DayRoutine(
         int day,
         Action onFinished)
     {
         PauseController.SetPause(true);
 
+
         yield return Fade(1);
 
-        dayText.text =
-            $"Dia {day}. . .";
 
-        dayText.gameObject.SetActive(true);
+        if (dayText != null)
+        {
+            dayText.text =
+                $"Dia {day}. . .";
 
-        yield return new WaitForSecondsRealtime(
-            textTime
-        );
+
+            dayText.gameObject
+                .SetActive(true);
+        }
+
+
+        yield return
+            new WaitForSecondsRealtime(
+                textTime
+            );
+
 
         yield return Fade(0);
 
-        dayText.gameObject.SetActive(false);
+
+        if (dayText != null)
+        {
+            dayText.gameObject
+                .SetActive(false);
+        }
+
 
         PauseController.SetPause(false);
 
+
         onFinished?.Invoke();
     }
+
+
+    // =====================================================
+    // VERIFICAR FIM DO DIA
+    // =====================================================
 
     public void CheckPatientsAtEndOfDay(
         Action onFinished)
@@ -76,10 +126,12 @@ public class DayTransition : MonoBehaviour
         );
     }
 
+
     private IEnumerator CheckPatientsRoutine(
         Action onFinished)
     {
         PauseController.SetPause(true);
+
 
         if (patientDayValidator == null)
         {
@@ -87,12 +139,15 @@ public class DayTransition : MonoBehaviour
                 "PatientDayValidator não foi atribuído no DayTransition!"
             );
 
+
             PauseController.SetPause(false);
 
             yield break;
         }
 
+
         bool finished = false;
+
 
         // =================================================
         // VALIDAR PACIENTES
@@ -110,6 +165,10 @@ public class DayTransition : MonoBehaviour
         );
 
 
+        // =================================================
+        // NÃO PODE TERMINAR
+        // =================================================
+
         if (!finished)
         {
             PauseController.SetPause(false);
@@ -117,12 +176,19 @@ public class DayTransition : MonoBehaviour
             yield break;
         }
 
+
         // =================================================
-        // RESETAR CONDUTAS
+        // NOVO DIA
+        // =================================================
+        //
+        // Somente as condutas são resetadas.
+        //
+        // welfareScore continua salvo.
         // =================================================
 
         patientDayValidator
             .ResetAllPatientsForNewDay();
+
 
         // =================================================
         // TRANSIÇÃO
@@ -130,14 +196,27 @@ public class DayTransition : MonoBehaviour
 
         yield return Fade(1);
 
-        dayText.gameObject.SetActive(false);
+
+        if (dayText != null)
+        {
+            dayText.gameObject
+                .SetActive(false);
+        }
+
 
         yield return Fade(0);
 
+
         PauseController.SetPause(false);
+
 
         onFinished?.Invoke();
     }
+
+
+    // =====================================================
+    // FADE
+    // =====================================================
 
     private IEnumerator Fade(
         float target)
@@ -151,18 +230,23 @@ public class DayTransition : MonoBehaviour
             yield break;
         }
 
+
         float start =
             blackPanel.color.a;
 
+
         float t = 0f;
+
 
         while (t < fadeTime)
         {
             t +=
                 Time.unscaledDeltaTime;
 
+
             Color color =
                 blackPanel.color;
+
 
             color.a =
                 Mathf.Lerp(
@@ -171,17 +255,22 @@ public class DayTransition : MonoBehaviour
                     t / fadeTime
                 );
 
+
             blackPanel.color =
                 color;
+
 
             yield return null;
         }
 
+
         Color finalColor =
             blackPanel.color;
 
+
         finalColor.a =
             target;
+
 
         blackPanel.color =
             finalColor;

@@ -20,11 +20,16 @@ public class OpenExams : MonoBehaviour, IInteractable
     [Header("Áudio")]
     public EventReference ClickSound;
 
+
+    // =========================================================
+    // ESTADO
+    // =========================================================
+
     private bool conductCompleted = false;
 
-    // Estado individual deste paciente
     private ConductState conductState =
         new ConductState();
+
 
     public bool ConductCompleted =>
         conductCompleted;
@@ -35,13 +40,83 @@ public class OpenExams : MonoBehaviour, IInteractable
     public ConductState ConductState =>
         conductState;
 
+
+    // =========================================================
+    // START
+    // =========================================================
+
     private void Start()
     {
+        if (patientData == null)
+        {
+            Debug.LogError(
+                "PatientData não foi atribuído no OpenExams!"
+            );
+
+            return;
+        }
+
+
+        // -----------------------------------------------------
+        // RESTAURA O ESTADO DO PACIENTE
+        // -----------------------------------------------------
+
+        GameSession.LoadPatient(
+            patientData
+        );
+
+
+        // -----------------------------------------------------
+        // SE O PACIENTE JÁ RECEBEU ALTA,
+        // NÃO DEVE APARECER NOVAMENTE
+        // -----------------------------------------------------
+
+        if (GameSession.IsPatientDischarged(
+            patientData))
+        {
+            Destroy(gameObject);
+
+            return;
+        }
+
+
+        // -----------------------------------------------------
+        // RESTAURA A CONDUTA
+        // -----------------------------------------------------
+
+        bool restoredConductCompleted;
+
+        bool hasConduct =
+            GameSession.LoadConduct(
+                patientData,
+                conductState,
+                out restoredConductCompleted
+            );
+
+        if (hasConduct)
+        {
+            conductCompleted =
+                restoredConductCompleted;
+        }
+        else
+        {
+            // Só limpa quando ainda não existe
+            // uma conduta salva para esse paciente.
+            conductState.Clear();
+
+            conductCompleted = false;
+        }
+
+
+        // -----------------------------------------------------
+        // REGISTRA O PACIENTE
+        // -----------------------------------------------------
+
         if (PatientManager.Instance != null)
         {
-            PatientManager.Instance.RegisterPatient(this);
-
-            patientData.welfareScore = 50;
+            PatientManager.Instance.RegisterPatient(
+                this
+            );
         }
         else
         {
@@ -49,23 +124,33 @@ public class OpenExams : MonoBehaviour, IInteractable
                 "PatientManager não encontrado!"
             );
         }
-
-        // Começa o dia com prontuário vazio
-        conductState.Clear();
     }
+
+
+    // =========================================================
+    // DESTROY
+    // =========================================================
 
     private void OnDestroy()
     {
         if (PatientManager.Instance != null)
         {
-            PatientManager.Instance.UnregisterPatient(this);
+            PatientManager.Instance.UnregisterPatient(
+                this
+            );
         }
     }
+
+
+    // =========================================================
+    // INTERAÇÃO
+    // =========================================================
 
     public bool CanInteract()
     {
         return true;
     }
+
 
     public void Interact()
     {
@@ -75,9 +160,12 @@ public class OpenExams : MonoBehaviour, IInteractable
 
         PauseController.SetPause(true);
 
-        // Define paciente atual
-        CurrentPatient.Data = patientData;
-        CurrentPatient.Object = this;
+        CurrentPatient.Data =
+            patientData;
+
+        CurrentPatient.Object =
+            this;
+
 
         if (PlayerReferences.Instance != null)
         {
@@ -85,10 +173,16 @@ public class OpenExams : MonoBehaviour, IInteractable
 
             if (PlayerReferences.Instance.InteractIcon != null)
             {
-                PlayerReferences.Instance.InteractIcon.SetActive(false);
+                PlayerReferences.Instance.InteractIcon
+                    .SetActive(false);
             }
         }
     }
+
+
+    // =========================================================
+    // FECHAR PAINEL
+    // =========================================================
 
     public void ClosePanel()
     {
@@ -97,9 +191,10 @@ public class OpenExams : MonoBehaviour, IInteractable
         panelExam.SetActive(false);
 
         PauseController.SetPause(false);
-        
+
         CurrentPatient.Data = null;
         CurrentPatient.Object = null;
+
 
         if (PlayerReferences.Instance != null)
         {
@@ -107,28 +202,84 @@ public class OpenExams : MonoBehaviour, IInteractable
 
             if (PlayerReferences.Instance.InteractIcon != null)
             {
-                PlayerReferences.Instance.InteractIcon.SetActive(true);
+                PlayerReferences.Instance.InteractIcon
+                    .SetActive(true);
             }
         }
     }
+
+
+    // =========================================================
+    // ABRIR EXAMES
+    // =========================================================
 
     public void OpenExam()
     {
         PlayClickSound();
 
-        SceneManager.LoadScene(exams);
+
+        // Salva o tempo atual antes de mudar de cena
+        Timer timer =
+            FindFirstObjectByType<Timer>();
+
+        if (timer != null)
+        {
+            timer.SaveCurrentTime();
+        }
+
+
+        // Salva qual cena devemos retornar
+        GameSession.SetOriginalScene(
+            SceneManager.GetActiveScene().name
+        );
+
+
+        // Salva o paciente atual
+        GameSession.SavePatient(
+            patientData
+        );
+
+
+        // Salva a conduta atual
+        GameSession.SaveConduct(
+            patientData,
+            conductState,
+            conductCompleted
+        );
+
+
+        // Mantém o paciente atual
+        CurrentPatient.Data =
+            patientData;
+
+        CurrentPatient.Object =
+            this;
+
+
+        SceneManager.LoadScene(
+            exams
+        );
     }
+
+
+    // =========================================================
+    // ABRIR CONDUTA
+    // =========================================================
 
     public void OpenConduta()
     {
         PlayClickSound();
 
-        // Define o paciente atual
-        CurrentPatient.Data = patientData;
-        CurrentPatient.Object = this;
+        CurrentPatient.Data =
+            patientData;
+
+        CurrentPatient.Object =
+            this;
+
 
         if (medicalDataUI != null)
         {
+            // Carrega a conduta deste paciente
             medicalDataUI.LoadState(
                 conductState
             );
@@ -136,10 +287,11 @@ public class OpenExams : MonoBehaviour, IInteractable
         else
         {
             Debug.LogError(
-                $"MedicalData não foi atribuído no paciente " +
-                $"{patientData.patientName}!"
+                $"MedicalData não foi atribuído " +
+                $"no paciente {patientData.patientName}!"
             );
         }
+
 
         if (tutorialScene)
         {
@@ -160,32 +312,61 @@ public class OpenExams : MonoBehaviour, IInteractable
         }
     }
 
+
+    // =========================================================
+    // SALVAR CONDUTA
+    // =========================================================
+
     public void SaveConductState()
     {
         if (medicalDataUI == null)
             return;
 
+
+        // Pega o estado atual da UI
         conductState =
             medicalDataUI.GetCurrentState();
 
+
+        // Salva também no GameSession
+        GameSession.SaveConduct(
+            patientData,
+            conductState,
+            conductCompleted
+        );
+
+
         Debug.Log(
-            $"Conduta salva do paciente: " +
+            $"[OpenExams] Conduta salva do paciente: " +
             $"{patientData.patientName}"
         );
     }
 
+
+    // =========================================================
+    // CONCLUIR CONDUTA
+    // =========================================================
+
     public void CompleteConduct()
     {
-        // Salva primeiro
         SaveConductState();
 
         conductCompleted = true;
 
-        Debug.Log(
-            $"Conduta do paciente " +
-            $"{patientData.patientName} foi concluída."
+
+        // Salva novamente agora que foi concluída
+        GameSession.SaveConduct(
+            patientData,
+            conductState,
+            conductCompleted
         );
+
     }
+
+
+    // =========================================================
+    // RESETAR NO NOVO DIA
+    // =========================================================
 
     public void ResetConductForNewDay()
     {
@@ -193,11 +374,28 @@ public class OpenExams : MonoBehaviour, IInteractable
 
         conductCompleted = false;
 
+
+        // IMPORTANTE:
+        // A conduta do novo dia começa vazia.
+        // Isso também atualiza o GameSession.
+        GameSession.SaveConduct(
+            patientData,
+            conductState,
+            false
+        );
+
+
         Debug.Log(
             $"Conduta do paciente " +
-            $"{patientData.patientName} foi resetada para o novo dia."
+            $"{patientData.patientName} " +
+            $"foi resetada para o novo dia."
         );
     }
+
+
+    // =========================================================
+    // RETORNAR PARA O PACIENTE
+    // =========================================================
 
     public void ReturnToExamPanel()
     {
@@ -207,6 +405,11 @@ public class OpenExams : MonoBehaviour, IInteractable
                 .ForceInteractable(this);
         }
     }
+
+
+    // =========================================================
+    // ÁUDIO
+    // =========================================================
 
     private void PlayClickSound()
     {

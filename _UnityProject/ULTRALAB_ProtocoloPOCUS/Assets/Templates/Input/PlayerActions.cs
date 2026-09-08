@@ -163,6 +163,33 @@ public partial class @PlayerAction: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""UpPage"",
+                    ""type"": ""Button"",
+                    ""id"": ""29fcf865-5c75-4b1b-90aa-df582ba223fc"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""DownPage"",
+                    ""type"": ""Button"",
+                    ""id"": ""d238e43f-77aa-4496-8e29-9d82e42f014d"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""NextField"",
+                    ""type"": ""Button"",
+                    ""id"": ""13b1511d-8491-49b6-be9c-733addfa359b"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -471,6 +498,72 @@ public partial class @PlayerAction: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""PointerPosition"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""750eab8d-d374-4e02-a0de-ecaa08ab52d9"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""UpPage"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""83c52ea0-c29c-4aa0-a952-a70d6734a5bd"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""UpPage"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fa386c10-69c6-4272-8a62-1edf4e514cc4"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""DownPage"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4bda1a50-1de0-4553-b6ad-10cb6b946093"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""DownPage"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""33afa284-9024-41d1-a8a6-b9fe3efa0e5e"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""NextField"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e14466cc-c35a-4132-b83f-53e8c12e9a1b"",
+                    ""path"": ""<Keyboard>/tab"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""NextField"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1053,6 +1146,9 @@ public partial class @PlayerAction: IInputActionCollection2, IDisposable
         m_Player_PointerPosition = m_Player.FindAction("PointerPosition", throwIfNotFound: true);
         m_Player_Next = m_Player.FindAction("Next", throwIfNotFound: true);
         m_Player_Sprint = m_Player.FindAction("Sprint", throwIfNotFound: true);
+        m_Player_UpPage = m_Player.FindAction("UpPage", throwIfNotFound: true);
+        m_Player_DownPage = m_Player.FindAction("DownPage", throwIfNotFound: true);
+        m_Player_NextField = m_Player.FindAction("NextField", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1155,6 +1251,9 @@ public partial class @PlayerAction: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_PointerPosition;
     private readonly InputAction m_Player_Next;
     private readonly InputAction m_Player_Sprint;
+    private readonly InputAction m_Player_UpPage;
+    private readonly InputAction m_Player_DownPage;
+    private readonly InputAction m_Player_NextField;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
     /// </summary>
@@ -1198,6 +1297,18 @@ public partial class @PlayerAction: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Player/Sprint".
         /// </summary>
         public InputAction @Sprint => m_Wrapper.m_Player_Sprint;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/UpPage".
+        /// </summary>
+        public InputAction @UpPage => m_Wrapper.m_Player_UpPage;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/DownPage".
+        /// </summary>
+        public InputAction @DownPage => m_Wrapper.m_Player_DownPage;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/NextField".
+        /// </summary>
+        public InputAction @NextField => m_Wrapper.m_Player_NextField;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -1248,6 +1359,15 @@ public partial class @PlayerAction: IInputActionCollection2, IDisposable
             @Sprint.started += instance.OnSprint;
             @Sprint.performed += instance.OnSprint;
             @Sprint.canceled += instance.OnSprint;
+            @UpPage.started += instance.OnUpPage;
+            @UpPage.performed += instance.OnUpPage;
+            @UpPage.canceled += instance.OnUpPage;
+            @DownPage.started += instance.OnDownPage;
+            @DownPage.performed += instance.OnDownPage;
+            @DownPage.canceled += instance.OnDownPage;
+            @NextField.started += instance.OnNextField;
+            @NextField.performed += instance.OnNextField;
+            @NextField.canceled += instance.OnNextField;
         }
 
         /// <summary>
@@ -1283,6 +1403,15 @@ public partial class @PlayerAction: IInputActionCollection2, IDisposable
             @Sprint.started -= instance.OnSprint;
             @Sprint.performed -= instance.OnSprint;
             @Sprint.canceled -= instance.OnSprint;
+            @UpPage.started -= instance.OnUpPage;
+            @UpPage.performed -= instance.OnUpPage;
+            @UpPage.canceled -= instance.OnUpPage;
+            @DownPage.started -= instance.OnDownPage;
+            @DownPage.performed -= instance.OnDownPage;
+            @DownPage.canceled -= instance.OnDownPage;
+            @NextField.started -= instance.OnNextField;
+            @NextField.performed -= instance.OnNextField;
+            @NextField.canceled -= instance.OnNextField;
         }
 
         /// <summary>
@@ -1650,6 +1779,27 @@ public partial class @PlayerAction: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnSprint(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "UpPage" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnUpPage(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "DownPage" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnDownPage(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "NextField" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnNextField(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "UI" which allows adding and removing callbacks.

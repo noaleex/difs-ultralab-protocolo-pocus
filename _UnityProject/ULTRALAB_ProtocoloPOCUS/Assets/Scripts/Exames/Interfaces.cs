@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-
 public class Interfaces : MonoBehaviour
 {
     [SerializeField] private GameObject pocus;
@@ -12,26 +11,45 @@ public class Interfaces : MonoBehaviour
     [SerializeField] private string uti;
 
 
+    // =====================================================
+    // POCUS
+    // =====================================================
+
     public void PocusClick()
     {
         pocus.SetActive(true);
+
         AudioManager.Instance?.PlayInteraction();
     }
 
+
+    // =====================================================
+    // LEITO
+    // =====================================================
 
     public void LeitoClick()
     {
         leito.SetActive(true);
+
         AudioManager.Instance?.PlayInteraction();
     }
 
+
+    // =====================================================
+    // TOOL
+    // =====================================================
 
     public void ToolClick()
     {
         tool.SetActive(true);
+
         AudioManager.Instance?.PlayInteraction();
     }
 
+
+    // =====================================================
+    // VOLTAR INTERFACE
+    // =====================================================
 
     public void BackInterface()
     {
@@ -43,39 +61,119 @@ public class Interfaces : MonoBehaviour
     }
 
 
+    // =====================================================
+    // VOLTAR PARA CENA DO PACIENTE
+    // =====================================================
+
     public void BackExam()
     {
-        PauseController.SetPause(false);
+        AudioManager.Instance?.PlayBack();
 
-        SceneManager.sceneLoaded += OnSceneLoaded;
 
-        if(CurrentPatient.Data.tutorial)
+        // =================================================
+        // SALVAR TEMPO ATUAL
+        // =================================================
+
+        Timer timer =
+            FindFirstObjectByType<Timer>();
+
+
+        if (timer != null)
         {
-            SceneManager.LoadScene(lab);
+            timer.SaveCurrentTime();
         }
         else
         {
-            SceneManager.LoadScene(uti);
+            Debug.LogWarning(
+                "Timer não encontrado na cena de exames."
+            );
         }
-        
+
+
+        // =================================================
+        // VERIFICAR PACIENTE ATUAL
+        // =================================================
+
+        if (CurrentPatient.Data == null)
+        {
+            Debug.LogError(
+                "CurrentPatient.Data está vazio ao voltar dos exames."
+            );
+
+            return;
+        }
+
+
+        // =================================================
+        // ESCOLHER CENA
+        // =================================================
+
+        string sceneToLoad;
+
+
+        if (CurrentPatient.Data.tutorial)
+        {
+            sceneToLoad = lab;
+        }
+        else
+        {
+            sceneToLoad = uti;
+        }
+
+
+        // =================================================
+        // PREPARAR PLAYER
+        // =================================================
+
+        PauseController.SetPause(false);
+
+
+        SceneManager.sceneLoaded +=
+            OnSceneLoaded;
+
+
+        // =================================================
+        // CARREGAR CENA
+        // =================================================
+
+        SceneManager.LoadScene(
+            sceneToLoad
+        );
     }
 
 
-    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    // =====================================================
+    // CENA CARREGADA
+    // =====================================================
+
+    private void OnSceneLoaded(
+        Scene scene,
+        LoadSceneMode mode)
     {
-        SceneManager.sceneLoaded -= OnSceneLoaded;
+        SceneManager.sceneLoaded -=
+            OnSceneLoaded;
 
 
-        if(PlayerReferences.Instance != null)
+        // =================================================
+        // PLAYER
+        // =================================================
+
+        if (PlayerReferences.Instance != null)
         {
-            PlayerReferences.Instance.RefreshReferences();
+            PlayerReferences.Instance
+                .RefreshReferences();
 
-            PlayerReferences.Instance.EnablePlayer();
+
+            PlayerReferences.Instance
+                .EnablePlayer();
 
 
-            if(PlayerReferences.Instance.InteractIcon != null)
+            if (PlayerReferences.Instance
+                .InteractIcon != null)
             {
-                PlayerReferences.Instance.InteractIcon.SetActive(true);
+                PlayerReferences.Instance
+                    .InteractIcon
+                    .SetActive(true);
             }
         }
     }

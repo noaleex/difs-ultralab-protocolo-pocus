@@ -9393,7 +9393,7 @@ MonoBehaviour:
   dayText: {fileID: 815428982}
   fadeTime: 1
   textTime: 1
-  patientDayValidator: {fileID: 0}
+  patientDayValidator: {fileID: 513372501}
 --- !u!114 &513372500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9421,7 +9421,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1049f5b22d5433541ae7bbd40b8b4f16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PatientDayValidator
-  medicalDataUI: {fileID: 0}
+  medicalDataUI: {fileID: 2033471343}
   messageTime: 1.5
 --- !u!1 &516921322
 GameObject:
@@ -16731,7 +16731,7 @@ GameObject:
   - component: {fileID: 711100906}
   - component: {fileID: 711100905}
   m_Layer: 5
-  m_Name: "Presen\xE7aDeAlgo"
+  m_Name: "Presen\xE7aDeEdema"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30575,7 +30575,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1379876625
 Transform:
   m_ObjectHideFlags: 0
@@ -42412,6 +42412,7 @@ GameObject:
   - component: {fileID: 2033471342}
   - component: {fileID: 2033471343}
   - component: {fileID: 2033471344}
+  - component: {fileID: 2033471345}
   m_Layer: 5
   m_Name: CondutaSelection
   m_TagString: Untagged
@@ -42501,6 +42502,8 @@ MonoBehaviour:
   conductPanel: {fileID: 2033471338}
   medicalDataUI: {fileID: 2033471343}
   conductEvaluator: {fileID: 2033471344}
+  upPageAction: {fileID: 2193862759920604265, guid: 3590b91b4603b465dbb4216d601bff33, type: 3}
+  downPageAction: {fileID: 6367819850962190805, guid: 3590b91b4603b465dbb4216d601bff33, type: 3}
   somClick:
     Guid:
       Data1: -804075512
@@ -42571,6 +42574,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c26c895f571d8bc4782c0f890a15a554, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PatientConductEvaluator
+--- !u!114 &2033471345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2033471338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e70138b24119ccd41b4fc3d374df3ab2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ConductPanelNavigation
+  fields:
+  - {fileID: 2116595122}
+  - {fileID: 711100905}
+  - {fileID: 1158176463}
+  - {fileID: 2043885888}
+  - {fileID: 868737946}
+  - {fileID: 1859235191}
+  - {fileID: 908094724}
+  - {fileID: 732624124}
+  - {fileID: 2047718797}
+  - {fileID: 1754932068}
+  - {fileID: 852586230}
+  - {fileID: 263926865}
+  - {fileID: 1139472210}
+  - {fileID: 1962485508}
+  - {fileID: 1768663849}
+  - {fileID: 1966406764}
+  - {fileID: 786663007}
+  - {fileID: 1032193729}
+  - {fileID: 1690712867}
+  - {fileID: 1522308266}
+  - {fileID: 493880700}
+  - {fileID: 1201934247}
+  - {fileID: 375364244}
+  - {fileID: 828962180}
+  nextFieldAction: {fileID: -3901728674266613136, guid: 3590b91b4603b465dbb4216d601bff33, type: 3}
 --- !u!1 &2037038767
 GameObject:
   m_ObjectHideFlags: 0
