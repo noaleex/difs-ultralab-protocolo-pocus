@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 383fac925e3b8244d9da414734a4f555
+guid: 7da499481eaa5aa4f84d3800610daa36
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3772070426051907894
-    second: Tablet_Exams_0
+      213: 4446838049664096037
+    second: TabletExams_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,12 +113,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Tablet_Exams_0
+      name: TabletExams_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 248
+        width: 288
         height: 491
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 63194943116195430800000000000000
-      internalID: 3772070426051907894
+      spriteID: 5275be355a756bd30800000000000000
+      internalID: 4446838049664096037
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Tablet_Exams_0: 3772070426051907894
+      TabletExams_0: 4446838049664096037
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
