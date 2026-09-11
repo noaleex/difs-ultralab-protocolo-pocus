@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: ff064efaea68bec4aa3ebc43c7ca283a
+guid: d27e89860ba5a1a459089d47921ff8e5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1469909079130451432
-    second: paper_0
+      213: -4873489558631339169
+    second: BancadaTOP_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,7 +113,7 @@ TextureImporter:
     buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: 4
+    textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: paper_0
+      name: BancadaTOP_0
       rect:
         serializedVersion: 2
-        x: 59
+        x: 0
         y: 0
-        width: 239
-        height: 360
+        width: 648
+        height: 571
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 812de4efa75d99be0800000000000000
-      internalID: -1469909079130451432
+      spriteID: f5b24393113ed5cb0800000000000000
+      internalID: -4873489558631339169
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      paper_0: -1469909079130451432
+      BancadaTOP_0: -4873489558631339169
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

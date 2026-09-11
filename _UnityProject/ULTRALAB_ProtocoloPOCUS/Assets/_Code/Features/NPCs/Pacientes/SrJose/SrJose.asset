@@ -18,7 +18,7 @@ MonoBehaviour:
   tutorial: 0
   welfareScore: 50
   characterSprite: {fileID: 21300000, guid: ea13302e905525349ab8d76f563cb4ea, type: 3}
-  characterFullSprite: {fileID: 21300000, guid: 093e796560a62b142b183b2658f5fd1a, type: 3}
+  characterFullSprite: {fileID: 21300000, guid: 32b50da4389d6894782a9d28248fbb2a, type: 3}
   backgroundSprite: {fileID: 21300000, guid: 9cfbf36d2b0ad0146ad4df4e2befba0c, type: 3}
   resumeCaso: 
   physicalExam:

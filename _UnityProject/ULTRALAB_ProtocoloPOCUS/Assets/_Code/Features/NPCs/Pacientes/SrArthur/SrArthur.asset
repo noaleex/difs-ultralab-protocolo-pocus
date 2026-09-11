@@ -16,7 +16,33 @@ MonoBehaviour:
   age: 70
   sex: Masculino
   tutorial: 0
+  welfareScore: 50
   characterSprite: {fileID: 0}
+  characterFullSprite: {fileID: 21300000, guid: d37dc6dd88dcac640994b403fa69511c, type: 3}
   backgroundSprite: {fileID: 0}
-  caso: 
-  physicalExam: 
+  resumeCaso: 
+  physicalExam: []
+  permeabilidade: 
+  presenca: 
+  intervencao: 
+  frequencia: 
+  saturation: 
+  acessoria: 
+  padraoRespiratorio: 
+  asculta: 
+  expansibilidade: 
+  oxigenoterapiaTipo: 
+  oxigenoterapiaFluxo: 
+  frequenciaCardiaca: 
+  pressaoArterial: 
+  pressaoArterial2: 
+  perfusaoTempo: 
+  perfusaoExtremidades: 
+  pulsos: 
+  ritmoCardiaco: 
+  edema: 
+  temperatura: 
+  nivelConsciencia: 
+  avalicaoPele: 
+  presencaPele: 
+  dorEscala: 
