@@ -5019,10 +5019,10 @@ MonoBehaviour:
     Path: event:/Interagir/fx_item
   backButtonSound:
     Guid:
-      Data1: 499708047
-      Data2: 1331960269
-      Data3: -732660037
-      Data4: -1557932642
+      Data1: -804075512
+      Data2: 1148289980
+      Data3: -580016215
+      Data4: 214636514
     Path: event:/Interagir/fx_menu_click
 --- !u!4 &1332520777
 Transform:
