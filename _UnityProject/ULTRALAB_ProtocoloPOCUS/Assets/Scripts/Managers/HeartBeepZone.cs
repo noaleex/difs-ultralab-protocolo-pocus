@@ -12,45 +12,43 @@ public class HeartBeepZone : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("ALGO ENTROU NA ÁREA: " + other.gameObject.name);
+        Debug.Log("ENTROU ALGO NA ÁREA: " + other.gameObject.name);
 
         if (!other.CompareTag("Player"))
-        {
-            Debug.Log("Não é o Player. Tag: " + other.tag);
             return;
-        }
 
         if (playerInside)
             return;
 
-        Debug.Log("PLAYER ENTROU NA ÁREA DA CAMA!");
+        Debug.Log("PLAYER ENTROU! TOCANDO BATIMENTO.");
 
         playerInside = true;
 
         if (heartBeep.IsNull)
         {
-            Debug.LogError("O evento FMOD Heart Beep não foi colocado no Inspector!");
+            Debug.LogError("ERRO: Heart Beep não foi colocado no Inspector!");
             return;
         }
 
         heartInstance = RuntimeManager.CreateInstance(heartBeep);
-        heartInstance.start();
 
-        Debug.Log("BIP DO CORAÇÃO INICIADO!");
+        FMOD.RESULT resultado = heartInstance.start();
+
+        Debug.Log("FMOD START RESULT: " + resultado);
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        Debug.Log("ALGO SAIU DA ÁREA: " + other.gameObject.name);
-
         if (!other.CompareTag("Player"))
             return;
 
+        Debug.Log("PLAYER SAIU DA ÁREA.");
+
         playerInside = false;
 
-        heartInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        heartInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
         heartInstance.release();
 
-        Debug.Log("BIP DO CORAÇÃO PARADO!");
+        Debug.Log("BATIMENTO PARADO.");
     }
 }
