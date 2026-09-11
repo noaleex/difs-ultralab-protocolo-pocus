@@ -17,9 +17,9 @@ MonoBehaviour:
   sex: Masculino
   tutorial: 0
   welfareScore: 50
-  characterSprite: {fileID: 0}
+  characterSprite: {fileID: 3970722849222489811, guid: 4f9a84ee587d7024599a90381539c348, type: 3}
   characterFullSprite: {fileID: 21300000, guid: d37dc6dd88dcac640994b403fa69511c, type: 3}
-  backgroundSprite: {fileID: 0}
+  backgroundSprite: {fileID: 21300000, guid: 9cfbf36d2b0ad0146ad4df4e2befba0c, type: 3}
   resumeCaso: 
   physicalExam: []
   permeabilidade: 
