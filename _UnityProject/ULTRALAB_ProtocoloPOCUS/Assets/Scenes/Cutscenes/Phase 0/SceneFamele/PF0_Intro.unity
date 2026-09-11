@@ -600,14 +600,14 @@ GameObject:
   - component: {fileID: 551606243}
   - component: {fileID: 551606246}
   - component: {fileID: 551606245}
-  - component: {fileID: 551606244}
+  - component: {fileID: 551606247}
   m_Layer: 5
   m_Name: Formatura
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &551606243
 RectTransform:
   m_ObjectHideFlags: 0
@@ -629,18 +629,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &551606244
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 551606242}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a59fa8c9a782084c9720fca25216ab8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::RawImageCover
 --- !u!114 &551606245
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -676,6 +664,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 551606242}
   m_CullTransparentMesh: 1
+--- !u!114 &551606247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 551606242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdba87a1bc714d046b568c5cd5b0ef28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RawImageCover
 --- !u!1 &637177985
 GameObject:
   m_ObjectHideFlags: 0
@@ -2172,7 +2172,7 @@ GameObject:
   - component: {fileID: 1534807880}
   - component: {fileID: 1534807883}
   - component: {fileID: 1534807882}
-  - component: {fileID: 1534807881}
+  - component: {fileID: 1534807884}
   m_Layer: 5
   m_Name: Instatisfacao
   m_TagString: Untagged
@@ -2199,18 +2199,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1534807881
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1534807879}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a59fa8c9a782084c9720fca25216ab8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::RawImageCover
 --- !u!114 &1534807882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2246,6 +2234,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1534807879}
   m_CullTransparentMesh: 1
+--- !u!114 &1534807884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1534807879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdba87a1bc714d046b568c5cd5b0ef28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RawImageCover
 --- !u!1 &1601979640
 GameObject:
   m_ObjectHideFlags: 0

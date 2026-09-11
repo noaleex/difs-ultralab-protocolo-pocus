@@ -7,37 +7,35 @@ using TMPro;
 
 public class menu_manager : MonoBehaviour
 {
-    [Header("Paineis de Interface")]
     [SerializeField] private GameObject panelMainMenu;
     [SerializeField] private GameObject panelCharacterSelection;
     [SerializeField] private GameObject panelMenuOptionsPc;
     [SerializeField] private GameObject panelMenuOptionsAndroid;
     [SerializeField] private GameObject panelMenuOutConfirmation;
 
-    [Header("Botões")]
     [SerializeField] private Button buttonContinue;
 
     [SerializeField] private Button buttonMale;
     [SerializeField] private Button buttonFemale;
-    [SerializeField] private Button buttonAcademic;
-    [SerializeField] private Button buttonGraduated;
-    [SerializeField] private Button buttonConfirmSelection;
-    [SerializeField] private Color colorNormal = Color.white;
-    [SerializeField] private Color colorSelected = Color.gray;
-
-    [Header("Seleção de Personagem")]
     [SerializeField] private GameObject spriteMale;
     [SerializeField] private GameObject spriteFemale;
 
+    [SerializeField] private Button buttonAcademic;
+    [SerializeField] private Button buttonGraduated;
+
+    [SerializeField] private Color colorNormal = Color.white;
+    [SerializeField] private Color colorSelected = Color.green;
+
+    [SerializeField] private Button buttonConfirmSelection;
 
     [SerializeField] private TMP_InputField inputName;
     [SerializeField] private TMP_InputField inputAge;
 
+    [SerializeField] private bool skipIntroCutscene = true;
+    [SerializeField] private string sceneGameplayTutorial = "gameplay_tutorial";
     [SerializeField] private string sceneCutsceneMale = "PM0_Intro";
     [SerializeField] private string sceneCutsceneFemale = "PF0_Intro";
 
-
-    [Header("Áudio FMOD")]
     public EventReference MusicaMenu;    
     public EventReference ClickMenu;
     public EventReference SelecionarPersonagemClick;
@@ -234,10 +232,20 @@ public class menu_manager : MonoBehaviour
 
         StopMenuMusic();
 
-        string targetCutscene = selectedCharacter == "Masculino" ? sceneCutsceneMale : sceneCutsceneFemale;
+        string targetScene = "";
+
+        if (skipIntroCutscene)
+        {
+            targetScene = sceneGameplayTutorial;
+        }
+        else
+        {
+            targetScene = selectedCharacter == "Masculino" ? sceneCutsceneMale : sceneCutsceneFemale;
+        }
+
         if (loading_manager.instance != null)
         {
-            loading_manager.instance.SwitchScene(targetCutscene);
+            loading_manager.instance.SwitchScene(targetScene);
         }
     }
 
