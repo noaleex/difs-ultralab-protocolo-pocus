@@ -31,6 +31,11 @@ public class boot_manager : MonoBehaviour
         {
             persistentCamera = Camera.main;
         }
+
+        if (persistentCamera != null)
+        {
+            DontDestroyOnLoad(persistentCamera.gameObject);
+        }
     }
 
     private void OnDestroy()
@@ -54,7 +59,7 @@ public class boot_manager : MonoBehaviour
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         CleanupDuplicateCameras();
-        HandlePlayerStateForScene(scene.name);
+        HandleGameplayStateForScene(scene.name);
     }
 
     private void CleanupDuplicateCameras()
@@ -63,14 +68,18 @@ public class boot_manager : MonoBehaviour
 
         foreach (Camera cam in camerasInHierarchy)
         {
-            if (cam != persistentCamera)
+            if (cam != persistentCamera && !cam.gameObject.CompareTag("MainCamera"))
+            {
+                Destroy(cam.gameObject);
+            }
+            else if (cam != persistentCamera && cam.gameObject.CompareTag("MainCamera") && persistentCamera != null)
             {
                 Destroy(cam.gameObject);
             }
         }
     }
 
-    private void HandlePlayerStateForScene(string sceneName)
+    private void HandleGameplayStateForScene(string sceneName)
     {
         bool isCutscene = game_flow_manager.instance != null && game_flow_manager.instance.IsCutsceneScene(sceneName);
 
@@ -79,6 +88,11 @@ public class boot_manager : MonoBehaviour
             if (activePlayer != null)
             {
                 activePlayer.SetActive(false);
+            }
+
+            if (hud_manager.instance != null)
+            {
+                hud_manager.instance.SetHudVisibility(false);
             }
             return;
         }
@@ -94,6 +108,11 @@ public class boot_manager : MonoBehaviour
             {
                 activePlayer.transform.position = spawnPoint.transform.position;
             }
+        }
+
+        if (hud_manager.instance != null)
+        {
+            hud_manager.instance.SetHudVisibility(true);
         }
     }
 

@@ -8,8 +8,9 @@ public class loading_manager : MonoBehaviour
 
     [SerializeField] private CanvasGroup loadingCanvasGroup;
     [SerializeField] private float fadeDuration = 0.5f;
+    [SerializeField] private string initialSceneName = "MainMenu";
 
-    private string currentActiveScene = "MainMenu";
+    private string currentActiveScene = "";
 
     private void Awake()
     {
@@ -31,6 +32,8 @@ public class loading_manager : MonoBehaviour
             loadingCanvasGroup.alpha = 0f;
             loadingCanvasGroup.blocksRaycasts = false;
         }
+
+        currentActiveScene = initialSceneName;
     }
 
     public void SwitchScene(string sceneToLoad)
@@ -50,30 +53,42 @@ public class loading_manager : MonoBehaviour
                 loadingCanvasGroup.alpha = Mathf.Clamp01(timer / fadeDuration);
                 yield return null;
             }
+            loadingCanvasGroup.alpha = 1f;
         }
 
         if (!string.IsNullOrEmpty(currentActiveScene))
         {
-            AsyncOperation unloadOp = SceneManager.UnloadSceneAsync(currentActiveScene);
-            while (unloadOp != null && !unloadOp.isDone)
+            Scene sceneToUnload = SceneManager.GetSceneByName(currentActiveScene);
+            if (sceneToUnload.isLoaded)
             {
-                yield return null;
+                AsyncOperation unloadOp = SceneManager.UnloadSceneAsync(sceneToUnload);
+                while (unloadOp != null && !unloadOp.isDone)
+                {
+                    yield return null;
+                }
             }
         }
 
         AsyncOperation loadOp = SceneManager.LoadSceneAsync(sceneToLoad, LoadSceneMode.Additive);
-        while (!loadOp.isDone)
+        if (loadOp != null)
         {
-            yield return null;
-        }
+            while (!loadOp.isDone)
+            {
+                yield return null;
+            }
 
-        currentActiveScene = sceneToLoad;
-        SceneManager.SetActiveScene(SceneManager.GetSceneByName(sceneToLoad));
+            currentActiveScene = sceneToLoad;
+            Scene newScene = SceneManager.GetSceneByName(sceneToLoad);
+            if (newScene.IsValid())
+            {
+                SceneManager.SetActiveScene(newScene);
+            }
 
-        if (save_manager.instance != null && save_manager.instance.currentData != null)
-        {
-            save_manager.instance.currentData.currentScene = sceneToLoad;
-            save_manager.instance.SaveGame();
+            if (save_manager.instance != null && save_manager.instance.currentData != null)
+            {
+                save_manager.instance.currentData.currentScene = sceneToLoad;
+                save_manager.instance.SaveGame();
+            }
         }
 
         if (loadingCanvasGroup != null)
@@ -85,6 +100,7 @@ public class loading_manager : MonoBehaviour
                 loadingCanvasGroup.alpha = 1f - Mathf.Clamp01(timer / fadeDuration);
                 yield return null;
             }
+            loadingCanvasGroup.alpha = 0f;
             loadingCanvasGroup.blocksRaycasts = false;
         }
     }

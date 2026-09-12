@@ -3118,7 +3118,7 @@ GameObject:
   - component: {fileID: 1247916986}
   m_Layer: 0
   m_Name: Main Camera
-  m_TagString: MainCamera
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4105,15 +4105,17 @@ MonoBehaviour:
   buttonContinue: {fileID: 1381918831}
   buttonMale: {fileID: 129279155}
   buttonFemale: {fileID: 1173654005}
-  buttonAcademic: {fileID: 918677271}
-  buttonGraduated: {fileID: 1277753104}
-  buttonConfirmSelection: {fileID: 1427983806}
-  colorNormal: {r: 1, g: 1, b: 1, a: 1}
-  colorSelected: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
   spriteMale: {fileID: 1860781057}
   spriteFemale: {fileID: 1342960434}
+  buttonAcademic: {fileID: 918677271}
+  buttonGraduated: {fileID: 1277753104}
+  colorNormal: {r: 1, g: 1, b: 1, a: 1}
+  colorSelected: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+  buttonConfirmSelection: {fileID: 1427983806}
   inputName: {fileID: 871833293}
   inputAge: {fileID: 1133633903}
+  skipIntroCutscene: 1
+  sceneGameplayTutorial: LAB
   sceneCutsceneMale: PM0_Intro
   sceneCutsceneFemale: PF0_Intro
   MusicaMenu:

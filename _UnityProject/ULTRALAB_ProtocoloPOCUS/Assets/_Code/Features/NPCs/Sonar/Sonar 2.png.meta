@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 564a97293bb6381458ac567e6019a57d
+guid: 3a3d32b07deae594dbbe1db16cdf0ad0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2725221012571676099
-    second: Interact 1_0
+      213: -8907448002779489539
+    second: Sonar 2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Interact 1_0
+      name: Sonar 2_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 29
-        height: 28
+        width: 43
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3cdd3c4721ee1d520800000000000000
-      internalID: 2725221012571676099
+      spriteID: dfad0133c33626480800000000000000
+      internalID: -8907448002779489539
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Interact 1_0: 2725221012571676099
+      Sonar 2_0: -8907448002779489539
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
