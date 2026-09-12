@@ -5,54 +5,35 @@ public class CharacterSpawn : MonoBehaviour
 {
     [SerializeField] private GameObject prefabMasculino;
     [SerializeField] private GameObject prefabFeminino;
-
     [SerializeField] private Transform spawnPoint;
-
     [SerializeField] private CinemachineCamera cinemachineCamera;
 
-
+    /*
     private void Start()
     {
         SpawnPlayer();
     }
 
-
     public void SpawnPlayer()
     {
-
         if (GameManager.Instance.HasPlayer())
         {
-            Debug.Log("Player já existe");
-
-            if(cinemachineCamera != null)
+            if (cinemachineCamera != null)
             {
-                cinemachineCamera.Follow =
-                    GameManager.Instance.Player.transform;
+                cinemachineCamera.Follow = GameManager.Instance.Player.transform;
             }
-
             return;
         }
 
-
-        string characterEscolhido =
-            PlayerPrefs.GetString("Character", "");
-
-
-        Debug.Log("Personagem escolhido: " + characterEscolhido);
-
+        string characterEscolhido = PlayerPrefs.GetString("Character", "");
 
         GameObject prefabParaInstanciar = null;
 
-
-        if(characterEscolhido == "Masculino")
+        if (characterEscolhido == "Masculino")
         {
             prefabParaInstanciar = prefabMasculino;
         }
-        else if(characterEscolhido == "Feminino")
-        {
-            prefabParaInstanciar = prefabFeminino;
-        }
-        else if(characterEscolhido == "")
+        else if (characterEscolhido == "Feminino" || characterEscolhido == "")
         {
             prefabParaInstanciar = prefabFeminino;
         }
@@ -63,35 +44,24 @@ public class CharacterSpawn : MonoBehaviour
             spawnPoint.rotation
         );
 
-
         DontDestroyOnLoad(novoPersonagem);
 
-
-        PlayerReferences references =
-            novoPersonagem.GetComponent<PlayerReferences>();
-
-
-        if(references != null)
+        PlayerReferences references = novoPersonagem.GetComponent<PlayerReferences>();
+        if (references != null)
         {
             references.RefreshReferences();
-
-
-            if(AndroidControl.Instance != null)
+            if (AndroidControl.Instance != null)
             {
-                AndroidControl.Instance.SetPlayerInteraction(
-                    references.InteractionDetector
-                );
+                AndroidControl.Instance.SetPlayerInteraction(references.InteractionDetector);
             }
         }
 
         GameManager.Instance.RegisterPlayer(novoPersonagem);
 
-
-        if(cinemachineCamera != null)
+        if (cinemachineCamera != null)
         {
-            cinemachineCamera.Follow =
-                novoPersonagem.transform;
+            cinemachineCamera.Follow = novoPersonagem.transform;
         }
-
     }
+    */
 }

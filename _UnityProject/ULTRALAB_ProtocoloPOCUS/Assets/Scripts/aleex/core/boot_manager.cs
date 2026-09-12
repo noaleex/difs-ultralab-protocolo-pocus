@@ -14,6 +14,10 @@ public class boot_manager : MonoBehaviour
 
     public GameObject activePlayer { get; private set; }
 
+    // Memória de posição do player
+    private Vector3? storedPosition = null;
+    private string storedPositionScene = "";
+
     private void Awake()
     {
         if (instance == null)
@@ -82,9 +86,10 @@ public class boot_manager : MonoBehaviour
 
     private void HandleGameplayStateForScene(string sceneName)
     {
+        bool isMenu = string.Equals(sceneName, initialSceneName, System.StringComparison.OrdinalIgnoreCase);
         bool isCutscene = game_flow_manager.instance != null && game_flow_manager.instance.IsCutsceneScene(sceneName);
 
-        if (sceneName == initialSceneName || isCutscene)
+        if (isMenu || isCutscene)
         {
             if (activePlayer != null)
             {
@@ -104,10 +109,28 @@ public class boot_manager : MonoBehaviour
         {
             activePlayer.SetActive(true);
 
-            GameObject spawnPoint = GameObject.FindWithTag("Respawn");
-            if (spawnPoint != null)
+            // 1. Garante que os scripts de movimento sejam religados
+            PlayerReferences refs = activePlayer.GetComponent<PlayerReferences>();
+            if (refs != null)
             {
-                activePlayer.transform.position = spawnPoint.transform.position;
+                refs.EnablePlayer();
+            }
+
+            // 2. Decide onde o player vai aparecer (Posição Salva ou Tag Respawn)
+            if (storedPosition.HasValue && storedPositionScene == sceneName)
+            {
+                activePlayer.transform.position = storedPosition.Value;
+                // Limpa a memória após usar para não travar o jogador aqui para sempre
+                storedPosition = null;
+                storedPositionScene = "";
+            }
+            else
+            {
+                GameObject spawnPoint = GameObject.FindWithTag("Respawn");
+                if (spawnPoint != null)
+                {
+                    activePlayer.transform.position = spawnPoint.transform.position;
+                }
             }
 
             BindCameraToPlayer(activePlayer.transform);
@@ -124,9 +147,14 @@ public class boot_manager : MonoBehaviour
         CinemachineCamera vcam = FindAnyObjectByType<CinemachineCamera>();
         if (vcam != null)
         {
-            vcam.Follow = playerTransform;
-            return;
+            vcam.Target.TrackingTarget = playerTransform;
         }
+    }
+
+    public void StorePlayerPosition(Vector3 position, string sceneName)
+    {
+        storedPosition = position;
+        storedPositionScene = sceneName;
     }
 
     public void EnsurePlayerInstantiated()
@@ -142,12 +170,27 @@ public class boot_manager : MonoBehaviour
             savedGender = save_manager.instance.currentData.characterGender;
         }
 
+        if (string.IsNullOrEmpty(savedGender))
+        {
+            return;
+        }
+
         GameObject selectedPrefab = savedGender == "Feminino" ? femalePlayerPrefab : malePlayerPrefab;
 
         if (selectedPrefab != null)
         {
             activePlayer = Instantiate(selectedPrefab);
             DontDestroyOnLoad(activePlayer);
+
+            PlayerReferences references = activePlayer.GetComponent<PlayerReferences>();
+            if (references != null)
+            {
+                references.RefreshReferences();
+                if (AndroidControl.Instance != null)
+                {
+                    AndroidControl.Instance.SetPlayerInteraction(references.InteractionDetector);
+                }
+            }
         }
     }
 

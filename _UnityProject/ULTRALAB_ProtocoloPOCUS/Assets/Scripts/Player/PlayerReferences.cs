@@ -1,9 +1,7 @@
 using UnityEngine;
 
-
 public class PlayerReferences : MonoBehaviour
 {
-
     public static PlayerReferences Instance;
 
     [Header("Referências")]
@@ -21,16 +19,7 @@ public class PlayerReferences : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance != null && Instance != this)
-        {
-
-            Destroy(gameObject);
-
-            return;
-        }
-
         Instance = this;
-        DontDestroyOnLoad(gameObject);
         isAndroid = Application.platform == RuntimePlatform.Android;
     }
 
@@ -41,24 +30,13 @@ public class PlayerReferences : MonoBehaviour
 
     public void RefreshReferences()
     {
-        playerMovement =
-            GetComponent<CharacterController2D>();
-
-
-        playerNavMesh =
-            GetComponent<PlayerMovementNavMash>();
-
-
-        interactionDetector =
-            GetComponentInChildren<InteractionDetector>();
-
+        playerMovement = GetComponent<CharacterController2D>();
+        playerNavMesh = GetComponent<PlayerMovementNavMash>();
+        interactionDetector = GetComponentInChildren<InteractionDetector>();
 
         if (interactIcon == null)
         {
-            GameObject icon =
-                GameObject.Find("InteractIcon");
-
-
+            GameObject icon = GameObject.Find("InteractIcon");
             if (icon != null)
                 interactIcon = icon;
         }
@@ -67,10 +45,7 @@ public class PlayerReferences : MonoBehaviour
     public void EnablePlayer()
     {
         RefreshReferences();
-
-
         gameObject.SetActive(true);
-
 
         if (playerMovement != null)
         {
@@ -88,7 +63,6 @@ public class PlayerReferences : MonoBehaviour
                 playerNavMesh.enabled = true;
             }
         }
-
     }
 
     public void DisablePlayer()
@@ -102,5 +76,4 @@ public class PlayerReferences : MonoBehaviour
         if (playerMovement != null)
             playerMovement.enabled = false;
     }
-
 }

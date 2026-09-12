@@ -238,7 +238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72e46a510a21386408b649740e56102d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::game_flow_manager
-  gameplayTutorialSceneName: LAB
+  gameplayTutorialSceneName: gameplay_tutorial
   cutscenes:
   - stepId: intro
     maleSceneName: PF0_Intro
@@ -426,6 +426,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::loading_manager
   loadingCanvasGroup: {fileID: 1174419811}
   fadeDuration: 0.5
+  initialSceneName: main_menu
 --- !u!1 &327369769
 GameObject:
   m_ObjectHideFlags: 0
@@ -877,7 +878,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80b003561be9bc347a9ae792f8f5b37c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::boot_manager
-  initialSceneName: MainMenu
+  initialSceneName: main_menu
   persistentCamera: {fileID: 463444160}
   malePlayerPrefab: {fileID: 1561545956832956884, guid: 1af82397f9be48d40b0d6c4baf544454, type: 3}
   femalePlayerPrefab: {fileID: 1561545956832956884, guid: 1c6259276f13568419e021fbbcfcf385, type: 3}

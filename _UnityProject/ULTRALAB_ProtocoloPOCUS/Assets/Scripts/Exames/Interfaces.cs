@@ -11,6 +11,12 @@ public class Interfaces : MonoBehaviour
     [SerializeField] private string uti;
 
 
+    private void Start()
+    {
+        BackInterface();
+    }
+
+
     // =====================================================
     // POCUS
     // =====================================================
@@ -53,9 +59,9 @@ public class Interfaces : MonoBehaviour
 
     public void BackInterface()
     {
-        pocus.SetActive(false);
-        leito.SetActive(false);
-        tool.SetActive(false);
+        if (pocus != null) pocus.SetActive(false);
+        if (leito != null) leito.SetActive(false);
+        if (tool != null) tool.SetActive(false);
 
         AudioManager.Instance?.PlayBack();
     }
@@ -128,53 +134,21 @@ public class Interfaces : MonoBehaviour
         PauseController.SetPause(false);
 
 
-        SceneManager.sceneLoaded +=
-            OnSceneLoaded;
-
-
         // =================================================
         // CARREGAR CENA
         // =================================================
 
-        SceneManager.LoadScene(
-            sceneToLoad
-        );
-    }
-
-
-    // =====================================================
-    // CENA CARREGADA
-    // =====================================================
-
-    private void OnSceneLoaded(
-        Scene scene,
-        LoadSceneMode mode)
-    {
-        SceneManager.sceneLoaded -=
-            OnSceneLoaded;
-
-
-        // =================================================
-        // PLAYER
-        // =================================================
-
-        if (PlayerReferences.Instance != null)
+        if (loading_manager.instance != null)
         {
-            PlayerReferences.Instance
-                .RefreshReferences();
-
-
-            PlayerReferences.Instance
-                .EnablePlayer();
-
-
-            if (PlayerReferences.Instance
-                .InteractIcon != null)
-            {
-                PlayerReferences.Instance
-                    .InteractIcon
-                    .SetActive(true);
-            }
+            loading_manager.instance.SwitchScene(
+                sceneToLoad
+            );
+        }
+        else
+        {
+            SceneManager.LoadScene(
+                sceneToLoad
+            );
         }
     }
 }

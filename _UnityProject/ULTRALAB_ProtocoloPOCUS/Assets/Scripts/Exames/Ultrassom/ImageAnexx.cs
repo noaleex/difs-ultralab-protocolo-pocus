@@ -32,16 +32,26 @@ public class ImageAnexx : MonoBehaviour
             case BodyArea.BodyRegion.Heart:
                 Debug.Log("Imagem do Coração confirmada.");
                 approved = true;
-                //COMEÇAR CUTSCENE
-                    PauseController.SetPause(false);
+                PauseController.SetPause(false);
+                
+                if (PlayerReferences.Instance != null)
+                {
                     PlayerReferences.Instance.RefreshReferences();
                     PlayerReferences.Instance.EnablePlayer();
-                SceneManager.LoadScene(uti);
+                }
+
+                if (loading_manager.instance != null)
+                {
+                    loading_manager.instance.SwitchScene(uti);
+                }
+                else
+                {
+                    SceneManager.LoadScene(uti);
+                }
                 break;
 
             case BodyArea.BodyRegion.Lung1:
                 Debug.Log("Imagem do Pulmão confirmada.");
-                //Reprovação, e todos abaixo também
                 approved = false;
                 break;
 

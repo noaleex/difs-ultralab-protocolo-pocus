@@ -217,48 +217,39 @@ public class OpenExams : MonoBehaviour, IInteractable
     {
         PlayClickSound();
 
-
-        // Salva o tempo atual antes de mudar de cena
-        Timer timer =
-            FindFirstObjectByType<Timer>();
-
+        Timer timer = FindFirstObjectByType<Timer>();
         if (timer != null)
         {
             timer.SaveCurrentTime();
         }
 
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        
+        GameSession.SetOriginalScene(currentSceneName);
+        GameSession.SavePatient(patientData);
+        GameSession.SaveConduct(patientData, conductState, conductCompleted);
 
-        // Salva qual cena devemos retornar
-        GameSession.SetOriginalScene(
-            SceneManager.GetActiveScene().name
-        );
+        if (boot_manager.instance != null && PlayerReferences.Instance != null)
+        {
+            boot_manager.instance.StorePlayerPosition(
+                PlayerReferences.Instance.transform.position, 
+                currentSceneName
+            );
+        }
 
+        CurrentPatient.Data = patientData;
+        CurrentPatient.Object = this;
 
-        // Salva o paciente atual
-        GameSession.SavePatient(
-            patientData
-        );
+        PauseController.SetPause(false);
 
-
-        // Salva a conduta atual
-        GameSession.SaveConduct(
-            patientData,
-            conductState,
-            conductCompleted
-        );
-
-
-        // Mantém o paciente atual
-        CurrentPatient.Data =
-            patientData;
-
-        CurrentPatient.Object =
-            this;
-
-
-        SceneManager.LoadScene(
-            exams
-        );
+        if (loading_manager.instance != null)
+        {
+            loading_manager.instance.SwitchScene(exams);
+        }
+        else
+        {
+            SceneManager.LoadScene(exams);
+        }
     }
 
 

@@ -49,7 +49,7 @@ public class loading_manager : MonoBehaviour
             float timer = 0f;
             while (timer < fadeDuration)
             {
-                timer += Time.deltaTime;
+                timer += Time.unscaledDeltaTime; // <-- ALTERADO AQUI
                 loadingCanvasGroup.alpha = Mathf.Clamp01(timer / fadeDuration);
                 yield return null;
             }
@@ -96,7 +96,7 @@ public class loading_manager : MonoBehaviour
             float timer = 0f;
             while (timer < fadeDuration)
             {
-                timer += Time.deltaTime;
+                timer += Time.unscaledDeltaTime; // <-- ALTERADO AQUI TAMBÉM
                 loadingCanvasGroup.alpha = 1f - Mathf.Clamp01(timer / fadeDuration);
                 yield return null;
             }
