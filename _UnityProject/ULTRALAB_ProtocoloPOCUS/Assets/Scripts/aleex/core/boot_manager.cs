@@ -1,3 +1,4 @@
+using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -108,11 +109,23 @@ public class boot_manager : MonoBehaviour
             {
                 activePlayer.transform.position = spawnPoint.transform.position;
             }
+
+            BindCameraToPlayer(activePlayer.transform);
         }
 
         if (hud_manager.instance != null)
         {
             hud_manager.instance.SetHudVisibility(true);
+        }
+    }
+
+    private void BindCameraToPlayer(Transform playerTransform)
+    {
+        CinemachineCamera vcam = FindAnyObjectByType<CinemachineCamera>();
+        if (vcam != null)
+        {
+            vcam.Follow = playerTransform;
+            return;
         }
     }
 
