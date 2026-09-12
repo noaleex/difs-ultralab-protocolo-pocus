@@ -1296,9 +1296,6 @@ MonoBehaviour:
       Data3: -801384060
       Data4: 1978304836
     Path: event:/Interagir/fx_item
-  dialogueIndex: 0
-  isTyping: 0
-  isDialogueActive: 0
 --- !u!95 &233699015
 Animator:
   serializedVersion: 7
@@ -1350,7 +1347,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66523845d0367ee45bf2f7b3628a6a97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  <Player>k__BackingField: {fileID: 0}
   somCena:
     Guid:
       Data1: 0
@@ -2500,9 +2496,6 @@ MonoBehaviour:
       Data3: -801384060
       Data4: 1978304836
     Path: event:/Interagir/fx_item
-  dialogueIndex: 0
-  isTyping: 0
-  isDialogueActive: 0
 --- !u!1 &511557021
 GameObject:
   m_ObjectHideFlags: 0
@@ -2753,9 +2746,6 @@ MonoBehaviour:
       Data3: -801384060
       Data4: 1978304836
     Path: event:/Interagir/fx_item
-  dialogueIndex: 0
-  isTyping: 0
-  isDialogueActive: 0
 --- !u!61 &536115206
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8478,9 +8468,6 @@ MonoBehaviour:
       Data3: -801384060
       Data4: 1978304836
     Path: event:/Interagir/fx_item
-  dialogueIndex: 0
-  isTyping: 0
-  isDialogueActive: 0
 --- !u!61 &645863879
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16375,9 +16362,6 @@ MonoBehaviour:
       Data3: -801384060
       Data4: 1978304836
     Path: event:/Interagir/fx_item
-  dialogueIndex: 0
-  isTyping: 0
-  isDialogueActive: 0
 --- !u!1 &1115960576
 GameObject:
   m_ObjectHideFlags: 0
@@ -17570,9 +17554,6 @@ MonoBehaviour:
       Data3: -801384060
       Data4: 1978304836
     Path: event:/Interagir/fx_item
-  dialogueIndex: 0
-  isTyping: 0
-  isDialogueActive: 0
 --- !u!61 &1186090020
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -18731,32 +18712,6 @@ MonoBehaviour:
       Data3: -801384060
       Data4: 1978304836
     Path: event:/Interagir/fx_item
-  conductCompleted: 0
-  conductState:
-    permeabilidade: 0
-    presenca: 0
-    intervencao: 0
-    frequencia: 
-    saturation: 
-    acessoria: 0
-    padraoRespiratorio: 0
-    asculta: 0
-    expansibilidade: 0
-    oxigenoterapiaTipo: 0
-    oxigenoterapiaFluxo: 
-    frequenciaCardiaca: 
-    pressaoArterial: 
-    pressaoArterial2: 
-    perfusaoTempo: 
-    perfusaoExtremidades: 0
-    pulsos: 0
-    ritmoCardiaco: 0
-    edema: 0
-    temperatura: 
-    nivelConsciencia: 0
-    avalicaoPele: 0
-    presencaPele: 0
-    dorEscala: 
 --- !u!483693784 &1312763283
 TilemapRenderer:
   serializedVersion: 2
@@ -20100,9 +20055,6 @@ MonoBehaviour:
       Data3: -801384060
       Data4: 1978304836
     Path: event:/Interagir/fx_item
-  dialogueIndex: 0
-  isTyping: 0
-  isDialogueActive: 0
 --- !u!61 &1430539770
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -26248,9 +26200,6 @@ MonoBehaviour:
       Data3: -801384060
       Data4: 1978304836
     Path: event:/Interagir/fx_item
-  dialogueIndex: 0
-  isTyping: 0
-  isDialogueActive: 0
 --- !u!61 &1628495552
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -26860,9 +26809,6 @@ MonoBehaviour:
       Data3: -801384060
       Data4: 1978304836
     Path: event:/Interagir/fx_item
-  dialogueIndex: 0
-  isTyping: 0
-  isDialogueActive: 0
 --- !u!61 &1671777924
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -28472,7 +28418,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2002453275
 RectTransform:
   m_ObjectHideFlags: 0
@@ -28508,7 +28454,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AndroidControl
   painelAndroid: {fileID: 2002453274}
   buttonInteract: {fileID: 1044896648}
-  interactionDetector: {fileID: 0}
 --- !u!114 &2002453277
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28583,7 +28528,6 @@ MonoBehaviour:
       Data3: -580016215
       Data4: 214636514
     Path: event:/Interagir/fx_menu_click
-  button: {fileID: 0}
 --- !u!1 &2007115292
 GameObject:
   m_ObjectHideFlags: 0

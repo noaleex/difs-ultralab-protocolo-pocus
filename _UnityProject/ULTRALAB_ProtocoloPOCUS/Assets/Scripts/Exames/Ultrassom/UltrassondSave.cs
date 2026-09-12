@@ -1,15 +1,15 @@
-using System;
 using System.Collections;
-using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
+
 public class UltrassondSave : MonoBehaviour
 {
     [SerializeField] private UltrasoundManager ultrasoundManager;
-    [SerializeField] private TextMeshPro confirmText;
+    [SerializeField] private GameObject confirmText;
 
-    [SerializeField] private float fadeTime = 1f;
     [SerializeField] private float textTime = 1.5f;
+
+    private Coroutine confirmCoroutine;
+
     public void OnSaveImage()
     {
         if (ultrasoundManager == null)
@@ -37,46 +37,24 @@ public class UltrassondSave : MonoBehaviour
 
         ExamsSaveData.IsDefaultUltrasoundImage = isDefault;
 
+        // Ativa o Panel
+        confirmText.SetActive(true);
+
+        // Reinicia o contador caso salve novamente antes de desaparecer
+        if (confirmCoroutine != null)
+            StopCoroutine(confirmCoroutine);
+
+        confirmCoroutine = StartCoroutine(HideConfirmation());
+
         Debug.Log($"Imagem salva: {ExamsSaveData.SavedExam}");
     }
 
-    private IEnumerator Fade(
-        float target)
+    private IEnumerator HideConfirmation()
     {
-       //confirmText 
-       float start =
-            confirmText.color.a;
+        yield return new WaitForSeconds(textTime);
 
-        float t = 0f;
+        confirmText.SetActive(false);
 
-        while (t < fadeTime)
-        {
-            t +=
-                Time.unscaledDeltaTime;
-
-            Color color =
-                confirmText.color;
-
-            color.a =
-                Mathf.Lerp(
-                    start,
-                    target,
-                    t / fadeTime
-                );
-
-            confirmText.color =
-                color;
-
-            yield return null;
-        }
-
-        Color finalColor =
-            confirmText.color;
-
-        finalColor.a =
-            target;
-
-        confirmText.color =
-            finalColor;
+        confirmCoroutine = null;
     }
 }

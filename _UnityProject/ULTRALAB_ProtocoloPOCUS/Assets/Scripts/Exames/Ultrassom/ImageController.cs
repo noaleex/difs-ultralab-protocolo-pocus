@@ -15,7 +15,7 @@ public class ImageController : MonoBehaviour
     [Header("Zoom")]
     [SerializeField] private Slider realZoomSlider;
     [SerializeField] private float minZoom = 1f;
-    [SerializeField] private float maxZoom = 3f;
+    [SerializeField] private float maxZoom = 4f;
 
     [Header("FMOD - Som da Barra")]
     [SerializeField] private EventReference somMovendo;

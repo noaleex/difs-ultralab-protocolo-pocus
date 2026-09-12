@@ -24,15 +24,15 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    // public void RegisterPlayer(GameObject player)
-    // {
-    //     Player = player;
-    // }
+    /* public void RegisterPlayer(GameObject player)
+    {
+        Player = player;
+    }
 
-    // public bool HasPlayer()
-    // {
-    //     return Player != null;
-    // }
+    public bool HasPlayer()
+    {
+         return Player != null;
+     }*/
 
     private void TocarSomCena()
     {
