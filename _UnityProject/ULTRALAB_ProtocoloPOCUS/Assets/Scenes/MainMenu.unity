@@ -2494,7 +2494,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1556939893}
         m_TargetAssemblyTypeName: menu_manager, Assembly-CSharp
-        m_MethodName: Options
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4775,7 +4775,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1556939893}
         m_TargetAssemblyTypeName: menu_manager, Assembly-CSharp
-        m_MethodName: QuitConfirm
+        m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
