@@ -366,4 +366,77 @@ public class PatientConductEvaluator : MonoBehaviour
             erros++;
         }
     }
+
+    public void EvaluateEmptyConduct(
+    PatientData npc)
+    {
+        if (npc == null)
+        {
+            Debug.LogError(
+                "[PatientConductEvaluator] " +
+                "Paciente não informado para avaliação vazia."
+            );
+
+            return;
+        }
+
+
+        // =====================================================
+        // TODOS OS CAMPOS ESTÃO VAZIOS
+        // =====================================================
+        //
+        // Um formulário vazio significa que cada campo que
+        // deveria ser preenchido representa um erro.
+        //
+        // O sistema possui 25 campos avaliados atualmente.
+        // =====================================================
+
+        int acertos = 0;
+
+        int erros = 25;
+
+
+        // =====================================================
+        // ALTERAR WELFARE
+        // =====================================================
+
+        int welfareAnterior =
+            GameSession.GetPatientWelfare(
+                npc
+            );
+
+
+        int resultado =
+            acertos - erros;
+
+
+        int novoWelfare =
+            welfareAnterior + resultado;
+
+
+        novoWelfare =
+            Mathf.Clamp(
+                novoWelfare,
+                0,
+                74
+            );
+
+
+        GameSession.SetPatientWelfare(
+            npc,
+            novoWelfare
+        );
+
+
+        Debug.Log(
+            $"===== PRONTUÁRIO VAZIO =====\n" +
+            $"Paciente: {npc.patientName}\n" +
+            $"Acertos: {acertos}\n" +
+            $"Erros: {erros}\n" +
+            $"Resultado: {resultado}\n" +
+            $"Welfare anterior: {welfareAnterior}\n" +
+            $"Novo Welfare: {novoWelfare}\n" +
+            $"============================"
+        );
+    }
 }

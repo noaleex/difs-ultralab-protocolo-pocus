@@ -10,6 +10,10 @@ public class PatientDayValidator : MonoBehaviour
     [SerializeField] private MedicalData medicalDataUI;
 
 
+    [Header("Avaliação")]
+    [SerializeField] private PatientConductEvaluator conductEvaluator;
+
+
     [Header("Configuração")]
     [SerializeField] private float messageTime = 1.5f;
 
@@ -44,8 +48,8 @@ public class PatientDayValidator : MonoBehaviour
 
 
     // =====================================================
-    // VERIFICAR PACIENTES NO FIM DO DIA
-    // =====================================================
+    // FIM DO DIA PELO RELÓGIO
+    // ====================================================
 
     public IEnumerator ValidatePatientsAtEndOfDay(
         Action<bool> onFinished,
@@ -56,36 +60,6 @@ public class PatientDayValidator : MonoBehaviour
             Debug.LogError(
                 "PatientManager não encontrado!"
             );
-
-            onFinished?.Invoke(false);
-
-            yield break;
-        }
-
-
-        // =================================================
-        // TODOS FIZERAM?
-        // =================================================
-
-        if (!AllPatientsCompletedConduct())
-        {
-            messageText.text =
-                "Realize a conduta de todos os pacientes para terminar o dia";
-
-
-            messageText.gameObject
-                .SetActive(true);
-
-
-            yield return
-                new WaitForSecondsRealtime(
-                    messageTime
-                );
-
-
-            messageText.gameObject
-                .SetActive(false);
-
 
             onFinished?.Invoke(false);
 
@@ -121,12 +95,49 @@ public class PatientDayValidator : MonoBehaviour
 
 
             PatientData patient =
-                patientObject
-                    .PatientDataReference;
+                patientObject.PatientDataReference;
 
 
             if (patient == null)
                 continue;
+
+
+            // ---------------------------------------------
+            // VERIFICAR SE A CONDUTA FOI PREENCHIDA
+            // ---------------------------------------------
+
+            bool conductCompleted =
+                patientObject.ConductCompleted;
+
+
+            if (!conductCompleted)
+            {
+                Debug.LogWarning(
+                    $"[PatientDayValidator] " +
+                    $"O paciente {patient.patientName} " +
+                    $"não teve o prontuário preenchido. " +
+                    $"Campos vazios serão considerados erros."
+                );
+
+
+                // -----------------------------------------
+                // AQUI NÃO BLOQUEAMOS O DIA.
+                //
+                // O paciente será avaliado pelo welfare
+                // que já foi alterado pelas condutas feitas.
+                //
+                // Para contabilizar os campos vazios como
+                // erros, fazemos uma avaliação automática
+                // usando um formulário vazio.
+                // -----------------------------------------
+
+                if (conductEvaluator != null)
+                {
+                    conductEvaluator.EvaluateEmptyConduct(
+                        patient
+                    );
+                }
+            }
 
 
             // ---------------------------------------------
@@ -151,12 +162,15 @@ public class PatientDayValidator : MonoBehaviour
             if (result ==
                 PatientResult.Discharged)
             {
-                messageText.text =
-                    $"O paciente {patient.patientName} ganhou alta";
+                if (messageText != null)
+                {
+                    messageText.text =
+                        $"O paciente {patient.patientName} ganhou alta";
 
 
-                messageText.gameObject
-                    .SetActive(true);
+                    messageText.gameObject
+                        .SetActive(true);
+                }
 
 
                 yield return
@@ -188,12 +202,15 @@ public class PatientDayValidator : MonoBehaviour
                 result ==
                 PatientResult.GameOver)
             {
-                messageText.text =
-                    $"O paciente {patient.patientName} piorou, game over";
+                if (messageText != null)
+                {
+                    messageText.text =
+                        $"O paciente {patient.patientName} piorou, game over";
 
 
-                messageText.gameObject
-                    .SetActive(true);
+                    messageText.gameObject
+                        .SetActive(true);
+                }
 
 
                 yield return
@@ -219,12 +236,15 @@ public class PatientDayValidator : MonoBehaviour
 
             else
             {
-                messageText.text =
-                    $"O paciente {patient.patientName} continua em tratamento";
+                if (messageText != null)
+                {
+                    messageText.text =
+                        $"O paciente {patient.patientName} continua em tratamento";
 
 
-                messageText.gameObject
-                    .SetActive(true);
+                    messageText.gameObject
+                        .SetActive(true);
+                }
 
 
                 yield return
@@ -274,11 +294,98 @@ public class PatientDayValidator : MonoBehaviour
         // FINALIZOU O DIA
         // =================================================
 
-        messageText.gameObject
-            .SetActive(false);
+        if (messageText != null)
+        {
+            messageText.gameObject
+                .SetActive(false);
+        }
 
+
+        // =================================================
+        // IMPORTANTE:
+        //
+        // O dia SEMPRE pode terminar quando chegou
+        // naturalmente ao endHour.
+        // =================================================
 
         onFinished?.Invoke(true);
+    }
+
+
+    // =====================================================
+    // VERIFICAÇÃO PARA SKIP DAY
+    // =====================================================
+    //
+    // Diferentemente do relógio, SkipDay exige que todos
+    // os prontuários estejam preenchidos.
+    // =====================================================
+
+    public IEnumerator ValidatePatientsForSkipDay(
+        Action<bool> onFinished,
+        TextMeshProUGUI messageText)
+    {
+        if (PatientManager.Instance == null)
+        {
+            Debug.LogError(
+                "PatientManager não encontrado!"
+            );
+
+            onFinished?.Invoke(false);
+
+            yield break;
+        }
+
+
+        // =================================================
+        // TODOS OS PACIENTES PRECISAM ESTAR COMPLETOS
+        // =================================================
+
+        if (!AllPatientsCompletedConduct())
+        {
+            if (messageText != null)
+            {
+                messageText.text =
+                    "Preencha o prontuário de todos os pacientes antes de pular o dia";
+
+
+                messageText.gameObject
+                    .SetActive(true);
+            }
+
+
+            yield return
+                new WaitForSecondsRealtime(
+                    messageTime
+                );
+
+
+            if (messageText != null)
+            {
+                messageText.gameObject
+                    .SetActive(false);
+            }
+
+
+            onFinished?.Invoke(false);
+
+            yield break;
+        }
+
+
+        // =================================================
+        // ESTÁ TUDO PREENCHIDO
+        // =================================================
+        //
+        // Agora podemos utilizar a mesma avaliação do
+        // final normal do dia.
+        // =================================================
+
+        yield return StartCoroutine(
+            ValidatePatientsAtEndOfDay(
+                onFinished,
+                messageText
+            )
+        );
     }
 
 
@@ -287,32 +394,36 @@ public class PatientDayValidator : MonoBehaviour
     // =====================================================
 
     private PatientResult EvaluatePatient(
-    PatientData patient)
-{
-    int welfare =
-        GameSession.GetPatientWelfare(
-            patient
+        PatientData patient)
+    {
+        int welfare =
+            GameSession.GetPatientWelfare(
+                patient
+            );
+
+
+        Debug.Log(
+            $"[PatientDayValidator] " +
+            $"Paciente: {patient.patientName} | " +
+            $"Welfare atual: {welfare} | " +
+            $"Welfare original: {patient.welfareScore}"
         );
 
-    Debug.Log(
-        $"[PatientDayValidator] " +
-        $"Paciente: {patient.patientName} | " +
-        $"Welfare atual: {welfare} | " +
-        $"Welfare original: {patient.welfareScore}"
-    );
 
-    if (welfare >= 74)
-    {
-        return PatientResult.Discharged;
+        if (welfare >= 74)
+        {
+            return PatientResult.Discharged;
+        }
+
+
+        if (welfare <= 0)
+        {
+            return PatientResult.GameOver;
+        }
+
+
+        return PatientResult.Continuing;
     }
-
-    if (welfare <= 0)
-    {
-        return PatientResult.GameOver;
-    }
-
-    return PatientResult.Continuing;
-}
 
 
     // =====================================================

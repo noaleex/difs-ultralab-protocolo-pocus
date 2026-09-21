@@ -9,7 +9,7 @@ public class Timer : MonoBehaviour
 
     [Header("Configuração")]
     [SerializeField] private int startHour = 8;
-    [SerializeField] private int endHour = 16;
+    [SerializeField] private int endHour = 9;
 
 
     public int CurrentDay
@@ -53,6 +53,12 @@ public class Timer : MonoBehaviour
     {
         // =================================================
         // EXISTE UM ESTADO SALVO?
+        // =================================================
+        //
+        // Isso acontece quando voltamos de outra cena.
+        //
+        // Nesse caso NÃO devemos mostrar DayTransition.
+        // Apenas restauramos o horário e continuamos.
         // =================================================
 
         if (GameSession.HasSavedTime)
@@ -98,16 +104,34 @@ public class Timer : MonoBehaviour
 
         CurrentDay = 1;
 
+
         currentHour =
             startHour;
+
 
         currentMinute = 0;
 
 
+        // =================================================
+        // SALVAR ESTADO INICIAL
+        // =================================================
+
         SaveCurrentTime();
+
 
         UpdateClockText();
 
+
+        // =================================================
+        // PRIMEIRO DIA
+        // =================================================
+        //
+        // Somente aqui mostramos:
+        //
+        // "Dia 1..."
+        //
+        // Ao voltar de outra cena isso NÃO acontece.
+        // =================================================
 
         if (DayTransition.Instance != null)
         {
@@ -121,6 +145,7 @@ public class Timer : MonoBehaviour
             Debug.LogError(
                 "DayTransition.Instance não encontrado!"
             );
+
 
             StartDay();
         }
@@ -167,7 +192,12 @@ public class Timer : MonoBehaviour
         }
 
 
+        // =================================================
+        // SALVAR HORÁRIO
+        // =================================================
+
         SaveCurrentTime();
+
 
         UpdateClockText();
 
@@ -230,21 +260,44 @@ public class Timer : MonoBehaviour
     {
         CurrentDay++;
 
+
         currentHour =
             startHour;
+
 
         currentMinute = 0;
 
 
+        // =================================================
+        // SALVAR NOVO DIA
+        // =================================================
+
         SaveCurrentTime();
+
 
         UpdateClockText();
 
 
-        DayTransition.Instance.BeginDay(
-            CurrentDay,
-            StartDay
-        );
+        // =================================================
+        // AGORA SIM MOSTRAR DAY TRANSITION
+        // =================================================
+
+        if (DayTransition.Instance != null)
+        {
+            DayTransition.Instance.BeginDay(
+                CurrentDay,
+                StartDay
+            );
+        }
+        else
+        {
+            Debug.LogError(
+                "DayTransition.Instance não encontrado ao iniciar novo dia."
+            );
+
+
+            StartDay();
+        }
     }
 
 
@@ -264,20 +317,6 @@ public class Timer : MonoBehaviour
     // PULAR PARA PRÓXIMO DIA
     // =====================================================
 
-    public void SkipToNextDay()
-    {
-        if (!timerRunning)
-            return;
-
-
-        timerRunning = false;
-
-
-        SaveCurrentTime();
-
-
-        EndDay();
-    }
 
 
     // =====================================================
@@ -294,11 +333,39 @@ public class Timer : MonoBehaviour
             $"{currentHour:00}:{currentMinute:00}";
     }
 
-    private void OnDisable()
+
+    // =====================================================
+    // SAIR DA CENA
+    // =====================================================
+
+    private void OnDestroy()
     {
         if (GameSession.HasSavedTime)
         {
             SaveCurrentTime();
+        }
+    }
+
+    public void SkipToNextDay()
+    {
+        if (!timerRunning)
+            return;
+
+        timerRunning = false;
+        SaveCurrentTime();
+
+        DayTransition.Instance.CheckPatientsForSkipDay(OnSkipDayFinished);
+    }
+
+    private void OnSkipDayFinished(bool success)
+    {
+        if (success)
+        {
+            NextDay();
+        }
+        else
+        {
+            timerRunning = true;
         }
     }
 }

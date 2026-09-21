@@ -9,7 +9,7 @@ public class CharacterSpawn : MonoBehaviour
     [SerializeField] private CinemachineCamera cinemachineCamera;
 
     
-    /*private void Start()
+    private void Start()
     {
         SpawnPlayer();
     }
@@ -62,6 +62,6 @@ public class CharacterSpawn : MonoBehaviour
         {
             cinemachineCamera.Follow = novoPersonagem.transform;
         }
-    }*/
+    }
     
 }

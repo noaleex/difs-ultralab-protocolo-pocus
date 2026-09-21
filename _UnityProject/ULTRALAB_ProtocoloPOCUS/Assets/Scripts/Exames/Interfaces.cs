@@ -3,10 +3,13 @@ using UnityEngine.SceneManagement;
 
 public class Interfaces : MonoBehaviour
 {
+    [Header("Interfaces")]
     [SerializeField] private GameObject pocus;
     [SerializeField] private GameObject leito;
     [SerializeField] private GameObject tool;
 
+
+    [Header("Cenas")]
     [SerializeField] private string lab;
     [SerializeField] private string uti;
 
@@ -23,7 +26,11 @@ public class Interfaces : MonoBehaviour
 
     public void PocusClick()
     {
-        pocus.SetActive(true);
+        if (pocus != null)
+        {
+            pocus.SetActive(true);
+        }
+
 
         AudioManager.Instance?.PlayInteraction();
     }
@@ -35,7 +42,11 @@ public class Interfaces : MonoBehaviour
 
     public void LeitoClick()
     {
-        leito.SetActive(true);
+        if (leito != null)
+        {
+            leito.SetActive(true);
+        }
+
 
         AudioManager.Instance?.PlayInteraction();
     }
@@ -47,7 +58,11 @@ public class Interfaces : MonoBehaviour
 
     public void ToolClick()
     {
-        tool.SetActive(true);
+        if (tool != null)
+        {
+            tool.SetActive(true);
+        }
+
 
         AudioManager.Instance?.PlayInteraction();
     }
@@ -59,9 +74,23 @@ public class Interfaces : MonoBehaviour
 
     public void BackInterface()
     {
-        if (pocus != null) pocus.SetActive(false);
-        if (leito != null) leito.SetActive(false);
-        if (tool != null) tool.SetActive(false);
+        if (pocus != null)
+        {
+            pocus.SetActive(false);
+        }
+
+
+        if (leito != null)
+        {
+            leito.SetActive(false);
+        }
+
+
+        if (tool != null)
+        {
+            tool.SetActive(false);
+        }
+
 
         AudioManager.Instance?.PlayBack();
     }
@@ -74,26 +103,6 @@ public class Interfaces : MonoBehaviour
     public void BackExam()
     {
         AudioManager.Instance?.PlayBack();
-
-
-        // =================================================
-        // SALVAR TEMPO ATUAL
-        // =================================================
-
-        Timer timer =
-            FindFirstObjectByType<Timer>();
-
-
-        if (timer != null)
-        {
-            timer.SaveCurrentTime();
-        }
-        else
-        {
-            Debug.LogWarning(
-                "Timer não encontrado na cena de exames."
-            );
-        }
 
 
         // =================================================
