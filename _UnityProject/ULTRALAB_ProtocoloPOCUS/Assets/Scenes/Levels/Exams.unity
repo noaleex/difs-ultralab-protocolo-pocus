@@ -2389,7 +2389,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 784f4a6205461f240a1530dd3b12543f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5cc36d462c4ed0f4ca56183be89d9a37, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -4606,14 +4606,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.61275387, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 68072e4d8d96cec4a96374b3c4fee87f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ac894779711098347b91f51ef1edfe38, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -4797,7 +4797,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -8119,8 +8119,8 @@ MonoBehaviour:
       Data4: -1242087218
     Path: event:/Interagir/fx_gel
   defaultImage: {fileID: -8527568592950175283, guid: 85d65de9e00d0044e98cd5df42c65431, type: 3}
-  setorialProbeSprite: {fileID: 21300000, guid: 68072e4d8d96cec4a96374b3c4fee87f, type: 3}
-  linearProbeSprite: {fileID: 21300000, guid: 784f4a6205461f240a1530dd3b12543f, type: 3}
+  setorialProbeSprite: {fileID: 21300000, guid: ac894779711098347b91f51ef1edfe38, type: 3}
+  linearProbeSprite: {fileID: 21300000, guid: 5cc36d462c4ed0f4ca56183be89d9a37, type: 3}
   convexProbeSprite: {fileID: 21300000, guid: db0575a02a3b30148abdc5f06c35430b, type: 3}
   heart: {fileID: 292863792}
   lung1: {fileID: 600117437}
