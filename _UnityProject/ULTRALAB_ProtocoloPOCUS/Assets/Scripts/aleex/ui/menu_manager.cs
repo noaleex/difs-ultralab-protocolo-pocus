@@ -12,6 +12,9 @@ public class menu_manager : MonoBehaviour
     [SerializeField] private GameObject panelMenuOptionsPc;
     [SerializeField] private GameObject panelMenuOptionsAndroid;
     [SerializeField] private GameObject panelMenuOutConfirmation;
+    [SerializeField] private GameObject panelContinueGame;
+    [SerializeField] private GameObject panelLearning;
+
 
     [SerializeField] private Button buttonContinue;
 
