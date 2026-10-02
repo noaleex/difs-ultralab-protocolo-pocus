@@ -14,7 +14,6 @@ public class boot_manager : MonoBehaviour
 
     public GameObject activePlayer { get; private set; }
 
-    // Memória de posição do player
     private Vector3? storedPosition = null;
     private string storedPositionScene = "";
 
@@ -109,18 +108,15 @@ public class boot_manager : MonoBehaviour
         {
             activePlayer.SetActive(true);
 
-            // 1. Garante que os scripts de movimento sejam religados
             PlayerReferences refs = activePlayer.GetComponent<PlayerReferences>();
             if (refs != null)
             {
                 refs.EnablePlayer();
             }
 
-            // 2. Decide onde o player vai aparecer (Posição Salva ou Tag Respawn)
             if (storedPosition.HasValue && storedPositionScene == sceneName)
             {
                 activePlayer.transform.position = storedPosition.Value;
-                // Limpa a memória após usar para não travar o jogador aqui para sempre
                 storedPosition = null;
                 storedPositionScene = "";
             }
@@ -139,6 +135,7 @@ public class boot_manager : MonoBehaviour
         if (hud_manager.instance != null)
         {
             hud_manager.instance.SetHudVisibility(true);
+            hud_manager.instance.UpdateContextualHud(sceneName);
         }
     }
 
