@@ -26572,8 +26572,8 @@ PolygonCollider2D:
     m_Paths:
     - - {x: 21.931517, y: 8.592265}
       - {x: -9.82364, y: 8.557934}
-      - {x: -9.702855, y: -3.898508}
-      - {x: 21.852055, y: -4.0120077}
+      - {x: -9.65151, y: -18.571707}
+      - {x: 21.443218, y: -18.883419}
   m_UseDelaunayMesh: 1
 --- !u!1 &1043655091
 GameObject:
@@ -37353,8 +37353,8 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 767058695
-  m_SortingLayer: 7
+  m_SortingLayerID: -905532613
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}

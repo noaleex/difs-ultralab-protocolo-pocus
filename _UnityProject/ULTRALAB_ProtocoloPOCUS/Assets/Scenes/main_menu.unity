@@ -935,6 +935,7 @@ GameObject:
   m_Component:
   - component: {fileID: 235355940}
   - component: {fileID: 235355941}
+  - component: {fileID: 235355942}
   m_Layer: 5
   m_Name: SliderVolume
   m_TagString: Untagged
@@ -1016,6 +1017,21 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &235355942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 235355939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dc61379435900146915cc1d278105e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioSettings
+  volumeGeral: {fileID: 235355941}
+  volumeMusica: {fileID: 1034343749}
+  volumeSFX: {fileID: 972633627}
 --- !u!1 &254518154
 GameObject:
   m_ObjectHideFlags: 0
@@ -1279,7 +1295,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -5509,6 +5525,8 @@ MonoBehaviour:
   panelMenuOptionsPc: {fileID: 550439502}
   panelMenuOptionsAndroid: {fileID: 0}
   panelMenuOutConfirmation: {fileID: 0}
+  panelContinueGame: {fileID: 0}
+  panelLearning: {fileID: 0}
   buttonContinue: {fileID: 1381918831}
   buttonMale: {fileID: 129279155}
   buttonFemale: {fileID: 1173654005}
