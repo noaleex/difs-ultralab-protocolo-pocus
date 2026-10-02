@@ -7040,7 +7040,7 @@ GameObject:
   - component: {fileID: 775005647}
   - component: {fileID: 775005646}
   m_Layer: 5
-  m_Name: camvas
+  m_Name: canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

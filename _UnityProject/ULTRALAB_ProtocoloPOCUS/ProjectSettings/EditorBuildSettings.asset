@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Cutscenes/Phase 0/SceneFamele/PF0_Intro.unity
     guid: fabc13468fb6b2945bf116781217cb78
   - enabled: 1
+    path: Assets/Scenes/Levels/gameplay_tutorial.unity
+    guid: cf357bc240aab20438e736ee8f34d662
+  - enabled: 1
     path: Assets/Scenes/Levels/LAB.unity
     guid: 080ef923b10458a45a0d45ee622113d2
   - enabled: 1
