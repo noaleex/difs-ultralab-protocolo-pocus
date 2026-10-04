@@ -68,8 +68,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 1.03}
-  m_Radius: 0.85
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 0.81712276
 --- !u!114 &3554129526055558895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,10 +170,10 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 767058695
-  m_SortingLayer: 7
+  m_SortingLayer: 15
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: 20cda5be06fe7e94b864e0599a9bff67, type: 3}
+  m_Sprite: {fileID: -1607632857148824164, guid: 1e12e7f6dcb763b4a941ee0a0a21392a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -264,17 +264,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.005338788, y: 0.33248758}
+  m_Offset: {x: 0.0028762817, y: -0.72089005}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0}
-    oldSize: {x: 2, y: 2}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 2}
     newSize: {x: 2, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.517781, y: 0.16074848}
+  m_Size: {x: 0.94101906, y: 0.20777512}
   m_EdgeRadius: 0
 --- !u!95 &7337454537632617819
 Animator:
@@ -454,6 +454,18 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 867bda6b-f4d9-403d-9606-cd56419d5503
     m_ActionName: UI/New action
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 29fcf865-5c75-4b1b-90aa-df582ba223fc
+    m_ActionName: 'Player/UpPage[/Keyboard/upArrow]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: d238e43f-77aa-4496-8e29-9d82e42f014d
+    m_ActionName: 'Player/DownPage[/Keyboard/downArrow]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 13b1511d-8491-49b6-be9c-733addfa359b
+    m_ActionName: 'Player/NextField[/Keyboard/tab]'
   m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -501,7 +513,7 @@ Transform:
   m_GameObject: {fileID: 3582078887113947399}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.45, y: 1.85, z: 0}
+  m_LocalPosition: {x: 0.574, y: 0.882, z: 0}
   m_LocalScale: {x: 1.2, y: 1.2, z: 2.4}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -553,7 +565,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 382699877
-  m_SortingLayer: 12
+  m_SortingLayer: 20
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: 1e7d2102fd7fa6e43beb424df5ada001, type: 3}

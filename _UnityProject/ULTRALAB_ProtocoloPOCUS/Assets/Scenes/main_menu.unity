@@ -5540,7 +5540,7 @@ MonoBehaviour:
   inputName: {fileID: 871833293}
   inputAge: {fileID: 1133633903}
   skipIntroCutscene: 1
-  sceneGameplayTutorial: LAB
+  sceneGameplayTutorial: gameplay_tutorial
   sceneCutsceneMale: PM0_Intro
   sceneCutsceneFemale: PF0_Intro
   MusicaMenu:

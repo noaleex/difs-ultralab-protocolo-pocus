@@ -41,6 +41,27 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Ground
+    uniqueID: 2302739009
+    locked: 0
+  - name: Carpet
+    uniqueID: 1280235809
+    locked: 0
+  - name: Walls_Bottom
+    uniqueID: 1376749161
+    locked: 0
+  - name: Wall_decorations
+    uniqueID: 936567433
+    locked: 0
+  - name: Forniture
+    uniqueID: 319459515
+    locked: 0
+  - name: "Forniture_sobreposi\xE7a\xF5"
+    uniqueID: 3441886195
+    locked: 0
+  - name: Wall_Top
+    uniqueID: 3897715341
+    locked: 0
   - name: Background
     uniqueID: 3141353209
     locked: 0
@@ -59,17 +80,20 @@ TagManager:
   - name: Cortinas
     uniqueID: 3389434683
     locked: 0
+  - name: interactables
+    uniqueID: 2862543663
+    locked: 0
   - name: Player
     uniqueID: 767058695
     locked: 0
-  - name: Moveis 02
-    uniqueID: 3441886195
+  - name: Forniture_top
+    uniqueID: 3327542503
+    locked: 0
+  - name: pacients
+    uniqueID: 359887817
     locked: 0
   - name: Leito_Cobertor
     uniqueID: 4186166415
-    locked: 0
-  - name: Wall_Top
-    uniqueID: 3897715341
     locked: 0
   - name: Cortina_Aberta
     uniqueID: 679906869

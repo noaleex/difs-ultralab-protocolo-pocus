@@ -1,0 +1,6389 @@
+fileFormatVersion: 2
+guid: bae978355dc34994dbb5d8a404f8ef14
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  importerVersion: 2
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 0
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 32
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  previousAsepriteImporterSettings:
+    fileImportMode: 2
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+    generateIndividualEvents: 1
+    generateSpriteAtlas: 1
+  asepriteImporterSettings:
+    fileImportMode: 2
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+    generateIndividualEvents: 1
+    generateSpriteAtlas: 1
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 639170575290112998
+  textureAssetName: 
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  animatedSpriteImportData: []
+  spriteSheetImportData: []
+  tileSetImportData:
+  - name: "TileSheet_Laborat\xC3\xB3rio_1"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 32
+      height: 32
+    spriteID: 2587f2ef2ec5d0c4c8bdc427b79b04f5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+  - name: "TileSheet_Laborat\xC3\xB3rio_2"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 44
+      width: 32
+      height: 32
+    spriteID: 37a6a0010cb05e5439248fd5798fba25
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 44}
+  - name: "TileSheet_Laborat\xC3\xB3rio_3"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 84
+      width: 32
+      height: 32
+    spriteID: 4354da6b5bdb152498eea335b8721e2d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 84}
+  - name: "TileSheet_Laborat\xC3\xB3rio_4"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 124
+      width: 32
+      height: 32
+    spriteID: 083a446406849194d84bc13031f7e3b0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 124}
+  - name: "TileSheet_Laborat\xC3\xB3rio_5"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 164
+      width: 32
+      height: 32
+    spriteID: 3e68b70517f66154d95d6dc1e461b034
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 164}
+  - name: "TileSheet_Laborat\xC3\xB3rio_6"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 204
+      width: 32
+      height: 32
+    spriteID: 4289723620587b545929da9d8f72b13d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 204}
+  - name: "TileSheet_Laborat\xC3\xB3rio_7"
+    originalName: 
+    pivot: {x: 0.5, y: -0.6}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 296
+      y: 166
+      width: 16
+      height: 10
+    spriteID: ef968b06043887342abe869b20c8f0f5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 288, y: 144}
+  - name: "TileSheet_Laborat\xC3\xB3rio_8"
+    originalName: 
+    pivot: {x: 0.5, y: 1.1428572}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 320
+      y: 4
+      width: 18
+      height: 14
+    spriteID: 774ef46065c5a0d4eb9b4b4e820721e3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 313, y: 4}
+  - name: "TileSheet_Laborat\xC3\xB3rio_9"
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1004
+      width: 32
+      height: 16
+    spriteID: 5a63c54c91629ed41aca918317ad46ce
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 988}
+  - name: "TileSheet_Laborat\xC3\xB3rio_10"
+    originalName: 
+    pivot: {x: 0.5, y: 1}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 44
+      y: 1004
+      width: 32
+      height: 16
+    spriteID: a2ad5f604a9cb6c4384ff783496fe452
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 44, y: 1004}
+  - name: "TileSheet_Laborat\xC3\xB3rio_11"
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 240
+      y: 215
+      width: 32
+      height: 16
+    spriteID: e7af4f3bf76561b4aa70494f564de7a0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 240, y: 199}
+  - name: "TileSheet_Laborat\xC3\xB3rio_12"
+    originalName: 
+    pivot: {x: 0.5, y: 1}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 240
+      y: 239
+      width: 32
+      height: 16
+    spriteID: 9386df4532f0b1041b1ea60b681123e4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 240, y: 239}
+  - name: "TileSheet_Laborat\xC3\xB3rio_13"
+    originalName: 
+    pivot: {x: 0.5, y: 0.7619048}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 240
+      y: 157
+      width: 32
+      height: 21
+    spriteID: a6066dd176bb8314f9ad3a41a989c688
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 240, y: 157}
+  - name: "TileSheet_Laborat\xC3\xB3rio_14"
+    originalName: 
+    pivot: {x: 0.5, y: 0.7619048}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 240
+      y: 186
+      width: 32
+      height: 21
+    spriteID: 95d950ff30a66444dad4fb04e56f8a2d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 240, y: 186}
+  - name: "TileSheet_Laborat\xC3\xB3rio_15"
+    originalName: 
+    pivot: {x: 0.53333336, y: -0.06666667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 240
+      y: 740
+      width: 30
+      height: 15
+    spriteID: fd12177539d2e504a9021f9b5ab9689d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 240, y: 723}
+  - name: "TileSheet_Laborat\xC3\xB3rio_16"
+    originalName: 
+    pivot: {x: 0.4666667, y: -0.06666667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 240
+      y: 763
+      width: 30
+      height: 15
+    spriteID: 4bb10a314cfc879468df626c7a7219fa
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 238, y: 746}
+  - name: "TileSheet_Laborat\xC3\xB3rio_17"
+    originalName: 
+    pivot: {x: 0.48387095, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 240
+      y: 506
+      width: 31
+      height: 16
+    spriteID: 0a23aca6d8b32604caf1eb6a3a962b0c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 239, y: 490}
+  - name: "TileSheet_Laborat\xC3\xB3rio_18"
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 240
+      y: 263
+      width: 32
+      height: 16
+    spriteID: fa33c0693ceac9b4f9af2cc5bd0ef09c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 240, y: 247}
+  - name: "TileSheet_Laborat\xC3\xB3rio_19"
+    originalName: 
+    pivot: {x: 0.516129, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 240
+      y: 530
+      width: 31
+      height: 16
+    spriteID: 7e0ab0b706c315942bcba5d85d951262
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 240, y: 514}
+  - name: "TileSheet_Laborat\xC3\xB3rio_20"
+    originalName: 
+    pivot: {x: 0.4666667, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 124
+      y: 201
+      width: 30
+      height: 32
+    spriteID: 1ec5404f877509243995f51d6a2a2d48
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 122, y: 201}
+  - name: "TileSheet_Laborat\xC3\xB3rio_21"
+    originalName: 
+    pivot: {x: 0.4666667, y: 1}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 240
+      y: 554
+      width: 30
+      height: 16
+    spriteID: b6a58dad3f6098d4eade8cd91685d538
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 238, y: 554}
+  - name: "TileSheet_Laborat\xC3\xB3rio_22"
+    originalName: 
+    pivot: {x: 0.53333336, y: 1}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 240
+      y: 578
+      width: 30
+      height: 16
+    spriteID: b9649df1527de9049b5879dea879709b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 240, y: 578}
+  - name: "TileSheet_Laborat\xC3\xB3rio_23"
+    originalName: 
+    pivot: {x: 0.53333336, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 124
+      y: 241
+      width: 30
+      height: 32
+    spriteID: 9d70a5ed15e5422458bf7862573dc5da
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 124, y: 241}
+  - name: "TileSheet_Laborat\xC3\xB3rio_24"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 244
+      width: 32
+      height: 32
+    spriteID: 65651040570bcc74d80793669c8334ed
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 244}
+  - name: "TileSheet_Laborat\xC3\xB3rio_25"
+    originalName: 
+    pivot: {x: 0.5, y: 1}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 240
+      y: 287
+      width: 32
+      height: 16
+    spriteID: deba5f47ef6ef8344b8cf22e94542a25
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 240, y: 287}
+  - name: "TileSheet_Laborat\xC3\xB3rio_26"
+    originalName: 
+    pivot: {x: 0.5, y: 1}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 240
+      y: 311
+      width: 32
+      height: 16
+    spriteID: e4f845efd3ddc5b4f915a66f4f8290ec
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 240, y: 311}
+  - name: "TileSheet_Laborat\xC3\xB3rio_27"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 284
+      width: 32
+      height: 32
+    spriteID: 53660958a04809345946edceee193836
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 284}
+  - name: "TileSheet_Laborat\xC3\xB3rio_28"
+    originalName: 
+    pivot: {x: 0.5, y: -0.06666667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 240
+      y: 602
+      width: 32
+      height: 15
+    spriteID: 4118fd8525cfaca42a9a15d75c6c65e8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 240, y: 585}
+  - name: "TileSheet_Laborat\xC3\xB3rio_29"
+    originalName: 
+    pivot: {x: 0.5, y: 1}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 240
+      y: 335
+      width: 32
+      height: 16
+    spriteID: a15e2f71172f9c24b83e12bddc1faf92
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 240, y: 335}
+  - name: "TileSheet_Laborat\xC3\xB3rio_30"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 324
+      width: 32
+      height: 32
+    spriteID: 770099d700d8a494d9e38b3224576aca
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 324}
+  - name: "TileSheet_Laborat\xC3\xB3rio_31"
+    originalName: 
+    pivot: {x: 0.5, y: -0.06666667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 240
+      y: 625
+      width: 32
+      height: 15
+    spriteID: 98dc85cb4b6f97242b39c335ec125ff4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 240, y: 608}
+  - name: "TileSheet_Laborat\xC3\xB3rio_32"
+    originalName: 
+    pivot: {x: 0.64, y: 1}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 203
+      y: 873
+      width: 25
+      height: 16
+    spriteID: 22f74fb2090adeb498bc2d6810ea37a6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 203, y: 873}
+  - name: "TileSheet_Laborat\xC3\xB3rio_33"
+    originalName: 
+    pivot: {x: 0.64, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 163
+      y: 779
+      width: 25
+      height: 32
+    spriteID: e951d96ea9cfa06428824c390040c0f5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 163, y: 779}
+  - name: "TileSheet_Laborat\xC3\xB3rio_34"
+    originalName: 
+    pivot: {x: 0.64, y: -0.06666667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 203
+      y: 921
+      width: 25
+      height: 15
+    spriteID: 53e76b7da2ad53a4bbd7235a9e3b3ef7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 203, y: 904}
+  - name: "TileSheet_Laborat\xC3\xB3rio_35"
+    originalName: 
+    pivot: {x: 0.5, y: 0.30434784}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 203
+      y: 842
+      width: 20
+      height: 23
+    spriteID: 2cae4ae0695f1524fa6b7b888bbaf48b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 197, y: 833}
+  - name: "TileSheet_Laborat\xC3\xB3rio_36"
+    originalName: 
+    pivot: {x: 0.5185185, y: 0.53333336}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 163
+      y: 605
+      width: 27
+      height: 30
+    spriteID: cb181b5dba1c7ef47bced25af06024bf
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 161, y: 605}
+  - name: "TileSheet_Laborat\xC3\xB3rio_37"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 124
+      y: 281
+      width: 30
+      height: 32
+    spriteID: 241bf8963ab10cc409307e21f79f1926
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline:
+    - outline:
+      - {x: -15, y: -15}
+      - {x: 15, y: -15}
+      - {x: 15, y: 16}
+      - {x: -15, y: 16}
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 123, y: 281}
+  - name: "TileSheet_Laborat\xC3\xB3rio_38"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 124
+      y: 321
+      width: 30
+      height: 32
+    spriteID: 31488c65585bec2468711fc1c9dc53a8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 123, y: 321}
+  - name: "TileSheet_Laborat\xC3\xB3rio_39"
+    originalName: 
+    pivot: {x: 0.4074074, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 163
+      y: 265
+      width: 27
+      height: 32
+    spriteID: 06d72c1a0cd0d7d479d687bd963362b6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline:
+    - outline:
+      - {x: -13.5, y: -16}
+      - {x: 13.5, y: -16}
+      - {x: 13.5, y: 16}
+      - {x: -13.5, y: 16}
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 158, y: 265}
+  - name: "TileSheet_Laborat\xC3\xB3rio_40"
+    originalName: 
+    pivot: {x: 0.5925926, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 163
+      y: 305
+      width: 27
+      height: 32
+    spriteID: 736bb87c1d63b0d4d917c7c6cc407ff0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline:
+    - outline:
+      - {x: -13.5, y: -16}
+      - {x: 12.5, y: -16}
+      - {x: 13.5, y: 16}
+      - {x: -13.5, y: 16}
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 163, y: 305}
+  - name: "TileSheet_Laborat\xC3\xB3rio_41"
+    originalName: 
+    pivot: {x: 0.4074074, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 163
+      y: 345
+      width: 27
+      height: 32
+    spriteID: 386332a69479a3540a3f2b51526a6fea
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 158, y: 345}
+  - name: "TileSheet_Laborat\xC3\xB3rio_42"
+    originalName: 
+    pivot: {x: 0.5925926, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 163
+      y: 385
+      width: 27
+      height: 32
+    spriteID: 0e11ca485b600bf4ebb2336c9c331821
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 163, y: 385}
+  - name: "TileSheet_Laborat\xC3\xB3rio_43"
+    originalName: 
+    pivot: {x: 0.35999998, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 163
+      y: 819
+      width: 25
+      height: 32
+    spriteID: 07c2af8edefd97b4b8f96e17e645f14e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 156, y: 819}
+  - name: "TileSheet_Laborat\xC3\xB3rio_44"
+    originalName: 
+    pivot: {x: 0.64, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 163
+      y: 859
+      width: 25
+      height: 32
+    spriteID: 13c1f933c82e1ec45a0cb6c666e2a75f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 163, y: 859}
+  - name: "TileSheet_Laborat\xC3\xB3rio_45"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 364
+      width: 32
+      height: 32
+    spriteID: ad0da1975cfd89d4c9b31db949562003
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 364}
+  - name: "TileSheet_Laborat\xC3\xB3rio_46"
+    originalName: 
+    pivot: {x: 0.52380955, y: 1.0666667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 240
+      y: 897
+      width: 21
+      height: 15
+    spriteID: 01bf6c0e38fb16149acce0e26924995d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 235, y: 897}
+  - name: "TileSheet_Laborat\xC3\xB3rio_47"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 124
+      y: 361
+      width: 30
+      height: 32
+    spriteID: 6b1ce84b070475a4b81e778200b60791
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 123, y: 361}
+  - name: "TileSheet_Laborat\xC3\xB3rio_48"
+    originalName: 
+    pivot: {x: 0.5, y: 0.05882353}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 203
+      y: 741
+      width: 28
+      height: 17
+    spriteID: 476c7671688589b4ab6be2252a5af07f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 201, y: 726}
+  - name: "TileSheet_Laborat\xC3\xB3rio_49"
+    originalName: 
+    pivot: {x: 0.48387095, y: 0.61538464}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 163
+      y: 643
+      width: 31
+      height: 26
+    spriteID: 51a7338be1817d846bc27a5ba7dfefaf
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 162, y: 643}
+  - name: "TileSheet_Laborat\xC3\xB3rio_50"
+    originalName: 
+    pivot: {x: 0.516129, y: 0.61538464}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 163
+      y: 677
+      width: 31
+      height: 26
+    spriteID: 0bfe91ade2824134cb22c0b2563b70c4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 163, y: 677}
+  - name: "TileSheet_Laborat\xC3\xB3rio_51"
+    originalName: 
+    pivot: {x: 0.4666667, y: 0.05882353}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 124
+      y: 998
+      width: 30
+      height: 17
+    spriteID: 34d8f08c8208e1241a2732ba373639b6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 122, y: 983}
+  - name: "TileSheet_Laborat\xC3\xB3rio_52"
+    originalName: 
+    pivot: {x: 0.53333336, y: 0.05882353}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 240
+      y: 431
+      width: 30
+      height: 17
+    spriteID: 0731aea6501d8a94cb4ff35c98a48268
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 240, y: 416}
+  - name: "TileSheet_Laborat\xC3\xB3rio_53"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 124
+      y: 401
+      width: 30
+      height: 32
+    spriteID: 8cac16e35b5868a47bdb60f86bbd78f3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 123, y: 401}
+  - name: "TileSheet_Laborat\xC3\xB3rio_54"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 124
+      y: 441
+      width: 30
+      height: 32
+    spriteID: 5cb130d04fea1f24290b81653608e316
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 123, y: 441}
+  - name: "TileSheet_Laborat\xC3\xB3rio_55"
+    originalName: 
+    pivot: {x: 0.5, y: 0.48387095}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 124
+      y: 521
+      width: 30
+      height: 31
+    spriteID: 135f5118f19e6034bababe2a86e217f6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 123, y: 520}
+  - name: "TileSheet_Laborat\xC3\xB3rio_56"
+    originalName: 
+    pivot: {x: 0.5, y: 0.4666667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 124
+      y: 680
+      width: 30
+      height: 30
+    spriteID: 2b6a95b87781bab49ba861c4fc75cfab
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 123, y: 678}
+  - name: "TileSheet_Laborat\xC3\xB3rio_57"
+    originalName: 
+    pivot: {x: 0.48387095, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 84
+      y: 884
+      width: 31
+      height: 32
+    spriteID: 869aba3c8a06fab4896b59063760f084
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 83, y: 884}
+  - name: "TileSheet_Laborat\xC3\xB3rio_58"
+    originalName: 
+    pivot: {x: 0.4666667, y: 0.05882353}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 240
+      y: 456
+      width: 30
+      height: 17
+    spriteID: 542ab038c855bdb4fac9b703d1b83c1e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 238, y: 441}
+  - name: "TileSheet_Laborat\xC3\xB3rio_59"
+    originalName: 
+    pivot: {x: 0.516129, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 84
+      y: 924
+      width: 31
+      height: 32
+    spriteID: 1742256efd2978243b128163310e8bc1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 84, y: 924}
+  - name: "TileSheet_Laborat\xC3\xB3rio_60"
+    originalName: 
+    pivot: {x: 0.53333336, y: 0.05882353}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 240
+      y: 481
+      width: 30
+      height: 17
+    spriteID: 8409913ed761a3b4ea046d3e6dec9cd4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 240, y: 466}
+  - name: "TileSheet_Laborat\xC3\xB3rio_61"
+    originalName: 
+    pivot: {x: 0, y: 3.2}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 1013
+      width: 16
+      height: 5
+    spriteID: beb061d73055fc840a7dddc9bc23897e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 240, y: 1013}
+  - name: "TileSheet_Laborat\xC3\xB3rio_62"
+    originalName: 
+    pivot: {x: 2, y: 3.2}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 280
+      y: 264
+      width: 8
+      height: 5
+    spriteID: 94e597b28bcc1ae4a95cf309224235e4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 280, y: 264}
+  - name: "TileSheet_Laborat\xC3\xB3rio_63"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 404
+      width: 32
+      height: 32
+    spriteID: b23fc2c64f191b046aab00e269677e52
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 404}
+  - name: "TileSheet_Laborat\xC3\xB3rio_64"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 444
+      width: 32
+      height: 32
+    spriteID: d6b85a4953a2c5847a76a5f6f248d30b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 444}
+  - name: "TileSheet_Laborat\xC3\xB3rio_65"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 484
+      width: 32
+      height: 32
+    spriteID: 83ea7cff9801b2a4d8b35de9a88b08d7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 484}
+  - name: "TileSheet_Laborat\xC3\xB3rio_66"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 524
+      width: 32
+      height: 32
+    spriteID: 657095acdefb82742b8520def756903a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 524}
+  - name: "TileSheet_Laborat\xC3\xB3rio_67"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 564
+      width: 32
+      height: 32
+    spriteID: b8e74a2bc335c7f4f85168f2acc7c022
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 564}
+  - name: "TileSheet_Laborat\xC3\xB3rio_68"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 604
+      width: 32
+      height: 32
+    spriteID: a61905ad5a00fd24e9e38c521e56cc4a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 604}
+  - name: "TileSheet_Laborat\xC3\xB3rio_69"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 644
+      width: 32
+      height: 32
+    spriteID: 0ccb7ae144d325446afdf72a2caccf88
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 644}
+  - name: "TileSheet_Laborat\xC3\xB3rio_70"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 684
+      width: 32
+      height: 32
+    spriteID: 7ae99e4fc90de8449af5ea476a5f7f05
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 684}
+  - name: "TileSheet_Laborat\xC3\xB3rio_71"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 724
+      width: 32
+      height: 32
+    spriteID: e97cbae0d16e87547b1786fde336fd96
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 724}
+  - name: "TileSheet_Laborat\xC3\xB3rio_72"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 764
+      width: 32
+      height: 32
+    spriteID: 511d946909328a44f83ef8a7f27bc62a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 764}
+  - name: "TileSheet_Laborat\xC3\xB3rio_73"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 804
+      width: 32
+      height: 32
+    spriteID: 52dcde0a7310ac5478d55f32c9d1cca3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 804}
+  - name: "TileSheet_Laborat\xC3\xB3rio_74"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 844
+      width: 32
+      height: 32
+    spriteID: 83054c2b8f186274bbdf6fd832b80801
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 844}
+  - name: "TileSheet_Laborat\xC3\xB3rio_75"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 884
+      width: 32
+      height: 32
+    spriteID: ba5b9624706685b40b2c8f47aeb97e97
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 884}
+  - name: "TileSheet_Laborat\xC3\xB3rio_76"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 924
+      width: 32
+      height: 32
+    spriteID: a37c9cbf9ca8d3b4a850fad13e5b072c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 924}
+  - name: "TileSheet_Laborat\xC3\xB3rio_77"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 964
+      width: 32
+      height: 32
+    spriteID: 880586beca350ac46935d901f9845132
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 964}
+  - name: "TileSheet_Laborat\xC3\xB3rio_78"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 44
+      y: 4
+      width: 32
+      height: 32
+    spriteID: 3250ad9c200c2a545ace19ad381f9231
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 44, y: 4}
+  - name: "TileSheet_Laborat\xC3\xB3rio_79"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 44
+      y: 44
+      width: 32
+      height: 32
+    spriteID: 9a49deaef39f61641a8ba7e699f240bf
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 44, y: 44}
+  - name: "TileSheet_Laborat\xC3\xB3rio_80"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 44
+      y: 84
+      width: 32
+      height: 32
+    spriteID: 886bc4cce85bfa04fa39ac80979f95ce
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 44, y: 84}
+  - name: "TileSheet_Laborat\xC3\xB3rio_81"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 44
+      y: 124
+      width: 32
+      height: 32
+    spriteID: aa15a0f4b74e13a4ebe375fdf8bd08b9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 44, y: 124}
+  - name: "TileSheet_Laborat\xC3\xB3rio_82"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 44
+      y: 164
+      width: 32
+      height: 32
+    spriteID: 9e9e4a3b0c184914c8b252fbebfa1924
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 44, y: 164}
+  - name: "TileSheet_Laborat\xC3\xB3rio_83"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 44
+      y: 204
+      width: 32
+      height: 32
+    spriteID: 69469d9ef6ac5de4da54565208b551b3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 44, y: 204}
+  - name: "TileSheet_Laborat\xC3\xB3rio_84"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 44
+      y: 244
+      width: 32
+      height: 32
+    spriteID: be9127ed5b87cd340aaea3a2c4b86bb4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 44, y: 244}
+  - name: "TileSheet_Laborat\xC3\xB3rio_85"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 44
+      y: 284
+      width: 32
+      height: 32
+    spriteID: ef5318426f3fe4e469c33bb4a6931a6a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 44, y: 284}
+  - name: "TileSheet_Laborat\xC3\xB3rio_86"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 44
+      y: 324
+      width: 32
+      height: 32
+    spriteID: 9e887c4f2d93f314b9cd72609b764c9a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 44, y: 324}
+  - name: "TileSheet_Laborat\xC3\xB3rio_87"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 44
+      y: 364
+      width: 32
+      height: 32
+    spriteID: b7f01b85015d7bc4a91e628122583a03
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 44, y: 364}
+  - name: "TileSheet_Laborat\xC3\xB3rio_88"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 44
+      y: 404
+      width: 32
+      height: 32
+    spriteID: 7aad94187d7d3374d80c511c6cb8d022
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 44, y: 404}
+  - name: "TileSheet_Laborat\xC3\xB3rio_89"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 44
+      y: 444
+      width: 32
+      height: 32
+    spriteID: b0ff9c1b4fbd9ab4cbaa4b39631d5c2b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 44, y: 444}
+  - name: "TileSheet_Laborat\xC3\xB3rio_90"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 44
+      y: 484
+      width: 32
+      height: 32
+    spriteID: 74eb0336d1b590b40b947f72d5120bfe
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 44, y: 484}
+  - name: "TileSheet_Laborat\xC3\xB3rio_91"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 44
+      y: 524
+      width: 32
+      height: 32
+    spriteID: 27a0791066b919a44a89fa28376fe4f8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 44, y: 524}
+  - name: "TileSheet_Laborat\xC3\xB3rio_92"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 44
+      y: 564
+      width: 32
+      height: 32
+    spriteID: c2e3fd585e89ebb4080de2c4cf16667e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 44, y: 564}
+  - name: "TileSheet_Laborat\xC3\xB3rio_93"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 44
+      y: 604
+      width: 32
+      height: 32
+    spriteID: 5d3d528a5f334b9498f9992f73bad405
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 44, y: 604}
+  - name: "TileSheet_Laborat\xC3\xB3rio_94"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 44
+      y: 644
+      width: 32
+      height: 32
+    spriteID: 9276e212efd44344bb2830c0da6cc47d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 44, y: 644}
+  - name: "TileSheet_Laborat\xC3\xB3rio_95"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 44
+      y: 684
+      width: 32
+      height: 32
+    spriteID: a4e5b42f8a28db541b882a19b2a08d83
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 44, y: 684}
+  - name: "TileSheet_Laborat\xC3\xB3rio_96"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 44
+      y: 724
+      width: 32
+      height: 32
+    spriteID: 86b63c5ae9e0dbb40acdeac88a81e9a7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 44, y: 724}
+  - name: "TileSheet_Laborat\xC3\xB3rio_97"
+    originalName: 
+    pivot: {x: 0.53846157, y: 1.4545455}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 240
+      y: 954
+      width: 26
+      height: 11
+    spriteID: a21912a6e1d6351428af908ae3254a82
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 238, y: 954}
+  - name: "TileSheet_Laborat\xC3\xB3rio_98"
+    originalName: 
+    pivot: {x: 0.5185185, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 163
+      y: 425
+      width: 27
+      height: 32
+    spriteID: fee8f86c37ed00f48873138f001901d1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 161, y: 425}
+  - name: "TileSheet_Laborat\xC3\xB3rio_99"
+    originalName: 
+    pivot: {x: 0.5, y: -0.45454547}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 346
+      y: 19
+      width: 20
+      height: 11
+    spriteID: 2e2691a1f421f384e98299c7e0415335
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 340, y: -2}
+  - name: "TileSheet_Laborat\xC3\xB3rio_100"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 44
+      y: 764
+      width: 32
+      height: 32
+    spriteID: 5ff88791a3a90c843b4052dfa0075b28
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 44, y: 764}
+  - name: "TileSheet_Laborat\xC3\xB3rio_101"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 44
+      y: 804
+      width: 32
+      height: 32
+    spriteID: a2430fbdacc42e247a1317c963d65501
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 44, y: 804}
+  - name: "TileSheet_Laborat\xC3\xB3rio_102"
+    originalName: 
+    pivot: {x: 0, y: 1.0666667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 296
+      y: 28
+      width: 16
+      height: 15
+    spriteID: d7d97f5d1bd32ee4b95046299ef2d4f7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 280, y: 28}
+  - name: "TileSheet_Laborat\xC3\xB3rio_103"
+    originalName: 
+    pivot: {x: 2.2857144, y: 1.0666667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 280
+      y: 241
+      width: 7
+      height: 15
+    spriteID: 75cadc336edbf754cbde62e8f9353a15
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 280, y: 241}
+  - name: "TileSheet_Laborat\xC3\xB3rio_104"
+    originalName: 
+    pivot: {x: 0, y: 0.44827586}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 203
+      y: 805
+      width: 16
+      height: 29
+    spriteID: 84ce7b26f95126a4aa378403b8fa9285
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 187, y: 802}
+  - name: "TileSheet_Laborat\xC3\xB3rio_105"
+    originalName: 
+    pivot: {x: 2.2857144, y: 0.44827586}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 280
+      y: 204
+      width: 7
+      height: 29
+    spriteID: 1e4d6e12225d0d945a0a1f425964a9d7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 280, y: 201}
+  - name: "TileSheet_Laborat\xC3\xB3rio_106"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5925926}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 163
+      y: 465
+      width: 32
+      height: 27
+    spriteID: bda8d3be2db617a42b73b1d142ef36d4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 163, y: 465}
+  - name: "TileSheet_Laborat\xC3\xB3rio_107"
+    originalName: 
+    pivot: {x: 0.5, y: 0.72727275}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 240
+      y: 97
+      width: 32
+      height: 22
+    spriteID: 1e97254d126af634eabfd633bc068c0b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 240, y: 97}
+  - name: "TileSheet_Laborat\xC3\xB3rio_108"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5925926}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 163
+      y: 500
+      width: 32
+      height: 27
+    spriteID: c190de63fb843ce4085057a788c7c2d9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 163, y: 500}
+  - name: "TileSheet_Laborat\xC3\xB3rio_109"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 44
+      y: 844
+      width: 32
+      height: 32
+    spriteID: 1c3454635f6e60642938358a7ee1d69d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 44, y: 844}
+  - name: "TileSheet_Laborat\xC3\xB3rio_110"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 44
+      y: 884
+      width: 32
+      height: 32
+    spriteID: 5b4016ad9d1b7e949a820df5c9c4e6e3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 44, y: 884}
+  - name: "TileSheet_Laborat\xC3\xB3rio_111"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 44
+      y: 924
+      width: 32
+      height: 32
+    spriteID: 241ed1ccf4161d34bb6af46764fd3654
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 44, y: 924}
+  - name: "TileSheet_Laborat\xC3\xB3rio_112"
+    originalName: 
+    pivot: {x: 0.5, y: 0.44827586}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 163
+      y: 4
+      width: 32
+      height: 29
+    spriteID: bb0a86a8395e7bb4caec5ab38e0a6bd8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 163, y: 1}
+  - name: "TileSheet_Laborat\xC3\xB3rio_113"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 44
+      y: 964
+      width: 32
+      height: 32
+    spriteID: 9cf269b4c308b5448a5ee83ccdaced9f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 44, y: 964}
+  - name: "TileSheet_Laborat\xC3\xB3rio_114"
+    originalName: 
+    pivot: {x: 0.5, y: 0.72727275}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 240
+      y: 127
+      width: 32
+      height: 22
+    spriteID: 84b93e53b54164949aeefcc790d2e649
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 240, y: 127}
+  - name: "TileSheet_Laborat\xC3\xB3rio_115"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5925926}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 163
+      y: 535
+      width: 32
+      height: 27
+    spriteID: a9aa244b02d21f743b8a1d0d361d19ea
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 163, y: 535}
+  - name: "TileSheet_Laborat\xC3\xB3rio_116"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 84
+      y: 4
+      width: 32
+      height: 32
+    spriteID: fa41b33c02f0e354897a2a854c4ab01a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 84, y: 4}
+  - name: "TileSheet_Laborat\xC3\xB3rio_117"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 84
+      y: 44
+      width: 32
+      height: 32
+    spriteID: a253f8e3b3e5f5641b99ff43b7e0f6f7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 84, y: 44}
+  - name: "TileSheet_Laborat\xC3\xB3rio_118"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 84
+      y: 84
+      width: 32
+      height: 32
+    spriteID: 0bb2ec567305a5e4392ae4ea7501dd8b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 84, y: 84}
+  - name: "TileSheet_Laborat\xC3\xB3rio_119"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5925926}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 163
+      y: 570
+      width: 32
+      height: 27
+    spriteID: dbd050865a3993a4d944cb9aa48e25aa
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 163, y: 570}
+  - name: "TileSheet_Laborat\xC3\xB3rio_120"
+    originalName: 
+    pivot: {x: 0.5, y: 0.44827586}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 163
+      y: 41
+      width: 32
+      height: 29
+    spriteID: 51a6ee142e7df70489dde57dabffebde
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 163, y: 38}
+  - name: "TileSheet_Laborat\xC3\xB3rio_121"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 84
+      y: 124
+      width: 32
+      height: 32
+    spriteID: 53ec5b47519fa8e43961494031ccb1f6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 84, y: 124}
+  - name: "TileSheet_Laborat\xC3\xB3rio_122"
+    originalName: 
+    pivot: {x: 0.30434784, y: 1.0666667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 203
+      y: 967
+      width: 23
+      height: 15
+    spriteID: a293184551fb4144cacce5c4f7e7f2c9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 194, y: 967}
+  - name: "TileSheet_Laborat\xC3\xB3rio_123"
+    originalName: 
+    pivot: {x: 0.6956522, y: 1.0666667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 203
+      y: 990
+      width: 23
+      height: 15
+    spriteID: d73876498fd8df94fb230c7a8dd0199e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 203, y: 990}
+  - name: "TileSheet_Laborat\xC3\xB3rio_124"
+    originalName: 
+    pivot: {x: 0.33333334, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 203
+      y: 74
+      width: 24
+      height: 32
+    spriteID: 13bb9e0c599cb81409cc4d8c07b618d2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 195, y: 74}
+  - name: "TileSheet_Laborat\xC3\xB3rio_125"
+    originalName: 
+    pivot: {x: 0.6666667, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 203
+      y: 114
+      width: 24
+      height: 32
+    spriteID: a9e45fa5d6f9f0b43977922aedb89d5d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 203, y: 114}
+  - name: "TileSheet_Laborat\xC3\xB3rio_126"
+    originalName: 
+    pivot: {x: 0.33333334, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 203
+      y: 154
+      width: 24
+      height: 32
+    spriteID: eaf7676d053c4e84bb3888a650a179d6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 195, y: 154}
+  - name: "TileSheet_Laborat\xC3\xB3rio_127"
+    originalName: 
+    pivot: {x: 0.6666667, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 203
+      y: 194
+      width: 24
+      height: 32
+    spriteID: 011df1d5112f1b144b71b6930c3a5be3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 203, y: 194}
+  - name: "TileSheet_Laborat\xC3\xB3rio_128"
+    originalName: 
+    pivot: {x: 0.30434784, y: 1.0666667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 240
+      y: 786
+      width: 23
+      height: 15
+    spriteID: a4ba2d158dcec6845b9a4ed997c83d2a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 231, y: 786}
+  - name: "TileSheet_Laborat\xC3\xB3rio_129"
+    originalName: 
+    pivot: {x: 0.6956522, y: 1.0666667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 240
+      y: 809
+      width: 23
+      height: 15
+    spriteID: 1c3d85f6ef8238e49abe668a1572c140
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 240, y: 809}
+  - name: "TileSheet_Laborat\xC3\xB3rio_130"
+    originalName: 
+    pivot: {x: 0.33333334, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 203
+      y: 234
+      width: 24
+      height: 32
+    spriteID: 88109a962261bf042827999bf148c3b7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 195, y: 234}
+  - name: "TileSheet_Laborat\xC3\xB3rio_131"
+    originalName: 
+    pivot: {x: 0.6666667, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 203
+      y: 274
+      width: 24
+      height: 32
+    spriteID: f6077876fe61f5343aebe9f34bdef06e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 203, y: 274}
+  - name: "TileSheet_Laborat\xC3\xB3rio_132"
+    originalName: 
+    pivot: {x: 0.33333334, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 203
+      y: 314
+      width: 24
+      height: 32
+    spriteID: e2e4c6c49c0b4fe4ea83e6fe38b9e683
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 195, y: 314}
+  - name: "TileSheet_Laborat\xC3\xB3rio_133"
+    originalName: 
+    pivot: {x: 0.6666667, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 203
+      y: 354
+      width: 24
+      height: 32
+    spriteID: 29e41ab69857d5a46883bf7e28c6b35c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 203, y: 354}
+  - name: "TileSheet_Laborat\xC3\xB3rio_134"
+    originalName: 
+    pivot: {x: 0.30434784, y: 1.0666667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 240
+      y: 832
+      width: 23
+      height: 15
+    spriteID: 21d6f189cac3a3148863d2e56d419655
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 231, y: 832}
+  - name: "TileSheet_Laborat\xC3\xB3rio_135"
+    originalName: 
+    pivot: {x: 0.6956522, y: 1.0666667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 240
+      y: 855
+      width: 23
+      height: 15
+    spriteID: 1800aeae4f8adea4386f59be09053565
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 240, y: 855}
+  - name: "TileSheet_Laborat\xC3\xB3rio_136"
+    originalName: 
+    pivot: {x: 0.33333334, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 203
+      y: 394
+      width: 24
+      height: 32
+    spriteID: c86dd7ec7f1a41e4587638c0e8635d6f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 195, y: 394}
+  - name: "TileSheet_Laborat\xC3\xB3rio_137"
+    originalName: 
+    pivot: {x: 0.6666667, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 203
+      y: 434
+      width: 24
+      height: 32
+    spriteID: cd2132d3fb3df18469c814effb59e8c2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 203, y: 434}
+  - name: "TileSheet_Laborat\xC3\xB3rio_138"
+    originalName: 
+    pivot: {x: 0.5, y: 0.64}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 163
+      y: 899
+      width: 32
+      height: 25
+    spriteID: 17dfffbb22a78d541a85a09cb3ab4268
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 163, y: 899}
+  - name: "TileSheet_Laborat\xC3\xB3rio_139"
+    originalName: 
+    pivot: {x: 0.5, y: 0.05882353}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 84
+      y: 1003
+      width: 32
+      height: 17
+    spriteID: 737e8ecb2e4e08f49946ad8b0cd9c8cd
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 84, y: 988}
+  - name: "TileSheet_Laborat\xC3\xB3rio_140"
+    originalName: 
+    pivot: {x: 0.42857146, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 124
+      y: 718
+      width: 28
+      height: 32
+    spriteID: 71832da5c41e591468cb94d4caea9f75
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 120, y: 718}
+  - name: "TileSheet_Laborat\xC3\xB3rio_141"
+    originalName: 
+    pivot: {x: 0.5714286, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 124
+      y: 758
+      width: 28
+      height: 32
+    spriteID: 64d7b65e7b29ad9469381b25431e9253
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 124, y: 758}
+  - name: "TileSheet_Laborat\xC3\xB3rio_142"
+    originalName: 
+    pivot: {x: 0.42857146, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 124
+      y: 798
+      width: 28
+      height: 32
+    spriteID: 6aa58d43aa405734c85e6b75e668c870
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 120, y: 798}
+  - name: "TileSheet_Laborat\xC3\xB3rio_143"
+    originalName: 
+    pivot: {x: 0.5714286, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 124
+      y: 838
+      width: 28
+      height: 32
+    spriteID: d50dc4c80d594e844bcd4ebcde4b7b24
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 124, y: 838}
+  - name: "TileSheet_Laborat\xC3\xB3rio_144"
+    originalName: 
+    pivot: {x: 0.48387095, y: 0.516129}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 124
+      y: 84
+      width: 31
+      height: 31
+    spriteID: aee58903e32263145a6b8484203d0da6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 123, y: 84}
+  - name: "TileSheet_Laborat\xC3\xB3rio_145"
+    originalName: 
+    pivot: {x: 2, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 240
+      y: 973
+      width: 8
+      height: 32
+    spriteID: 83813b6034af2014299b89e68eef71f9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 240, y: 973}
+  - name: "TileSheet_Laborat\xC3\xB3rio_146"
+    originalName: 
+    pivot: {x: 0.4666667, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 124
+      y: 481
+      width: 30
+      height: 32
+    spriteID: d74080ebdf7ae25489e3ce1d26835716
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 122, y: 481}
+  - name: "TileSheet_Laborat\xC3\xB3rio_147"
+    originalName: 
+    pivot: {x: 2, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 973
+      width: 8
+      height: 32
+    spriteID: df2a5471db04edc4cbb342c1e6b40109
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 256, y: 973}
+  - name: "TileSheet_Laborat\xC3\xB3rio_148"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 84
+      y: 164
+      width: 32
+      height: 32
+    spriteID: 6a0fcddb373343149bda9d50defad7a5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 84, y: 164}
+  - name: "TileSheet_Laborat\xC3\xB3rio_149"
+    originalName: 
+    pivot: {x: 2, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 280
+      y: 4
+      width: 8
+      height: 32
+    spriteID: 4c0450e4b993eec4fa624c0dc758e377
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 280, y: 4}
+  - name: "TileSheet_Laborat\xC3\xB3rio_150"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 84
+      y: 204
+      width: 32
+      height: 32
+    spriteID: 96fea065475ca9a438e33abc9a1f7d71
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 84, y: 204}
+  - name: "TileSheet_Laborat\xC3\xB3rio_151"
+    originalName: 
+    pivot: {x: 0.5, y: 0.6956522}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 240
+      y: 4
+      width: 32
+      height: 23
+    spriteID: dba47c7ab0bc30a4b909a88a3bef1ef0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 240, y: 4}
+  - name: "TileSheet_Laborat\xC3\xB3rio_152"
+    originalName: 
+    pivot: {x: 0.55172414, y: 0.5925926}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 163
+      y: 972
+      width: 29
+      height: 27
+    spriteID: 14a7d35a9d5b84a48ab2086cd8dc58d7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 163, y: 972}
+  - name: "TileSheet_Laborat\xC3\xB3rio_153"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 84
+      y: 244
+      width: 32
+      height: 32
+    spriteID: ecf8d46f37a4d504cbe63446e4a22bc6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 84, y: 244}
+  - name: "TileSheet_Laborat\xC3\xB3rio_154"
+    originalName: 
+    pivot: {x: 0.5, y: 0.44827586}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 163
+      y: 78
+      width: 32
+      height: 29
+    spriteID: 5cce07547c3b72e4a8dd452fbcf40de1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 163, y: 75}
+  - name: "TileSheet_Laborat\xC3\xB3rio_155"
+    originalName: 
+    pivot: {x: 0.55172414, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 124
+      y: 560
+      width: 29
+      height: 32
+    spriteID: e5bb0029387257048ac794916d7e988d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 124, y: 560}
+  - name: "TileSheet_Laborat\xC3\xB3rio_156"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 84
+      y: 284
+      width: 32
+      height: 32
+    spriteID: 0528d5b113ae8f34aaedeb29336d1357
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 84, y: 284}
+  - name: "TileSheet_Laborat\xC3\xB3rio_157"
+    originalName: 
+    pivot: {x: 0.5, y: 0.6956522}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 240
+      y: 35
+      width: 32
+      height: 23
+    spriteID: 7d9c1bd52bd846246baaef22b4076a90
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 240, y: 35}
+  - name: "TileSheet_Laborat\xC3\xB3rio_158"
+    originalName: 
+    pivot: {x: 0.55172414, y: 0.5925926}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 203
+      y: 4
+      width: 29
+      height: 27
+    spriteID: 61eb2deac5bcff04e910d9c650b7c5cf
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 203, y: 4}
+  - name: "TileSheet_Laborat\xC3\xB3rio_159"
+    originalName: 
+    pivot: {x: 0.5, y: 0.44827586}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 163
+      y: 115
+      width: 32
+      height: 29
+    spriteID: 82e9e774479ddf142ab5ccb1ffd6a065
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 163, y: 112}
+  - name: "TileSheet_Laborat\xC3\xB3rio_160"
+    originalName: 
+    pivot: {x: 0.55172414, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 124
+      y: 600
+      width: 29
+      height: 32
+    spriteID: aa6552dd013653245826348a1840cccc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 124, y: 600}
+  - name: "TileSheet_Laborat\xC3\xB3rio_161"
+    originalName: 
+    pivot: {x: 0.5, y: 0.6956522}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 240
+      y: 66
+      width: 32
+      height: 23
+    spriteID: 880510753266fba4f93193da052cb95a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 240, y: 66}
+  - name: "TileSheet_Laborat\xC3\xB3rio_162"
+    originalName: 
+    pivot: {x: 0.55172414, y: 0.5925926}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 203
+      y: 39
+      width: 29
+      height: 27
+    spriteID: 31a2409bf448a5e43aa4ef1cf95f3c05
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 203, y: 39}
+  - name: "TileSheet_Laborat\xC3\xB3rio_163"
+    originalName: 
+    pivot: {x: 0.5, y: 0.44827586}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 163
+      y: 152
+      width: 32
+      height: 29
+    spriteID: b29d525265b74494ba014e3cacf03929
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 163, y: 149}
+  - name: "TileSheet_Laborat\xC3\xB3rio_164"
+    originalName: 
+    pivot: {x: 0.55172414, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 124
+      y: 640
+      width: 29
+      height: 32
+    spriteID: 4bbc5a24268f329458eb210476167d18
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 124, y: 640}
+  - name: "TileSheet_Laborat\xC3\xB3rio_165"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 84
+      y: 324
+      width: 32
+      height: 32
+    spriteID: 19542b179c2612c45ad10463cf37a016
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 84, y: 324}
+  - name: "TileSheet_Laborat\xC3\xB3rio_166"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 84
+      y: 364
+      width: 32
+      height: 32
+    spriteID: 831a4ee86fdb6d1418829d45ce227f46
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 84, y: 364}
+  - name: "TileSheet_Laborat\xC3\xB3rio_167"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 84
+      y: 404
+      width: 32
+      height: 32
+    spriteID: 68486bd042fa10a4aaed35a3aacd44f4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 84, y: 404}
+  - name: "TileSheet_Laborat\xC3\xB3rio_168"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 84
+      y: 444
+      width: 32
+      height: 32
+    spriteID: 0bfb51376920b154b965851ab2ecca75
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 84, y: 444}
+  - name: "TileSheet_Laborat\xC3\xB3rio_169"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 84
+      y: 484
+      width: 32
+      height: 32
+    spriteID: b56b3820085e91d4198fc0abb6aeeade
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 84, y: 484}
+  - name: "TileSheet_Laborat\xC3\xB3rio_170"
+    originalName: 
+    pivot: {x: 0.48387095, y: 0.516129}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 124
+      y: 123
+      width: 31
+      height: 31
+    spriteID: b762bb5daf123494dbdda06ab750be26
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 123, y: 123}
+  - name: "TileSheet_Laborat\xC3\xB3rio_171"
+    originalName: 
+    pivot: {x: 2, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 280
+      y: 44
+      width: 8
+      height: 32
+    spriteID: 6302c88b8991f184a9bc3d91d215e95e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 280, y: 44}
+  - name: "TileSheet_Laborat\xC3\xB3rio_172"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 84
+      y: 524
+      width: 32
+      height: 32
+    spriteID: ba6dc79de2ed2914c9d80205cba3992f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 84, y: 524}
+  - name: "TileSheet_Laborat\xC3\xB3rio_173"
+    originalName: 
+    pivot: {x: 2, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 280
+      y: 84
+      width: 8
+      height: 32
+    spriteID: cef37105f05e2194099dc1c9b236d88a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 280, y: 84}
+  - name: "TileSheet_Laborat\xC3\xB3rio_174"
+    originalName: 
+    pivot: {x: 0.5714286, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 124
+      y: 878
+      width: 28
+      height: 32
+    spriteID: 14d408dc7f24919409f4445c0dc33dd0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 124, y: 878}
+  - name: "TileSheet_Laborat\xC3\xB3rio_175"
+    originalName: 
+    pivot: {x: 0.42857146, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 124
+      y: 918
+      width: 28
+      height: 32
+    spriteID: 1905c1c806743994aa7a17f7900d8eab
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 120, y: 918}
+  - name: "TileSheet_Laborat\xC3\xB3rio_176"
+    originalName: 
+    pivot: {x: 0.42857146, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 124
+      y: 958
+      width: 28
+      height: 32
+    spriteID: 167ca1b5ae7c44149a548c2ed47a09db
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 120, y: 958}
+  - name: "TileSheet_Laborat\xC3\xB3rio_177"
+    originalName: 
+    pivot: {x: 0.5714286, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 163
+      y: 189
+      width: 28
+      height: 32
+    spriteID: 8cc881881bf096541b4aa8d1daaec607
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 163, y: 189}
+  - name: "TileSheet_Laborat\xC3\xB3rio_178"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 84
+      y: 564
+      width: 32
+      height: 32
+    spriteID: ebef009f2119ff64d911305deb94d38a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 84, y: 564}
+  - name: "TileSheet_Laborat\xC3\xB3rio_179"
+    originalName: 
+    pivot: {x: -1, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 280
+      y: 124
+      width: 8
+      height: 32
+    spriteID: d5151945fc3b6cd4a921eae6606ec0f5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 256, y: 124}
+  - name: "TileSheet_Laborat\xC3\xB3rio_180"
+    originalName: 
+    pivot: {x: -1, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 280
+      y: 164
+      width: 8
+      height: 32
+    spriteID: 0cf4f27a7241ca5438c382593ed0093c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 256, y: 164}
+  - name: "TileSheet_Laborat\xC3\xB3rio_181"
+    originalName: 
+    pivot: {x: 0.516129, y: 0.516129}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 124
+      y: 162
+      width: 31
+      height: 31
+    spriteID: 7116b5bd4fc938e4684f30f8b264efd7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 124, y: 162}
+  - name: "TileSheet_Laborat\xC3\xB3rio_182"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 84
+      y: 604
+      width: 32
+      height: 32
+    spriteID: c7ef547e6c0b15241995d6db3bab253f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 84, y: 604}
+  - name: "TileSheet_Laborat\xC3\xB3rio_183"
+    originalName: 
+    pivot: {x: 1, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 203
+      y: 550
+      width: 16
+      height: 32
+    spriteID: 007f7b90e498ead40873b50cf40f3e13
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 203, y: 550}
+  - name: "TileSheet_Laborat\xC3\xB3rio_184"
+    originalName: 
+    pivot: {x: 0.5, y: 1.0666667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 240
+      y: 648
+      width: 32
+      height: 15
+    spriteID: 4be97564c64d0cc4f8c3234c91cdc9d0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 240, y: 648}
+  - name: "TileSheet_Laborat\xC3\xB3rio_185"
+    originalName: 
+    pivot: {x: -0.06666667, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 203
+      y: 701
+      width: 15
+      height: 32
+    spriteID: d809857516b96e140ad0128c06094389
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 186, y: 701}
+  - name: "TileSheet_Laborat\xC3\xB3rio_186"
+    originalName: 
+    pivot: {x: -0.06666667, y: 0.48387095}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 203
+      y: 766
+      width: 15
+      height: 31
+    spriteID: 9ae5a718bd185574a99368ade03c0c81
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 186, y: 765}
+  - name: "TileSheet_Laborat\xC3\xB3rio_187"
+    originalName: 
+    pivot: {x: 0.5, y: 0.48387095}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 84
+      y: 964
+      width: 32
+      height: 31
+    spriteID: 3b8d4703c94c27744b3748dcd72606ef
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 84, y: 963}
+  - name: "TileSheet_Laborat\xC3\xB3rio_188"
+    originalName: 
+    pivot: {x: 1, y: 0.48387095}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 203
+      y: 662
+      width: 16
+      height: 31
+    spriteID: 1f7b89cf7bbe2dc4d904acb86c676ff1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 203, y: 661}
+  - name: "TileSheet_Laborat\xC3\xB3rio_189"
+    originalName: 
+    pivot: {x: -0.06666667, y: 1.0666667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 296
+      y: 121
+      width: 15
+      height: 15
+    spriteID: 23b239b9cd27f7243aac7a72a850e489
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 279, y: 121}
+  - name: "TileSheet_Laborat\xC3\xB3rio_190"
+    originalName: 
+    pivot: {x: 0.5, y: 1.0666667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 240
+      y: 671
+      width: 32
+      height: 15
+    spriteID: 9cff90847bca93f4ba93b73401db4690
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 240, y: 671}
+  - name: "TileSheet_Laborat\xC3\xB3rio_191"
+    originalName: 
+    pivot: {x: 1, y: 1.0666667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 296
+      y: 51
+      width: 16
+      height: 15
+    spriteID: 10a0b679febe61445afb0361a40cf850
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 296, y: 51}
+  - name: "TileSheet_Laborat\xC3\xB3rio_192"
+    originalName: 
+    pivot: {x: -0.06666667, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 296
+      y: 74
+      width: 15
+      height: 16
+    spriteID: 4a74039cf465b17428e84b34d07a52d9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 279, y: 58}
+  - name: "TileSheet_Laborat\xC3\xB3rio_193"
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 240
+      y: 359
+      width: 32
+      height: 16
+    spriteID: 8ebe5036a7daf7846a9201a2ca7e563f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 240, y: 343}
+  - name: "TileSheet_Laborat\xC3\xB3rio_194"
+    originalName: 
+    pivot: {x: 1, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 296
+      y: 4
+      width: 16
+      height: 16
+    spriteID: d7ca2e910f990ea489c089b09cb1e45e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 296, y: -12}
+  - name: "TileSheet_Laborat\xC3\xB3rio_195"
+    originalName: 
+    pivot: {x: 0, y: 1.0666667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 296
+      y: 98
+      width: 16
+      height: 15
+    spriteID: 4f4a7360ecc899b438848550ded0e4bc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 280, y: 98}
+  - name: "TileSheet_Laborat\xC3\xB3rio_196"
+    originalName: 
+    pivot: {x: 0, y: -0.14285715}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 296
+      y: 144
+      width: 16
+      height: 14
+    spriteID: ebf08cac78a1fcd4c861c150b1680c4b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 280, y: 126}
+  - name: "TileSheet_Laborat\xC3\xB3rio_197"
+    originalName: 
+    pivot: {x: 2.2857144, y: -1.2857144}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 240
+      y: 1013
+      width: 7
+      height: 7
+    spriteID: 1a0e78bd89d2c3c4c976e6a552a72ca0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 240, y: 988}
+  - name: "TileSheet_Laborat\xC3\xB3rio_198"
+    originalName: 
+    pivot: {x: 0.35999998, y: 1}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 203
+      y: 897
+      width: 25
+      height: 16
+    spriteID: dd879f0950f439d49adcae42b72d4e3d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 196, y: 897}
+  - name: "TileSheet_Laborat\xC3\xB3rio_199"
+    originalName: 
+    pivot: {x: 0.5, y: 1}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 240
+      y: 383
+      width: 32
+      height: 16
+    spriteID: 27ffce288d90d464e94819363cee0772
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 240, y: 383}
+  - name: "TileSheet_Laborat\xC3\xB3rio_200"
+    originalName: 
+    pivot: {x: 0.5, y: 1}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 240
+      y: 407
+      width: 32
+      height: 16
+    spriteID: 82217fdb53a150c4aace549697d83096
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 240, y: 407}
+  - name: "TileSheet_Laborat\xC3\xB3rio_201"
+    originalName: 
+    pivot: {x: 0.35999998, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 163
+      y: 932
+      width: 25
+      height: 32
+    spriteID: d65c721d3976a4d4b87ddfb199fa44c9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 156, y: 932}
+  - name: "TileSheet_Laborat\xC3\xB3rio_202"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 84
+      y: 644
+      width: 32
+      height: 32
+    spriteID: 35a19337e3093b14baa98999850fbeee
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 84, y: 644}
+  - name: "TileSheet_Laborat\xC3\xB3rio_203"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 84
+      y: 684
+      width: 32
+      height: 32
+    spriteID: 08573548742811d43bc40572830ddb52
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 84, y: 684}
+  - name: "TileSheet_Laborat\xC3\xB3rio_204"
+    originalName: 
+    pivot: {x: 0.35999998, y: -0.06666667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 203
+      y: 944
+      width: 25
+      height: 15
+    spriteID: 123b2f0f3e438034d88cb39538303d19
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 196, y: 927}
+  - name: "TileSheet_Laborat\xC3\xB3rio_205"
+    originalName: 
+    pivot: {x: 0.5, y: -0.06666667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 240
+      y: 694
+      width: 32
+      height: 15
+    spriteID: db21ad57e4338a24bad037a17ea3aa9c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 240, y: 677}
+  - name: "TileSheet_Laborat\xC3\xB3rio_206"
+    originalName: 
+    pivot: {x: 0.5, y: -0.06666667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 240
+      y: 717
+      width: 32
+      height: 15
+    spriteID: f3c32d4e0b763674b9c928e1cc84edf0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 240, y: 700}
+  - name: "TileSheet_Laborat\xC3\xB3rio_207"
+    originalName: 
+    pivot: {x: 0.48387095, y: 1.4545455}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 163
+      y: 1007
+      width: 31
+      height: 11
+    spriteID: 2e4da792a3a5c264abf6b3ffab154214
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 162, y: 1007}
+  - name: "TileSheet_Laborat\xC3\xB3rio_208"
+    originalName: 
+    pivot: {x: 0.516129, y: 1.4545455}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 240
+      y: 878
+      width: 31
+      height: 11
+    spriteID: 1a5d4b3997aa8fc409a35e6b9718f74c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 240, y: 878}
+  - name: "TileSheet_Laborat\xC3\xB3rio_209"
+    originalName: 
+    pivot: {x: 0.48387095, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 124
+      y: 4
+      width: 31
+      height: 32
+    spriteID: ebbba49dc39366c45a289f5d224cdc2a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 123, y: 4}
+  - name: "TileSheet_Laborat\xC3\xB3rio_210"
+    originalName: 
+    pivot: {x: 0.516129, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 124
+      y: 44
+      width: 31
+      height: 32
+    spriteID: 95b8739639ad3b945b8f47cf4d6cb2ba
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 124, y: 44}
+  - name: "TileSheet_Laborat\xC3\xB3rio_211"
+    originalName: 
+    pivot: {x: 0.11111111, y: 0.5714286}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 203
+      y: 590
+      width: 18
+      height: 28
+    spriteID: 55c14eb4e81434344b0dc12701aface7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 189, y: 590}
+  - name: "TileSheet_Laborat\xC3\xB3rio_212"
+    originalName: 
+    pivot: {x: 0.2, y: -1.2857144}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 203
+      y: 1013
+      width: 20
+      height: 7
+    spriteID: ec978c156d17a4640a1447dfa52f8a13
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 191, y: 988}
+  - name: "TileSheet_Laborat\xC3\xB3rio_213"
+    originalName: 
+    pivot: {x: 0.5, y: -1.2857144}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 346
+      y: 4
+      width: 32
+      height: 7
+    spriteID: 8e06b9f029d15834dad39361035755c7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 346, y: -21}
+  - name: "TileSheet_Laborat\xC3\xB3rio_214"
+    originalName: 
+    pivot: {x: 0.8888889, y: 0.5714286}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 203
+      y: 626
+      width: 18
+      height: 28
+    spriteID: 46e9fbcda4af62b4a9f250b2e6fd680b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 203, y: 626}
+  - name: "TileSheet_Laborat\xC3\xB3rio_215"
+    originalName: 
+    pivot: {x: 0.8, y: -1.2857144}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 346
+      y: 38
+      width: 20
+      height: 7
+    spriteID: e466588ef15cd3c4ea2401591e548b2d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 346, y: 13}
+  - name: "TileSheet_Laborat\xC3\xB3rio_216"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5714286}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 163
+      y: 229
+      width: 32
+      height: 28
+    spriteID: 24e1a373ed4b9b94391fe7bf9aec80c0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 163, y: 229}
+  - name: "TileSheet_Laborat\xC3\xB3rio_217"
+    originalName: 
+    pivot: {x: 0.35999998, y: 0.53333336}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 203
+      y: 474
+      width: 25
+      height: 30
+    spriteID: 24253e1e5140a1b49be0e92a29f6935f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 196, y: 474}
+  - name: "TileSheet_Laborat\xC3\xB3rio_218"
+    originalName: 
+    pivot: {x: 0.64, y: 0.53333336}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 203
+      y: 512
+      width: 25
+      height: 30
+    spriteID: 8b444485f73b7aa47b90ba452e8c0c10
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 203, y: 512}
+  - name: "TileSheet_Laborat\xC3\xB3rio_219"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 84
+      y: 724
+      width: 32
+      height: 32
+    spriteID: a65c033f42f1caa43b08056cb93d07bd
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 84, y: 724}
+  - name: "TileSheet_Laborat\xC3\xB3rio_220"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 84
+      y: 764
+      width: 32
+      height: 32
+    spriteID: 19adc334a793b954d9b363da32e00372
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 84, y: 764}
+  - name: "TileSheet_Laborat\xC3\xB3rio_221"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 84
+      y: 804
+      width: 32
+      height: 32
+    spriteID: 7ba70a113877b9b42894209726a57516
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 84, y: 804}
+  - name: "TileSheet_Laborat\xC3\xB3rio_222"
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 84
+      y: 844
+      width: 32
+      height: 32
+    spriteID: 8d16d0a533b53b74790396f20108b283
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 84, y: 844}
+  - name: "TileSheet_Laborat\xC3\xB3rio_223"
+    originalName: 
+    pivot: {x: -0.33333334, y: 0.61538464}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 240
+      y: 920
+      width: 12
+      height: 26
+    spriteID: bbc9546190144574899db10b78ed4436
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 220, y: 920}
+  - name: "TileSheet_Laborat\xC3\xB3rio_224"
+    originalName: 
+    pivot: {x: 1.4545455, y: 0.61538464}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 260
+      y: 920
+      width: 11
+      height: 26
+    spriteID: b65596fb659627a4aa70300da44cd1c8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 260, y: 920}
+  - name: "TileSheet_Laborat\xC3\xB3rio_225"
+    originalName: 
+    pivot: {x: -4.3333335, y: -4.3333335}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 374
+      y: 19
+      width: 3
+      height: 3
+    spriteID: 5028f150a1699f844a4430ea075788c3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 345, y: -10}
+  - name: "TileSheet_Laborat\xC3\xB3rio_226"
+    originalName: 
+    pivot: {x: 8, y: -4.3333335}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 269
+      y: 897
+      width: 2
+      height: 3
+    spriteID: 657150e77156c394a90a76961f9bb284
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 269, y: 868}
+  - name: "TileSheet_Laborat\xC3\xB3rio_227"
+    originalName: 
+    pivot: {x: 0.48387095, y: 0.61538464}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 163
+      y: 711
+      width: 31
+      height: 26
+    spriteID: 41c711792c9b17e488b147f55b1456be
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 162, y: 711}
+  - name: "TileSheet_Laborat\xC3\xB3rio_228"
+    originalName: 
+    pivot: {x: 0.516129, y: 0.61538464}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 163
+      y: 745
+      width: 31
+      height: 26
+    spriteID: bfcb9803366dc7b48b1797e5851558ab
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 163, y: 745}
+  asepriteLayers:
+  - layerIndex: 0
+    uuid:
+      value0: 2183917997
+      value1: 0
+      value2: 0
+      value3: 0
+    guid: 0
+    name: Lab_Universidade
+    layerFlags: 3
+    layerType: 2
+    blendMode: 0
+    cells: []
+    linkedCells: []
+    tileCells:
+    - layerIndex: 0
+      frameIndex: 0
+      cellRect:
+        x: 0
+        y: 0
+        width: 16
+        height: 16
+      tileIndices: bd000000be000000bf000000ba000000bb000000bc000000d3000000d8000000d6000000de000000dc000000db000000dd000000000000000000000000000000b9000000b6000000b7000000bd000000be000000bf000000d4000000d5000000d7000000000000000000000000000000000000000a0000000c00000025000000c0000000c1000000c2000000c0000000c1000000c2000000df000000e0000000e3000000e4000000c6000000c7000000c80000000b0000000900000026000000d9000000da00000000000000000000000000000000000000e1000000e2000000c300000067000000c9000000ca000000cb00000000000000000000003500000096000000970000009800000096000000a1000000a2000000b0000000b1000000c4000000c5000000cc000000cd000000ce000000270000002800000036000000990000009a0000009b00000099000000a3000000a4000000af000000ae000000b4000000b5000000cf000000d000000000000000290000002a000000370000007a0000007b000000800000008100000086000000870000009000000091000000b3000000b2000000d1000000d20000002e0000002b0000002c000000610000007c0000007d000000820000008300000088000000890000009200000093000000960000009d0000009e000000000000002f0000006600000067000000620000007e0000007f00000084000000850000007e0000007f0000009400000095000000990000009f000000a000000000000000300000006800000069000000630000006a0000006b0000006c0000007700000072000000730000008a0000008c0000008d000000a5000000aa000000ab000000080000001500000019000000160000006d0000006e0000006f0000007600000074000000750000008b0000008e0000008f000000a7000000ac000000ad000000070000001400000018000000170000009c00000070000000710000009c00000078000000790000000d0000000e00000000000000a9000000000000003d0000003e0000001100000012000000130000005e0000003f00000040000000410000004200000043000000100000000f000000380000003100000032000000390000003b0000001a0000001d0000002000000044000000450000004600000047000000480000004900000056000000570000005800000033000000340000003a0000003c0000001b0000001e000000210000004a0000004b0000004c0000004d0000004e0000004f000000590000005e0000005a000000050000000200000003000000650000001c0000001f000000220000005000000051000000520000005300000054000000550000005b0000005c0000005d00000006000000010000000400000064000000600000005f0000002d000000
+    tileSetIndex: 0
+    parentIndex: -1
+  tileSets:
+  - id: 0
+    name: "TileSheet_Laborat\xC3\xB3rio"
+    tileSize:
+      x: 32
+      y: 32
+    tiles:
+    - tileId: 1
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_1"
+      spriteId: 2587f2ef2ec5d0c4c8bdc427b79b04f5
+    - tileId: 2
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_2"
+      spriteId: 37a6a0010cb05e5439248fd5798fba25
+    - tileId: 3
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_3"
+      spriteId: 4354da6b5bdb152498eea335b8721e2d
+    - tileId: 4
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_4"
+      spriteId: 083a446406849194d84bc13031f7e3b0
+    - tileId: 5
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_5"
+      spriteId: 3e68b70517f66154d95d6dc1e461b034
+    - tileId: 6
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_6"
+      spriteId: 4289723620587b545929da9d8f72b13d
+    - tileId: 7
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_7"
+      spriteId: ef968b06043887342abe869b20c8f0f5
+    - tileId: 8
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_8"
+      spriteId: 774ef46065c5a0d4eb9b4b4e820721e3
+    - tileId: 9
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_9"
+      spriteId: 5a63c54c91629ed41aca918317ad46ce
+    - tileId: 10
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_10"
+      spriteId: a2ad5f604a9cb6c4384ff783496fe452
+    - tileId: 11
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_11"
+      spriteId: e7af4f3bf76561b4aa70494f564de7a0
+    - tileId: 12
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_12"
+      spriteId: 9386df4532f0b1041b1ea60b681123e4
+    - tileId: 13
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_13"
+      spriteId: a6066dd176bb8314f9ad3a41a989c688
+    - tileId: 14
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_14"
+      spriteId: 95d950ff30a66444dad4fb04e56f8a2d
+    - tileId: 15
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_15"
+      spriteId: fd12177539d2e504a9021f9b5ab9689d
+    - tileId: 16
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_16"
+      spriteId: 4bb10a314cfc879468df626c7a7219fa
+    - tileId: 17
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_17"
+      spriteId: 0a23aca6d8b32604caf1eb6a3a962b0c
+    - tileId: 18
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_18"
+      spriteId: fa33c0693ceac9b4f9af2cc5bd0ef09c
+    - tileId: 19
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_19"
+      spriteId: 7e0ab0b706c315942bcba5d85d951262
+    - tileId: 20
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_20"
+      spriteId: 1ec5404f877509243995f51d6a2a2d48
+    - tileId: 21
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_21"
+      spriteId: b6a58dad3f6098d4eade8cd91685d538
+    - tileId: 22
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_22"
+      spriteId: b9649df1527de9049b5879dea879709b
+    - tileId: 23
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_23"
+      spriteId: 9d70a5ed15e5422458bf7862573dc5da
+    - tileId: 24
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_24"
+      spriteId: 65651040570bcc74d80793669c8334ed
+    - tileId: 25
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_25"
+      spriteId: deba5f47ef6ef8344b8cf22e94542a25
+    - tileId: 26
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_26"
+      spriteId: e4f845efd3ddc5b4f915a66f4f8290ec
+    - tileId: 27
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_27"
+      spriteId: 53660958a04809345946edceee193836
+    - tileId: 28
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_28"
+      spriteId: 4118fd8525cfaca42a9a15d75c6c65e8
+    - tileId: 29
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_29"
+      spriteId: a15e2f71172f9c24b83e12bddc1faf92
+    - tileId: 30
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_30"
+      spriteId: 770099d700d8a494d9e38b3224576aca
+    - tileId: 31
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_31"
+      spriteId: 98dc85cb4b6f97242b39c335ec125ff4
+    - tileId: 32
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_32"
+      spriteId: 22f74fb2090adeb498bc2d6810ea37a6
+    - tileId: 33
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_33"
+      spriteId: e951d96ea9cfa06428824c390040c0f5
+    - tileId: 34
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_34"
+      spriteId: 53e76b7da2ad53a4bbd7235a9e3b3ef7
+    - tileId: 35
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_35"
+      spriteId: 2cae4ae0695f1524fa6b7b888bbaf48b
+    - tileId: 36
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_36"
+      spriteId: cb181b5dba1c7ef47bced25af06024bf
+    - tileId: 37
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_37"
+      spriteId: 241bf8963ab10cc409307e21f79f1926
+    - tileId: 38
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_38"
+      spriteId: 31488c65585bec2468711fc1c9dc53a8
+    - tileId: 39
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_39"
+      spriteId: 06d72c1a0cd0d7d479d687bd963362b6
+    - tileId: 40
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_40"
+      spriteId: 736bb87c1d63b0d4d917c7c6cc407ff0
+    - tileId: 41
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_41"
+      spriteId: 386332a69479a3540a3f2b51526a6fea
+    - tileId: 42
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_42"
+      spriteId: 0e11ca485b600bf4ebb2336c9c331821
+    - tileId: 43
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_43"
+      spriteId: 07c2af8edefd97b4b8f96e17e645f14e
+    - tileId: 44
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_44"
+      spriteId: 13c1f933c82e1ec45a0cb6c666e2a75f
+    - tileId: 45
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_45"
+      spriteId: ad0da1975cfd89d4c9b31db949562003
+    - tileId: 46
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_46"
+      spriteId: 01bf6c0e38fb16149acce0e26924995d
+    - tileId: 47
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_47"
+      spriteId: 6b1ce84b070475a4b81e778200b60791
+    - tileId: 48
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_48"
+      spriteId: 476c7671688589b4ab6be2252a5af07f
+    - tileId: 49
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_49"
+      spriteId: 51a7338be1817d846bc27a5ba7dfefaf
+    - tileId: 50
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_50"
+      spriteId: 0bfe91ade2824134cb22c0b2563b70c4
+    - tileId: 51
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_51"
+      spriteId: 34d8f08c8208e1241a2732ba373639b6
+    - tileId: 52
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_52"
+      spriteId: 0731aea6501d8a94cb4ff35c98a48268
+    - tileId: 53
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_53"
+      spriteId: 8cac16e35b5868a47bdb60f86bbd78f3
+    - tileId: 54
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_54"
+      spriteId: 5cb130d04fea1f24290b81653608e316
+    - tileId: 55
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_55"
+      spriteId: 135f5118f19e6034bababe2a86e217f6
+    - tileId: 56
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_56"
+      spriteId: 2b6a95b87781bab49ba861c4fc75cfab
+    - tileId: 57
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_57"
+      spriteId: 869aba3c8a06fab4896b59063760f084
+    - tileId: 58
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_58"
+      spriteId: 542ab038c855bdb4fac9b703d1b83c1e
+    - tileId: 59
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_59"
+      spriteId: 1742256efd2978243b128163310e8bc1
+    - tileId: 60
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_60"
+      spriteId: 8409913ed761a3b4ea046d3e6dec9cd4
+    - tileId: 61
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_61"
+      spriteId: beb061d73055fc840a7dddc9bc23897e
+    - tileId: 62
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_62"
+      spriteId: 94e597b28bcc1ae4a95cf309224235e4
+    - tileId: 63
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_63"
+      spriteId: b23fc2c64f191b046aab00e269677e52
+    - tileId: 64
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_64"
+      spriteId: d6b85a4953a2c5847a76a5f6f248d30b
+    - tileId: 65
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_65"
+      spriteId: 83ea7cff9801b2a4d8b35de9a88b08d7
+    - tileId: 66
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_66"
+      spriteId: 657095acdefb82742b8520def756903a
+    - tileId: 67
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_67"
+      spriteId: b8e74a2bc335c7f4f85168f2acc7c022
+    - tileId: 68
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_68"
+      spriteId: a61905ad5a00fd24e9e38c521e56cc4a
+    - tileId: 69
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_69"
+      spriteId: 0ccb7ae144d325446afdf72a2caccf88
+    - tileId: 70
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_70"
+      spriteId: 7ae99e4fc90de8449af5ea476a5f7f05
+    - tileId: 71
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_71"
+      spriteId: e97cbae0d16e87547b1786fde336fd96
+    - tileId: 72
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_72"
+      spriteId: 511d946909328a44f83ef8a7f27bc62a
+    - tileId: 73
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_73"
+      spriteId: 52dcde0a7310ac5478d55f32c9d1cca3
+    - tileId: 74
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_74"
+      spriteId: 83054c2b8f186274bbdf6fd832b80801
+    - tileId: 75
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_75"
+      spriteId: ba5b9624706685b40b2c8f47aeb97e97
+    - tileId: 76
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_76"
+      spriteId: a37c9cbf9ca8d3b4a850fad13e5b072c
+    - tileId: 77
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_77"
+      spriteId: 880586beca350ac46935d901f9845132
+    - tileId: 78
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_78"
+      spriteId: 3250ad9c200c2a545ace19ad381f9231
+    - tileId: 79
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_79"
+      spriteId: 9a49deaef39f61641a8ba7e699f240bf
+    - tileId: 80
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_80"
+      spriteId: 886bc4cce85bfa04fa39ac80979f95ce
+    - tileId: 81
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_81"
+      spriteId: aa15a0f4b74e13a4ebe375fdf8bd08b9
+    - tileId: 82
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_82"
+      spriteId: 9e9e4a3b0c184914c8b252fbebfa1924
+    - tileId: 83
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_83"
+      spriteId: 69469d9ef6ac5de4da54565208b551b3
+    - tileId: 84
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_84"
+      spriteId: be9127ed5b87cd340aaea3a2c4b86bb4
+    - tileId: 85
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_85"
+      spriteId: ef5318426f3fe4e469c33bb4a6931a6a
+    - tileId: 86
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_86"
+      spriteId: 9e887c4f2d93f314b9cd72609b764c9a
+    - tileId: 87
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_87"
+      spriteId: b7f01b85015d7bc4a91e628122583a03
+    - tileId: 88
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_88"
+      spriteId: 7aad94187d7d3374d80c511c6cb8d022
+    - tileId: 89
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_89"
+      spriteId: b0ff9c1b4fbd9ab4cbaa4b39631d5c2b
+    - tileId: 90
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_90"
+      spriteId: 74eb0336d1b590b40b947f72d5120bfe
+    - tileId: 91
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_91"
+      spriteId: 27a0791066b919a44a89fa28376fe4f8
+    - tileId: 92
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_92"
+      spriteId: c2e3fd585e89ebb4080de2c4cf16667e
+    - tileId: 93
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_93"
+      spriteId: 5d3d528a5f334b9498f9992f73bad405
+    - tileId: 94
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_94"
+      spriteId: 9276e212efd44344bb2830c0da6cc47d
+    - tileId: 95
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_95"
+      spriteId: a4e5b42f8a28db541b882a19b2a08d83
+    - tileId: 96
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_96"
+      spriteId: 86b63c5ae9e0dbb40acdeac88a81e9a7
+    - tileId: 97
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_97"
+      spriteId: a21912a6e1d6351428af908ae3254a82
+    - tileId: 98
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_98"
+      spriteId: fee8f86c37ed00f48873138f001901d1
+    - tileId: 99
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_99"
+      spriteId: 2e2691a1f421f384e98299c7e0415335
+    - tileId: 100
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_100"
+      spriteId: 5ff88791a3a90c843b4052dfa0075b28
+    - tileId: 101
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_101"
+      spriteId: a2430fbdacc42e247a1317c963d65501
+    - tileId: 102
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_102"
+      spriteId: d7d97f5d1bd32ee4b95046299ef2d4f7
+    - tileId: 103
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_103"
+      spriteId: 75cadc336edbf754cbde62e8f9353a15
+    - tileId: 104
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_104"
+      spriteId: 84ce7b26f95126a4aa378403b8fa9285
+    - tileId: 105
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_105"
+      spriteId: 1e4d6e12225d0d945a0a1f425964a9d7
+    - tileId: 106
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_106"
+      spriteId: bda8d3be2db617a42b73b1d142ef36d4
+    - tileId: 107
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_107"
+      spriteId: 1e97254d126af634eabfd633bc068c0b
+    - tileId: 108
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_108"
+      spriteId: c190de63fb843ce4085057a788c7c2d9
+    - tileId: 109
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_109"
+      spriteId: 1c3454635f6e60642938358a7ee1d69d
+    - tileId: 110
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_110"
+      spriteId: 5b4016ad9d1b7e949a820df5c9c4e6e3
+    - tileId: 111
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_111"
+      spriteId: 241ed1ccf4161d34bb6af46764fd3654
+    - tileId: 112
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_112"
+      spriteId: bb0a86a8395e7bb4caec5ab38e0a6bd8
+    - tileId: 113
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_113"
+      spriteId: 9cf269b4c308b5448a5ee83ccdaced9f
+    - tileId: 114
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_114"
+      spriteId: 84b93e53b54164949aeefcc790d2e649
+    - tileId: 115
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_115"
+      spriteId: a9aa244b02d21f743b8a1d0d361d19ea
+    - tileId: 116
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_116"
+      spriteId: fa41b33c02f0e354897a2a854c4ab01a
+    - tileId: 117
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_117"
+      spriteId: a253f8e3b3e5f5641b99ff43b7e0f6f7
+    - tileId: 118
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_118"
+      spriteId: 0bb2ec567305a5e4392ae4ea7501dd8b
+    - tileId: 119
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_119"
+      spriteId: dbd050865a3993a4d944cb9aa48e25aa
+    - tileId: 120
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_120"
+      spriteId: 51a6ee142e7df70489dde57dabffebde
+    - tileId: 121
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_121"
+      spriteId: 53ec5b47519fa8e43961494031ccb1f6
+    - tileId: 122
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_122"
+      spriteId: a293184551fb4144cacce5c4f7e7f2c9
+    - tileId: 123
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_123"
+      spriteId: d73876498fd8df94fb230c7a8dd0199e
+    - tileId: 124
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_124"
+      spriteId: 13bb9e0c599cb81409cc4d8c07b618d2
+    - tileId: 125
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_125"
+      spriteId: a9e45fa5d6f9f0b43977922aedb89d5d
+    - tileId: 126
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_126"
+      spriteId: eaf7676d053c4e84bb3888a650a179d6
+    - tileId: 127
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_127"
+      spriteId: 011df1d5112f1b144b71b6930c3a5be3
+    - tileId: 128
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_128"
+      spriteId: a4ba2d158dcec6845b9a4ed997c83d2a
+    - tileId: 129
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_129"
+      spriteId: 1c3d85f6ef8238e49abe668a1572c140
+    - tileId: 130
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_130"
+      spriteId: 88109a962261bf042827999bf148c3b7
+    - tileId: 131
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_131"
+      spriteId: f6077876fe61f5343aebe9f34bdef06e
+    - tileId: 132
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_132"
+      spriteId: e2e4c6c49c0b4fe4ea83e6fe38b9e683
+    - tileId: 133
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_133"
+      spriteId: 29e41ab69857d5a46883bf7e28c6b35c
+    - tileId: 134
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_134"
+      spriteId: 21d6f189cac3a3148863d2e56d419655
+    - tileId: 135
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_135"
+      spriteId: 1800aeae4f8adea4386f59be09053565
+    - tileId: 136
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_136"
+      spriteId: c86dd7ec7f1a41e4587638c0e8635d6f
+    - tileId: 137
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_137"
+      spriteId: cd2132d3fb3df18469c814effb59e8c2
+    - tileId: 138
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_138"
+      spriteId: 17dfffbb22a78d541a85a09cb3ab4268
+    - tileId: 139
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_139"
+      spriteId: 737e8ecb2e4e08f49946ad8b0cd9c8cd
+    - tileId: 140
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_140"
+      spriteId: 71832da5c41e591468cb94d4caea9f75
+    - tileId: 141
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_141"
+      spriteId: 64d7b65e7b29ad9469381b25431e9253
+    - tileId: 142
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_142"
+      spriteId: 6aa58d43aa405734c85e6b75e668c870
+    - tileId: 143
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_143"
+      spriteId: d50dc4c80d594e844bcd4ebcde4b7b24
+    - tileId: 144
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_144"
+      spriteId: aee58903e32263145a6b8484203d0da6
+    - tileId: 145
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_145"
+      spriteId: 83813b6034af2014299b89e68eef71f9
+    - tileId: 146
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_146"
+      spriteId: d74080ebdf7ae25489e3ce1d26835716
+    - tileId: 147
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_147"
+      spriteId: df2a5471db04edc4cbb342c1e6b40109
+    - tileId: 148
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_148"
+      spriteId: 6a0fcddb373343149bda9d50defad7a5
+    - tileId: 149
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_149"
+      spriteId: 4c0450e4b993eec4fa624c0dc758e377
+    - tileId: 150
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_150"
+      spriteId: 96fea065475ca9a438e33abc9a1f7d71
+    - tileId: 151
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_151"
+      spriteId: dba47c7ab0bc30a4b909a88a3bef1ef0
+    - tileId: 152
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_152"
+      spriteId: 14a7d35a9d5b84a48ab2086cd8dc58d7
+    - tileId: 153
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_153"
+      spriteId: ecf8d46f37a4d504cbe63446e4a22bc6
+    - tileId: 154
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_154"
+      spriteId: 5cce07547c3b72e4a8dd452fbcf40de1
+    - tileId: 155
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_155"
+      spriteId: e5bb0029387257048ac794916d7e988d
+    - tileId: 156
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_156"
+      spriteId: 0528d5b113ae8f34aaedeb29336d1357
+    - tileId: 157
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_157"
+      spriteId: 7d9c1bd52bd846246baaef22b4076a90
+    - tileId: 158
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_158"
+      spriteId: 61eb2deac5bcff04e910d9c650b7c5cf
+    - tileId: 159
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_159"
+      spriteId: 82e9e774479ddf142ab5ccb1ffd6a065
+    - tileId: 160
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_160"
+      spriteId: aa6552dd013653245826348a1840cccc
+    - tileId: 161
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_161"
+      spriteId: 880510753266fba4f93193da052cb95a
+    - tileId: 162
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_162"
+      spriteId: 31a2409bf448a5e43aa4ef1cf95f3c05
+    - tileId: 163
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_163"
+      spriteId: b29d525265b74494ba014e3cacf03929
+    - tileId: 164
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_164"
+      spriteId: 4bbc5a24268f329458eb210476167d18
+    - tileId: 165
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_165"
+      spriteId: 19542b179c2612c45ad10463cf37a016
+    - tileId: 166
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_166"
+      spriteId: 831a4ee86fdb6d1418829d45ce227f46
+    - tileId: 167
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_167"
+      spriteId: 68486bd042fa10a4aaed35a3aacd44f4
+    - tileId: 168
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_168"
+      spriteId: 0bfb51376920b154b965851ab2ecca75
+    - tileId: 169
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_169"
+      spriteId: b56b3820085e91d4198fc0abb6aeeade
+    - tileId: 170
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_170"
+      spriteId: b762bb5daf123494dbdda06ab750be26
+    - tileId: 171
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_171"
+      spriteId: 6302c88b8991f184a9bc3d91d215e95e
+    - tileId: 172
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_172"
+      spriteId: ba6dc79de2ed2914c9d80205cba3992f
+    - tileId: 173
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_173"
+      spriteId: cef37105f05e2194099dc1c9b236d88a
+    - tileId: 174
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_174"
+      spriteId: 14d408dc7f24919409f4445c0dc33dd0
+    - tileId: 175
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_175"
+      spriteId: 1905c1c806743994aa7a17f7900d8eab
+    - tileId: 176
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_176"
+      spriteId: 167ca1b5ae7c44149a548c2ed47a09db
+    - tileId: 177
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_177"
+      spriteId: 8cc881881bf096541b4aa8d1daaec607
+    - tileId: 178
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_178"
+      spriteId: ebef009f2119ff64d911305deb94d38a
+    - tileId: 179
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_179"
+      spriteId: d5151945fc3b6cd4a921eae6606ec0f5
+    - tileId: 180
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_180"
+      spriteId: 0cf4f27a7241ca5438c382593ed0093c
+    - tileId: 181
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_181"
+      spriteId: 7116b5bd4fc938e4684f30f8b264efd7
+    - tileId: 182
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_182"
+      spriteId: c7ef547e6c0b15241995d6db3bab253f
+    - tileId: 183
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_183"
+      spriteId: 007f7b90e498ead40873b50cf40f3e13
+    - tileId: 184
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_184"
+      spriteId: 4be97564c64d0cc4f8c3234c91cdc9d0
+    - tileId: 185
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_185"
+      spriteId: d809857516b96e140ad0128c06094389
+    - tileId: 186
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_186"
+      spriteId: 9ae5a718bd185574a99368ade03c0c81
+    - tileId: 187
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_187"
+      spriteId: 3b8d4703c94c27744b3748dcd72606ef
+    - tileId: 188
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_188"
+      spriteId: 1f7b89cf7bbe2dc4d904acb86c676ff1
+    - tileId: 189
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_189"
+      spriteId: 23b239b9cd27f7243aac7a72a850e489
+    - tileId: 190
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_190"
+      spriteId: 9cff90847bca93f4ba93b73401db4690
+    - tileId: 191
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_191"
+      spriteId: 10a0b679febe61445afb0361a40cf850
+    - tileId: 192
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_192"
+      spriteId: 4a74039cf465b17428e84b34d07a52d9
+    - tileId: 193
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_193"
+      spriteId: 8ebe5036a7daf7846a9201a2ca7e563f
+    - tileId: 194
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_194"
+      spriteId: d7ca2e910f990ea489c089b09cb1e45e
+    - tileId: 195
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_195"
+      spriteId: 4f4a7360ecc899b438848550ded0e4bc
+    - tileId: 196
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_196"
+      spriteId: ebf08cac78a1fcd4c861c150b1680c4b
+    - tileId: 197
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_197"
+      spriteId: 1a0e78bd89d2c3c4c976e6a552a72ca0
+    - tileId: 198
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_198"
+      spriteId: dd879f0950f439d49adcae42b72d4e3d
+    - tileId: 199
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_199"
+      spriteId: 27ffce288d90d464e94819363cee0772
+    - tileId: 200
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_200"
+      spriteId: 82217fdb53a150c4aace549697d83096
+    - tileId: 201
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_201"
+      spriteId: d65c721d3976a4d4b87ddfb199fa44c9
+    - tileId: 202
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_202"
+      spriteId: 35a19337e3093b14baa98999850fbeee
+    - tileId: 203
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_203"
+      spriteId: 08573548742811d43bc40572830ddb52
+    - tileId: 204
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_204"
+      spriteId: 123b2f0f3e438034d88cb39538303d19
+    - tileId: 205
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_205"
+      spriteId: db21ad57e4338a24bad037a17ea3aa9c
+    - tileId: 206
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_206"
+      spriteId: f3c32d4e0b763674b9c928e1cc84edf0
+    - tileId: 207
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_207"
+      spriteId: 2e4da792a3a5c264abf6b3ffab154214
+    - tileId: 208
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_208"
+      spriteId: 1a5d4b3997aa8fc409a35e6b9718f74c
+    - tileId: 209
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_209"
+      spriteId: ebbba49dc39366c45a289f5d224cdc2a
+    - tileId: 210
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_210"
+      spriteId: 95b8739639ad3b945b8f47cf4d6cb2ba
+    - tileId: 211
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_211"
+      spriteId: 55c14eb4e81434344b0dc12701aface7
+    - tileId: 212
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_212"
+      spriteId: ec978c156d17a4640a1447dfa52f8a13
+    - tileId: 213
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_213"
+      spriteId: 8e06b9f029d15834dad39361035755c7
+    - tileId: 214
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_214"
+      spriteId: 46e9fbcda4af62b4a9f250b2e6fd680b
+    - tileId: 215
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_215"
+      spriteId: e466588ef15cd3c4ea2401591e548b2d
+    - tileId: 216
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_216"
+      spriteId: 24e1a373ed4b9b94391fe7bf9aec80c0
+    - tileId: 217
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_217"
+      spriteId: 24253e1e5140a1b49be0e92a29f6935f
+    - tileId: 218
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_218"
+      spriteId: 8b444485f73b7aa47b90ba452e8c0c10
+    - tileId: 219
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_219"
+      spriteId: a65c033f42f1caa43b08056cb93d07bd
+    - tileId: 220
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_220"
+      spriteId: 19adc334a793b954d9b363da32e00372
+    - tileId: 221
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_221"
+      spriteId: 7ba70a113877b9b42894209726a57516
+    - tileId: 222
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_222"
+      spriteId: 8d16d0a533b53b74790396f20108b283
+    - tileId: 223
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_223"
+      spriteId: bbc9546190144574899db10b78ed4436
+    - tileId: 224
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_224"
+      spriteId: b65596fb659627a4aa70300da44cd1c8
+    - tileId: 225
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_225"
+      spriteId: 5028f150a1699f844a4430ea075788c3
+    - tileId: 226
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_226"
+      spriteId: 657150e77156c394a90a76961f9bb284
+    - tileId: 227
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_227"
+      spriteId: 41c711792c9b17e488b147f55b1456be
+    - tileId: 228
+      size:
+        x: 32
+        y: 32
+      name: "TileSheet_Laborat\xC3\xB3rio_228"
+      spriteId: bfcb9803366dc7b48b1797e5851558ab
+    guid: -1368463789
+  platformSettings:
+  - name: DefaultTexturePlatform
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Android
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: WebGL
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  generatePhysicsShape: 0
+  secondarySpriteTextures: []
+  spritePackingTag: 
+  canvasSize: {x: 512, y: 512}
+  previousTextureSize: {x: 512, y: 1024}

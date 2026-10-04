@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd81a6fe40be39c4e83a96c320938fd9, type: 3}
   m_Name: Beatriz
   m_EditorClassIdentifier: Assembly-CSharp::NPCdialogue
-  npcName: Beatriz
+  npcName: Larissa
   npcPortrait: {fileID: 21300000, guid: 7c75f538e138c6c439c04cab560c2749, type: 3}
   dialogueLines:
   - "N\xE3o tenha medo de explorar o equipamento. Quanto mais praticamos, mais o
