@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd81a6fe40be39c4e83a96c320938fd9, type: 3}
+  m_Name: Sonar_Inicio
+  m_EditorClassIdentifier: Assembly-CSharp::NPCdialogue
+  npcName: Sonar
+  npcPortrait: {fileID: 21300000, guid: 3a3d32b07deae594dbbe1db16cdf0ad0, type: 3}
+  dialogueLines:
+  - "Ol\xE1! Eu sou o Sonar. Vou te ajudar durante os atendimentos, bem como te aplicar
+    feedbacks."
+  - Mas antes de irmos para a UTI, vou te ensinar a como realizar os exames de forma
+    adequada.
+  - "V\xE1 at\xE9 os orientadores que eles ir\xE3o te passar mais informa\xE7\xF5es."
+  typingSpeed: 0.05
+  voiceEvent:
+    Guid:
+      Data1: -355241531
+      Data2: 1255865929
+      Data3: -907916883
+      Data4: 863556038
+    Path: event:/Falas/wa_morcego
+  voicePitch: 1
+  autoProgressLines: 
+  autoProgressDelay: 1.5
