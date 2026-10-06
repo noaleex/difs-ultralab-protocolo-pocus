@@ -56,26 +56,8 @@ TagManager:
   - name: Forniture
     uniqueID: 319459515
     locked: 0
-  - name: "Forniture_sobreposi\xE7a\xF5"
+  - name: "Forniture_sobreposi\xE7\xE3o"
     uniqueID: 3441886195
-    locked: 0
-  - name: Wall_Top
-    uniqueID: 3897715341
-    locked: 0
-  - name: Background
-    uniqueID: 3141353209
-    locked: 0
-  - name: Tapetes
-    uniqueID: 4087924003
-    locked: 0
-  - name: Wall_Bot
-    uniqueID: 1178829679
-    locked: 0
-  - name: Moveis
-    uniqueID: 4156093055
-    locked: 0
-  - name: Leito_Base
-    uniqueID: 877028501
     locked: 0
   - name: Cortinas
     uniqueID: 3389434683
@@ -86,17 +68,14 @@ TagManager:
   - name: Player
     uniqueID: 767058695
     locked: 0
+  - name: Wall_Top
+    uniqueID: 3897715341
+    locked: 0
   - name: Forniture_top
     uniqueID: 3327542503
     locked: 0
   - name: pacients
     uniqueID: 359887817
-    locked: 0
-  - name: Leito_Cobertor
-    uniqueID: 4186166415
-    locked: 0
-  - name: Cortina_Aberta
-    uniqueID: 679906869
     locked: 0
   - name: UI
     uniqueID: 382699877
