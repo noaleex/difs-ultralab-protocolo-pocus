@@ -6058,7 +6058,7 @@ MonoBehaviour:
   pocus: {fileID: 2137500603}
   leito: {fileID: 1842000228}
   tool: {fileID: 849634469}
-  lab: LAB
+  lab: gameplay_tutorial
   uti: UTI
 --- !u!114 &1762434226
 MonoBehaviour:
