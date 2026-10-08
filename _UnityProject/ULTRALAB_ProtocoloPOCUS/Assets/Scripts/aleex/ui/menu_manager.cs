@@ -35,7 +35,7 @@ public class menu_manager : MonoBehaviour
     [SerializeField] private TMP_InputField inputAge;
 
     [SerializeField] private bool skipIntroCutscene = true;
-    [SerializeField] private string sceneGameplayTutorial = "gameplay_tutorial";
+    [SerializeField] private string sceneGameplayTutorial = "LAB";
     [SerializeField] private string sceneCutsceneMale = "PM0_Intro";
     [SerializeField] private string sceneCutsceneFemale = "PF0_Intro";
 

@@ -17,11 +17,18 @@ public class NPC : MonoBehaviour, IInteractable
     [Header("Configuração")]
     public bool startDialogueOnStart;
     public bool isInterfaceCharacter;
+    public bool startDialogueOnTrigger;
+    public bool triggerOnlyOnce = true;
+
+    [Header("Feedback do Sonar")]
+    public NPC sonar;
+    public NPCdialogue sonarFeedback;
 
     private EventInstance dialogueVoiceInstance;
 
     private int dialogueIndex;
     private bool isTyping, isDialogueActive;
+    private bool hasTriggeredDialogue;
 
     public bool IsDialogueActive => isDialogueActive;
     public System.Action OnDialogueEnded;
@@ -226,40 +233,58 @@ public class NPC : MonoBehaviour, IInteractable
 
 
     public void EndDialogue()
+{
+    StopAllCoroutines();
+    StopVoice();
+
+    isDialogueActive = false;
+
+    dialogueText.SetText("");
+    dialoguePanel.SetActive(false);
+
+    PauseController.SetPause(false);
+
+    if (!isInterfaceCharacter)
     {
-        StopAllCoroutines();
-        StopVoice();
-
-        isDialogueActive = false;
-
-        dialogueText.SetText("");
-        dialoguePanel.SetActive(false);
-
-        PauseController.SetPause(false);
-
-
-        // Só limpa a interação se for um NPC normal
-        if (!isInterfaceCharacter)
+        if (PlayerReferences.Instance?.InteractionDetector != null)
         {
-            if (PlayerReferences.Instance?.InteractionDetector != null)
-            {
-                PlayerReferences.Instance.InteractionDetector.ClearForcedInteractable(this);
-            }
-        }
-
-
-        OnDialogueEnded?.Invoke();
-        OnDialogueEnded = null;
-
-
-        if (PlayerReferences.Instance != null)
-        {
-            PlayerReferences.Instance.InteractIcon.SetActive(true);
-
-            if (PlayerReferences.Instance.playerMovement != null)
-            {
-                PlayerReferences.Instance.EnablePlayer();
-            }
+            PlayerReferences.Instance.InteractionDetector.ClearForcedInteractable(this);
         }
     }
+
+    OnDialogueEnded?.Invoke();
+    OnDialogueEnded = null;
+
+    if (PlayerReferences.Instance != null)
+    {
+        PlayerReferences.Instance.InteractIcon.SetActive(true);
+
+        if (PlayerReferences.Instance.playerMovement != null)
+        {
+            PlayerReferences.Instance.EnablePlayer();
+        }
+    }
+
+    // Mostra o feedback do Sonar depois da conversa
+    if (!isInterfaceCharacter && sonar != null && sonarFeedback != null)
+    {
+        sonar.StartDialogue(sonarFeedback);
+    }
+}
+
+    private void OnTriggerEnter2D(Collider2D other)
+{
+    if (!startDialogueOnTrigger)
+        return;
+
+    if (!other.CompareTag("Player"))
+        return;
+
+    if (triggerOnlyOnce && hasTriggeredDialogue)
+        return;
+
+    hasTriggeredDialogue = true;
+
+    StartDialogueExternally();
+}
 }

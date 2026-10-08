@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bd81a6fe40be39c4e83a96c320938fd9, type: 3}
-  m_Name: Sonar_Inicio
+  m_Name: Sonar_Feedback_Monia
   m_EditorClassIdentifier: Assembly-CSharp::NPCdialogue
   npcName: Sonar
-  npcPortrait: {fileID: 21300000, guid: 71f2e594236d85046b54d68db9d7348c, type: 3}
+  npcPortrait: {fileID: 21300000, guid: 3a3d32b07deae594dbbe1db16cdf0ad0, type: 3}
   dialogueLines:
-  - "Ol\xE1! Eu sou o Sonar. Vou te ajudar durante os atendimentos, bem como te aplicar
-    feedbacks."
-  - Mas antes de irmos para a UTI, vou te ensinar a como realizar os exames de forma
-    adequada.
-  - "V\xE1 at\xE9 os orientadores que eles ir\xE3o te passar mais informa\xE7\xF5es."
+  - "Voc\xEA vai perceber que temos v\xE1rios instrumentos na mesa para uso do POCUS,
+    cada um serve para um determinado caso."
+  - "Logo mais te derei mais informa\xE7\xF5es sobre cada um. "
+  - "Agora vamos treinar sobre o procedimento.  V\xE1 para a primeira mesa no lado
+    esquerdo para come\xE7armos o tutorial"
   typingSpeed: 0.05
   voiceEvent:
     Guid:
