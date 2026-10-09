@@ -9824,6 +9824,7 @@ GameObject:
   - component: {fileID: 375096715}
   - component: {fileID: 375096717}
   - component: {fileID: 375096718}
+  - component: {fileID: 375096719}
   m_Layer: 0
   m_Name: Avaliador_03
   m_TagString: Untagged
@@ -10076,6 +10077,98 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
+--- !u!114 &375096719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 375096713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b230426fabd1bb54a952733c381b3efa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NPC
+  dialogueData: {fileID: 11400000, guid: ee72602a007f8db4788f7c6981b75442, type: 2}
+  dialoguePanel: {fileID: 455700456}
+  dialogueText: {fileID: 2038723594}
+  nameText: {fileID: 1666026886}
+  portraitImage: {fileID: 1771755434}
+  interactSoundEvent:
+    Guid:
+      Data1: 2103294604
+      Data2: 1155553301
+      Data3: -801384060
+      Data4: 1978304836
+    Path: event:/Interagir/fx_item
+  startDialogueOnStart: 0
+  isInterfaceCharacter: 0
+  startDialogueOnTrigger: 0
+  triggerOnlyOnce: 1
+  sonar: {fileID: 0}
+  sonarFeedback: {fileID: 0}
+--- !u!1 &379917837
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 379917839}
+  - component: {fileID: 379917838}
+  m_Layer: 0
+  m_Name: Sonar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &379917838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 379917837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b230426fabd1bb54a952733c381b3efa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NPC
+  dialogueData: {fileID: 11400000, guid: b329dec276a0e5e46819f58ee551daad, type: 2}
+  dialoguePanel: {fileID: 0}
+  dialogueText: {fileID: 0}
+  nameText: {fileID: 0}
+  portraitImage: {fileID: 0}
+  interactSoundEvent:
+    Guid:
+      Data1: 2103294604
+      Data2: 1155553301
+      Data3: -801384060
+      Data4: 1978304836
+    Path: event:/Interagir/fx_item
+  startDialogueOnStart: 1
+  isInterfaceCharacter: 1
+  startDialogueOnTrigger: 0
+  triggerOnlyOnce: 1
+  sonar: {fileID: 0}
+  sonarFeedback: {fileID: 0}
+--- !u!4 &379917839
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 379917837}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -4.39984, y: -7.46447, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &387956041
 GameObject:
   m_ObjectHideFlags: 0
@@ -10376,6 +10469,10 @@ MonoBehaviour:
     Path: event:/Interagir/fx_item
   startDialogueOnStart: 0
   isInterfaceCharacter: 0
+  startDialogueOnTrigger: 0
+  triggerOnlyOnce: 1
+  sonar: {fileID: 0}
+  sonarFeedback: {fileID: 0}
 --- !u!483693784 &435270259
 TilemapRenderer:
   serializedVersion: 2
@@ -10846,7 +10943,6 @@ GameObject:
   - component: {fileID: 536115204}
   - component: {fileID: 536115203}
   - component: {fileID: 536115206}
-  - component: {fileID: 536115205}
   m_Layer: 0
   m_Name: TeacherGabriel
   m_TagString: Untagged
@@ -10928,32 +11024,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 887520847}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &536115205
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 536115202}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b230426fabd1bb54a952733c381b3efa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::NPC
-  dialogueData: {fileID: 11400000, guid: ee72602a007f8db4788f7c6981b75442, type: 2}
-  dialoguePanel: {fileID: 455700456}
-  dialogueText: {fileID: 2038723594}
-  nameText: {fileID: 1666026886}
-  portraitImage: {fileID: 1771755434}
-  interactSoundEvent:
-    Guid:
-      Data1: 2103294604
-      Data2: 1155553301
-      Data3: -801384060
-      Data4: 1978304836
-    Path: event:/Interagir/fx_item
-  startDialogueOnStart: 0
-  isInterfaceCharacter: 0
 --- !u!61 &536115206
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16615,6 +16685,10 @@ MonoBehaviour:
     Path: event:/Interagir/fx_item
   startDialogueOnStart: 0
   isInterfaceCharacter: 0
+  startDialogueOnTrigger: 0
+  triggerOnlyOnce: 1
+  sonar: {fileID: 0}
+  sonarFeedback: {fileID: 0}
 --- !u!61 &645863879
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -23677,6 +23751,115 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 964086096}
   m_CullTransparentMesh: 1
+--- !u!1 &1049283536
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1049283539}
+  - component: {fileID: 1049283538}
+  - component: {fileID: 1049283537}
+  m_Layer: 0
+  m_Name: Trigger_SalaConsulta
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1049283537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1049283536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b230426fabd1bb54a952733c381b3efa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NPC
+  dialogueData: {fileID: 11400000, guid: 7409c4db15ec12b458158ebabb621492, type: 2}
+  dialoguePanel: {fileID: 455700456}
+  dialogueText: {fileID: 2038723594}
+  nameText: {fileID: 1666026886}
+  portraitImage: {fileID: 1771755434}
+  interactSoundEvent:
+    Guid:
+      Data1: 2103294604
+      Data2: 1155553301
+      Data3: -801384060
+      Data4: 1978304836
+    Path: event:/Interagir/fx_item
+  startDialogueOnStart: 1
+  isInterfaceCharacter: 1
+  startDialogueOnTrigger: 0
+  triggerOnlyOnce: 1
+  sonar: {fileID: 379917838}
+  sonarFeedback: {fileID: 0}
+--- !u!61 &1049283538
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1049283536}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -3.8922327, y: -0.057748437}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 3.1482358, y: 3.059278}
+  m_EdgeRadius: 0
+--- !u!4 &1049283539
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1049283536}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.45254, y: -1.88092, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1094953290
 GameObject:
   m_ObjectHideFlags: 0
@@ -25441,6 +25624,10 @@ MonoBehaviour:
     Path: event:/Interagir/fx_item
   startDialogueOnStart: 0
   isInterfaceCharacter: 0
+  startDialogueOnTrigger: 0
+  triggerOnlyOnce: 1
+  sonar: {fileID: 0}
+  sonarFeedback: {fileID: 0}
 --- !u!1 &1106933591
 GameObject:
   m_ObjectHideFlags: 0
@@ -26797,6 +26984,10 @@ MonoBehaviour:
     Path: event:/Interagir/fx_item
   startDialogueOnStart: 0
   isInterfaceCharacter: 0
+  startDialogueOnTrigger: 0
+  triggerOnlyOnce: 1
+  sonar: {fileID: 0}
+  sonarFeedback: {fileID: 0}
 --- !u!61 &1186090020
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -37867,6 +38058,10 @@ MonoBehaviour:
     Path: event:/Interagir/fx_item
   startDialogueOnStart: 0
   isInterfaceCharacter: 0
+  startDialogueOnTrigger: 0
+  triggerOnlyOnce: 1
+  sonar: {fileID: 0}
+  sonarFeedback: {fileID: 0}
 --- !u!61 &1628495552
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -38316,7 +38511,7 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 7ae4e632612f0c54b80a1122b781df6d, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -38383,7 +38578,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 98.282814, w: 30.780901}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1666026887
@@ -39602,6 +39797,10 @@ MonoBehaviour:
     Path: event:/Interagir/fx_item
   startDialogueOnStart: 0
   isInterfaceCharacter: 0
+  startDialogueOnTrigger: 0
+  triggerOnlyOnce: 1
+  sonar: {fileID: 0}
+  sonarFeedback: {fileID: 0}
 --- !u!19719996 &1829186863
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -42981,7 +43180,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 7ae4e632612f0c54b80a1122b781df6d, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -43048,7 +43247,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 55.08156, w: 0.7338562}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &2038723595
@@ -43313,6 +43512,10 @@ MonoBehaviour:
     Path: event:/Interagir/fx_item
   startDialogueOnStart: 0
   isInterfaceCharacter: 0
+  startDialogueOnTrigger: 0
+  triggerOnlyOnce: 1
+  sonar: {fileID: 0}
+  sonarFeedback: {fileID: 0}
 --- !u!19719996 &2116358915
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -43605,6 +43808,10 @@ MonoBehaviour:
     Path: event:/Interagir/fx_item
   startDialogueOnStart: 0
   isInterfaceCharacter: 0
+  startDialogueOnTrigger: 0
+  triggerOnlyOnce: 1
+  sonar: {fileID: 0}
+  sonarFeedback: {fileID: 0}
 --- !u!19719996 &2119386868
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -43990,7 +44197,9 @@ SceneRoots:
   - {fileID: 1652270173}
   - {fileID: 1726917609}
   - {fileID: 1296834859}
+  - {fileID: 379917839}
   - {fileID: 775005649}
   - {fileID: 1943116480}
   - {fileID: 1996171703}
   - {fileID: 2144463009}
+  - {fileID: 1049283539}
