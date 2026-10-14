@@ -85,10 +85,6 @@ public class MedicalData : MonoBehaviour
 
     private void Start()
     {
-        if (CurrentPatient.Data != null)
-        {
-            patientData = CurrentPatient.Data;
-        }
 
         SetupNumericInput(frequenciaInput);
         SetupNumericInput(saturationInput);
@@ -101,6 +97,21 @@ public class MedicalData : MonoBehaviour
 
         SetupNumericInput2(temperaturaInput);
         SetupNumericInput2(dorEscalaInput);
+
+        // Som de digitação - Respiração
+AdicionarSomDigitacao(frequenciaInput);
+AdicionarSomDigitacao(saturationInput);
+AdicionarSomDigitacao(oxigenoterapiaFluxoInput);
+
+// Som de digitação - Circulação
+AdicionarSomDigitacao(frequenciaCardiacaInput);
+AdicionarSomDigitacao(pressaoArterialInput);
+AdicionarSomDigitacao(pressaoArterial2Input);
+AdicionarSomDigitacao(perfusaoTempoInput);
+AdicionarSomDigitacao(temperaturaInput);
+
+// Som de digitação - Exposição
+AdicionarSomDigitacao(dorEscalaInput);
 
         AdicionarSomDropdowns();
 
@@ -123,15 +134,28 @@ public class MedicalData : MonoBehaviour
         ultimoValorDor = valor;
     }
 
-    private void TocarSomDigitacao()
+private void TocarSomDigitacao()
+{
+    if (!somDigitacao.IsNull)
     {
-        if (!somDigitacao.IsNull)
-        {
-            RuntimeManager.PlayOneShot(
-                somDigitacao
-            );
-        }
+        RuntimeManager.PlayOneShot(somDigitacao);
     }
+}
+
+    private void AdicionarSomDigitacao(TMP_InputField input)
+{
+    if (input == null)
+        return;
+
+    input.onValueChanged.AddListener((valor) =>
+    {
+        // Toca o som quando um caractere é digitado
+        if (valor.Length > 0)
+        {
+            TocarSomDigitacao();
+        }
+    });
+}
 
     //Som caixinhas
     private void AdicionarSomDropdowns()

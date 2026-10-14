@@ -15,7 +15,10 @@ MonoBehaviour:
   npcName: Sonar
   npcPortrait: {fileID: 21300000, guid: 3a3d32b07deae594dbbe1db16cdf0ad0, type: 3}
   dialogueLines:
-  - 
+  - "Aten\xE7\xE3o: para passar de fase, voc\xEA dever\xE1 ir at\xE9 o enfermario
+    adrian, utilizar o pocus como auxiliar no diagnostico. "
+  - "Voc\xEA precisar\xE1 ajustar a imagem que ser\xE1 anexada no prontuario ela
+    tem que ser nitida e voc\xEA conseguir prosseguir."
   typingSpeed: 0.05
   voiceEvent:
     Guid:

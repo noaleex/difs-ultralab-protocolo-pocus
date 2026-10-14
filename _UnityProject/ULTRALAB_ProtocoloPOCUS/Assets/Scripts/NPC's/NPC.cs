@@ -29,6 +29,8 @@ public class NPC : MonoBehaviour, IInteractable
     private int dialogueIndex;
     private bool isTyping, isDialogueActive;
     private bool hasTriggeredDialogue;
+    private bool sonarFeedbackJaExibido;
+    private bool dialogoJaConcluido;
 
     public bool IsDialogueActive => isDialogueActive;
     public System.Action OnDialogueEnded;
@@ -62,22 +64,26 @@ public class NPC : MonoBehaviour, IInteractable
 
 
     public void Interact()
+{
+    if (dialogueData == null ||
+        (PauseController.IsGamePaused && !isDialogueActive))
+        return;
+
+    // Não permite reiniciar o diálogo já concluído
+    if (dialogoJaConcluido && !isInterfaceCharacter)
+        return;
+
+    PlayInteractSound();
+
+    if (isDialogueActive)
     {
-        if (dialogueData == null || (PauseController.IsGamePaused && !isDialogueActive))
-            return;
-
-        PlayInteractSound();
-
-        if (isDialogueActive)
-        {
-            NextLine();
-        }
-        else
-        {
-            StartDialogue();
-        }
+        NextLine();
     }
-
+    else
+    {
+        StartDialogue();
+    }
+}
 
     void PlayInteractSound()
     {
@@ -239,6 +245,11 @@ public class NPC : MonoBehaviour, IInteractable
 
     isDialogueActive = false;
 
+    if (!isInterfaceCharacter)
+{
+    dialogoJaConcluido = true;
+}
+
     dialogueText.SetText("");
     dialoguePanel.SetActive(false);
 
@@ -266,13 +277,21 @@ public class NPC : MonoBehaviour, IInteractable
     }
 
     // Mostra o feedback do Sonar depois da conversa
-    if (!isInterfaceCharacter && sonar != null && sonarFeedback != null)
-    {
-        sonar.StartDialogue(sonarFeedback);
-    }
+    if (!isInterfaceCharacter &&
+    !sonarFeedbackJaExibido &&
+    sonar != null &&
+    sonarFeedback != null)
+{
+    sonarFeedbackJaExibido = true;
+
+    NPCdialogue feedback = sonarFeedback;
+    sonarFeedback = null;
+
+    sonar.StartDialogue(feedback);
+}
 }
 
-    private void OnTriggerEnter2D(Collider2D other)
+private void OnTriggerEnter2D(Collider2D other)
 {
     if (!startDialogueOnTrigger)
         return;
@@ -280,11 +299,22 @@ public class NPC : MonoBehaviour, IInteractable
     if (!other.CompareTag("Player"))
         return;
 
-    if (triggerOnlyOnce && hasTriggeredDialogue)
+    if (hasTriggeredDialogue)
         return;
 
+    // Bloqueia novas ativações imediatamente
     hasTriggeredDialogue = true;
+    startDialogueOnTrigger = false;
 
+    // Desativa o Collider da área
+    Collider2D areaCollider = GetComponent<Collider2D>();
+
+    if (areaCollider != null)
+    {
+        areaCollider.enabled = false;
+    }
+
+    // Inicia o diálogo uma única vez
     StartDialogueExternally();
 }
 }
