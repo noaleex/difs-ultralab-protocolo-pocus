@@ -1,10 +1,14 @@
 using System.Collections;
 using UnityEngine;
+using FMODUnity;
 
 public class UltrassondSave : MonoBehaviour
 {
     [SerializeField] private UltrasoundManager ultrasoundManager;
     [SerializeField] private GameObject confirmText;
+
+    [Header("Som FMOD")]
+    [SerializeField] private EventReference somClick;
 
     [SerializeField] private float textTime = 1.5f;
 
@@ -37,10 +41,13 @@ public class UltrassondSave : MonoBehaviour
 
         ExamsSaveData.IsDefaultUltrasoundImage = isDefault;
 
-        // Ativa o Panel
+        // Toca o som de clique do FMOD
+        RuntimeManager.PlayOneShot(somClick);
+
+        // Ativa o texto de confirmação
         confirmText.SetActive(true);
 
-        // Reinicia o contador caso salve novamente antes de desaparecer
+        // Reinicia o contador caso salve novamente
         if (confirmCoroutine != null)
             StopCoroutine(confirmCoroutine);
 

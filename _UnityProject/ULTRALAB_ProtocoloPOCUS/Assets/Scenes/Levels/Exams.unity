@@ -5038,11 +5038,11 @@ MonoBehaviour:
     Path: event:/Musica/mx_gameplay
   interactionSound:
     Guid:
-      Data1: 2103294604
-      Data2: 1155553301
-      Data3: -801384060
-      Data4: 1978304836
-    Path: event:/Interagir/fx_item
+      Data1: -804075512
+      Data2: 1148289980
+      Data3: -580016215
+      Data4: 214636514
+    Path: event:/Interagir/fx_menu_click
   backButtonSound:
     Guid:
       Data1: -804075512
@@ -8229,6 +8229,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UltrassondSave
   ultrasoundManager: {fileID: 2137500607}
   confirmText: {fileID: 23748662}
+  somClick:
+    Guid:
+      Data1: -804075512
+      Data2: 1148289980
+      Data3: -580016215
+      Data4: 214636514
+    Path: event:/Interagir/fx_menu_click
   textTime: 1.5
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

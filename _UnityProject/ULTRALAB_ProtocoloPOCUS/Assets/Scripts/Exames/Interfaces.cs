@@ -91,8 +91,6 @@ public class Interfaces : MonoBehaviour
             tool.SetActive(false);
         }
 
-
-        AudioManager.Instance?.PlayBack();
     }
 
 
