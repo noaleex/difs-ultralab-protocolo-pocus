@@ -68,6 +68,9 @@ TagManager:
   - name: Player
     uniqueID: 767058695
     locked: 0
+  - name: Alice
+    uniqueID: 4112609647
+    locked: 0
   - name: Wall_Top
     uniqueID: 3897715341
     locked: 0
