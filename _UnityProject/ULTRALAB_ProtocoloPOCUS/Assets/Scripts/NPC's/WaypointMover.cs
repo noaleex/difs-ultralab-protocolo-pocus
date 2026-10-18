@@ -34,8 +34,8 @@ public class WaypointMover : MonoBehaviour
         if(PauseController.IsGamePaused || isWaiting)
         {
             animator.SetBool("isWalking", false);
-            animator.SetFloat("LastInputX", lastInputX);
-            animator.SetFloat("LastInputY", lastInputY);
+            animator.SetFloat("horizontal", lastInputX);
+            animator.SetFloat("vertical", lastInputY);
             return;
         }
 
@@ -70,8 +70,8 @@ public class WaypointMover : MonoBehaviour
         isWaiting = true;
         animator.SetBool("isWalking", false);
 
-        animator.SetFloat("LastInputX", lastInputX);
-        animator.SetFloat("LastInputY", lastInputY);
+        animator.SetFloat("horizontal", lastInputX);
+        animator.SetFloat("vertical", lastInputY);
 
         yield return new WaitForSeconds(waitTime);
         

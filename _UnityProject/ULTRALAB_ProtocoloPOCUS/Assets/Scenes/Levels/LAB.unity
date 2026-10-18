@@ -28629,6 +28629,7 @@ MonoBehaviour:
       Data3: -549595210
       Data4: 552736080
     Path: event:/Ambiente/fx_lab
+  nextSceneName: UTI
 --- !u!4 &1943116480
 Transform:
   m_ObjectHideFlags: 0
