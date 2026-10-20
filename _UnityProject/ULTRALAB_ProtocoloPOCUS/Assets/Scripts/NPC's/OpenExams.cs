@@ -133,12 +133,10 @@ public class OpenExams : MonoBehaviour, IInteractable
 
     private void OnDestroy()
     {
+        // Não limpamos CurrentPatient aqui: OpenExam pode trocar de cena e
+        // a cena de exames ainda pode precisar de CurrentPatient.Data.
         if (PatientManager.Instance != null)
-        {
-            PatientManager.Instance.UnregisterPatient(
-                this
-            );
-        }
+            PatientManager.Instance.UnregisterPatient(this);
     }
 
 
@@ -154,17 +152,22 @@ public class OpenExams : MonoBehaviour, IInteractable
 
     public void Interact()
     {
+        if (patientData == null)
+        {
+            Debug.LogError("[OpenExams] Não é possível interagir: PatientData não foi atribuído.", this);
+            return;
+        }
+
         PlayClickSound();
 
-        panelExam.SetActive(true);
+        CurrentPatient.Select(this);
+
+        if (panelExam != null)
+            panelExam.SetActive(true);
+        else
+            Debug.LogError($"[OpenExams] Panel Exam não foi atribuído para {patientData.patientName}.", this);
 
         PauseController.SetPause(true);
-
-        CurrentPatient.Data =
-            patientData;
-
-        CurrentPatient.Object =
-            this;
 
 
         if (PlayerReferences.Instance != null)
@@ -188,12 +191,12 @@ public class OpenExams : MonoBehaviour, IInteractable
     {
         PlayClickSound();
 
-        panelExam.SetActive(false);
+        if (panelExam != null)
+            panelExam.SetActive(false);
 
         PauseController.SetPause(false);
 
-        CurrentPatient.Data = null;
-        CurrentPatient.Object = null;
+        CurrentPatient.ClearIfCurrent(this);
 
 
         if (PlayerReferences.Instance != null)
@@ -215,12 +218,21 @@ public class OpenExams : MonoBehaviour, IInteractable
 
     public void OpenExam()
     {
+        if (patientData == null)
+        {
+            Debug.LogError("[OpenExams] Não é possível abrir exames sem PatientData.", this);
+            return;
+        }
+
         PlayClickSound();
 
-        Timer timer = FindFirstObjectByType<Timer>();
-        if (timer != null)
+        if (Timer.Instance != null)
         {
-            timer.SaveCurrentTime();
+            Timer.Instance.SaveCurrentTime();
+        }
+        else
+        {
+            Debug.LogWarning("[OpenExams] Timer.Instance não está disponível. O horário não será salvo antes de abrir os exames.", this);
         }
 
         string currentSceneName = SceneManager.GetActiveScene().name;
@@ -237,8 +249,7 @@ public class OpenExams : MonoBehaviour, IInteractable
             );
         }
 
-        CurrentPatient.Data = patientData;
-        CurrentPatient.Object = this;
+        CurrentPatient.Select(this);
 
         PauseController.SetPause(false);
 
@@ -261,19 +272,21 @@ public class OpenExams : MonoBehaviour, IInteractable
     {
         PlayClickSound();
 
-        CurrentPatient.Data =
-            patientData;
+        if (patientData == null)
+        {
+            Debug.LogError("[OpenExams] Não é possível abrir a conduta sem PatientData.", this);
+            return;
+        }
 
-        CurrentPatient.Object =
-            this;
+        CurrentPatient.Select(this);
 
 
         if (medicalDataUI != null)
         {
-            // Carrega a conduta deste paciente
-            medicalDataUI.LoadState(
-                conductState
-            );
+            medicalDataUI.patientData = patientData;
+            // Cada OpenExams mantém seu próprio ConductState.
+            // O formulário compartilhado sempre carrega o estado do NPC selecionado.
+            medicalDataUI.LoadState(conductState);
         }
         else
         {
@@ -281,23 +294,33 @@ public class OpenExams : MonoBehaviour, IInteractable
                 $"MedicalData não foi atribuído " +
                 $"no paciente {patientData.patientName}!"
             );
+            return;
         }
 
 
         if (tutorialScene)
         {
-            panelExam.SetActive(false);
+            if (panelExam != null)
+                panelExam.SetActive(false);
 
-            npcConduta.OnDialogueEnded =
-                ReturnToExamPanel;
+            if (npcConduta == null)
+            {
+                Debug.LogError("[OpenExams] NPC de conduta não foi atribuído para o tutorial.", this);
+                return;
+            }
 
+            npcConduta.OnDialogueEnded = ReturnToExamPanel;
             npcConduta.StartDialogueExternally();
         }
         else
         {
-            panelExam.SetActive(false);
+            if (panelExam != null)
+                panelExam.SetActive(false);
 
-            panelConduct.SetActive(true);
+            if (panelConduct != null)
+                panelConduct.SetActive(true);
+            else
+                Debug.LogError($"[OpenExams] Panel Conduct não foi atribuído para {patientData.patientName}.", this);
 
             PauseController.SetPause(false);
         }
@@ -315,8 +338,13 @@ public class OpenExams : MonoBehaviour, IInteractable
 
 
         // Pega o estado atual da UI
-        conductState =
-            medicalDataUI.GetCurrentState();
+        if (CurrentPatient.Object != this)
+        {
+            Debug.LogWarning("[OpenExams] Estado não salvo: este NPC não é o paciente atualmente selecionado.", this);
+            return;
+        }
+
+        conductState = medicalDataUI.GetCurrentState();
 
 
         // Salva também no GameSession
@@ -340,8 +368,19 @@ public class OpenExams : MonoBehaviour, IInteractable
 
     public void CompleteConduct()
     {
-        SaveConductState();
+        if (patientData == null)
+        {
+            Debug.LogError("[OpenExams] Não é possível concluir uma conduta sem PatientData.", this);
+            return;
+        }
 
+        if (CurrentPatient.Object != this)
+        {
+            Debug.LogError("[OpenExams] Tentativa de concluir a conduta de um paciente que não está selecionado.", this);
+            return;
+        }
+
+        SaveConductState();
         conductCompleted = true;
 
 

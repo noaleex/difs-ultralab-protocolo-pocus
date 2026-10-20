@@ -2,8 +2,6 @@ using UnityEngine;
 
 public class SkipDay : MonoBehaviour, IInteractable
 {
-    [SerializeField] private Timer timer;
-
     public bool CanInteract()
     {
         return true;
@@ -11,9 +9,12 @@ public class SkipDay : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        if (timer != null)
+        if (Timer.Instance == null)
         {
-            timer.SkipToNextDay();
+            Debug.LogError("[SkipDay] Timer.Instance não está disponível na cena.", this);
+            return;
         }
+
+        Timer.Instance.SkipToNextDay();
     }
 }

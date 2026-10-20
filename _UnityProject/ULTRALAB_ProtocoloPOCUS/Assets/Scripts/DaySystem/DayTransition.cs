@@ -28,13 +28,12 @@ public class DayTransition : MonoBehaviour
     {
         if (Instance != null && Instance != this)
         {
-            Debug.LogWarning(
-                "Existe mais de um DayTransition na cena."
-            );
+            Debug.LogWarning("[DayTransition] Instância duplicada; removendo o objeto duplicado.", this);
+            Destroy(gameObject);
+            return;
         }
 
         Instance = this;
-
         ResetVisualState();
     }
 

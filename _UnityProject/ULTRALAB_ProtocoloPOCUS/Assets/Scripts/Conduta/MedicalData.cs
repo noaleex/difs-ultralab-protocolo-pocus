@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -318,48 +319,87 @@ private void TocarSomDigitacao()
 
     public bool ValidateAllFields()
     {
-        if (frequenciaInput == null ||
-            saturationInput == null ||
-            frequenciaCardiacaInput == null ||
-            pressaoArterialInput == null ||
-            temperaturaInput == null ||
-            dorEscalaInput == null)
-        {
-            Debug.LogError(
-                "Um ou mais campos numéricos não foram atribuídos no MedicalData!"
-            );
+        bool valid = true;
 
+        // Todos os campos de texto avaliados pela conduta precisam ter conteúdo.
+        valid &= ValidateRequiredInput(frequenciaInput, "Frequência respiratória");
+        valid &= ValidateRequiredInput(saturationInput, "Saturação");
+        valid &= ValidateRequiredInput(oxigenoterapiaFluxoInput, "Fluxo de oxigenoterapia");
+        valid &= ValidateRequiredInput(frequenciaCardiacaInput, "Frequência cardíaca");
+        valid &= ValidateRequiredInput(pressaoArterialInput, "Pressão arterial");
+        valid &= ValidateRequiredInput(pressaoArterial2Input, "Segundo valor da pressão arterial");
+        valid &= ValidateRequiredInput(perfusaoTempoInput, "Tempo de perfusão");
+        valid &= ValidateRequiredInput(temperaturaInput, "Temperatura");
+        valid &= ValidateRequiredInput(dorEscalaInput, "Escala de dor");
+
+        // Os dropdowns também precisam existir e ter uma opção selecionável.
+        // Quando a primeira opção é um placeholder como "Selecione...", ela não conta como resposta.
+        valid &= ValidateRequiredDropdown(permeabilidadeDropdown, "Permeabilidade da via aérea");
+        valid &= ValidateRequiredDropdown(presencaDropdown, "Presença na via aérea");
+        valid &= ValidateRequiredDropdown(intervencaoDropdown, "Intervenção na via aérea");
+        valid &= ValidateRequiredDropdown(acessoriaDropdown, "Musculatura acessória");
+        valid &= ValidateRequiredDropdown(padraoRespiratorioDropdown, "Padrão respiratório");
+        valid &= ValidateRequiredDropdown(ascultaDropdown, "Ausculta");
+        valid &= ValidateRequiredDropdown(expansibilidadeDropdown, "Expansibilidade");
+        valid &= ValidateRequiredDropdown(oxigenoterapiaTipoDropdown, "Tipo de oxigenoterapia");
+        valid &= ValidateRequiredDropdown(perfusaoExtremidadesDropdown, "Perfusão das extremidades");
+        valid &= ValidateRequiredDropdown(pulsosDropdown, "Pulsos");
+        valid &= ValidateRequiredDropdown(ritmoCardiacoDropdown, "Ritmo cardíaco");
+        valid &= ValidateRequiredDropdown(edemaDropdown, "Edema");
+        valid &= ValidateRequiredDropdown(nivelConscienciaDropdown, "Nível de consciência");
+        valid &= ValidateRequiredDropdown(avalicaoPeleDropdown, "Avaliação da pele");
+        valid &= ValidateRequiredDropdown(presencaPeleDropdown, "Presença na pele");
+
+        if (!valid)
+        {
+            Debug.LogWarning("[MedicalData] O prontuário está incompleto. Confira os campos indicados no Console.", this);
             return false;
         }
 
-        if (string.IsNullOrEmpty(
-                frequenciaInput.text) ||
+        Debug.Log("[MedicalData] Todos os campos obrigatórios foram validados.", this);
+        return true;
+    }
 
-            string.IsNullOrEmpty(
-                saturationInput.text) ||
-
-            string.IsNullOrEmpty(
-                frequenciaCardiacaInput.text) ||
-
-            string.IsNullOrEmpty(
-                pressaoArterialInput.text) ||
-
-            string.IsNullOrEmpty(
-                temperaturaInput.text) ||
-
-            string.IsNullOrEmpty(
-                dorEscalaInput.text))
+    private bool ValidateRequiredInput(TMP_InputField field, string fieldName)
+    {
+        if (field == null)
         {
-            Debug.LogWarning(
-                "Existem campos numéricos obrigatórios não preenchidos!"
-            );
-
+            Debug.LogError($"[MedicalData] O campo '{fieldName}' não foi atribuído no Inspector.", this);
             return false;
         }
 
-        Debug.Log(
-            "Todas as informações foram validadas com sucesso!"
-        );
+        if (string.IsNullOrWhiteSpace(field.text))
+        {
+            Debug.LogWarning($"[MedicalData] Campo obrigatório vazio: {fieldName}.", field);
+            return false;
+        }
+
+        return true;
+    }
+
+    private bool ValidateRequiredDropdown(TMP_Dropdown dropdown, string fieldName)
+    {
+        if (dropdown == null)
+        {
+            Debug.LogError($"[MedicalData] O dropdown '{fieldName}' não foi atribuído no Inspector.", this);
+            return false;
+        }
+
+        if (dropdown.options == null || dropdown.options.Count == 0 ||
+            dropdown.value < 0 || dropdown.value >= dropdown.options.Count)
+        {
+            Debug.LogError($"[MedicalData] O dropdown '{fieldName}' não possui uma opção válida.", dropdown);
+            return false;
+        }
+
+        string selectedText = dropdown.options[dropdown.value].text;
+        if (string.IsNullOrWhiteSpace(selectedText) ||
+            selectedText.Trim().StartsWith("Selecione", StringComparison.OrdinalIgnoreCase) ||
+            selectedText.Trim().StartsWith("Escolha", StringComparison.OrdinalIgnoreCase))
+        {
+            Debug.LogWarning($"[MedicalData] Selecione uma resposta para: {fieldName}.", dropdown);
+            return false;
+        }
 
         return true;
     }

@@ -340,34 +340,28 @@ public class PatientDayValidator : MonoBehaviour
         // TODOS OS PACIENTES PRECISAM ESTAR COMPLETOS
         // =================================================
 
+        IReadOnlyList<OpenExams> registeredPatients =
+            PatientManager.Instance.GetPatients();
+
+        if (registeredPatients.Count == 0)
+        {
+            Debug.LogError("[PatientDayValidator] SkipDay bloqueado: PatientManager não possui pacientes registrados.");
+            yield return ShowSkipValidationMessage(
+                messageText,
+                "Nenhum paciente foi registrado. Verifique o PatientManager e os componentes OpenExams."
+            );
+            onFinished?.Invoke(false);
+            yield break;
+        }
+
         if (!AllPatientsCompletedConduct())
         {
-            if (messageText != null)
-            {
-                messageText.text =
-                    "Preencha o prontuário de todos os pacientes antes de pular o dia";
-
-
-                messageText.gameObject
-                    .SetActive(true);
-            }
-
-
-            yield return
-                new WaitForSecondsRealtime(
-                    messageTime
-                );
-
-
-            if (messageText != null)
-            {
-                messageText.gameObject
-                    .SetActive(false);
-            }
-
+            yield return ShowSkipValidationMessage(
+                messageText,
+                "Confirme a conduta de todos os pacientes antes de pular o dia"
+            );
 
             onFinished?.Invoke(false);
-
             yield break;
         }
 
@@ -386,6 +380,23 @@ public class PatientDayValidator : MonoBehaviour
                 messageText
             )
         );
+    }
+
+
+    private IEnumerator ShowSkipValidationMessage(
+        TextMeshProUGUI messageText,
+        string message)
+    {
+        if (messageText != null)
+        {
+            messageText.text = message;
+            messageText.gameObject.SetActive(true);
+        }
+
+        yield return new WaitForSecondsRealtime(messageTime);
+
+        if (messageText != null)
+            messageText.gameObject.SetActive(false);
     }
 
 

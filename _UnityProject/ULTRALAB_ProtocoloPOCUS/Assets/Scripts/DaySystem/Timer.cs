@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class Timer : MonoBehaviour
 {
+    public static Timer Instance { get; private set; }
+
     [Header("UI")]
     [SerializeField] private TextMeshProUGUI timerText;
 
@@ -46,11 +48,31 @@ public class Timer : MonoBehaviour
 
 
     // =====================================================
+    // AWAKE / SINGLETON
+    // =====================================================
+
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Debug.LogWarning("[Timer] Instância duplicada; removendo o objeto duplicado.", this);
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
+    }
+
+
+    // =====================================================
     // START
     // =====================================================
 
     private void Start()
     {
+        if (Instance != this)
+            return;
+
         // =================================================
         // EXISTE UM ESTADO SALVO?
         // =================================================
@@ -340,17 +362,30 @@ public class Timer : MonoBehaviour
 
     private void OnDestroy()
     {
+        if (Instance != this)
+            return;
+
         if (GameSession.HasSavedTime)
-        {
             SaveCurrentTime();
-        }
+
+        Instance = null;
     }
 
     public void SkipToNextDay()
     {
         if (!timerRunning)
+        {
+            Debug.LogWarning("[Timer] O dia não pode ser pulado agora: o relógio já está parado ou uma transição está em andamento.");
             return;
+        }
 
+        if (DayTransition.Instance == null)
+        {
+            Debug.LogError("[Timer] DayTransition.Instance não encontrado. O relógio continuará funcionando.");
+            return;
+        }
+
+        // Só para o relógio depois de confirmar que a transição existe.
         timerRunning = false;
         SaveCurrentTime();
 

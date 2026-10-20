@@ -11,6 +11,7 @@ public class PatientManager : MonoBehaviour
     {
         if (Instance != null && Instance != this)
         {
+            Debug.LogWarning("[PatientManager] Instância duplicada; removendo o objeto duplicado.", this);
             Destroy(gameObject);
             return;
         }
@@ -18,46 +19,97 @@ public class PatientManager : MonoBehaviour
         Instance = this;
     }
 
+    private void OnDestroy()
+    {
+        if (Instance == this)
+            Instance = null;
+    }
+
     public void RegisterPatient(OpenExams patient)
     {
         if (patient == null)
             return;
 
-        if (!patients.Contains(patient))
-        {
-            patients.Add(patient);
-        }
+        RemoveDestroyedPatients();
+
+        if (patients.Contains(patient))
+            return;
+
+        patients.Add(patient);
+        Debug.Log($"[PatientManager] Registrado: {GetPatientName(patient)}. Total ativo: {patients.Count}.", patient);
     }
 
     public void UnregisterPatient(OpenExams patient)
     {
-        if (patient == null)
+        if (ReferenceEquals(patient, null))
             return;
 
         patients.Remove(patient);
-    }
-
-    public IReadOnlyList<OpenExams> GetPatients()
-    {
-        return patients;
+        RemoveDestroyedPatients();
     }
 
     /// <summary>
-    /// Verifica se todos os pacientes tiveram sua conduta realizada.
+    /// Retorna uma cópia estável para que alterações na lista durante uma avaliação
+    /// não invalidem a iteração.
     /// </summary>
+    public IReadOnlyList<OpenExams> GetPatients()
+    {
+        RemoveDestroyedPatients();
+        return patients.ToArray();
+    }
+
     public bool AllPatientsCompletedConduct()
     {
+        RemoveDestroyedPatients();
+
+        if (patients.Count == 0)
+        {
+            Debug.LogError("[PatientManager] Nenhum paciente foi registrado. O SkipDay será bloqueado para evitar avançar com uma lista vazia.", this);
+            return false;
+        }
+
+        bool allCompleted = true;
+
         foreach (OpenExams patient in patients)
         {
             if (patient == null)
                 continue;
 
+            if (patient.PatientDataReference == null)
+            {
+                Debug.LogError("[PatientManager] Existe um paciente registrado sem PatientData. O SkipDay será bloqueado.", patient);
+                allCompleted = false;
+                continue;
+            }
+
             if (!patient.ConductCompleted)
             {
-                return false;
+                Debug.LogWarning($"[PatientManager] Conduta pendente: {GetPatientName(patient)}.", patient);
+                allCompleted = false;
+            }
+            else
+            {
+                Debug.Log($"[PatientManager] Conduta concluída: {GetPatientName(patient)}.", patient);
             }
         }
 
-        return true;
+        return allCompleted;
+    }
+
+    private void RemoveDestroyedPatients()
+    {
+        for (int i = patients.Count - 1; i >= 0; i--)
+        {
+            if (patients[i] == null)
+                patients.RemoveAt(i);
+        }
+    }
+
+    private static string GetPatientName(OpenExams patient)
+    {
+        if (patient == null || patient.PatientDataReference == null)
+            return "Paciente sem identificação";
+
+        return patient.PatientDataReference.patientName;
     }
 }

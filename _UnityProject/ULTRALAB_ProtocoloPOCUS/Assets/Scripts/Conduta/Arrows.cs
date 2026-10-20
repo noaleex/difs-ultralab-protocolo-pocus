@@ -82,12 +82,13 @@ public class Arrows : MonoBehaviour
             currentPageIndex = 0;
         }
 
-        pages[currentPageIndex].SetActive(false);
+        if (pages[currentPageIndex] != null)
+            pages[currentPageIndex].SetActive(false);
 
-        currentPageIndex =
-            (currentPageIndex + 1) % pages.Length;
+        currentPageIndex = (currentPageIndex + 1) % pages.Length;
 
-        pages[currentPageIndex].SetActive(true);
+        if (pages[currentPageIndex] != null)
+            pages[currentPageIndex].SetActive(true);
     }
 
 
@@ -102,12 +103,13 @@ public class Arrows : MonoBehaviour
             currentPageIndex = 0;
         }
 
-        pages[currentPageIndex].SetActive(false);
+        if (pages[currentPageIndex] != null)
+            pages[currentPageIndex].SetActive(false);
 
-        currentPageIndex =
-            (currentPageIndex - 1 + pages.Length) % pages.Length;
+        currentPageIndex = (currentPageIndex - 1 + pages.Length) % pages.Length;
 
-        pages[currentPageIndex].SetActive(true);
+        if (pages[currentPageIndex] != null)
+            pages[currentPageIndex].SetActive(true);
     }
 
 
@@ -243,8 +245,7 @@ public class Arrows : MonoBehaviour
 
         currentPageIndex = 0;
 
-        CurrentPatient.Data = null;
-        CurrentPatient.Object = null;
+        CurrentPatient.Clear();
     }
 
 

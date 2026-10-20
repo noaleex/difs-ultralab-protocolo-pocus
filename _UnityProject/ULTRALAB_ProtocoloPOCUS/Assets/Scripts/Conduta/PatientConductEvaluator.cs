@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class PatientConductEvaluator : MonoBehaviour
 {
+    // Quantidade atual de campos comparados em EvaluatePatient.
+    private const int EvaluatedFieldCount = 24;
     public bool EvaluatePatient(
         PatientData npc,
         MedicalData medicalDataUI)
@@ -388,12 +390,12 @@ public class PatientConductEvaluator : MonoBehaviour
         // Um formulário vazio significa que cada campo que
         // deveria ser preenchido representa um erro.
         //
-        // O sistema possui 25 campos avaliados atualmente.
+        // O sistema possui 24 campos avaliados atualmente.
+        // Mantenha a constante sincronizada com os Contabilizar de EvaluatePatient.
         // =====================================================
 
         int acertos = 0;
-
-        int erros = 25;
+        int erros = EvaluatedFieldCount;
 
 
         // =====================================================

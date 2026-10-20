@@ -36017,7 +36017,6 @@ GameObject:
   - component: {fileID: 1221919079}
   - component: {fileID: 1221919078}
   - component: {fileID: 1221919077}
-  - component: {fileID: 1221919076}
   - component: {fileID: 1221919075}
   m_Layer: 0
   m_Name: 08_forniture(interactables)
@@ -36057,32 +36056,6 @@ MonoBehaviour:
   m_Area: 1
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
---- !u!114 &1221919076
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1221919073}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c6c2394902c7214d8022f9b3d49d8cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::OpenExams
-  panelExam: {fileID: 0}
-  panelConduct: {fileID: 0}
-  exams: Exams
-  patientData: {fileID: 11400000, guid: fec63c220a29010488c02e86307d2d1f, type: 2}
-  npcConduta: {fileID: 0}
-  medicalDataUI: {fileID: 0}
-  tutorialScene: 1
-  ClickSound:
-    Guid:
-      Data1: 2103294604
-      Data2: 1155553301
-      Data3: -801384060
-      Data4: 1978304836
-    Path: event:/Interagir/fx_item
 --- !u!19719996 &1221919077
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -43043,7 +43016,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b32ea70c322f0640bbd3d45333f9c38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SkipDay
-  timer: {fileID: 513372500}
 --- !u!19719996 &1414597663
 TilemapCollider2D:
   m_ObjectHideFlags: 0
