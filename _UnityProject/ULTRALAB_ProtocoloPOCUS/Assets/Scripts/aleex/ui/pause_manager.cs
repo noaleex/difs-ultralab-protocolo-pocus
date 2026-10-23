@@ -4,8 +4,8 @@ using UnityEngine.InputSystem;
 public class pause_manager : MonoBehaviour
 {
     public static pause_manager instance { get; private set; }
-
     public static bool isGamePaused { get; private set; }
+    public static System.Action overridePauseAction;
 
     [Header("UI do Pause")]
     [SerializeField] private GameObject pausePanel;
@@ -15,6 +15,7 @@ public class pause_manager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
+            transform.SetParent(null); // Garante que não tenha pai, prevenindo warnings
             DontDestroyOnLoad(gameObject);
         }
         else
@@ -33,7 +34,15 @@ public class pause_manager : MonoBehaviour
             pausePanel.SetActive(false);
     }
 
-    // Mantido estático para facilitar o uso por outros scripts (ex: OpenExams, DayTransition)
+    private void Update()
+    {
+        // Leitura direta do hardware: ignora configurações quebradas do PlayerInput
+        if (Keyboard.current != null && Keyboard.current.escapeKey.wasPressedThisFrame)
+        {
+            TriggerPauseAction();
+        }
+    }
+
     public static void SetPause(bool pause)
     {
         isGamePaused = pause;
@@ -62,16 +71,27 @@ public class pause_manager : MonoBehaviour
             pausePanel.SetActive(false);
     }
 
-    // Para o botão da interface chamar diretamente
     public void OnMenu()
     {
         TogglePause();
     }
 
-    // Para uso com o novo Input System (tecla ESC ou Start no controle)
-    public void OnPauseInput(InputAction.CallbackContext context)
+    // Mantido caso você ainda queira usar botões de controle (Gamepad) via PlayerInput
+    public void OnPause(InputAction.CallbackContext context)
     {
         if (context.started)
+        {
+            TriggerPauseAction();
+        }
+    }
+
+    private void TriggerPauseAction()
+    {
+        if (overridePauseAction != null)
+        {
+            overridePauseAction.Invoke();
+        }
+        else
         {
             TogglePause();
         }

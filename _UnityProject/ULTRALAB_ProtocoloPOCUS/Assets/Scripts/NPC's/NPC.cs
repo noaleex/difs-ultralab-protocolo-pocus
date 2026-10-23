@@ -9,12 +9,10 @@ using UnityEngine.InputSystem;
 public class NPC : MonoBehaviour, IInteractable
 {
     public NPCdialogue dialogueData;
-    public GameObject dialoguePanel;
-    public TMP_Text dialogueText, nameText;
-    public Image portraitImage;
     public EventReference interactSoundEvent;
 
     [Header("Configuração")]
+    public string uniqueId;
     public bool startDialogueOnStart;
     public bool isInterfaceCharacter;
     public bool startDialogueOnTrigger;
@@ -35,55 +33,57 @@ public class NPC : MonoBehaviour, IInteractable
     public bool IsDialogueActive => isDialogueActive;
     public System.Action OnDialogueEnded;
 
+    private static System.Collections.Generic.HashSet<string> completedDialogues = new System.Collections.Generic.HashSet<string>();
 
     void Start()
     {
         if (startDialogueOnStart)
         {
+            // Checa se o diálogo já foi feito nesta sessão
+            if (triggerOnlyOnce && !string.IsNullOrEmpty(uniqueId) && completedDialogues.Contains(uniqueId))
+                return;
+
             StartDialogueExternally();
         }
     }
 
     void Update()
-{
-    if (isInterfaceCharacter && isDialogueActive)
     {
-        if (Keyboard.current != null && Keyboard.current.eKey.wasPressedThisFrame)
+        if (isInterfaceCharacter && isDialogueActive)
         {
-            NextLine();
+            if (Keyboard.current != null && Keyboard.current.eKey.wasPressedThisFrame)
+            {
+                NextLine();
+            }
         }
     }
-}
-
-
 
     public bool CanInteract()
     {
         return !isDialogueActive;
     }
 
-
     public void Interact()
-{
-    if (dialogueData == null ||
-        (PauseController.IsGamePaused && !isDialogueActive))
-        return;
-
-    // Não permite reiniciar o diálogo já concluído
-    if (dialogoJaConcluido && !isInterfaceCharacter)
-        return;
-
-    PlayInteractSound();
-
-    if (isDialogueActive)
     {
-        NextLine();
+        if (dialogueData == null ||
+            (pause_manager.isGamePaused && !isDialogueActive))
+            return;
+
+        // Não permite reiniciar o diálogo já concluído
+        if (dialogoJaConcluido && !isInterfaceCharacter)
+            return;
+
+        PlayInteractSound();
+
+        if (isDialogueActive)
+        {
+            NextLine();
+        }
+        else
+        {
+            StartDialogue();
+        }
     }
-    else
-    {
-        StartDialogue();
-    }
-}
 
     void PlayInteractSound()
     {
@@ -92,7 +92,6 @@ public class NPC : MonoBehaviour, IInteractable
             RuntimeManager.PlayOneShot(interactSoundEvent);
         }
     }
-
 
     // Usado para iniciar o diálogo sem precisar interagir com o NPC
     public void StartDialogueExternally()
@@ -116,10 +115,8 @@ public class NPC : MonoBehaviour, IInteractable
         }
 
         PlayInteractSound();
-
         StartDialogue();
     }
-
 
     // Permite iniciar um diálogo específico no Sonar
     public void StartDialogue(NPCdialogue newDialogue)
@@ -128,22 +125,19 @@ public class NPC : MonoBehaviour, IInteractable
             return;
 
         dialogueData = newDialogue;
-
         StartDialogueExternally();
     }
-
 
     void StartDialogue()
     {
         isDialogueActive = true;
         dialogueIndex = 0;
 
-        nameText.SetText(dialogueData.npcName);
-        portraitImage.sprite = dialogueData.npcPortrait;
+        dialogue_hud.instance.nameText.SetText(dialogueData.npcName);
+        dialogue_hud.instance.portraitImage.sprite = dialogueData.npcPortrait;
+        dialogue_hud.instance.dialoguePanel.SetActive(true);
 
-        dialoguePanel.SetActive(true);
-
-        PauseController.SetPause(true);
+        pause_manager.SetPause(true);
 
         StartCoroutine(TypeLine());
 
@@ -158,7 +152,6 @@ public class NPC : MonoBehaviour, IInteractable
         }
     }
 
-
     public void NextLine()
     {
         if (isTyping)
@@ -166,8 +159,7 @@ public class NPC : MonoBehaviour, IInteractable
             StopAllCoroutines();
             StopVoice();
 
-            dialogueText.SetText(dialogueData.dialogueLines[dialogueIndex]);
-
+            dialogue_hud.instance.dialogueText.SetText(dialogueData.dialogueLines[dialogueIndex]);
             isTyping = false;
         }
         else if (++dialogueIndex < dialogueData.dialogueLines.Length)
@@ -180,17 +172,16 @@ public class NPC : MonoBehaviour, IInteractable
         }
     }
 
-
     IEnumerator TypeLine()
     {
         isTyping = true;
-        dialogueText.SetText("");
+        dialogue_hud.instance.dialogueText.SetText("");
 
         StartVoice();
 
         foreach (char letter in dialogueData.dialogueLines[dialogueIndex])
         {
-            dialogueText.text += letter;
+            dialogue_hud.instance.dialogueText.text += letter;
 
             yield return new WaitForSecondsRealtime(
                 dialogueData.typingSpeed
@@ -212,7 +203,6 @@ public class NPC : MonoBehaviour, IInteractable
         }
     }
 
-
     void StartVoice()
     {
         if (dialogueData.voiceEvent.IsNull)
@@ -226,7 +216,6 @@ public class NPC : MonoBehaviour, IInteractable
         dialogueVoiceInstance.start();
     }
 
-
     void StopVoice()
     {
         if (dialogueVoiceInstance.isValid())
@@ -237,84 +226,76 @@ public class NPC : MonoBehaviour, IInteractable
         }
     }
 
-
     public void EndDialogue()
-{
-    StopAllCoroutines();
-    StopVoice();
-
-    isDialogueActive = false;
-
-    if (!isInterfaceCharacter)
-{
-    dialogoJaConcluido = true;
-}
-
-    dialogueText.SetText("");
-    dialoguePanel.SetActive(false);
-
-    PauseController.SetPause(false);
-
-    if (!isInterfaceCharacter)
     {
-        if (PlayerReferences.Instance?.InteractionDetector != null)
+        StopAllCoroutines();
+        StopVoice();
+
+        isDialogueActive = false;
+
+        if (!isInterfaceCharacter)
         {
-            PlayerReferences.Instance.InteractionDetector.ClearForcedInteractable(this);
+            dialogoJaConcluido = true;
+        }
+
+        // Salva que este NPC já falou
+        if (triggerOnlyOnce && !string.IsNullOrEmpty(uniqueId))
+        {
+            completedDialogues.Add(uniqueId);
+        }
+
+        dialogue_hud.instance.dialogueText.SetText("");
+        dialogue_hud.instance.dialoguePanel.SetActive(false);
+
+        pause_manager.SetPause(false);
+
+        if (!isInterfaceCharacter)
+        {
+            if (PlayerReferences.Instance?.InteractionDetector != null)
+            {
+                PlayerReferences.Instance.InteractionDetector.ClearForcedInteractable(this);
+            }
+        }
+
+        OnDialogueEnded?.Invoke();
+        OnDialogueEnded = null;
+
+        if (PlayerReferences.Instance != null)
+        {
+            PlayerReferences.Instance.InteractIcon.SetActive(true);
+
+            if (PlayerReferences.Instance.playerMovement != null)
+            {
+                PlayerReferences.Instance.EnablePlayer();
+            }
+        }
+
+        if (!isInterfaceCharacter && !sonarFeedbackJaExibido && sonar != null && sonarFeedback != null)
+        {
+            sonarFeedbackJaExibido = true;
+            NPCdialogue feedback = sonarFeedback;
+            sonarFeedback = null;
+            sonar.StartDialogue(feedback);
         }
     }
 
-    OnDialogueEnded?.Invoke();
-    OnDialogueEnded = null;
-
-    if (PlayerReferences.Instance != null)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        PlayerReferences.Instance.InteractIcon.SetActive(true);
+        if (!startDialogueOnTrigger || !other.CompareTag("Player") || hasTriggeredDialogue)
+            return;
 
-        if (PlayerReferences.Instance.playerMovement != null)
+        if (triggerOnlyOnce && !string.IsNullOrEmpty(uniqueId) && completedDialogues.Contains(uniqueId))
+            return;
+
+        hasTriggeredDialogue = true;
+        startDialogueOnTrigger = false;
+
+        Collider2D areaCollider = GetComponent<Collider2D>();
+        if (areaCollider != null)
         {
-            PlayerReferences.Instance.EnablePlayer();
+            areaCollider.enabled = false;
         }
+
+        StartDialogueExternally();
     }
-
-    // Mostra o feedback do Sonar depois da conversa
-    if (!isInterfaceCharacter &&
-    !sonarFeedbackJaExibido &&
-    sonar != null &&
-    sonarFeedback != null)
-{
-    sonarFeedbackJaExibido = true;
-
-    NPCdialogue feedback = sonarFeedback;
-    sonarFeedback = null;
-
-    sonar.StartDialogue(feedback);
-}
-}
-
-private void OnTriggerEnter2D(Collider2D other)
-{
-    if (!startDialogueOnTrigger)
-        return;
-
-    if (!other.CompareTag("Player"))
-        return;
-
-    if (hasTriggeredDialogue)
-        return;
-
-    // Bloqueia novas ativações imediatamente
-    hasTriggeredDialogue = true;
-    startDialogueOnTrigger = false;
-
-    // Desativa o Collider da área
-    Collider2D areaCollider = GetComponent<Collider2D>();
-
-    if (areaCollider != null)
-    {
-        areaCollider.enabled = false;
-    }
-
-    // Inicia o diálogo uma única vez
-    StartDialogueExternally();
-}
 }
