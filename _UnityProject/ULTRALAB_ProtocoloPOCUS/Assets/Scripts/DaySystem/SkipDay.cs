@@ -9,9 +9,12 @@ public class SkipDay : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        if (Timer.instance != null)
+        if (Timer.Instance == null)
         {
-            Timer.instance.TentarDormir();
+            Debug.LogError("[SkipDay] Timer.Instance não está disponível na cena.", this);
+            return;
         }
+
+        Timer.Instance.SkipToNextDay();
     }
 }

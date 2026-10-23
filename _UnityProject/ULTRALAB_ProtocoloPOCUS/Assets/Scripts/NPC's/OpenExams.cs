@@ -226,9 +226,9 @@ public class OpenExams : MonoBehaviour, IInteractable
 
         PlayClickSound();
 
-        if (Timer.instance != null)
+        if (Timer.Instance != null)
         {
-            Timer.instance.SaveCurrentTime();
+            Timer.Instance.SaveCurrentTime();
         }
         else
         {
