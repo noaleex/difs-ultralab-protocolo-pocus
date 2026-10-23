@@ -7,7 +7,9 @@ public class ButtonBodyArea : MonoBehaviour
     {
         Hands,
         Elbows,
-        Legs
+        Legs,
+        Abdômen,
+        Quadril_Inferior
     }
 
     public BodyRegion region;

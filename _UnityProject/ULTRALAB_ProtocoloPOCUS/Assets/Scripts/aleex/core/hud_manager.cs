@@ -82,8 +82,13 @@ public class hud_manager : MonoBehaviour
                 }
             }
 
+            // Oculta visualmente o relógio se ele ainda não estiver oficialmente rodando (ex: Exames do Tutorial)
+            if (Timer.instance != null && !Timer.instance.isInitialized)
+            {
+                hideTimer = true;
+            }
+
             timerContainer.SetActive(!hideTimer);
-            Debug.Log($"[HUD_MANAGER] Avaliando cena: '{sceneName}'. Relógio oculto? {hideTimer}");
         }
     }
 }

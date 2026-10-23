@@ -85,10 +85,13 @@ public class boot_manager : MonoBehaviour
 
     private void HandleGameplayStateForScene(string sceneName)
     {
+        // 1. Adicionamos a verificação para a cena _boot
+        bool isBoot = sceneName == "_boot" || sceneName == "boot";
         bool isMenu = string.Equals(sceneName, initialSceneName, System.StringComparison.OrdinalIgnoreCase);
         bool isCutscene = game_flow_manager.instance != null && game_flow_manager.instance.IsCutsceneScene(sceneName);
 
-        if (isMenu || isCutscene)
+        // 2. Bloqueamos o player e o HUD se for Menu, Cutscene OU a própria _boot
+        if (isMenu || isCutscene || isBoot)
         {
             if (activePlayer != null)
             {
@@ -132,6 +135,16 @@ public class boot_manager : MonoBehaviour
             BindCameraToPlayer(activePlayer.transform);
         }
 
+        // 1º INICIA O RELÓGIO (Se for fase válida)
+        if (!isBoot && !isMenu && !isCutscene && sceneName != "gameplay_tutorial" && sceneName != "Exams")
+        {
+            if (Timer.instance != null)
+            {
+                Timer.instance.InitializeTimer();
+            }
+        }
+
+        // 2º ATUALIZA O HUD (Agora ele vai saber que o timer já inicializou)
         if (hud_manager.instance != null)
         {
             hud_manager.instance.SetHudVisibility(true);

@@ -3,404 +3,230 @@ using UnityEngine;
 
 public class Timer : MonoBehaviour
 {
-    public static Timer Instance { get; private set; }
+    public static Timer instance { get; private set; }
 
     [Header("UI")]
     [SerializeField] private TextMeshProUGUI timerText;
-
+    [SerializeField] private TextMeshProUGUI dayOfWeekText; // <-- Novo campo para o dia
 
     [Header("Configuração")]
     [SerializeField] private int startHour = 8;
-    [SerializeField] private int endHour = 9;
+    [SerializeField] private int endHour = 16;
 
-
-    public int CurrentDay
-    {
-        get;
-        private set;
-    }
-
-
-    public int CurrentHour
-    {
-        get
-        {
-            return currentHour;
-        }
-    }
-
-
-    public int CurrentMinute
-    {
-        get
-        {
-            return currentMinute;
-        }
-    }
-
+    public int CurrentDay { get; private set; }
+    public int CurrentHour => currentHour;
+    public int CurrentMinute => currentMinute;
 
     private int currentHour;
     private int currentMinute;
-
     private float secondCounter;
-
     private bool timerRunning;
+    
+    public bool isInitialized { get; private set; }
 
-
-    // =====================================================
-    // AWAKE / SINGLETON
-    // =====================================================
+    // Array da escala 5x2
+    private readonly string[] weekDays = { 
+        "SEGUNDA", 
+        "TERÇA", 
+        "QUARTA", 
+        "QUINTA", 
+        "SEXTA" 
+    };
 
     private void Awake()
     {
-        if (Instance != null && Instance != this)
-        {
-            Debug.LogWarning("[Timer] Instância duplicada; removendo o objeto duplicado.", this);
-            Destroy(gameObject);
-            return;
-        }
-
-        Instance = this;
+        instance = this;
     }
 
-
-    // =====================================================
-    // START
-    // =====================================================
-
-    private void Start()
+    public void InitializeTimer()
     {
-        if (Instance != this)
-            return;
+        if (isInitialized) return;
+        isInitialized = true;
 
-        // =================================================
-        // EXISTE UM ESTADO SALVO?
-        // =================================================
-        //
-        // Isso acontece quando voltamos de outra cena.
-        //
-        // Nesse caso NÃO devemos mostrar DayTransition.
-        // Apenas restauramos o horário e continuamos.
-        // =================================================
+        bool validSaveLoaded = false;
 
         if (GameSession.HasSavedTime)
         {
-            GameSession.LoadTime(
-                out int savedDay,
-                out int savedHour,
-                out int savedMinute
-            );
-
-
-            CurrentDay =
-                savedDay;
-
-
-            currentHour =
-                savedHour;
-
-
-            currentMinute =
-                savedMinute;
-
-
-            UpdateClockText();
-
-
-            Debug.Log(
-                $"[Timer] Estado restaurado: " +
-                $"Dia {CurrentDay} - " +
-                $"{currentHour:00}:{currentMinute:00}"
-            );
-
-
-            StartDay();
-
-            return;
+            GameSession.LoadTime(out int savedDay, out int savedHour, out int savedMinute);
+            
+            // Trava de segurança: só confia no save se o dia for 1 ou maior
+            if (savedDay > 0)
+            {
+                CurrentDay = savedDay;
+                currentHour = savedHour;
+                currentMinute = savedMinute;
+                validSaveLoaded = true;
+            }
         }
 
-
-        // =================================================
-        // NOVA PARTIDA
-        // =================================================
-
-        CurrentDay = 1;
-
-
-        currentHour =
-            startHour;
-
-
-        currentMinute = 0;
-
-
-        // =================================================
-        // SALVAR ESTADO INICIAL
-        // =================================================
-
-        SaveCurrentTime();
-
+        // Se não tinha save, ou se o save estava corrompido (dia 0)
+        if (!validSaveLoaded)
+        {
+            CurrentDay = 1;
+            currentHour = startHour;
+            currentMinute = 0;
+            
+            // Força o salvamento imediato para sobrescrever o save bugado de "dia 0"
+            SaveCurrentTime(); 
+        }
 
         UpdateClockText();
 
-
-        // =================================================
-        // PRIMEIRO DIA
-        // =================================================
-        //
-        // Somente aqui mostramos:
-        //
-        // "Dia 1..."
-        //
-        // Ao voltar de outra cena isso NÃO acontece.
-        // =================================================
-
         if (DayTransition.Instance != null)
         {
-            DayTransition.Instance.BeginDay(
-                CurrentDay,
-                StartDay
-            );
+            DayTransition.Instance.BeginDay(CurrentDay, StartDay, true);
         }
         else
         {
-            Debug.LogError(
-                "DayTransition.Instance não encontrado!"
-            );
-
-
             StartDay();
         }
     }
 
-
-    // =====================================================
-    // UPDATE
-    // =====================================================
-
     private void Update()
     {
-        if (!timerRunning)
-            return;
+        if (!timerRunning) return;
 
-
-        secondCounter +=
-            Time.deltaTime;
-
+        secondCounter += Time.deltaTime;
 
         if (secondCounter >= 1f)
         {
             secondCounter -= 1f;
-
             AddMinute();
         }
     }
-
-
-    // =====================================================
-    // ADICIONAR MINUTO
-    // =====================================================
 
     private void AddMinute()
     {
         currentMinute++;
 
-
         if (currentMinute >= 60)
         {
             currentMinute = 0;
-
             currentHour++;
         }
 
-
-        // =================================================
-        // SALVAR HORÁRIO
-        // =================================================
-
         SaveCurrentTime();
-
-
         UpdateClockText();
-
-
-        // =================================================
-        // FIM DO DIA
-        // =================================================
 
         if (currentHour >= endHour)
         {
             timerRunning = false;
-
             EndDay();
         }
     }
 
-
-    // =====================================================
-    // SALVAR HORÁRIO
-    // =====================================================
-
     public void SaveCurrentTime()
     {
-        GameSession.SaveTime(
-            CurrentDay,
-            currentHour,
-            currentMinute
-        );
+        GameSession.SaveTime(CurrentDay, currentHour, currentMinute);
     }
-
-
-    // =====================================================
-    // FIM DO DIA
-    // =====================================================
 
     private void EndDay()
     {
-        if (DayTransition.Instance == null)
+        if (DayTransition.Instance != null)
         {
-            Debug.LogError(
-                "DayTransition.Instance não encontrado!"
-            );
-
-            return;
+            DayTransition.Instance.CheckPatientsAtEndOfDay(NextDay);
         }
-
-
-        DayTransition.Instance
-            .CheckPatientsAtEndOfDay(
-                NextDay
-            );
     }
-
-
-    // =====================================================
-    // PRÓXIMO DIA
-    // =====================================================
 
     private void NextDay()
     {
         CurrentDay++;
-
-
-        currentHour =
-            startHour;
-
-
+        currentHour = startHour;
         currentMinute = 0;
 
-
-        // =================================================
-        // SALVAR NOVO DIA
-        // =================================================
-
         SaveCurrentTime();
-
-
         UpdateClockText();
 
-
-        // =================================================
-        // AGORA SIM MOSTRAR DAY TRANSITION
-        // =================================================
-
-        if (DayTransition.Instance != null)
-        {
-            DayTransition.Instance.BeginDay(
-                CurrentDay,
-                StartDay
-            );
-        }
-        else
-        {
-            Debug.LogError(
-                "DayTransition.Instance não encontrado ao iniciar novo dia."
-            );
-
-
-            StartDay();
-        }
+        DayTransition.Instance.BeginDay(CurrentDay, StartDay, false);
     }
-
-
-    // =====================================================
-    // COMEÇAR DIA
-    // =====================================================
 
     private void StartDay()
     {
         secondCounter = 0f;
-
         timerRunning = true;
-    }
-
-
-    // =====================================================
-    // PULAR PARA PRÓXIMO DIA
-    // =====================================================
-
-
-
-    // =====================================================
-    // ATUALIZAR TEXTO
-    // =====================================================
-
-    private void UpdateClockText()
-    {
-        if (timerText == null)
-            return;
-
-
-        timerText.text =
-            $"{currentHour:00}:{currentMinute:00}";
-    }
-
-
-    // =====================================================
-    // SAIR DA CENA
-    // =====================================================
-
-    private void OnDestroy()
-    {
-        if (Instance != this)
-            return;
-
-        if (GameSession.HasSavedTime)
-            SaveCurrentTime();
-
-        Instance = null;
     }
 
     public void SkipToNextDay()
     {
-        if (!timerRunning)
+        if (!timerRunning) return;
+        timerRunning = false;
+        SaveCurrentTime();
+        EndDay();
+    }
+
+    private void UpdateClockText()
+    {
+        if (timerText != null)
         {
-            Debug.LogWarning("[Timer] O dia não pode ser pulado agora: o relógio já está parado ou uma transição está em andamento.");
-            return;
+            timerText.text = $"{currentHour:00}:{currentMinute:00}";
         }
 
-        if (DayTransition.Instance == null)
+        if (dayOfWeekText != null)
         {
-            Debug.LogError("[Timer] DayTransition.Instance não encontrado. O relógio continuará funcionando.");
-            return;
+            // Garante que o dia nunca seja zero ou negativo (proteção contra saves antigos)
+            int safeDay = Mathf.Max(1, CurrentDay); 
+            int dayIndex = (safeDay - 1) % weekDays.Length;
+            dayOfWeekText.text = weekDays[dayIndex];
         }
+    }
 
-        // Só para o relógio depois de confirmar que a transição existe.
+    private void OnDisable()
+    {
+        if (GameSession.HasSavedTime)
+        {
+            SaveCurrentTime();
+        }
+    }
+
+    public void TentarDormir()
+    {
+        if (!timerRunning) return;
         timerRunning = false;
         SaveCurrentTime();
 
-        DayTransition.Instance.CheckPatientsForSkipDay(OnSkipDayFinished);
-    }
-
-    private void OnSkipDayFinished(bool success)
-    {
-        if (success)
+        // Puxa a nota calculada no Prontuário
+        string notaDoPlantao = "N/A";
+        if (prontuario_manager.instance != null)
         {
-            NextDay();
+            notaDoPlantao = prontuario_manager.instance.notaFinal;
+        }
+
+        // Se fracassou ou esqueceu de validar
+        if (notaDoPlantao == "D" || notaDoPlantao == "N/A")
+        {
+            RepetirDiaAtual(notaDoPlantao);
         }
         else
         {
-            timerRunning = true;
+            // Sucesso: Vai pro próximo dia
+            AvancarParaProximoDia(notaDoPlantao);
         }
+    }
+
+    private void RepetirDiaAtual(string nota)
+    {
+        // Não aumenta o CurrentDay. Apenas reseta as horas.
+        currentHour = startHour;
+        currentMinute = 0;
+        
+        SaveCurrentTime();
+        UpdateClockText();
+
+        // Passa a nota para o DayTransition exibir
+        if (DayTransition.Instance != null)
+            DayTransition.Instance.BeginDay(CurrentDay, StartDay, false, nota);
+    }
+
+    private void AvancarParaProximoDia(string nota)
+    {
+        CurrentDay++;
+        currentHour = startHour;
+        currentMinute = 0;
+
+        SaveCurrentTime();
+        UpdateClockText();
+
+        if (DayTransition.Instance != null)
+            DayTransition.Instance.BeginDay(CurrentDay, StartDay, false, nota);
     }
 }

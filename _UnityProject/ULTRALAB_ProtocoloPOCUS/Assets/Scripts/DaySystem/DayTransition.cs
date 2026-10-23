@@ -9,359 +9,155 @@ public class DayTransition : MonoBehaviour
     public static DayTransition Instance;
 
     [Header("UI")]
-    [SerializeField] private RawImage blackPanel;
+    [SerializeField] private RawImage blackPanel; // <-- Atualizado para RawImage
     [SerializeField] private TextMeshProUGUI dayText;
 
     [Header("Configuração da Transição")]
     [SerializeField] private float fadeTime = 1f;
-    [SerializeField] private float textTime = 1.5f;
+    [SerializeField] private float textTime = 2.5f;
 
     [Header("Verificação dos Pacientes")]
     [SerializeField] private PatientDayValidator patientDayValidator;
 
-
-    // =====================================================
-    // AWAKE
-    // =====================================================
-
     private void Awake()
     {
-        if (Instance != null && Instance != this)
-        {
-            Debug.LogWarning("[DayTransition] Instância duplicada; removendo o objeto duplicado.", this);
-            Destroy(gameObject);
-            return;
-        }
-
         Instance = this;
-        ResetVisualState();
+        
+        // Garante que os elementos visuais comecem desligados
+        if (blackPanel != null) blackPanel.gameObject.SetActive(false);
+        if (dayText != null) dayText.gameObject.SetActive(false);
     }
 
-
-    // =====================================================
-    // DESTROY
-    // =====================================================
-
-    private void OnDestroy()
+    public void BeginDay(int day, Action onFinished, bool instantBlack = false, string nota = "")
     {
-        if (Instance == this)
+        StartCoroutine(DayRoutine(day, onFinished, instantBlack, nota));
+    }
+
+    private IEnumerator DayRoutine(int day, Action onFinished, bool instantBlack, string nota)
+    {
+        pause_manager.SetPause(true);
+
+        // Bloqueia qualquer ação ou movimento residual do player
+        if (PlayerReferences.Instance != null)
         {
-            Instance = null;
+            PlayerReferences.Instance.DisablePlayer();
         }
-    }
 
-
-    // =====================================================
-    // RESETAR ESTADO VISUAL
-    // =====================================================
-
-    private void ResetVisualState()
-    {
         if (blackPanel != null)
         {
-            Color color = blackPanel.color;
-            color.a = 0f;
-            blackPanel.color = color;
+            blackPanel.gameObject.SetActive(true);
+        }
+
+        if (instantBlack && blackPanel != null)
+        {
+            Color c = blackPanel.color;
+            c.a = 1f;
+            blackPanel.color = c;
+            yield return new WaitForSecondsRealtime(0.6f); 
+        }
+        else
+        {
+            yield return Fade(1);
         }
 
         if (dayText != null)
         {
-            dayText.gameObject.SetActive(false);
-        }
-    }
+            // Formata o texto base do dia
+            string textoDia = $"Plantão de Integração\n<size=75%>Dia {day}</size>";
+            
+            // Se houver uma nota (vindo do botão de dormir), adiciona no final em amarelo
+            if (!string.IsNullOrEmpty(nota))
+            {
+                string corNota = (nota == "D" || nota == "N/A") ? "red" : "yellow";
+                textoDia += $"\n\n<size=60%><color={corNota}>Desempenho: {nota}</color></size>";
+            }
 
-
-    // =====================================================
-    // COMEÇAR DIA
-    // =====================================================
-
-    public void BeginDay(
-        int day,
-        Action onFinished)
-    {
-        StartCoroutine(
-            DayRoutine(
-                day,
-                onFinished
-            )
-        );
-    }
-
-
-    private IEnumerator DayRoutine(
-        int day,
-        Action onFinished)
-    {
-        PauseController.SetPause(true);
-
-        // Garantir que começa transparente
-        if (blackPanel != null)
-        {
-            Color color = blackPanel.color;
-            color.a = 0f;
-            blackPanel.color = color;
-        }
-
-        // Fade para preto
-        yield return Fade(1f);
-
-        // Mostrar dia
-        if (dayText != null)
-        {
-            dayText.text = $"Dia {day}. . .";
+            dayText.text = textoDia;
             dayText.gameObject.SetActive(true);
         }
 
+        // Espera o tempo de leitura do texto
         yield return new WaitForSecondsRealtime(textTime);
 
-        // Voltar para o jogo
-        yield return Fade(0f);
-
+        // SOME O TEXTO PRIMEIRO
         if (dayText != null)
         {
             dayText.gameObject.SetActive(false);
         }
 
-        PauseController.SetPause(false);
+        // Espera um tempinho extra só com a tela preta
+        yield return new WaitForSecondsRealtime(0.5f);
+
+        // AGORA CLAREA A TELA
+        yield return Fade(0);
+
+        if (blackPanel != null)
+        {
+            blackPanel.gameObject.SetActive(false);
+        }
+
+        pause_manager.SetPause(false);
+
+        // Devolve o controle ao jogador
+        if (PlayerReferences.Instance != null)
+        {
+            PlayerReferences.Instance.EnablePlayer();
+        }
 
         onFinished?.Invoke();
     }
 
-
-    // =====================================================
-    // FIM NATURAL DO DIA
-    // =====================================================
-    //
-    // Este método é chamado quando o relógio chega
-    // naturalmente ao endHour.
-    //
-    // NÃO exige que todos os pacientes tenham conduta.
-    //
-    // Pacientes incompletos serão avaliados como erros
-    // pelo PatientDayValidator.
-    // =====================================================
-
-    public void CheckPatientsAtEndOfDay(
-        Action onFinished)
+    public void CheckPatientsAtEndOfDay(Action onFinished)
     {
-        StartCoroutine(
-            CheckPatientsRoutine(
-                onFinished
-            )
-        );
+        StartCoroutine(CheckPatientsRoutine(onFinished));
     }
 
-
-    private IEnumerator CheckPatientsRoutine(
-        Action onFinished)
+    private IEnumerator CheckPatientsRoutine(Action onFinished)
     {
-        PauseController.SetPause(true);
+        pause_manager.SetPause(true);
 
         if (patientDayValidator == null)
         {
-            Debug.LogError(
-                "PatientDayValidator não foi atribuído no DayTransition!"
-            );
-
-            PauseController.SetPause(false);
-
+            Debug.LogError("PatientDayValidator não foi atribuído!");
+            pause_manager.SetPause(false);
             yield break;
         }
 
-        bool validationFinished = false;
-        bool validationSuccess = false;
-
-        // =================================================
-        // VALIDAR PACIENTES
-        // =================================================
+        bool finished = false;
 
         yield return StartCoroutine(
             patientDayValidator.ValidatePatientsAtEndOfDay(
-                result =>
-                {
-                    validationSuccess = result;
-                    validationFinished = true;
-                },
+                result => { finished = result; },
                 dayText
             )
         );
 
-        // =================================================
-        // GARANTIR QUE A VALIDAÇÃO TERMINOU
-        // =================================================
-
-        if (!validationFinished)
+        if (!finished)
         {
-            validationFinished = true;
-        }
-
-        // =================================================
-        // NÃO AVANÇAR
-        // =================================================
-        //
-        // Normalmente isso poderá acontecer em situações
-        // como Game Over.
-        // =================================================
-
-        if (!validationSuccess)
-        {
-            PauseController.SetPause(false);
+            pause_manager.SetPause(false);
             yield break;
         }
 
-        // =================================================
-        // RESETAR PACIENTES
-        // =================================================
-
         patientDayValidator.ResetAllPatientsForNewDay();
 
-        // =================================================
-        // TRANSIÇÃO
-        // =================================================
+        if (blackPanel != null)
+        {
+            blackPanel.gameObject.SetActive(true);
+        }
 
-        yield return Fade(1f);
+        yield return Fade(1);
 
         if (dayText != null)
         {
             dayText.gameObject.SetActive(false);
         }
-
-        yield return Fade(0f);
-
-        PauseController.SetPause(false);
 
         onFinished?.Invoke();
     }
 
-
-    // =====================================================
-    // SKIP DAY
-    // =====================================================
-    //
-    // Diferente do fim natural:
-    //
-    // O SkipDay SÓ pode funcionar se todos os pacientes
-    // tiverem a conduta preenchida.
-    // =====================================================
-
-    public void CheckPatientsForSkipDay(
-        Action<bool> onFinished)
-    {
-        StartCoroutine(
-            CheckPatientsForSkipDayRoutine(
-                onFinished
-            )
-        );
-    }
-
-
-    private IEnumerator CheckPatientsForSkipDayRoutine(
-    Action<bool> onFinished)
-    {
-        PauseController.SetPause(true);
-
-        if (patientDayValidator == null)
-        {
-            Debug.LogError(
-                "PatientDayValidator não foi atribuído no DayTransition."
-            );
-
-            PauseController.SetPause(false);
-
-            onFinished?.Invoke(false);
-
-            yield break;
-        }
-
-        bool validationFinished = false;
-        bool validationSuccess = false;
-
-        // =================================================
-        // VALIDAR PACIENTES PARA SKIP
-        // =================================================
-
-        yield return StartCoroutine(
-            patientDayValidator.ValidatePatientsForSkipDay(
-                result =>
-                {
-                    validationSuccess = result;
-                    validationFinished = true;
-                },
-                dayText
-            )
-        );
-
-        // =================================================
-        // VERIFICAR RESULTADO
-        // =================================================
-
-        if (!validationFinished)
-        {
-            Debug.LogWarning(
-                "A validação dos pacientes terminou sem retornar resultado."
-            );
-
-            PauseController.SetPause(false);
-
-            onFinished?.Invoke(false);
-
-            yield break;
-        }
-
-        // =================================================
-        // NÃO PODE PULAR O DIA
-        // =================================================
-
-        if (!validationSuccess)
-        {
-            PauseController.SetPause(false);
-
-            onFinished?.Invoke(false);
-
-            yield break;
-        }
-
-        // =================================================
-        // RESETAR PACIENTES
-        // =================================================
-
-        patientDayValidator.ResetAllPatientsForNewDay();
-
-        // =================================================
-        // TRANSIÇÃO
-        // =================================================
-
-        yield return Fade(1f);
-
-        if (dayText != null)
-        {
-            dayText.gameObject.SetActive(false);
-        }
-
-        yield return new WaitForSecondsRealtime(textTime);
-
-        yield return Fade(0f);
-
-        PauseController.SetPause(false);
-
-        onFinished?.Invoke(true);
-    }
-
-
-    // =====================================================
-    // FADE
-    // =====================================================
-
     private IEnumerator Fade(float target)
     {
-        if (blackPanel == null)
-        {
-            Debug.LogError(
-                "Black Panel não foi atribuído!"
-            );
-
-            yield break;
-        }
+        if (blackPanel == null) yield break;
 
         float start = blackPanel.color.a;
         float t = 0f;
@@ -369,24 +165,14 @@ public class DayTransition : MonoBehaviour
         while (t < fadeTime)
         {
             t += Time.unscaledDeltaTime;
-
             Color color = blackPanel.color;
-
-            color.a = Mathf.Lerp(
-                start,
-                target,
-                t / fadeTime
-            );
-
+            color.a = Mathf.Lerp(start, target, t / fadeTime);
             blackPanel.color = color;
-
             yield return null;
         }
 
         Color finalColor = blackPanel.color;
-
         finalColor.a = target;
-
         blackPanel.color = finalColor;
     }
 }
