@@ -19,7 +19,6 @@ MonoBehaviour:
     meu rim direito a\xED!"
   - "Cuidado com o gel, est\xE1 meio frio hoje! Mas a posi\xE7\xE3o do transdutor
     parece certa."
-  - "Boa! Se voc\xEA conseguir essa imagem na prova, a vaga na UTI j\xE1 \xE9 sua."
   typingSpeed: 0.05
   voiceEvent:
     Guid:

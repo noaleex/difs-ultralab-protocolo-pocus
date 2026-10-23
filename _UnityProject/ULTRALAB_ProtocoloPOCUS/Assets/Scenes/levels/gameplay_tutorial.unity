@@ -2194,7 +2194,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 359887817
-  m_SortingLayer: 12
+  m_SortingLayer: 13
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
@@ -2453,7 +2453,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 359887817
-  m_SortingLayer: 12
+  m_SortingLayer: 13
   m_SortingOrder: 1
   m_MaskInteraction: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
@@ -25470,7 +25470,6 @@ GameObject:
   - component: {fileID: 1098063966}
   - component: {fileID: 1098063965}
   - component: {fileID: 1098063968}
-  - component: {fileID: 1098063969}
   m_Layer: 0
   m_Name: EnfAdrian
   m_TagString: Untagged
@@ -25598,36 +25597,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.6875, y: 1.4470944}
   m_EdgeRadius: 0
---- !u!114 &1098063969
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1098063964}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b230426fabd1bb54a952733c381b3efa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::NPC
-  dialogueData: {fileID: 11400000, guid: 5b74544d8eb098745947c90e0e38e353, type: 2}
-  dialoguePanel: {fileID: 455700456}
-  dialogueText: {fileID: 2038723594}
-  nameText: {fileID: 1666026886}
-  portraitImage: {fileID: 1771755434}
-  interactSoundEvent:
-    Guid:
-      Data1: 2103294604
-      Data2: 1155553301
-      Data3: -801384060
-      Data4: 1978304836
-    Path: event:/Interagir/fx_item
-  startDialogueOnStart: 0
-  isInterfaceCharacter: 0
-  startDialogueOnTrigger: 0
-  triggerOnlyOnce: 1
-  sonar: {fileID: 0}
-  sonarFeedback: {fileID: 0}
 --- !u!1 &1106933591
 GameObject:
   m_ObjectHideFlags: 0
@@ -28407,7 +28376,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 359887817
-  m_SortingLayer: 12
+  m_SortingLayer: 13
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
@@ -28557,7 +28526,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 359887817
-  m_SortingLayer: 12
+  m_SortingLayer: 13
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
@@ -28851,7 +28820,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 359887817
-  m_SortingLayer: 12
+  m_SortingLayer: 13
   m_SortingOrder: 1
   m_MaskInteraction: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
@@ -38269,7 +38238,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 359887817
-  m_SortingLayer: 12
+  m_SortingLayer: 13
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
@@ -38512,7 +38481,7 @@ MonoBehaviour:
 '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7ae4e632612f0c54b80a1122b781df6d, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -179420769915780814, guid: 7ae4e632612f0c54b80a1122b781df6d, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -39322,7 +39291,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OpenExams
   panelExam: {fileID: 661179836}
-  panelConduct: {fileID: 0}
+  panelConduct: {fileID: 13268772}
   exams: Exams
   patientData: {fileID: 11400000, guid: fec63c220a29010488c02e86307d2d1f, type: 2}
   npcConduta: {fileID: 0}
@@ -40055,7 +40024,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -397251955
-  m_SortingLayer: 10
+  m_SortingLayer: 11
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
@@ -42346,6 +42315,7 @@ MonoBehaviour:
       Data3: -549595210
       Data4: 552736080
     Path: event:/Ambiente/fx_lab
+  uti: UTI
 --- !u!4 &1943116480
 Transform:
   m_ObjectHideFlags: 0
@@ -42997,7 +42967,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 359887817
-  m_SortingLayer: 12
+  m_SortingLayer: 13
   m_SortingOrder: 1
   m_MaskInteraction: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
@@ -43181,7 +43151,7 @@ MonoBehaviour:
   m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7ae4e632612f0c54b80a1122b781df6d, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -179420769915780814, guid: 7ae4e632612f0c54b80a1122b781df6d, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -43929,7 +43899,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 359887817
-  m_SortingLayer: 12
+  m_SortingLayer: 13
   m_SortingOrder: 1
   m_MaskInteraction: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
