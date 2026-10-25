@@ -12,6 +12,7 @@ public class PatientData : ScriptableObject
     public int welfareScore = 50;
     // Valor-base da alimentação: 1 = sólido, 2 = líquido, 3 = NPT.
     public int food = 1;
+    public string diagnosis;
 
     [Header("Ultrassom - opções para sorteio diário")]
     public List<UltrasoundImageOption> ultrasoundImageOptions = new List<UltrasoundImageOption>();

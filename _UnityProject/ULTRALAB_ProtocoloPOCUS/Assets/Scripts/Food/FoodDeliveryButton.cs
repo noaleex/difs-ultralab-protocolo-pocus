@@ -49,7 +49,7 @@ public sealed class FoodDeliveryButton : MonoBehaviour
         PatientData clinical = PatientDailyState.GetClinicalData(CurrentPatient.Data, day);
         requiredFoodText.text = clinical == null
             ? "Alimentação indisponível"
-            : "Alimentação prescrita: " + FoodName(clinical.food);
+            : FoodName(clinical.food);
     }
 
     private static string FoodName(int food)

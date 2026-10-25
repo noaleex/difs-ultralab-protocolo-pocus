@@ -6,8 +6,9 @@ public class ButtonBodyArea : MonoBehaviour
     public enum BodyRegion
     {
         Hands,
-        Elbows,
-        Legs
+        Panturrilha,
+        Coxa,
+        Tornozelo
     }
 
     public BodyRegion region;

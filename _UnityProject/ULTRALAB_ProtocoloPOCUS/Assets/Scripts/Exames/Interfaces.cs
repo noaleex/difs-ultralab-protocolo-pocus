@@ -7,6 +7,8 @@ public class Interfaces : MonoBehaviour
     [SerializeField] private GameObject pocus;
     [SerializeField] private GameObject leito;
     [SerializeField] private GameObject tool;
+    [SerializeField] private GameObject infos;
+    [SerializeField] private GameObject sonar;
 
 
     [Header("Cenas")]
@@ -20,10 +22,6 @@ public class Interfaces : MonoBehaviour
     }
 
 
-    // =====================================================
-    // POCUS
-    // =====================================================
-
     public void PocusClick()
     {
         if (pocus != null)
@@ -34,11 +32,6 @@ public class Interfaces : MonoBehaviour
 
         AudioManager.Instance?.PlayInteraction();
     }
-
-
-    // =====================================================
-    // LEITO
-    // =====================================================
 
     public void LeitoClick()
     {
@@ -51,26 +44,54 @@ public class Interfaces : MonoBehaviour
         AudioManager.Instance?.PlayInteraction();
     }
 
+    public void SonarClick()
+    {
+        if (sonar != null)
+        {
+            sonar.SetActive(true);
+        }
 
-    // =====================================================
-    // TOOL
-    // =====================================================
+        AudioManager.Instance?.PlayInteraction();
+    }
+    
+public void InfosClick()
+{
+    if (infos != null)
+    {
+        infos.SetActive(true);
+
+        MonitorMultiparametroUI monitor =
+            infos.GetComponentInChildren<MonitorMultiparametroUI>(true);
+
+        if (monitor != null)
+        {
+            monitor.Refresh();
+        }
+        else
+        {
+            Debug.LogWarning(
+                "MonitorMultiparametroUI não foi encontrado no painel Infos.",
+                infos
+            );
+        }
+    }
+
+    AudioManager.Instance?.PlayInteraction();
+}
+
 
     public void ToolClick()
     {
-        if (tool != null)
+
+
+        /*if (tool != null)
         {
             tool.SetActive(true);
         }
 
 
-        AudioManager.Instance?.PlayInteraction();
+        AudioManager.Instance?.PlayInteraction();*/
     }
-
-
-    // =====================================================
-    // VOLTAR INTERFACE
-    // =====================================================
 
     public void BackInterface()
     {
@@ -91,21 +112,24 @@ public class Interfaces : MonoBehaviour
             tool.SetActive(false);
         }
 
+        if (infos != null)
+        {
+            infos.SetActive(false);
+        }
+
+        if (sonar != null)
+        {
+            sonar.SetActive(false);
+        }
+
     }
 
-
-    // =====================================================
-    // VOLTAR PARA CENA DO PACIENTE
-    // =====================================================
 
     public void BackExam()
     {
         AudioManager.Instance?.PlayBack();
 
-
-        // =================================================
         // VERIFICAR PACIENTE ATUAL
-        // =================================================
 
         if (CurrentPatient.Data == null)
         {
@@ -116,10 +140,7 @@ public class Interfaces : MonoBehaviour
             return;
         }
 
-
-        // =================================================
         // ESCOLHER CENA
-        // =================================================
 
         string sceneToLoad;
 
@@ -134,16 +155,8 @@ public class Interfaces : MonoBehaviour
         }
 
 
-        // =================================================
-        // PREPARAR PLAYER
-        // =================================================
-
         PauseController.SetPause(false);
 
-
-        // =================================================
-        // CARREGAR CENA
-        // =================================================
 
         if (loading_manager.instance != null)
         {

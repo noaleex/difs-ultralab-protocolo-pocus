@@ -18,6 +18,7 @@ MonoBehaviour:
   tutorial: 0
   welfareScore: 50
   food: 1
+  diagnosis: Perda de massa muscular
   ultrasoundImageOptions:
   - region: 0
     image: {fileID: 21300000, guid: e44d795b6f895b44fbf7c6bab937d2c3, type: 3}
@@ -35,7 +36,14 @@ MonoBehaviour:
   resumeCaso: 
   physicalExam:
   - region: 0
-    info: Test1
+    info: "Sem altera\xE7\xF5es"
+  - region: 2
+    info: "for\xE7a muscular reduzida e diminui\xE7\xE3o aparente do volume muscular."
+  - region: 1
+    info: "A triagem SARC-CalF \xE9 positiva no caso, com pontua\xE7\xE3o igual ou
+      superior a 11."
+  - region: 3
+    info: Edema residual nos membros inferiores.
   permeabilidade: "P\xE9rvia"
   presenca: "N\xE3o"
   intervencao: "N\xE3o"
