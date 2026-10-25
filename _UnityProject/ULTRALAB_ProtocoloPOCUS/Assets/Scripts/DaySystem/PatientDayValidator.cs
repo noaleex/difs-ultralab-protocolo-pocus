@@ -466,6 +466,16 @@ public class PatientDayValidator : MonoBehaviour
 
 
             // ---------------------------------------------
+            // PREPARAR DADOS CLÍNICOS ALEATÓRIOS DO PRÓXIMO DIA
+            // ---------------------------------------------
+
+            if (patient.PatientDataReference != null)
+            {
+                int nextDay = Timer.Instance != null ? Timer.Instance.CurrentDay + 1 : 1;
+                PatientDailyState.PrepareForDay(patient.PatientDataReference, nextDay);
+            }
+
+            // ---------------------------------------------
             // RESETAR SOMENTE A CONDUTA
             // ---------------------------------------------
 
@@ -484,6 +494,10 @@ public class PatientDayValidator : MonoBehaviour
             }
         }
 
+
+        // Imagem anexada é específica do paciente e do dia.
+        ExamsSaveData.Clear();
+        CurrentPatient.Clear();
 
         // =================================================
         // RESETAR UI

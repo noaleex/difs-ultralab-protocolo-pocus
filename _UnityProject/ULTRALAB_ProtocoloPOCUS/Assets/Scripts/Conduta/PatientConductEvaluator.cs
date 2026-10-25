@@ -8,6 +8,19 @@ public class PatientConductEvaluator : MonoBehaviour
         PatientData npc,
         MedicalData medicalDataUI)
     {
+        return EvaluatePatient(npc, npc, medicalDataUI);
+    }
+
+    public bool EvaluatePatient(
+        PatientData npc,
+        PatientData expectedClinicalData,
+        MedicalData medicalDataUI)
+    {
+        // npc mantém a identidade usada pelo GameSession; expectedClinicalData
+        // contém os valores clínicos sorteados para o dia.
+        if (expectedClinicalData == null)
+            expectedClinicalData = npc;
+
         // =====================================================
         // VERIFICAÇÕES
         // =====================================================
@@ -48,7 +61,7 @@ public class PatientConductEvaluator : MonoBehaviour
                     medicalDataUI.permeabilidadeDropdown.value
                 ].text,
 
-            npc.permeabilidade,
+            expectedClinicalData.permeabilidade,
 
             ref acertos,
             ref erros
@@ -60,7 +73,7 @@ public class PatientConductEvaluator : MonoBehaviour
                     medicalDataUI.presencaDropdown.value
                 ].text,
 
-            npc.presenca,
+            expectedClinicalData.presenca,
 
             ref acertos,
             ref erros
@@ -72,7 +85,7 @@ public class PatientConductEvaluator : MonoBehaviour
                     medicalDataUI.intervencaoDropdown.value
                 ].text,
 
-            npc.intervencao,
+            expectedClinicalData.intervencao,
 
             ref acertos,
             ref erros
@@ -84,14 +97,14 @@ public class PatientConductEvaluator : MonoBehaviour
 
         Contabilizar(
             medicalDataUI.frequenciaInput.text,
-            npc.frequencia,
+            expectedClinicalData.frequencia,
             ref acertos,
             ref erros
         );
 
         Contabilizar(
             medicalDataUI.saturationInput.text,
-            npc.saturation,
+            expectedClinicalData.saturation,
             ref acertos,
             ref erros
         );
@@ -102,7 +115,7 @@ public class PatientConductEvaluator : MonoBehaviour
                     medicalDataUI.acessoriaDropdown.value
                 ].text,
 
-            npc.acessoria,
+            expectedClinicalData.acessoria,
 
             ref acertos,
             ref erros
@@ -114,7 +127,7 @@ public class PatientConductEvaluator : MonoBehaviour
                     medicalDataUI.padraoRespiratorioDropdown.value
                 ].text,
 
-            npc.padraoRespiratorio,
+            expectedClinicalData.padraoRespiratorio,
 
             ref acertos,
             ref erros
@@ -126,7 +139,7 @@ public class PatientConductEvaluator : MonoBehaviour
                     medicalDataUI.ascultaDropdown.value
                 ].text,
 
-            npc.asculta,
+            expectedClinicalData.asculta,
 
             ref acertos,
             ref erros
@@ -138,7 +151,7 @@ public class PatientConductEvaluator : MonoBehaviour
                     medicalDataUI.expansibilidadeDropdown.value
                 ].text,
 
-            npc.expansibilidade,
+            expectedClinicalData.expansibilidade,
 
             ref acertos,
             ref erros
@@ -150,7 +163,7 @@ public class PatientConductEvaluator : MonoBehaviour
                     medicalDataUI.oxigenoterapiaTipoDropdown.value
                 ].text,
 
-            npc.oxigenoterapiaTipo,
+            expectedClinicalData.oxigenoterapiaTipo,
 
             ref acertos,
             ref erros
@@ -158,7 +171,7 @@ public class PatientConductEvaluator : MonoBehaviour
 
         Contabilizar(
             medicalDataUI.oxigenoterapiaFluxoInput.text,
-            npc.oxigenoterapiaFluxo,
+            expectedClinicalData.oxigenoterapiaFluxo,
             ref acertos,
             ref erros
         );
@@ -169,28 +182,28 @@ public class PatientConductEvaluator : MonoBehaviour
 
         Contabilizar(
             medicalDataUI.frequenciaCardiacaInput.text,
-            npc.frequenciaCardiaca,
+            expectedClinicalData.frequenciaCardiaca,
             ref acertos,
             ref erros
         );
 
         Contabilizar(
             medicalDataUI.pressaoArterialInput.text,
-            npc.pressaoArterial,
+            expectedClinicalData.pressaoArterial,
             ref acertos,
             ref erros
         );
 
         Contabilizar(
             medicalDataUI.pressaoArterial2Input.text,
-            npc.pressaoArterial2,
+            expectedClinicalData.pressaoArterial2,
             ref acertos,
             ref erros
         );
 
         Contabilizar(
             medicalDataUI.perfusaoTempoInput.text,
-            npc.perfusaoTempo,
+            expectedClinicalData.perfusaoTempo,
             ref acertos,
             ref erros
         );
@@ -201,7 +214,7 @@ public class PatientConductEvaluator : MonoBehaviour
                     medicalDataUI.perfusaoExtremidadesDropdown.value
                 ].text,
 
-            npc.perfusaoExtremidades,
+            expectedClinicalData.perfusaoExtremidades,
 
             ref acertos,
             ref erros
@@ -213,7 +226,7 @@ public class PatientConductEvaluator : MonoBehaviour
                     medicalDataUI.pulsosDropdown.value
                 ].text,
 
-            npc.pulsos,
+            expectedClinicalData.pulsos,
 
             ref acertos,
             ref erros
@@ -225,7 +238,7 @@ public class PatientConductEvaluator : MonoBehaviour
                     medicalDataUI.ritmoCardiacoDropdown.value
                 ].text,
 
-            npc.ritmoCardiaco,
+            expectedClinicalData.ritmoCardiaco,
 
             ref acertos,
             ref erros
@@ -237,7 +250,7 @@ public class PatientConductEvaluator : MonoBehaviour
                     medicalDataUI.edemaDropdown.value
                 ].text,
 
-            npc.edema,
+            expectedClinicalData.edema,
 
             ref acertos,
             ref erros
@@ -245,7 +258,7 @@ public class PatientConductEvaluator : MonoBehaviour
 
         Contabilizar(
             medicalDataUI.temperaturaInput.text,
-            npc.temperatura,
+            expectedClinicalData.temperatura,
             ref acertos,
             ref erros
         );
@@ -260,7 +273,7 @@ public class PatientConductEvaluator : MonoBehaviour
                     medicalDataUI.nivelConscienciaDropdown.value
                 ].text,
 
-            npc.nivelConsciencia,
+            expectedClinicalData.nivelConsciencia,
 
             ref acertos,
             ref erros
@@ -276,7 +289,7 @@ public class PatientConductEvaluator : MonoBehaviour
                     medicalDataUI.avalicaoPeleDropdown.value
                 ].text,
 
-            npc.avalicaoPele,
+            expectedClinicalData.avalicaoPele,
 
             ref acertos,
             ref erros
@@ -288,7 +301,7 @@ public class PatientConductEvaluator : MonoBehaviour
                     medicalDataUI.presencaPeleDropdown.value
                 ].text,
 
-            npc.presencaPele,
+            expectedClinicalData.presencaPele,
 
             ref acertos,
             ref erros
@@ -296,7 +309,7 @@ public class PatientConductEvaluator : MonoBehaviour
 
         Contabilizar(
             medicalDataUI.dorEscalaInput.text,
-            npc.dorEscala,
+            expectedClinicalData.dorEscala,
             ref acertos,
             ref erros
         );

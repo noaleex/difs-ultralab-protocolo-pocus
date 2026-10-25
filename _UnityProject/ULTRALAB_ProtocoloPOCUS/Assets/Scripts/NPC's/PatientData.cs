@@ -10,7 +10,11 @@ public class PatientData : ScriptableObject
     public string sex;
     public bool tutorial;
     public int welfareScore = 50;
-    public int food;
+    // Valor-base da alimentação: 1 = sólido, 2 = líquido, 3 = NPT.
+    public int food = 1;
+
+    [Header("Ultrassom - opções para sorteio diário")]
+    public List<UltrasoundImageOption> ultrasoundImageOptions = new List<UltrasoundImageOption>();
 
     [Header("Visual")]
     public Sprite characterSprite;
@@ -66,4 +70,10 @@ public class PhysicalExamInfo
 
     [TextArea]
     public string info;
+}
+[System.Serializable]
+public class UltrasoundImageOption
+{
+    public BodyArea.BodyRegion region = BodyArea.BodyRegion.Heart;
+    public Sprite image;
 }

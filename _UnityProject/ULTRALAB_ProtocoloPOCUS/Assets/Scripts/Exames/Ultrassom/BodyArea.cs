@@ -23,6 +23,6 @@ public class BodyArea : MonoBehaviour
 
     public bool ContainsPoint(Vector2 worldPosition)
     {
-        return areaCollider.OverlapPoint(worldPosition);
+        return areaCollider != null && areaCollider.OverlapPoint(worldPosition);
     }
 }

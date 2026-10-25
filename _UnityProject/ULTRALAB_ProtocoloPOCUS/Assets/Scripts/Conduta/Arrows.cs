@@ -189,6 +189,7 @@ public class Arrows : MonoBehaviour
         bool condutaCorreta =
             conductEvaluator.EvaluatePatient(
                 CurrentPatient.Data,
+                CurrentPatient.ClinicalData,
                 medicalDataUI
             );
 

@@ -45,9 +45,16 @@ public class UltrasoundManager : MonoBehaviour
 
     private void Awake()
     {
+        if (Instance != null && Instance != this)
+        {
+            Debug.LogWarning("[UltrasoundManager] Instância duplicada.", this);
+            Destroy(gameObject);
+            return;
+        }
         Instance = this;
 
-        probeRect = probeImage.GetComponent<RectTransform>();
+        if (probeImage != null)
+            probeRect = probeImage.GetComponent<RectTransform>();
 
         // Detecta quando uma cena começa a ser carregada
         SceneManager.sceneUnloaded += OnSceneUnloaded;
@@ -56,13 +63,19 @@ public class UltrasoundManager : MonoBehaviour
 
     private void Start()
     {
-        resultImage.sprite = defaultImage;
+        if (resultImage != null)
+            resultImage.sprite = defaultImage;
     }
 
 
     public void SelectProbe(TransdutorSelected.ProbeType probe)
     {
         currentProbe = probe;
+        if (probeImage == null || probeRect == null)
+        {
+            Debug.LogWarning("[UltrasoundManager] Imagem/RectTransform da sonda não configurado.", this);
+            return;
+        }
 
         switch (probe)
         {
@@ -148,61 +161,81 @@ public class UltrasoundManager : MonoBehaviour
     private void OnDestroy()
     {
         StopAndReleaseGel();
-
         SceneManager.sceneUnloaded -= OnSceneUnloaded;
+        if (Instance == this)
+            Instance = null;
     }
 
 
     public void CheckProbePosition(Vector2 probePosition)
     {
-        bool probeOverBody = gelArea.ContainsPoint(probePosition);
-
+        bool probeOverBody = gelArea != null && gelArea.ContainsPoint(probePosition);
         HandleGelSound(probeOverBody);
 
+        BodyArea foundArea = null;
+        BodyArea.BodyRegion foundRegion = BodyArea.BodyRegion.Empty;
 
-        // CORAÇÃO
-        if (heart.ContainsPoint(probePosition))
+        if (heart != null && heart.ContainsPoint(probePosition))
         {
-            CurrentRegion = BodyArea.BodyRegion.Heart;
+            foundArea = heart;
+            foundRegion = BodyArea.BodyRegion.Heart;
+        }
+        else if (lung1 != null && lung1.ContainsPoint(probePosition))
+        {
+            foundArea = lung1;
+            foundRegion = BodyArea.BodyRegion.Lung1;
+        }
+        else if (lung2 != null && lung2.ContainsPoint(probePosition))
+        {
+            foundArea = lung2;
+            foundRegion = BodyArea.BodyRegion.Lung2;
+        }
+        else if (bladder != null && bladder.ContainsPoint(probePosition))
+        {
+            foundArea = bladder;
+            foundRegion = BodyArea.BodyRegion.Bladder;
+        }
 
-            if (currentProbe == TransdutorSelected.ProbeType.Linear)
-                resultImage.sprite = heart.correctImage;
-            else
-                resultImage.sprite = defaultImage;
+        CurrentRegion = foundRegion;
+        if (resultImage == null) return;
 
+        if (foundArea == null)
+        {
+            resultImage.sprite = defaultImage;
             return;
         }
 
-
-        // PULMÃO
-        if (lung1.ContainsPoint(probePosition) ||
-            lung2.ContainsPoint(probePosition))
+        // Se o paciente possui imagens candidatas configuradas, o requisito do dia
+        // prevalece sobre a imagem genérica da área corporal.
+        PatientData basePatient = CurrentPatient.Data;
+        int day = Timer.Instance != null ? Mathf.Max(1, Timer.Instance.CurrentDay) : 1;
+        Sprite requiredImage = PatientDailyState.GetUltrasoundImage(basePatient, day);
+        if (requiredImage != null)
         {
-            CurrentRegion = BodyArea.BodyRegion.Lung1;
-
-            if (currentProbe == TransdutorSelected.ProbeType.Setorial)
-                resultImage.sprite = lung1.correctImage;
-            else
-                resultImage.sprite = defaultImage;
-
+            BodyArea.BodyRegion requiredRegion = PatientDailyState.GetUltrasoundRegion(basePatient, day);
+            bool rightProbe = IsCorrectProbe(foundRegion);
+            resultImage.sprite = foundRegion == requiredRegion && rightProbe
+                ? requiredImage
+                : defaultImage;
             return;
         }
 
+        resultImage.sprite = IsCorrectProbe(foundRegion) ? foundArea.correctImage : defaultImage;
+    }
 
-        // BEXIGA
-        if (bladder.ContainsPoint(probePosition))
+    private bool IsCorrectProbe(BodyArea.BodyRegion region)
+    {
+        switch (region)
         {
-            CurrentRegion = BodyArea.BodyRegion.Bladder;
-
-            if (currentProbe == TransdutorSelected.ProbeType.Convex)
-                resultImage.sprite = bladder.correctImage;
-            else
-                resultImage.sprite = defaultImage;
-
-            return;
+            case BodyArea.BodyRegion.Heart:
+                return currentProbe == TransdutorSelected.ProbeType.Linear;
+            case BodyArea.BodyRegion.Lung1:
+            case BodyArea.BodyRegion.Lung2:
+                return currentProbe == TransdutorSelected.ProbeType.Setorial;
+            case BodyArea.BodyRegion.Bladder:
+                return currentProbe == TransdutorSelected.ProbeType.Convex;
+            default:
+                return false;
         }
-
-
-        resultImage.sprite = defaultImage;
     }
 }

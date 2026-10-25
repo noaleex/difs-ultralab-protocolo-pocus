@@ -96,7 +96,7 @@ public class MedicalData : MonoBehaviour
         SetupNumericInput(pressaoArterial2Input);
         SetupNumericInput(perfusaoTempoInput);
 
-        SetupNumericInput2(temperaturaInput);
+        SetupTemperatureInput(temperaturaInput);
         SetupNumericInput2(dorEscalaInput);
 
         // Som de digitação - Respiração
@@ -311,6 +311,31 @@ private void TocarSomDigitacao()
                 }
             }
         );
+    }
+
+    // =====================================================
+    // TEMPERATURA: aceita casas decimais (ex.: 36.8 ou 36,8)
+    // =====================================================
+
+    private void SetupTemperatureInput(TMP_InputField inputField)
+    {
+        if (inputField == null)
+            return;
+
+        inputField.contentType = TMP_InputField.ContentType.DecimalNumber;
+        inputField.characterLimit = 5;
+        inputField.onEndEdit.AddListener(value =>
+        {
+            if (float.TryParse(value.Replace(',', '.'), System.Globalization.NumberStyles.Float,
+                System.Globalization.CultureInfo.InvariantCulture, out float temperature))
+            {
+                inputField.SetTextWithoutNotify(Mathf.Clamp(temperature, 34f, 42f).ToString("0.0", System.Globalization.CultureInfo.InvariantCulture));
+            }
+            else
+            {
+                inputField.SetTextWithoutNotify("");
+            }
+        });
     }
 
     // =====================================================

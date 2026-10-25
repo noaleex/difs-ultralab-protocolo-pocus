@@ -17,22 +17,22 @@ public class ExamManager : MonoBehaviour
 
     private void Start()
     {
-        if (CurrentPatient.Data == null)
+        if (CurrentPatient.ClinicalData == null)
         {
             return;
         }
 
-        characterImage.sprite = CurrentPatient.Data.characterSprite;
-        characterFullImage.sprite = CurrentPatient.Data.characterFullSprite;
-        characterFullImage2.sprite = CurrentPatient.Data.characterFullSprite;
-        characterFullImage3.sprite = CurrentPatient.Data.characterFullSprite;
+        if (characterImage != null) characterImage.sprite = CurrentPatient.ClinicalData.characterSprite;
+        if (characterFullImage != null) characterFullImage.sprite = CurrentPatient.ClinicalData.characterFullSprite;
+        if (characterFullImage2 != null) characterFullImage2.sprite = CurrentPatient.ClinicalData.characterFullSprite;
+        if (characterFullImage3 != null) characterFullImage3.sprite = CurrentPatient.ClinicalData.characterFullSprite;
         //infoText.text = CurrentPatient.Data.caso;
 
-        if (CurrentPatient.Data.tutorial)
+        if (CurrentPatient.ClinicalData.tutorial)
         {
-            table.SetActive(false);
-            button.interactable = false;
-            backgroundImage.sprite = CurrentPatient.Data.backgroundSprite;
+            if (table != null) table.SetActive(false);
+            if (button != null) button.interactable = false;
+            if (backgroundImage != null) backgroundImage.sprite = CurrentPatient.ClinicalData.backgroundSprite;
         }
     }
 }

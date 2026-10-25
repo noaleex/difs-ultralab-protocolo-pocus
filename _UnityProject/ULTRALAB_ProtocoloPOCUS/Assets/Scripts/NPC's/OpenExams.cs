@@ -37,6 +37,38 @@ public class OpenExams : MonoBehaviour, IInteractable
     public PatientData PatientDataReference =>
         patientData;
 
+    /// <summary>Dados clínicos sorteados para o dia atual, sem alterar o asset original.</summary>
+    public PatientData ClinicalData
+    {
+        get
+        {
+            int day = Timer.Instance != null ? Mathf.Max(1, Timer.Instance.CurrentDay) : 1;
+            return PatientDailyState.GetClinicalData(patientData, day);
+        }
+    }
+
+    public bool TryDeliverFood(ChoiceFood.TipoComida selected, out bool correct, out bool alreadyDelivered)
+    {
+        int day = Timer.Instance != null ? Mathf.Max(1, Timer.Instance.CurrentDay) : 1;
+        bool attempted = PatientDailyState.TryDeliverFood(patientData, day, selected, out correct, out alreadyDelivered);
+        if (!attempted)
+            return false;
+
+        int welfareBefore = GameSession.GetPatientWelfare(patientData);
+        int delta = correct ? 1 : -1;
+        int welfareAfter = Mathf.Clamp(welfareBefore + delta, 0, 74);
+        GameSession.SetPatientWelfare(patientData, welfareAfter);
+        GameSession.SavePatient(patientData);
+
+        Debug.Log(
+            $"[Entrega de comida] Paciente: {patientData.patientName} | " +
+            $"Resultado: {(correct ? "CORRETA" : "INCORRETA")} | " +
+            $"Welfare: {(correct ? "+1" : "-1")} | " +
+            $"Valor: {welfareBefore} -> {welfareAfter}",
+            this);
+        return true;
+    }
+
     public ConductState ConductState =>
         conductState;
 
@@ -58,6 +90,10 @@ public class OpenExams : MonoBehaviour, IInteractable
 
 
         // -----------------------------------------------------
+        // Garante que os dados clínicos do dia estejam preparados.
+        int currentDay = Timer.Instance != null ? Mathf.Max(1, Timer.Instance.CurrentDay) : 1;
+        PatientDailyState.GetClinicalData(patientData, currentDay);
+
         // RESTAURA O ESTADO DO PACIENTE
         // -----------------------------------------------------
 
@@ -283,7 +319,7 @@ public class OpenExams : MonoBehaviour, IInteractable
 
         if (medicalDataUI != null)
         {
-            medicalDataUI.patientData = patientData;
+            medicalDataUI.patientData = ClinicalData;
             // Cada OpenExams mantém seu próprio ConductState.
             // O formulário compartilhado sempre carrega o estado do NPC selecionado.
             medicalDataUI.LoadState(conductState);

@@ -56,6 +56,9 @@ public class ChoiceFood : MonoBehaviour, IInteractable
             painelComida.SetActive(false);
 
         // Guarda as cores originais dos botões.
+        if (opcoes == null)
+            opcoes = System.Array.Empty<OpcaoComida>();
+
         foreach (OpcaoComida opcao in opcoes)
         {
             if (opcao == null || opcao.botao == null)
@@ -86,7 +89,7 @@ public class ChoiceFood : MonoBehaviour, IInteractable
 
     public void SelecionarComida(int indice)
     {
-        if (!painelAberto || indice < 0 || indice >= opcoes.Length)
+        if (!painelAberto || opcoes == null || indice < 0 || indice >= opcoes.Length)
             return;
 
         OpcaoComida opcao = opcoes[indice];
@@ -138,6 +141,7 @@ public class ChoiceFood : MonoBehaviour, IInteractable
 
     private void RestaurarCores()
     {
+        if (opcoes == null) return;
         foreach (OpcaoComida opcao in opcoes)
         {
             if (opcao == null || opcao.botao == null)
@@ -163,6 +167,17 @@ public class ChoiceFood : MonoBehaviour, IInteractable
     }
 
 
+
+
+    /// <summary>Consome a comida carregada pelo jogador após clicar em entregar.</summary>
+    public void ConsumirComida()
+    {
+        ComidaSelecionada = TipoComida.Nenhuma;
+        SpriteSelecionado = null;
+        selecaoProvisoria = TipoComida.Nenhuma;
+        AtualizarImagemPrincipal();
+        RestaurarCores();
+    }
 
     public void Voltar()
     {
