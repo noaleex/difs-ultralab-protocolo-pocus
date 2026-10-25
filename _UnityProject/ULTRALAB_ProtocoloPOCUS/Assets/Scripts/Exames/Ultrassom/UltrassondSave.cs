@@ -11,86 +11,73 @@ public class UltrassondSave : MonoBehaviour
     [SerializeField] private EventReference somClick;
 
     [SerializeField] private float textTime = 1.5f;
+    [SerializeField] private Timer timer;
 
     private Coroutine confirmCoroutine;
 
-    [SerializeField] private Timer timer;
-
     public void OnSaveImage()
-{
-    if (ultrasoundManager == null)
     {
-        Debug.LogError("UltrasoundManager não foi atribuído.");
-        return;
-    }
+        if (ultrasoundManager == null)
+        {
+            Debug.LogError("UltrasoundManager não foi atribuído.", this);
+            return;
+        }
 
-    if (ultrasoundManager.resultImage == null ||
-        ultrasoundManager.resultImage.sprite == null)
-    {
-        Debug.Log("Nenhuma imagem para salvar.");
-        return;
-    }
+        if (ultrasoundManager.resultImage == null || ultrasoundManager.resultImage.sprite == null)
+        {
+            Debug.LogWarning("Não há imagem de ultrassom para salvar.", this);
+            return;
+        }
 
-    // Identifica o paciente atual.
-    PatientData patient = CurrentPatient.Data;
+        PatientData patient = CurrentPatient.Data;
+        if (patient == null)
+        {
+            Debug.LogError("Nenhum paciente está selecionado.", this);
+            return;
+        }
 
-    if (patient == null)
-    {
-        Debug.LogError("Nenhum paciente está selecionado.");
-        return;
-    }
+        int currentDay = timer != null
+    ? Mathf.Max(1, timer.CurrentDay)
+    : Timer.CurrentDayValue;
 
-    // Identifica se a imagem exibida é a imagem padrão.
-    bool isDefault =
-        ultrasoundManager.resultImage.sprite ==
-        ultrasoundManager.defaultImage;
-
-    if (timer == null)
-{
-    Debug.LogError("Timer não foi atribuído no Inspector.");
-    return;
-}
-
-int currentDay = timer.CurrentDay;
-
-    // Salva a imagem associada ao paciente e ao dia.
-    ExamsSaveData.Save(
-        ultrasoundManager.resultImage.sprite,
-        isDefault
+        bool isDefault = ultrasoundManager.resultImage.sprite == ultrasoundManager.defaultImage;
+        BodyArea.BodyRegion region = isDefault
             ? BodyArea.BodyRegion.Empty
-            : ultrasoundManager.CurrentRegion,
-        patient,
-        currentDay
-    );
+            : ultrasoundManager.CurrentRegion;
 
-    ExamsSaveData.IsDefaultUltrasoundImage = isDefault;
+        if (!isDefault && region == BodyArea.BodyRegion.Empty)
+        {
+            Debug.LogWarning("Posicione a sonda sobre uma região anatômica válida antes de salvar.", this);
+            return;
+        }
 
-    // Toca o som de clique do FMOD.
-    RuntimeManager.PlayOneShot(somClick);
+        ExamsSaveData.Save(
+            ultrasoundManager.resultImage.sprite,
+            region,
+            patient,
+            currentDay
+        );
+        ExamsSaveData.IsDefaultUltrasoundImage = isDefault;
 
-    // Exibe a confirmação, se configurada.
-    if (confirmText != null)
-    {
-        confirmText.SetActive(true);
+        if (!somClick.IsNull)
+            RuntimeManager.PlayOneShot(somClick);
 
-        if (confirmCoroutine != null)
-            StopCoroutine(confirmCoroutine);
+        if (confirmText != null)
+        {
+            confirmText.SetActive(true);
+            if (confirmCoroutine != null)
+                StopCoroutine(confirmCoroutine);
+            confirmCoroutine = StartCoroutine(HideConfirmation());
+        }
 
-        confirmCoroutine = StartCoroutine(HideConfirmation());
+        Debug.Log($"Imagem salva para {patient.patientName}, dia {currentDay}: {region}");
     }
-
-    Debug.Log(
-        $"Imagem salva para {patient.patientName}, " +
-        $"dia {currentDay}: {ultrasoundManager.CurrentRegion}"
-    );
-}
 
     private IEnumerator HideConfirmation()
     {
         yield return new WaitForSeconds(textTime);
-
-        confirmText.SetActive(false);
-
+        if (confirmText != null)
+            confirmText.SetActive(false);
         confirmCoroutine = null;
     }
 }

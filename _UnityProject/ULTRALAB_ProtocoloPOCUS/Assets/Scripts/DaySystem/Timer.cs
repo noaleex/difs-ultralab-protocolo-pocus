@@ -12,12 +12,25 @@ public class Timer : MonoBehaviour
     [Header("Configuração")]
     [SerializeField] private int startHour = 8;
     [SerializeField] private int endHour = 9;
+    private static int savedCurrentDay = 1;
 
+    private int currentDay = 1;
 
     public int CurrentDay
     {
-        get;
-        private set;
+        get => currentDay;
+        set
+        {
+            currentDay = Mathf.Max(1, value);
+            savedCurrentDay = currentDay;
+        }
+    }
+
+    public static int CurrentDayValue
+    {
+        get => Instance != null
+            ? Instance.CurrentDay
+            : savedCurrentDay;
     }
 
 

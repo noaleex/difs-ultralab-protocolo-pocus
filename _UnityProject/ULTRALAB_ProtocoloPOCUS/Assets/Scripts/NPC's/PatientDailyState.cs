@@ -9,6 +9,8 @@ using UnityEngine;
 /// </summary>
 public static class PatientDailyState
 {
+    private const float ChanceSemUltrassom = 0.25f;
+
     private sealed class RuntimeEntry
     {
         public int day;
@@ -16,7 +18,9 @@ public static class PatientDailyState
         public BodyArea.BodyRegion ultrasoundRegion;
         public Sprite ultrasoundImage;
         public bool foodDelivered;
+        
     }
+
 
     private static readonly Dictionary<int, RuntimeEntry> Entries = new Dictionary<int, RuntimeEntry>();
 
@@ -102,32 +106,65 @@ public static class PatientDailyState
         return CreateEntry(source, day, previousImage);
     }
 
-    private static RuntimeEntry CreateEntry(PatientData source, int day, Sprite previousImage = null)
-    {
-        PatientData clone = UnityEngine.Object.Instantiate(source);
-        clone.name = source.name + "_Runtime_Day_" + day;
-        RandomizeVitals(clone);
-        RandomizeFood(clone);
+    
+private static RuntimeEntry CreateEntry(
+    PatientData source,
+    int day,
+    Sprite previousImage = null)
+{
+    PatientData clone = UnityEngine.Object.Instantiate(source);
+    clone.name = source.name + "_Runtime_Day_" + day;
 
-        RuntimeEntry entry = new RuntimeEntry { day = day, clinicalData = clone, ultrasoundRegion = BodyArea.BodyRegion.Empty };
-        if (source.ultrasoundImageOptions != null)
-        {
-            List<UltrasoundImageOption> valid = source.ultrasoundImageOptions.FindAll(x => x != null && x.image != null && x.region != BodyArea.BodyRegion.Empty);
-            if (valid.Count > 1 && previousImage != null)
-            {
-                List<UltrasoundImageOption> alternatives = valid.FindAll(x => x.image != previousImage);
-                if (alternatives.Count > 0) valid = alternatives;
-            }
-            if (valid.Count > 0)
-            {
-                UltrasoundImageOption selected = valid[UnityEngine.Random.Range(0, valid.Count)];
-                entry.ultrasoundRegion = selected.region;
-                entry.ultrasoundImage = selected.image;
-            }
-        }
+    RandomizeVitals(clone);
+    RandomizeFood(clone);
+
+    RuntimeEntry entry = new RuntimeEntry
+    {
+        day = day,
+        clinicalData = clone,
+        ultrasoundRegion = BodyArea.BodyRegion.Empty,
+        ultrasoundImage = null
+    };
+
+    // Em 25% dos casos, nenhum ultrassom será solicitado.
+    if (UnityEngine.Random.value < ChanceSemUltrassom)
+    {
         Entries[source.GetInstanceID()] = entry;
         return entry;
     }
+
+    if (source.ultrasoundImageOptions != null)
+    {
+        List<UltrasoundImageOption> valid =
+            source.ultrasoundImageOptions.FindAll(
+                x => x != null &&
+                     x.image != null &&
+                     x.region != BodyArea.BodyRegion.Empty
+            );
+
+        if (valid.Count > 1 && previousImage != null)
+        {
+            List<UltrasoundImageOption> alternatives =
+                valid.FindAll(x => x.image != previousImage);
+
+            if (alternatives.Count > 0)
+                valid = alternatives;
+        }
+
+        if (valid.Count > 0)
+        {
+            UltrasoundImageOption selected =
+                valid[UnityEngine.Random.Range(0, valid.Count)];
+
+            entry.ultrasoundRegion = selected.region;
+            entry.ultrasoundImage = selected.image;
+        }
+    }
+
+    Entries[source.GetInstanceID()] = entry;
+    return entry;
+}
+
 
     private static void RandomizeFood(PatientData data)
     {
