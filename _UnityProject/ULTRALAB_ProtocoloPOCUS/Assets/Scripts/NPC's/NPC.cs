@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using FMODUnity;
 using FMOD.Studio;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class NPC : MonoBehaviour, IInteractable
 {
@@ -22,6 +23,15 @@ public class NPC : MonoBehaviour, IInteractable
     public NPC sonar;
     public NPCdialogue sonarFeedback;
 
+
+    [Header("Feedback inicial da cena Exams")]
+public bool feedbackInicialExams;
+
+public GameObject objetoSonarParaDesativar;
+
+private const string CHAVE_FEEDBACK_EXAMS =
+    "Exams_SonarFeedbackMostrado";
+
     private EventInstance dialogueVoiceInstance;
 
     private int dialogueIndex;
@@ -35,17 +45,63 @@ public class NPC : MonoBehaviour, IInteractable
 
     private static System.Collections.Generic.HashSet<string> completedDialogues = new System.Collections.Generic.HashSet<string>();
 
-    void Start()
+    
+void Start()
+{
+    if (feedbackInicialExams &&
+        SceneManager.GetActiveScene().name == "Exams")
     {
-        if (startDialogueOnStart)
+        if (PlayerPrefs.GetInt(CHAVE_FEEDBACK_EXAMS, 0) == 0)
         {
-            // Checa se o diálogo já foi feito nesta sessão
-            if (triggerOnlyOnce && !string.IsNullOrEmpty(uniqueId) && completedDialogues.Contains(uniqueId))
-                return;
-
-            StartDialogueExternally();
+            StartCoroutine(IniciarFeedbackExams());
         }
+
+        return;
     }
+
+    if (startDialogueOnStart)
+    {
+        StartDialogueExternally();
+    }
+}
+
+private IEnumerator IniciarFeedbackExams()
+{
+    // Espera o HUD e suas referências estarem disponíveis.
+    while (dialogue_hud.instance == null ||
+           dialogue_hud.instance.dialoguePanel == null ||
+           dialogue_hud.instance.dialogueText == null ||
+           dialogue_hud.instance.nameText == null ||
+           dialogue_hud.instance.portraitImage == null)
+    {
+        yield return null;
+    }
+
+    if (dialogueData == null ||
+        dialogueData.dialogueLines == null ||
+        dialogueData.dialogueLines.Length == 0)
+    {
+        Debug.LogError(
+            "O feedback inicial de Exams está sem falas!",
+            this
+        );
+        yield break;
+    }
+
+    // Desativa o objeto escolhido, se houver.
+    if (objetoSonarParaDesativar != null &&
+        objetoSonarParaDesativar != gameObject)
+    {
+        objetoSonarParaDesativar.SetActive(false);
+    }
+
+    // Registra que o feedback foi iniciado.
+    PlayerPrefs.SetInt(CHAVE_FEEDBACK_EXAMS, 1);
+    PlayerPrefs.Save();
+
+    StartDialogueExternally();
+}
+
 
     void Update()
     {
@@ -277,6 +333,16 @@ public class NPC : MonoBehaviour, IInteractable
             sonarFeedback = null;
             sonar.StartDialogue(feedback);
         }
+
+        // Reativa o objeto quando o diálogo termina.
+if (feedbackInicialExams &&
+    SceneManager.GetActiveScene().name == "Exams" &&
+    objetoSonarParaDesativar != null)
+{
+    objetoSonarParaDesativar.SetActive(true);
+}
+
+
     }
 
     private void OnTriggerEnter2D(Collider2D other)

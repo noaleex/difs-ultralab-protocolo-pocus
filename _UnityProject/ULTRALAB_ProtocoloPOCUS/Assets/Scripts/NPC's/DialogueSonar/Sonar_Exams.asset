@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd81a6fe40be39c4e83a96c320938fd9, type: 3}
+  m_Name: Sonar_Exams
+  m_EditorClassIdentifier: Assembly-CSharp::NPCdialogue
+  npcName: Sonar
+  npcPortrait: {fileID: 21300000, guid: d62e534004023d040a3fa23a8732ece7, type: 3}
+  dialogueLines:
+  - "Muito bem! Agora vamos iniciar realmente com a parte pr\xE1tica. Adrian \xE9
+    nosso paciente simulado. Cuide bem dele!"
+  - "Lembre: temos sempre que verificar a palpa\xE7\xE3o (toque no paciente), fazer
+    os exames com o estetoscopio para verificar as batidas do cora\xE7\xE3o e medir
+    a press\xE3o."
+  - Logo em seguida utilizar o ultrassom para facilitar o diagnostico. Essas etapas
+    sao muito importantes para quando voce tiver que prencher o formulario do paciente.
+  - Mas primeiro, vamos pegar pratica sobre o ultrassom. Clique no POCUS, que esta
+    a sua esquerda, ao lado do Adrian.
+  - " Se precisar de mais alguma informa\xE7\xE3o, pode clicar em mim que tiro suas
+    d\xFAvidas."
+  typingSpeed: 0.05
+  voiceEvent:
+    Guid:
+      Data1: -355241531
+      Data2: 1255865929
+      Data3: -907916883
+      Data4: 863556038
+    Path: event:/Falas/wa_morcego
+  voicePitch: 1
+  autoProgressLines: 
+  autoProgressDelay: 1.5

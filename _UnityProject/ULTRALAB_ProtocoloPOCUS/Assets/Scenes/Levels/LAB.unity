@@ -1285,10 +1285,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NPC
   dialogueData: {fileID: 11400000, guid: 4cd2ce85b62f8d64abb63a9453d9cb0b, type: 2}
-  dialoguePanel: {fileID: 455700456}
-  dialogueText: {fileID: 2038723594}
-  nameText: {fileID: 1666026886}
-  portraitImage: {fileID: 1771755434}
   interactSoundEvent:
     Guid:
       Data1: 2103294604
@@ -1296,12 +1292,15 @@ MonoBehaviour:
       Data3: -801384060
       Data4: 1978304836
     Path: event:/Interagir/fx_item
+  uniqueId: 
   startDialogueOnStart: 0
   isInterfaceCharacter: 0
   startDialogueOnTrigger: 0
   triggerOnlyOnce: 1
   sonar: {fileID: 487279050}
   sonarFeedback: {fileID: 11400000, guid: 393ce39f6668bfe40b07f13e247bfed2, type: 2}
+  feedbackInicialExams: 0
+  objetoSonarParaDesativar: {fileID: 0}
 --- !u!95 &233699015
 Animator:
   serializedVersion: 7
@@ -1670,10 +1669,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NPC
   dialogueData: {fileID: 11400000, guid: 7409c4db15ec12b458158ebabb621492, type: 2}
-  dialoguePanel: {fileID: 455700456}
-  dialogueText: {fileID: 2038723594}
-  nameText: {fileID: 1666026886}
-  portraitImage: {fileID: 1771755434}
   interactSoundEvent:
     Guid:
       Data1: 2103294604
@@ -1681,12 +1676,15 @@ MonoBehaviour:
       Data3: -801384060
       Data4: 1978304836
     Path: event:/Interagir/fx_item
+  uniqueId: 
   startDialogueOnStart: 0
   isInterfaceCharacter: 1
   startDialogueOnTrigger: 1
   triggerOnlyOnce: 1
   sonar: {fileID: 0}
   sonarFeedback: {fileID: 0}
+  feedbackInicialExams: 0
+  objetoSonarParaDesativar: {fileID: 0}
 --- !u!61 &367795110
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2551,10 +2549,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NPC
   dialogueData: {fileID: 11400000, guid: b329dec276a0e5e46819f58ee551daad, type: 2}
-  dialoguePanel: {fileID: 455700456}
-  dialogueText: {fileID: 2038723594}
-  nameText: {fileID: 1666026886}
-  portraitImage: {fileID: 1771755434}
   interactSoundEvent:
     Guid:
       Data1: 2103294604
@@ -2562,12 +2556,15 @@ MonoBehaviour:
       Data3: -801384060
       Data4: 1978304836
     Path: event:/Interagir/fx_item
+  uniqueId: 
   startDialogueOnStart: 1
   isInterfaceCharacter: 1
   startDialogueOnTrigger: 0
   triggerOnlyOnce: 1
   sonar: {fileID: 0}
   sonarFeedback: {fileID: 0}
+  feedbackInicialExams: 0
+  objetoSonarParaDesativar: {fileID: 0}
 --- !u!1 &511557021
 GameObject:
   m_ObjectHideFlags: 0
@@ -2807,10 +2804,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NPC
   dialogueData: {fileID: 11400000, guid: ee72602a007f8db4788f7c6981b75442, type: 2}
-  dialoguePanel: {fileID: 455700456}
-  dialogueText: {fileID: 2038723594}
-  nameText: {fileID: 1666026886}
-  portraitImage: {fileID: 1771755434}
   interactSoundEvent:
     Guid:
       Data1: 2103294604
@@ -2818,12 +2811,15 @@ MonoBehaviour:
       Data3: -801384060
       Data4: 1978304836
     Path: event:/Interagir/fx_item
+  uniqueId: 
   startDialogueOnStart: 0
   isInterfaceCharacter: 0
   startDialogueOnTrigger: 0
   triggerOnlyOnce: 1
   sonar: {fileID: 487279050}
   sonarFeedback: {fileID: 11400000, guid: c077bbcfe412b8040bfa61cdde4e35ec, type: 2}
+  feedbackInicialExams: 0
+  objetoSonarParaDesativar: {fileID: 0}
 --- !u!61 &536115206
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8672,10 +8668,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NPC
   dialogueData: {fileID: 11400000, guid: 45ff364d642e01c4e9c37fc7e7434f06, type: 2}
-  dialoguePanel: {fileID: 455700456}
-  dialogueText: {fileID: 2038723594}
-  nameText: {fileID: 1666026886}
-  portraitImage: {fileID: 1771755434}
   interactSoundEvent:
     Guid:
       Data1: 2103294604
@@ -8683,12 +8675,15 @@ MonoBehaviour:
       Data3: -801384060
       Data4: 1978304836
     Path: event:/Interagir/fx_item
+  uniqueId: 
   startDialogueOnStart: 0
   isInterfaceCharacter: 0
   startDialogueOnTrigger: 0
   triggerOnlyOnce: 1
   sonar: {fileID: 0}
   sonarFeedback: {fileID: 0}
+  feedbackInicialExams: 0
+  objetoSonarParaDesativar: {fileID: 0}
 --- !u!61 &645863879
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16647,10 +16642,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NPC
   dialogueData: {fileID: 11400000, guid: 5b74544d8eb098745947c90e0e38e353, type: 2}
-  dialoguePanel: {fileID: 455700456}
-  dialogueText: {fileID: 2038723594}
-  nameText: {fileID: 1666026886}
-  portraitImage: {fileID: 1771755434}
   interactSoundEvent:
     Guid:
       Data1: 2103294604
@@ -16658,12 +16649,15 @@ MonoBehaviour:
       Data3: -801384060
       Data4: 1978304836
     Path: event:/Interagir/fx_item
+  uniqueId: 
   startDialogueOnStart: 0
   isInterfaceCharacter: 0
   startDialogueOnTrigger: 0
   triggerOnlyOnce: 1
   sonar: {fileID: 0}
   sonarFeedback: {fileID: 0}
+  feedbackInicialExams: 0
+  objetoSonarParaDesativar: {fileID: 0}
 --- !u!1 &1115960576
 GameObject:
   m_ObjectHideFlags: 0
@@ -17845,10 +17839,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NPC
   dialogueData: {fileID: 11400000, guid: 2beb1586d6614844781d91f28ebde222, type: 2}
-  dialoguePanel: {fileID: 455700456}
-  dialogueText: {fileID: 2038723594}
-  nameText: {fileID: 1666026886}
-  portraitImage: {fileID: 1771755434}
   interactSoundEvent:
     Guid:
       Data1: 2103294604
@@ -17856,12 +17846,15 @@ MonoBehaviour:
       Data3: -801384060
       Data4: 1978304836
     Path: event:/Interagir/fx_item
+  uniqueId: 
   startDialogueOnStart: 0
   isInterfaceCharacter: 0
   startDialogueOnTrigger: 0
   triggerOnlyOnce: 1
   sonar: {fileID: 0}
   sonarFeedback: {fileID: 0}
+  feedbackInicialExams: 0
+  objetoSonarParaDesativar: {fileID: 0}
 --- !u!61 &1186090020
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -20352,10 +20345,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NPC
   dialogueData: {fileID: 11400000, guid: f810c7ae59eeb96429897fb853162235, type: 2}
-  dialoguePanel: {fileID: 455700456}
-  dialogueText: {fileID: 2038723594}
-  nameText: {fileID: 1666026886}
-  portraitImage: {fileID: 1771755434}
   interactSoundEvent:
     Guid:
       Data1: 2103294604
@@ -20363,12 +20352,15 @@ MonoBehaviour:
       Data3: -801384060
       Data4: 1978304836
     Path: event:/Interagir/fx_item
+  uniqueId: 
   startDialogueOnStart: 0
   isInterfaceCharacter: 0
   startDialogueOnTrigger: 0
   triggerOnlyOnce: 1
   sonar: {fileID: 487279050}
   sonarFeedback: {fileID: 11400000, guid: 09f92975b0e81fc438d10ff8b447f72a, type: 2}
+  feedbackInicialExams: 0
+  objetoSonarParaDesativar: {fileID: 0}
 --- !u!61 &1430539770
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -26503,10 +26495,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NPC
   dialogueData: {fileID: 11400000, guid: 2314e41f254204746903ef0cdcbffe4a, type: 2}
-  dialoguePanel: {fileID: 455700456}
-  dialogueText: {fileID: 2038723594}
-  nameText: {fileID: 1666026886}
-  portraitImage: {fileID: 1771755434}
   interactSoundEvent:
     Guid:
       Data1: 2103294604
@@ -26514,12 +26502,15 @@ MonoBehaviour:
       Data3: -801384060
       Data4: 1978304836
     Path: event:/Interagir/fx_item
+  uniqueId: 
   startDialogueOnStart: 0
   isInterfaceCharacter: 0
   startDialogueOnTrigger: 0
   triggerOnlyOnce: 1
   sonar: {fileID: 0}
   sonarFeedback: {fileID: 0}
+  feedbackInicialExams: 0
+  objetoSonarParaDesativar: {fileID: 0}
 --- !u!61 &1628495552
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -26716,8 +26707,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ImageAnexx
   anexxImage: {fileID: 1646161807}
+  requestedRegionText: {fileID: 0}
   approved: 0
   uti: UTI
+  timerReference: {fileID: 0}
 --- !u!1 &1647699219
 GameObject:
   m_ObjectHideFlags: 0
@@ -27118,10 +27111,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NPC
   dialogueData: {fileID: 11400000, guid: 9dd6de4a86430ec459ed58e500358b35, type: 2}
-  dialoguePanel: {fileID: 455700456}
-  dialogueText: {fileID: 2038723594}
-  nameText: {fileID: 1666026886}
-  portraitImage: {fileID: 1771755434}
   interactSoundEvent:
     Guid:
       Data1: 2103294604
@@ -27129,12 +27118,15 @@ MonoBehaviour:
       Data3: -801384060
       Data4: 1978304836
     Path: event:/Interagir/fx_item
+  uniqueId: 
   startDialogueOnStart: 0
   isInterfaceCharacter: 0
   startDialogueOnTrigger: 0
   triggerOnlyOnce: 1
   sonar: {fileID: 487279050}
   sonarFeedback: {fileID: 11400000, guid: d7887136f605a0440a7df109f3331d3e, type: 2}
+  feedbackInicialExams: 0
+  objetoSonarParaDesativar: {fileID: 0}
 --- !u!61 &1671777924
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -28629,7 +28621,7 @@ MonoBehaviour:
       Data3: -549595210
       Data4: 552736080
     Path: event:/Ambiente/fx_lab
-  nextSceneName: UTI
+  uti: UTI
 --- !u!4 &1943116480
 Transform:
   m_ObjectHideFlags: 0
