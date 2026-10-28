@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Este ScriptableObject é o gabarito/base configurável de um paciente específico.
+// PatientDailyState cria uma cópia por dia e aleatoriza somente essa cópia.
 [CreateAssetMenu(fileName = "Patient", menuName = "Patients/Patient Data")]
 public class PatientData : ScriptableObject
 {
@@ -34,7 +36,7 @@ public class PatientData : ScriptableObject
     public string presenca;
     public string intervencao;
 
-    [Header("Respiração")]
+    [Header("Respiração - gabarito/base do paciente")]
     public string frequencia;
     public string saturation;
     public string acessoria;
@@ -44,7 +46,7 @@ public class PatientData : ScriptableObject
     public string oxigenoterapiaTipo;
     public string oxigenoterapiaFluxo;
 
-    [Header("Circulação")]
+    [Header("Circulação - gabarito/base do paciente")]
     public string frequenciaCardiaca;
     public string pressaoArterial;
     public string pressaoArterial2;

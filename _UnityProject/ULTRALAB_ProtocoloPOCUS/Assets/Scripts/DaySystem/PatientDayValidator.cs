@@ -528,10 +528,7 @@ public class PatientDayValidator : MonoBehaviour
 
     private void GameOver()
     {
-        Debug.Log(
-            "GAME OVER"
-        );
-
-        // SceneManager.LoadScene("GameOver");
+        Debug.Log("[PatientDayValidator] Final negativo: um paciente chegou a 0 pontos.");
+        GameEndingManager.FinishGame(GameEndingManager.EndingType.Negative);
     }
 }

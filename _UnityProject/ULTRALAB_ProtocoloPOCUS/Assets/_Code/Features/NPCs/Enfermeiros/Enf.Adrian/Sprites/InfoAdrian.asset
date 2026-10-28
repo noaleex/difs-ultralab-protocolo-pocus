@@ -16,6 +16,12 @@ MonoBehaviour:
   age: 20
   sex: Masculino
   tutorial: 1
+  welfareScore: 50
+  food: 1
+  diagnosis: 
+  ultrasoundImageOptions:
+  - region: 0
+    image: {fileID: 21300000, guid: e44d795b6f895b44fbf7c6bab937d2c3, type: 3}
   characterSprite: {fileID: 21300000, guid: 9acd4c7e6c6829b4c9bd4a33ea39e3fb, type: 3}
   characterFullSprite: {fileID: 21300000, guid: 5012c25d67b85d24287ce3e7a591b9f2, type: 3}
   backgroundSprite: {fileID: 21300000, guid: 062b907ef89b1ed4cb142bec96005b26, type: 3}

@@ -170,5 +170,18 @@ public void InfosClick()
                 sceneToLoad
             );
         }
+
+        PauseController.SetPause(false);
+
+        if (PlayerReferences.Instance != null)
+        {
+            PlayerReferences.Instance.EnablePlayer();
+
+            if (PlayerReferences.Instance.InteractIcon != null)
+            {
+                PlayerReferences.Instance.InteractIcon
+                    .SetActive(true);
+            }
+        }
     }
 }

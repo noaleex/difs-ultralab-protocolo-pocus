@@ -99,7 +99,6 @@ public void Refresh()
 
     sb2.AppendLine("MONITORIZAÇÃO RESPIRATÓRIA");
     sb2.AppendLine($"Paciente: {Value(data.patientName)}");
-    sb2.AppendLine($"Dia: {day}");
     sb2.AppendLine();
 
     sb2.AppendLine("RESPIRATÓRIO");

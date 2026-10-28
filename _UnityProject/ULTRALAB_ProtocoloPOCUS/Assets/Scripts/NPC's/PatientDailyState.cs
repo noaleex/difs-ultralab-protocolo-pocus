@@ -182,10 +182,32 @@ private static RuntimeEntry CreateEntry(
 
         if (TryParseDecimal(data.temperatura, out float temperature))
         {
-            float delta = UnityEngine.Random.Range(1, 5) / 10f * (UnityEngine.Random.value < 0.5f ? -1f : 1f);
+            float delta = UnityEngine.Random.Range(1, 6) / 10f * (UnityEngine.Random.value < 0.5f ? -1f : 1f);
             float randomized = Mathf.Clamp(temperature + delta, 34f, 42f);
             data.temperatura = randomized.ToString("0.0", CultureInfo.InvariantCulture);
         }
+
+        // Pressão arterial: os dois campos representam os valores sistólico e diastólico.
+        // O PatientData original permanece como gabarito; apenas a cópia diária é alterada.
+        data.pressaoArterial = RandomizePressureValue(data.pressaoArterial, 5, 12, 70, 240);
+        data.pressaoArterial2 = RandomizePressureValue(data.pressaoArterial2, 3, 8, 35, 150);
+
+        // Saturação e frequência respiratória também variam diariamente.
+        data.saturation = RandomizePressureValue(data.saturation, 1, 3, 50, 100);
+        data.frequencia = RandomizePressureValue(data.frequencia, 1, 4, 4, 60);
+    }
+
+    private static string RandomizePressureValue(string value, int minDelta, int maxDelta, int minValue, int maxValue)
+    {
+        if (!int.TryParse(value, NumberStyles.Integer, CultureInfo.InvariantCulture, out int parsed) &&
+            !int.TryParse(value, NumberStyles.Integer, new CultureInfo("pt-BR"), out parsed))
+            return value;
+
+        int delta = UnityEngine.Random.Range(minDelta, maxDelta + 1);
+        if (UnityEngine.Random.value < 0.5f)
+            delta *= -1;
+
+        return Mathf.Clamp(parsed + delta, minValue, maxValue).ToString(CultureInfo.InvariantCulture);
     }
 
     private static bool TryParseDecimal(string value, out float result)

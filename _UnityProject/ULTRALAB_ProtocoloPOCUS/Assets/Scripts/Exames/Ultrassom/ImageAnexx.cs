@@ -7,15 +7,20 @@ using UnityEngine.SceneManagement;
 public class ImageAnexx : MonoBehaviour
 {
     [Header("UI do prontuário")]
-    [Tooltip("Imagem efetivamente anexada pelo jogador.")]
     [SerializeField] private Image anexxImage;
-
-    [Tooltip("Texto que mostra Coração, Pulmão, Bexiga ou Vazio.")]
     [SerializeField] private TMP_Text requestedRegionText;
 
     [Header("Validação")]
     public bool approved;
 
+    [Header("Tutorial")]
+    [Tooltip("Marque se este componente pertence ao prontuário do tutorial.")]
+    [SerializeField] private bool tutorialMode;
+
+    [Tooltip("Imagem correta do coração exigida no tutorial.")]
+    [SerializeField] private Sprite tutorialHeartImage;
+
+    [Header("Cena")]
     [SerializeField] private string uti;
     [SerializeField] private Timer timerReference;
 
@@ -32,6 +37,31 @@ public class ImageAnexx : MonoBehaviour
 
     public void UpdateUI()
     {
+        if (tutorialMode)
+        {
+            if (requestedRegionText != null)
+                requestedRegionText.text = "Coração";
+
+            bool hasHeartAttachment =
+                ExamsSaveData.SavedImage != null &&
+                (tutorialHeartImage == null ||
+                 ExamsSaveData.SavedImage == tutorialHeartImage) &&
+                ExamsSaveData.SavedExam.HasValue &&
+                ExamsSaveData.SavedExam.Value == BodyArea.BodyRegion.Heart;
+
+            if (anexxImage != null)
+            {
+                anexxImage.sprite = hasHeartAttachment
+                    ? ExamsSaveData.SavedImage
+                    : null;
+
+                anexxImage.enabled = hasHeartAttachment;
+                anexxImage.color = Color.white;
+            }
+
+            return;
+        }
+
         PatientData patient = CurrentPatient.Data;
         int day = GetCurrentDay();
 
@@ -57,38 +87,48 @@ public class ImageAnexx : MonoBehaviour
             anexxImage.enabled = hasCurrentAttachment;
             anexxImage.color = Color.white;
         }
-
-    }
-
-    private string GetRegionName(BodyArea.BodyRegion region)
-    {
-        switch (region)
-        {
-            case BodyArea.BodyRegion.Heart:
-                return "Coração";
-
-            case BodyArea.BodyRegion.Lung1:
-            case BodyArea.BodyRegion.Lung2:
-                return "Pulmão";
-
-            case BodyArea.BodyRegion.Bladder:
-                return "Bexiga";
-
-            case BodyArea.BodyRegion.Empty:
-            default:
-                return "Vazio";
-        }
     }
 
     public void OnConfirm()
     {
         approved = false;
 
+        // Tutorial: exige somente o exame do coração.
+        if (tutorialMode)
+        {
+            bool validHeart =
+                ExamsSaveData.SavedImage != null &&
+                (tutorialHeartImage == null ||
+                 ExamsSaveData.SavedImage == tutorialHeartImage) &&
+                !ExamsSaveData.IsDefaultUltrasoundImage &&
+                ExamsSaveData.SavedExam.HasValue &&
+                ExamsSaveData.SavedExam.Value == BodyArea.BodyRegion.Heart;
+
+            if (!validHeart)
+            {
+                Debug.LogWarning(
+                    "No tutorial, anexe o resultado correto do ultrassom do coração."
+                );
+
+                UpdateUI();
+                return;
+            }
+
+            approved = true;
+            Debug.Log("Tutorial: ultrassom do coração validado.");
+
+            LoadUTIScene();
+            return;
+        }
+
+        // Validação normal: exige paciente e dia.
         PatientData patient = CurrentPatient.Data;
 
         if (patient == null)
         {
-            Debug.LogWarning("Não há paciente selecionado para validar o prontuário.");
+            Debug.LogWarning(
+                "Não há paciente selecionado para validar o prontuário."
+            );
             return;
         }
 
@@ -102,7 +142,6 @@ public class ImageAnexx : MonoBehaviour
             ExamsSaveData.OwnerPatient == patient &&
             ExamsSaveData.SavedDay == day;
 
-        // Nenhum ultrassom foi solicitado para este paciente e dia.
         if (requiredRegion == BodyArea.BodyRegion.Empty)
         {
             if (hasCurrentAttachment)
@@ -117,18 +156,21 @@ public class ImageAnexx : MonoBehaviour
             }
 
             approved = true;
-            Debug.Log("Prontuário validado: nenhum ultrassom solicitado.");
+            Debug.Log(
+                "Prontuário validado: nenhum ultrassom solicitado."
+            );
+
             LoadUTIScene();
             return;
         }
 
-        // Há exame solicitado: é obrigatório anexar o exame correto.
         if (!hasCurrentAttachment ||
             ExamsSaveData.IsDefaultUltrasoundImage ||
             !ExamsSaveData.SavedExam.HasValue)
         {
             Debug.LogWarning(
-                "Anexe o resultado do ultrassom solicitado para o paciente e dia atuais."
+                "Anexe o resultado do ultrassom solicitado " +
+                "para o paciente e dia atuais."
             );
 
             UpdateUI();
@@ -146,7 +188,8 @@ public class ImageAnexx : MonoBehaviour
         if (!correct)
         {
             Debug.LogWarning(
-                "Exame incorreto. Confira a imagem salva e a região anatômica."
+                "Exame incorreto. Confira a imagem salva " +
+                "e a região anatômica."
             );
 
             UpdateUI();
@@ -154,8 +197,30 @@ public class ImageAnexx : MonoBehaviour
         }
 
         approved = true;
-        Debug.Log("Ultrassom validado para o paciente e dia atuais.");
+        Debug.Log(
+            "Ultrassom validado para o paciente e dia atuais."
+        );
+
         LoadUTIScene();
+    }
+
+    private string GetRegionName(BodyArea.BodyRegion region)
+    {
+        switch (region)
+        {
+            case BodyArea.BodyRegion.Heart:
+                return "Coração";
+
+            case BodyArea.BodyRegion.Lung1:
+            case BodyArea.BodyRegion.Lung2:
+                return "Pulmão";
+
+            case BodyArea.BodyRegion.Bladder:
+                return "Bexiga";
+
+            default:
+                return "Vazio";
+        }
     }
 
     private int GetCurrentDay()

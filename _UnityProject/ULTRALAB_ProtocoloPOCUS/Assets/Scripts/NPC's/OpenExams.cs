@@ -176,6 +176,14 @@ public class OpenExams : MonoBehaviour, IInteractable
     }
 
 
+    /// <summary>Usado pelo host para ligar o painel instanciado ao NPC atual.</summary>
+    public void BindRuntimePanels(GameObject runtimeExamPanel, GameObject sharedConductPanel, MedicalData runtimeMedicalData)
+    {
+        panelExam = runtimeExamPanel;
+        if (sharedConductPanel != null) panelConduct = sharedConductPanel;
+        if (runtimeMedicalData != null) medicalDataUI = runtimeMedicalData;
+    }
+
     // =========================================================
     // INTERAÇÃO
     // =========================================================
@@ -198,10 +206,16 @@ public class OpenExams : MonoBehaviour, IInteractable
 
         CurrentPatient.Select(this);
 
-        if (panelExam != null)
-            panelExam.SetActive(true);
-        else
-            Debug.LogError($"[OpenExams] Panel Exam não foi atribuído para {patientData.patientName}.", this);
+        bool panelInstantiated = PatientPanelUIHost.Instance != null &&
+                                 PatientPanelUIHost.Instance.OpenPanel(this);
+
+        if (!panelInstantiated)
+        {
+            if (panelExam != null)
+                panelExam.SetActive(true);
+            else
+                Debug.LogError($"[OpenExams] Nenhum PatientPanelUIHost ativo e Panel Exam não foi atribuído para {patientData.patientName}.", this);
+        }
 
         PauseController.SetPause(true);
 
@@ -229,6 +243,9 @@ public class OpenExams : MonoBehaviour, IInteractable
 
         if (panelExam != null)
             panelExam.SetActive(false);
+
+        if (PatientPanelUIHost.Instance != null)
+            PatientPanelUIHost.Instance.ClosePanel(this);
 
         PauseController.SetPause(false);
 

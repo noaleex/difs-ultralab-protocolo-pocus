@@ -343,6 +343,9 @@ public class PatientConductEvaluator : MonoBehaviour
             novoWelfare
         );
 
+        int evaluationDay = Timer.Instance != null ? Mathf.Max(1, Timer.Instance.CurrentDay) : GameSession.CurrentDay;
+        GameSession.RecordDailyEvaluation(npc, evaluationDay, acertos, acertos + erros);
+
         // =====================================================
         // DEBUG
         // =====================================================
@@ -442,6 +445,8 @@ public class PatientConductEvaluator : MonoBehaviour
             novoWelfare
         );
 
+        int evaluationDay = Timer.Instance != null ? Mathf.Max(1, Timer.Instance.CurrentDay) : GameSession.CurrentDay;
+        GameSession.RecordDailyEvaluation(npc, evaluationDay, acertos, erros);
 
         Debug.Log(
             $"===== PRONTUÁRIO VAZIO =====\n" +

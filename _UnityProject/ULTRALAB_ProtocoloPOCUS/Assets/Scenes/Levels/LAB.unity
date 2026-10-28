@@ -19000,7 +19000,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OpenExams
   panelExam: {fileID: 661179836}
-  panelConduct: {fileID: 0}
+  panelConduct: {fileID: 1866819034}
   exams: Exams
   patientData: {fileID: 11400000, guid: fec63c220a29010488c02e86307d2d1f, type: 2}
   npcConduta: {fileID: 487279050}
@@ -27994,7 +27994,7 @@ GameObject:
   - component: {fileID: 1866819038}
   - component: {fileID: 1866819039}
   m_Layer: 5
-  m_Name: Menu
+  m_Name: Prontuario
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
