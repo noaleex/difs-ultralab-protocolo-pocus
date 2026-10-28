@@ -17,32 +17,45 @@ MonoBehaviour:
   sex: Masculino
   tutorial: 0
   welfareScore: 50
-  characterSprite: {fileID: 3970722849222489811, guid: 4f9a84ee587d7024599a90381539c348, type: 3}
-  characterFullSprite: {fileID: 21300000, guid: d37dc6dd88dcac640994b403fa69511c, type: 3}
+  food: 1
+  diagnosis: "Constipa\xE7\xE3o"
+  ultrasoundImageOptions:
+  - region: 0
+    image: {fileID: 21300000, guid: e44d795b6f895b44fbf7c6bab937d2c3, type: 3}
+  - region: 1
+    image: {fileID: 21300000, guid: 357e0d7de9a1824419e79a5f81b0393b, type: 3}
+  - region: 2
+    image: {fileID: 21300000, guid: 357e0d7de9a1824419e79a5f81b0393b, type: 3}
+  - region: 3
+    image: {fileID: 21300000, guid: 404035f515b861541b8b16c905ccab72, type: 3}
+  - region: 4
+    image: {fileID: -8527568592950175283, guid: 85d65de9e00d0044e98cd5df42c65431, type: 3}
+  characterSprite: {fileID: 21300000, guid: 2ce8c281f2ffa1f4c8c211cd60eb5040, type: 3}
+  characterFullSprite: {fileID: 21300000, guid: 7296aab20a2b8104fabf183700144f86, type: 3}
   backgroundSprite: {fileID: 21300000, guid: 9cfbf36d2b0ad0146ad4df4e2befba0c, type: 3}
   resumeCaso: 
   physicalExam: []
-  permeabilidade: 
-  presenca: 
-  intervencao: 
-  frequencia: 
-  saturation: 
-  acessoria: 
-  padraoRespiratorio: 
-  asculta: 
-  expansibilidade: 
-  oxigenoterapiaTipo: 
-  oxigenoterapiaFluxo: 
-  frequenciaCardiaca: 
-  pressaoArterial: 
-  pressaoArterial2: 
-  perfusaoTempo: 
-  perfusaoExtremidades: 
-  pulsos: 
-  ritmoCardiaco: 
-  edema: 
-  temperatura: 
-  nivelConsciencia: 
-  avalicaoPele: 
-  presencaPele: 
-  dorEscala: 
+  permeabilidade: "P\xE9rvia"
+  presenca: "N\xE3o"
+  intervencao: "N\xE3o"
+  frequencia: 24
+  saturation: 93
+  acessoria: Sim
+  padraoRespiratorio: Dispneico
+  asculta: Estertores
+  expansibilidade: "Sim\xE9trica"
+  oxigenoterapiaTipo: Sem
+  oxigenoterapiaFluxo: 0
+  frequenciaCardiaca: 96
+  pressaoArterial: 104
+  pressaoArterial2: 68
+  perfusaoTempo: 0
+  perfusaoExtremidades: Frias
+  pulsos: "Palp\xE1veis"
+  ritmoCardiaco: Regular
+  edema: Sim
+  temperatura: 36
+  nivelConsciencia: Alerta
+  avalicaoPele: Hipocorado
+  presencaPele: Edema
+  dorEscala: 5
