@@ -288,6 +288,20 @@ public class menu_manager : MonoBehaviour
         panelMainMenu.SetActive(true);
     }
 
+    public void OpenLearning()
+    {
+        PlayClickSound();
+        panelMainMenu.SetActive(false);
+        panelLearning.SetActive(true);
+    }
+
+    public void CloseLearning()
+    {
+        PlayClickSound();
+        panelLearning.SetActive(false);
+        panelMainMenu.SetActive(true);
+    }
+
     public void QuitConfirm()
     {
         PlayClickSound();

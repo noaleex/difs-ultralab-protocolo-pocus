@@ -15,8 +15,8 @@ MonoBehaviour:
   npcName: "J\xE9ssica"
   npcPortrait: {fileID: 21300000, guid: 365dc085c72268543b82490585ef3e93, type: 3}
   dialogueLines:
-  - "Oi! Voc\xEA veio atr\xE1s da dieta, n\xE9? Me fale o paciente que voc\xEA est\xE1
-    atendendo agora para que eu veja as op\xE7\xF5es de comida para ele!"
+  - "Oi! Voc\xEA veio atr\xE1s da dieta para seu paciente, certo? V\xE1 at\xE9 a
+    geladeira para escolher a melhor dieta para ele!"
   typingSpeed: 0.05
   voiceEvent:
     Guid:
