@@ -1,12 +1,12 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 using FMODUnity;
 
-/// <summary>Entrega a comida selecionada ao paciente atual e gerencia o feedback temporário.</summary>
 public sealed class FoodDeliveryButton : MonoBehaviour
 {
-    [Header("Referências")]
+    [Header("Referências configuradas pelo host")]
     [SerializeField] private ChoiceFood choiceFood;
     [SerializeField] private TMP_Text feedbackText;
     [SerializeField] private TMP_Text requiredFoodText;
@@ -16,9 +16,44 @@ public sealed class FoodDeliveryButton : MonoBehaviour
     public EventReference ClickSound;
 
     [Header("Feedback")]
-    [SerializeField, Min(0.1f)] private float feedbackDuration = 3f;
+    [SerializeField, Min(0.1f)]
+    private float feedbackDuration = 3f;
 
+    private Button button;
     private Coroutine feedbackCoroutine;
+    private bool initialized;
+
+    public void Initialize(
+        ChoiceFood food,
+        TMP_Text feedback,
+        TMP_Text requiredFood,
+        GameObject runtimePanel)
+    {
+        choiceFood = food;
+        feedbackText = feedback;
+        requiredFoodText = requiredFood;
+        panelExam = runtimePanel;
+
+        button = GetComponent<Button>();
+
+        if (button == null)
+            button = GetComponentInChildren<Button>(true);
+
+        if (button == null)
+        {
+            Debug.LogError(
+                "[FoodDeliveryButton] Não foi encontrado um componente Button.",
+                this
+            );
+            return;
+        }
+
+        button.onClick.RemoveListener(DeliverFood);
+        button.onClick.AddListener(DeliverFood);
+
+        initialized = true;
+        RefreshRequiredFood();
+    }
 
     private void OnEnable()
     {
@@ -29,6 +64,7 @@ public sealed class FoodDeliveryButton : MonoBehaviour
     private void OnDisable()
     {
         CurrentPatient.Changed -= RefreshRequiredFood;
+
         if (feedbackCoroutine != null)
         {
             StopCoroutine(feedbackCoroutine);
@@ -36,17 +72,30 @@ public sealed class FoodDeliveryButton : MonoBehaviour
         }
     }
 
+    private void OnDestroy()
+    {
+        if (button != null)
+            button.onClick.RemoveListener(DeliverFood);
+    }
+
     public void RefreshRequiredFood()
     {
-        if (requiredFoodText == null) return;
+        if (requiredFoodText == null)
+            return;
+
         if (CurrentPatient.Data == null)
         {
             requiredFoodText.text = "Nenhum paciente selecionado";
             return;
         }
 
-        int day = Timer.Instance != null ? Mathf.Max(1, Timer.Instance.CurrentDay) : 1;
-        PatientData clinical = PatientDailyState.GetClinicalData(CurrentPatient.Data, day);
+        int day = Timer.Instance != null
+            ? Mathf.Max(1, Timer.Instance.CurrentDay)
+            : 1;
+
+        PatientData clinical =
+            PatientDailyState.GetClinicalData(CurrentPatient.Data, day);
+
         requiredFoodText.text = clinical == null
             ? "Alimentação indisponível"
             : FoodName(clinical.food);
@@ -56,65 +105,81 @@ public sealed class FoodDeliveryButton : MonoBehaviour
     {
         switch ((ChoiceFood.TipoComida)food)
         {
-            case ChoiceFood.TipoComida.Solido: return "Sólida";
-            case ChoiceFood.TipoComida.Liquido: return "Líquida";
-            case ChoiceFood.TipoComida.NPT: return "NPT";
-            default: return "Não definida";
+            case ChoiceFood.TipoComida.Solido:
+                return "Sólida";
+
+            case ChoiceFood.TipoComida.Liquido:
+                return "Líquida";
+
+            case ChoiceFood.TipoComida.NPT:
+                return "NPT";
+
+            default:
+                return "Não definida";
         }
     }
 
-    /// <summary>Vincule este método ao OnClick do botão Entregar Comida.</summary>
     public void DeliverFood()
     {
+        if (!initialized)
+        {
+            Debug.LogError(
+                "[FoodDeliveryButton] O botão ainda não foi inicializado pelo host.",
+                this
+            );
+            return;
+        }
+
+        PlayClickSound();
+
         ChoiceFood.TipoComida selected = choiceFood != null
             ? choiceFood.ComidaSelecionada
             : ChoiceFood.TipoComida.Nenhuma;
 
-        // O painel fecha sempre que o botão é acionado. A comida selecionada
-        // é consumida após capturar seu tipo, mesmo que a tentativa falhe.
         if (choiceFood != null)
         {
             choiceFood.FecharPainel();
+
             if (selected != ChoiceFood.TipoComida.Nenhuma)
                 choiceFood.ConsumirComida();
         }
 
         if (choiceFood == null)
         {
-            ShowMessage("Selecione uma comida antes de entregar.");
-            Debug.LogWarning("[FoodDeliveryButton] ChoiceFood não foi atribuído.", this);
+            ShowMessage("Sistema de escolha de comida indisponível.");
             return;
         }
 
         if (selected == ChoiceFood.TipoComida.Nenhuma)
         {
-            ShowMessage("Você não tinha uma comida selecionada para entregar.");
-            Debug.LogWarning("[Entrega de comida] Nenhuma comida estava selecionada.", this);
+            ShowMessage("Selecione uma comida antes de entregar.");
             return;
         }
 
         if (CurrentPatient.Object == null || CurrentPatient.Data == null)
         {
-            ShowMessage("Interaja com um paciente antes de entregar a comida.");
-            Debug.LogWarning("[Entrega de comida] Não há paciente selecionado. A comida selecionada foi consumida.", this);
+            ShowMessage("Interaja com um paciente antes de entregar.");
             return;
         }
 
         bool correct;
         bool alreadyDelivered;
-        bool attempted = CurrentPatient.Object.TryDeliverFood(selected, out correct, out alreadyDelivered);
+
+        bool attempted = CurrentPatient.Object.TryDeliverFood(
+            selected,
+            out correct,
+            out alreadyDelivered
+        );
 
         if (!attempted && alreadyDelivered)
         {
             ShowMessage("Este paciente já recebeu comida hoje.");
-            Debug.LogWarning($"[Entrega de comida] {CurrentPatient.Data.patientName} já recebeu comida hoje. Nenhuma alteração de welfare.", this);
             return;
         }
 
         if (!attempted)
         {
             ShowMessage("Não foi possível entregar a comida.");
-            Debug.LogWarning("[Entrega de comida] A tentativa não foi processada.", this);
             return;
         }
 
@@ -122,43 +187,36 @@ public sealed class FoodDeliveryButton : MonoBehaviour
             ? $"Comida correta entregue a {CurrentPatient.Data.patientName}! Welfare +1."
             : $"Comida incorreta para {CurrentPatient.Data.patientName}. Welfare -1.");
 
-        ClosePanel();
+        if (CurrentPatient.Object != null)
+            CurrentPatient.Object.ClosePanel();
+        else if (panelExam != null)
+            panelExam.SetActive(false);
     }
 
     private void ShowMessage(string message)
     {
         Debug.Log(message, this);
-        if (feedbackText == null) return;
+
+        if (feedbackText == null)
+            return;
 
         feedbackText.text = message;
         feedbackText.gameObject.SetActive(true);
-        if (feedbackCoroutine != null) StopCoroutine(feedbackCoroutine);
+
+        if (feedbackCoroutine != null)
+            StopCoroutine(feedbackCoroutine);
+
         feedbackCoroutine = StartCoroutine(HideFeedbackAfterDelay());
     }
 
     private IEnumerator HideFeedbackAfterDelay()
     {
         yield return new WaitForSecondsRealtime(feedbackDuration);
-        if (feedbackText != null) feedbackText.gameObject.SetActive(false);
+
+        if (feedbackText != null)
+            feedbackText.gameObject.SetActive(false);
+
         feedbackCoroutine = null;
-    }
-
-    public void ClosePanel()
-    {
-        PlayClickSound();
-
-        if (panelExam != null)
-            panelExam.SetActive(false);
-
-        PauseController.SetPause(false);
-
-        if (PlayerReferences.Instance != null)
-        {
-            PlayerReferences.Instance.EnablePlayer();
-
-            if (PlayerReferences.Instance.InteractIcon != null)
-                PlayerReferences.Instance.InteractIcon.SetActive(true);
-        }
     }
 
     private void PlayClickSound()

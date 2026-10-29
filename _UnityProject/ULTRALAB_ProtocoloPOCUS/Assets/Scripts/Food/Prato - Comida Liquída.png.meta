@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 6b3c89fd0c876634cb3bbe653e361d4e
+guid: 6b414a2bff26f74459251875ccd3e297
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2568956360853038877
-    second: soup_0
+      213: 7355426386672853658
+    second: "Prato - Comida Liqu\xEDda_0"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -24,7 +24,7 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
     flipGreenChannel: 0
-  isReadable: 1
+  isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: soup_0
+      name: "Prato - Comida Liqu\xEDda_0"
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 980
-        height: 980
+        x: 66
+        y: 54
+        width: 92
+        height: 83
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d1720240334c6a320800000000000000
-      internalID: 2568956360853038877
+      spriteID: a92ab25f359b31660800000000000000
+      internalID: 7355426386672853658
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      soup_0: 2568956360853038877
+      "Prato - Comida Liqu\xEDda_0": 7355426386672853658
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

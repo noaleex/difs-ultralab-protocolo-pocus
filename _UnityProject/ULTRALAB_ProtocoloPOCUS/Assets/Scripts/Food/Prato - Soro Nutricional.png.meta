@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: b2d8bca349e60e445bb77a73b1f1d9df
+guid: 21670ee6cfe726d4787387e008518855
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2234474921238605288
-    second: npt_0
+      213: -2679661424433364709
+    second: Prato - Soro Nutricional_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -24,7 +24,7 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
     flipGreenChannel: 0
-  isReadable: 1
+  isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: npt_0
+      name: Prato - Soro Nutricional_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1200
-        height: 1200
+        x: 94
+        y: 5
+        width: 82
+        height: 102
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 812dd0cd5ec8df0e0800000000000000
-      internalID: -2234474921238605288
+      spriteID: b110556c12eefcad0800000000000000
+      internalID: -2679661424433364709
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      npt_0: -2234474921238605288
+      Prato - Soro Nutricional_0: -2679661424433364709
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,20 +1,22 @@
+using TMPro;
 using UnityEngine;
 
-/// <summary>
-/// Instancia o painel de ações para o NPC que recebeu a interação.
-/// Coloque este componente em um objeto ativo da cena (por exemplo, Canvas).
-/// </summary>
 public sealed class PatientPanelUIHost : MonoBehaviour
 {
     public static PatientPanelUIHost Instance { get; private set; }
 
-    [Header("Painel de ações - prefab")]
+    [Header("Prefab do painel de ações")]
     [SerializeField] private GameObject examPanelPrefab;
     [SerializeField] private Transform panelRoot;
 
     [Header("Painéis compartilhados da cena")]
     [SerializeField] private GameObject conductPanel;
     [SerializeField] private MedicalData medicalDataUI;
+
+    [Header("Referências compartilhadas da alimentação")]
+    [SerializeField] private ChoiceFood choiceFood;
+    [SerializeField] private TMP_Text feedbackText;
+    [SerializeField] private TMP_Text requiredFoodText;
 
     private OpenExams currentOwner;
     private GameObject currentPanel;
@@ -23,7 +25,11 @@ public sealed class PatientPanelUIHost : MonoBehaviour
     {
         if (Instance != null && Instance != this)
         {
-            Debug.LogError("[PatientPanelUIHost] Há mais de um host de painéis na cena.", this);
+            Debug.LogError(
+                "[PatientPanelUIHost] Já existe outro host na cena.",
+                this
+            );
+
             enabled = false;
             return;
         }
@@ -33,29 +39,54 @@ public sealed class PatientPanelUIHost : MonoBehaviour
 
     private void OnDestroy()
     {
-        if (Instance == this) Instance = null;
+        if (Instance == this)
+            Instance = null;
     }
 
     public bool OpenPanel(OpenExams owner)
     {
-        if (owner == null) return false;
+        if (owner == null)
+            return false;
+
         if (examPanelPrefab == null || panelRoot == null)
         {
-            Debug.LogError("[PatientPanelUIHost] Atribua Exam Panel Prefab e Panel Root no Inspector.", this);
+            Debug.LogError(
+                "[PatientPanelUIHost] Atribua Exam Panel Prefab e Panel Root.",
+                this
+            );
+
             return false;
         }
 
-        if (currentPanel != null) Destroy(currentPanel);
+        if (currentPanel != null)
+            Destroy(currentPanel);
+
         currentOwner = owner;
-        currentPanel = Instantiate(examPanelPrefab, panelRoot, false);
+
+        currentPanel = Instantiate(
+            examPanelPrefab,
+            panelRoot,
+            false
+        );
+
         currentPanel.SetActive(true);
 
-        owner.BindRuntimePanels(currentPanel, conductPanel, medicalDataUI);
+        owner.BindRuntimePanels(
+            currentPanel,
+            conductPanel,
+            medicalDataUI
+        );
 
-        PatientExamPanelController controller = currentPanel.GetComponent<PatientExamPanelController>();
+        PatientExamPanelController controller =
+            currentPanel.GetComponent<PatientExamPanelController>();
+
         if (controller == null)
         {
-            Debug.LogError("O prefab do painel precisa ter PatientExamPanelController na raiz.", currentPanel);
+            Debug.LogError(
+                "[PatientPanelUIHost] A prefab precisa ter PatientExamPanelController na raiz.",
+                currentPanel
+            );
+
             Destroy(currentPanel);
             currentPanel = null;
             currentOwner = null;
@@ -63,20 +94,45 @@ public sealed class PatientPanelUIHost : MonoBehaviour
         }
 
         controller.Initialize(owner);
+
+        FoodDeliveryButton foodButton =
+            currentPanel.GetComponentInChildren<FoodDeliveryButton>(true);
+
+        if (foodButton != null)
+        {
+            foodButton.Initialize(
+                choiceFood,
+                feedbackText,
+                requiredFoodText,
+                currentPanel
+            );
+        }
+        else
+        {
+            Debug.LogWarning(
+                "[PatientPanelUIHost] Não foi encontrado FoodDeliveryButton na prefab.",
+                currentPanel
+            );
+        }
+
         return true;
     }
 
     public void ClosePanel(OpenExams owner)
     {
-        if (owner == null || owner != currentOwner) return;
-        if (currentPanel != null) Destroy(currentPanel);
+        if (owner == null || owner != currentOwner)
+            return;
+
+        if (currentPanel != null)
+            Destroy(currentPanel);
+
         currentPanel = null;
         currentOwner = null;
     }
 
-    /// <summary>Use no botão Voltar/Fechar do painel de conduta compartilhado.</summary>
     public void CloseCurrentPatientPanel()
     {
-        if (currentOwner != null) currentOwner.ClosePanel();
+        if (currentOwner != null)
+            currentOwner.ClosePanel();
     }
 }
