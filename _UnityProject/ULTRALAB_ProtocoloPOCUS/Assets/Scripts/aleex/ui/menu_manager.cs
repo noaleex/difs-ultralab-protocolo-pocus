@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEditor; 
+using UnityEditor;
 using FMODUnity;
 using FMOD.Studio;
 using TMPro;
@@ -39,7 +39,7 @@ public class menu_manager : MonoBehaviour
     [SerializeField] private string sceneCutsceneMale = "PM0_Intro";
     [SerializeField] private string sceneCutsceneFemale = "PF0_Intro";
 
-    public EventReference MusicaMenu;    
+    public EventReference MusicaMenu;
     public EventReference ClickMenu;
     public EventReference SelecionarPersonagemClick;
     private EventInstance menuMusicInstance;
@@ -87,8 +87,8 @@ public class menu_manager : MonoBehaviour
 
     private void CheckSave()
     {
-        bool hasValidSave = save_manager.instance != null && 
-                            save_manager.instance.currentData != null && 
+        bool hasValidSave = save_manager.instance != null &&
+                            save_manager.instance.currentData != null &&
                             !string.IsNullOrEmpty(save_manager.instance.currentData.currentScene) &&
                             save_manager.instance.currentData.currentScene != "MainMenu" &&
                             save_manager.instance.currentData.currentScene != "Menu";
@@ -211,7 +211,7 @@ public class menu_manager : MonoBehaviour
     {
         if (buttonConfirmSelection != null)
         {
-            buttonConfirmSelection.interactable = !string.IsNullOrEmpty(selectedCharacter) && 
+            buttonConfirmSelection.interactable = !string.IsNullOrEmpty(selectedCharacter) &&
                                                   !string.IsNullOrEmpty(selectedDegree);
         }
     }
@@ -224,14 +224,27 @@ public class menu_manager : MonoBehaviour
             return;
         }
 
+
         if (save_manager.instance != null)
         {
             save_manager.instance.currentData.characterGender = selectedCharacter;
             save_manager.instance.currentData.playerDegree = selectedDegree;
-            if (inputName != null) save_manager.instance.currentData.playerName = inputName.text;
-            if (inputAge != null) save_manager.instance.currentData.playerAge = inputAge.text;
+
+            if (inputName != null)
+                save_manager.instance.currentData.playerName = inputName.text;
+
+            if (inputAge != null)
+                save_manager.instance.currentData.playerAge = inputAge.text;
+
             save_manager.instance.SaveGame();
         }
+
+        // Informa ao gerenciador que será iniciada uma nova partida.
+        if (boot_manager.instance != null)
+        {
+            boot_manager.instance.PrepareForNewGame(selectedCharacter);
+        }
+
 
         StopMenuMusic();
 
@@ -327,7 +340,7 @@ public class menu_manager : MonoBehaviour
     }
 
     public void AndroidConfirm()
-    { 
+    {
         PlayClickSound();
         panelMenuOutConfirmation.SetActive(true);
         panelMainMenu.SetActive(false);

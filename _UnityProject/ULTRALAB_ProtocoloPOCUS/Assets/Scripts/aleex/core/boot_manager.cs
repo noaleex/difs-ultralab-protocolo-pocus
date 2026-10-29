@@ -16,6 +16,7 @@ public class boot_manager : MonoBehaviour
 
     private Vector3? storedPosition = null;
     private string storedPositionScene = "";
+    private string activePlayerGender = "";
 
     private void Awake()
     {
@@ -154,47 +155,102 @@ public class boot_manager : MonoBehaviour
         storedPositionScene = sceneName;
     }
 
+
+    public void PrepareForNewGame(string selectedGender)
+    {
+        // A nova partida começa com o personagem escolhido no menu.
+        if (activePlayer != null)
+        {
+            Destroy(activePlayer);
+            activePlayer = null;
+        }
+
+        activePlayerGender = "";
+
+        // Não reaproveitar a posição de uma partida anterior.
+        storedPosition = null;
+        storedPositionScene = "";
+
+        if (save_manager.instance != null &&
+            save_manager.instance.currentData != null)
+        {
+            save_manager.instance.currentData.characterGender = selectedGender;
+            save_manager.instance.SaveGame();
+        }
+    }
+
     public void EnsurePlayerInstantiated()
     {
-        if (activePlayer != null)
+        if (save_manager.instance == null ||
+            save_manager.instance.currentData == null)
         {
             return;
         }
 
-        string savedGender = "";
-        if (save_manager.instance != null && save_manager.instance.currentData != null)
-        {
-            savedGender = save_manager.instance.currentData.characterGender;
-        }
+        string savedGender =
+            save_manager.instance.currentData.characterGender;
 
         if (string.IsNullOrEmpty(savedGender))
         {
             return;
         }
 
-        GameObject selectedPrefab = savedGender == "Feminino" ? femalePlayerPrefab : malePlayerPrefab;
-
-        if (selectedPrefab != null)
+        // Se o personagem atual corresponde à seleção, não recria.
+        if (activePlayer != null && activePlayerGender == savedGender)
         {
-            activePlayer = Instantiate(selectedPrefab);
-            DontDestroyOnLoad(activePlayer);
+            return;
+        }
 
-            PlayerReferences references = activePlayer.GetComponent<PlayerReferences>();
-            if (references != null)
+        // Se o gênero mudou, descarta o personagem anterior.
+        if (activePlayer != null)
+        {
+            Destroy(activePlayer);
+            activePlayer = null;
+        }
+
+        GameObject selectedPrefab =
+            savedGender == "Feminino" ? femalePlayerPrefab : malePlayerPrefab;
+
+        if (selectedPrefab == null)
+        {
+            Debug.LogError(
+                $"Prefab do personagem '{savedGender}' não foi configurado no boot_manager.");
+            return;
+        }
+
+        activePlayer = Instantiate(selectedPrefab);
+        activePlayerGender = savedGender;
+
+        DontDestroyOnLoad(activePlayer);
+
+        PlayerReferences references = activePlayer.GetComponent<PlayerReferences>();
+
+        if (references != null)
+        {
+            references.RefreshReferences();
+
+            if (AndroidControl.Instance != null)
             {
-                references.RefreshReferences();
-                if (AndroidControl.Instance != null)
-                {
-                    AndroidControl.Instance.SetPlayerInteraction(references.InteractionDetector);
-                }
+                AndroidControl.Instance.SetPlayerInteraction(
+                    references.InteractionDetector);
             }
         }
     }
 
+
+
     public void RegisterPlayer(GameObject player)
     {
         activePlayer = player;
+
+        if (save_manager.instance != null &&
+            save_manager.instance.currentData != null)
+        {
+            activePlayerGender =
+                save_manager.instance.currentData.characterGender;
+        }
     }
+
 
     public bool HasPlayer()
     {
