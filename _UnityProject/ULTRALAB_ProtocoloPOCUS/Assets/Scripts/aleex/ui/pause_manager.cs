@@ -37,7 +37,8 @@ public class pause_manager : MonoBehaviour
     private void Update()
     {
         // Leitura direta do hardware: ignora configurações quebradas do PlayerInput
-        if (Keyboard.current != null && Keyboard.current.escapeKey.wasPressedThisFrame)
+        if (Keyboard.current != null &&
+            (Keyboard.current.escapeKey.wasPressedThisFrame || Keyboard.current.pKey.wasPressedThisFrame))
         {
             TriggerPauseAction();
         }
