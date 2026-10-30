@@ -9,7 +9,7 @@ public class DayTransition : MonoBehaviour
     public static DayTransition Instance;
 
     [Header("UI")]
-    [SerializeField] private Image blackPanel;
+    [SerializeField] private RawImage blackPanel;
     [SerializeField] private TextMeshProUGUI dayText;
 
     [Header("Configuração da Transição")]
