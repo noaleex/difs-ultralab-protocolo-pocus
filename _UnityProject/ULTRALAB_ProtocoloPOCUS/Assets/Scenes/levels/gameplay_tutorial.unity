@@ -30927,9 +30927,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1721295624}
-        m_TargetAssemblyTypeName: OpenExams, Assembly-CSharp
-        m_MethodName: OpenConduta
+      - m_Target: {fileID: 1218551608}
+        m_TargetAssemblyTypeName: tutorial_menu_controller, Assembly-CSharp
+        m_MethodName: OpenProntuario
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -34951,7 +34951,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1218551608}
         m_TargetAssemblyTypeName: tutorial_menu_controller, Assembly-CSharp
-        m_MethodName: BackToPauseMenu
+        m_MethodName: CloseMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

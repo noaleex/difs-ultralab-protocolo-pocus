@@ -38,10 +38,15 @@ public class loading_manager : MonoBehaviour
 
     public void SwitchScene(string sceneToLoad)
     {
-        StartCoroutine(LoadSceneCoroutine(sceneToLoad));
+        StartCoroutine(LoadSceneCoroutine(sceneToLoad, true));
     }
 
-    private IEnumerator LoadSceneCoroutine(string sceneToLoad)
+    public void SwitchSceneWithoutUpdatingSave(string sceneToLoad)
+    {
+        StartCoroutine(LoadSceneCoroutine(sceneToLoad, false));
+    }
+
+    private IEnumerator LoadSceneCoroutine(string sceneToLoad, bool updateSavedScene)
     {
         if (loadingCanvasGroup != null)
         {
@@ -84,7 +89,7 @@ public class loading_manager : MonoBehaviour
                 SceneManager.SetActiveScene(newScene);
             }
 
-            if (save_manager.instance != null && save_manager.instance.currentData != null)
+            if (updateSavedScene && save_manager.instance != null && save_manager.instance.currentData != null)
             {
                 save_manager.instance.currentData.currentScene = sceneToLoad;
                 save_manager.instance.SaveGame();
