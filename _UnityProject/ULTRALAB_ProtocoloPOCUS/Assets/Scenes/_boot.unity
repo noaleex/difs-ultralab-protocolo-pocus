@@ -137,7 +137,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &41408328
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6048,7 +6048,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &544193385
 RectTransform:
   m_ObjectHideFlags: 0
@@ -18627,7 +18627,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1277931004
 Transform:
   m_ObjectHideFlags: 0
@@ -18670,7 +18670,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9815463703bf084c96edac368b8151f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DayTransition
-  blackPanel: {fileID: 845847015}
+  blackPanel: {fileID: 0}
   dayText: {fileID: 1113263978}
   fadeTime: 1
   textTime: 1.5
