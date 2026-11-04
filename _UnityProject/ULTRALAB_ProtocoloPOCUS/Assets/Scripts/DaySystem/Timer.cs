@@ -405,6 +405,39 @@ public class Timer : MonoBehaviour
         DayTransition.Instance.CheckPatientsForSkipDay(OnSkipDayFinished);
     }
 
+
+    public void DeveloperSkipToNextDay()
+    {
+        if (!timerRunning)
+        {
+            Debug.LogWarning(
+                "[Developer] Não é possível pular o dia durante uma transição."
+            );
+
+            return;
+        }
+
+        if (DayTransition.Instance == null)
+        {
+            Debug.LogError(
+                "[Developer] DayTransition não encontrado."
+            );
+
+            return;
+        }
+
+        // Parar o relógio.
+        timerRunning = false;
+
+        SaveCurrentTime();
+
+        // Utilizar o caminho exclusivo do modo desenvolvedor.
+        DayTransition.Instance.CheckPatientsForDeveloperSkipDay(
+            OnSkipDayFinished
+        );
+    }
+
+
     private void OnSkipDayFinished(bool success)
     {
         if (success)

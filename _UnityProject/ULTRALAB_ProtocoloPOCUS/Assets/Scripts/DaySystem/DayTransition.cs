@@ -127,20 +127,6 @@ public class DayTransition : MonoBehaviour
         onFinished?.Invoke();
     }
 
-
-    // =====================================================
-    // FIM NATURAL DO DIA
-    // =====================================================
-    //
-    // Este método é chamado quando o relógio chega
-    // naturalmente ao endHour.
-    //
-    // NÃO exige que todos os pacientes tenham conduta.
-    //
-    // Pacientes incompletos serão avaliados como erros
-    // pelo PatientDayValidator.
-    // =====================================================
-
     public void CheckPatientsAtEndOfDay(
         Action onFinished)
     {
@@ -194,14 +180,6 @@ public class DayTransition : MonoBehaviour
         {
             validationFinished = true;
         }
-
-        // =================================================
-        // NÃO AVANÇAR
-        // =================================================
-        //
-        // Normalmente isso poderá acontecer em situações
-        // como Game Over.
-        // =================================================
 
         if (!validationSuccess)
         {
@@ -337,6 +315,71 @@ public class DayTransition : MonoBehaviour
         {
             dayText.gameObject.SetActive(false);
         }
+
+        yield return new WaitForSecondsRealtime(textTime);
+
+        yield return Fade(0f);
+
+        PauseController.SetPause(false);
+
+        onFinished?.Invoke(true);
+    }
+
+
+    public void CheckPatientsForDeveloperSkipDay(
+        Action<bool> onFinished)
+    {
+        StartCoroutine(
+            CheckPatientsForDeveloperSkipDayRoutine(onFinished)
+        );
+    }
+
+    private IEnumerator CheckPatientsForDeveloperSkipDayRoutine(
+        Action<bool> onFinished)
+    {
+        PauseController.SetPause(true);
+
+        if (patientDayValidator == null)
+        {
+            Debug.LogError(
+                "[DayTransition] PatientDayValidator não atribuído."
+            );
+
+            PauseController.SetPause(false);
+            onFinished?.Invoke(false);
+            yield break;
+        }
+
+        bool validationFinished = false;
+        bool validationSuccess = false;
+
+        // Avaliação sem exigir prontuários completos.
+        yield return StartCoroutine(
+            patientDayValidator.ValidatePatientsForDeveloperSkipDay(
+                result =>
+                {
+                    validationSuccess = result;
+                    validationFinished = true;
+                },
+                dayText
+            )
+        );
+
+        if (!validationFinished || !validationSuccess)
+        {
+            PauseController.SetPause(false);
+            onFinished?.Invoke(false);
+            yield break;
+        }
+
+        // Preparar os pacientes para o próximo dia.
+        patientDayValidator.ResetAllPatientsForNewDay();
+
+        // Transição visual.
+        yield return Fade(1f);
+
+        if (dayText != null)
+            dayText.gameObject.SetActive(false);
 
         yield return new WaitForSecondsRealtime(textTime);
 

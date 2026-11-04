@@ -119,18 +119,6 @@ public class PatientDayValidator : MonoBehaviour
                     $"Campos vazios serão considerados erros."
                 );
 
-
-                // -----------------------------------------
-                // AQUI NÃO BLOQUEAMOS O DIA.
-                //
-                // O paciente será avaliado pelo welfare
-                // que já foi alterado pelas condutas feitas.
-                //
-                // Para contabilizar os campos vazios como
-                // erros, fazemos uma avaliação automática
-                // usando um formulário vazio.
-                // -----------------------------------------
-
                 if (conductEvaluator != null)
                 {
                     conductEvaluator.EvaluateEmptyConduct(
@@ -300,25 +288,9 @@ public class PatientDayValidator : MonoBehaviour
                 .SetActive(false);
         }
 
-
-        // =================================================
-        // IMPORTANTE:
-        //
-        // O dia SEMPRE pode terminar quando chegou
-        // naturalmente ao endHour.
-        // =================================================
-
         onFinished?.Invoke(true);
     }
 
-
-    // =====================================================
-    // VERIFICAÇÃO PARA SKIP DAY
-    // =====================================================
-    //
-    // Diferentemente do relógio, SkipDay exige que todos
-    // os prontuários estejam preenchidos.
-    // =====================================================
 
     public IEnumerator ValidatePatientsForSkipDay(
         Action<bool> onFinished,
@@ -365,15 +337,6 @@ public class PatientDayValidator : MonoBehaviour
             yield break;
         }
 
-
-        // =================================================
-        // ESTÁ TUDO PREENCHIDO
-        // =================================================
-        //
-        // Agora podemos utilizar a mesma avaliação do
-        // final normal do dia.
-        // =================================================
-
         yield return StartCoroutine(
             ValidatePatientsAtEndOfDay(
                 onFinished,
@@ -382,6 +345,51 @@ public class PatientDayValidator : MonoBehaviour
         );
     }
 
+
+
+    public IEnumerator ValidatePatientsForDeveloperSkipDay(
+        Action<bool> onFinished,
+        TextMeshProUGUI messageText)
+    {
+        if (PatientManager.Instance == null)
+        {
+            Debug.LogError(
+                "[Developer SkipDay] PatientManager não encontrado!"
+            );
+
+            onFinished?.Invoke(false);
+            yield break;
+        }
+
+        IReadOnlyList<OpenExams> patients =
+            PatientManager.Instance.GetPatients();
+
+        if (patients.Count == 0)
+        {
+            Debug.LogWarning(
+                "[Developer SkipDay] Nenhum paciente encontrado."
+            );
+
+            onFinished?.Invoke(false);
+            yield break;
+        }
+
+        if (GameEndingManager.IsEnding)
+        {
+            onFinished?.Invoke(false);
+            yield break;
+        }
+
+
+        Debug.Log(
+            "[Developer SkipDay] Dia avançado sem avaliar prontuários. " +
+            "Welfare dos pacientes preservado."
+        );
+
+        onFinished?.Invoke(true);
+
+        yield break;
+    }
 
     private IEnumerator ShowSkipValidationMessage(
         TextMeshProUGUI messageText,
