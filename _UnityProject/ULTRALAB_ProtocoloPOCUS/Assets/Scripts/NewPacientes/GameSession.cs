@@ -587,6 +587,8 @@ public static class GameSession
         target.temperatura =
             source.temperatura;
 
+        // DIAGNÓSTICO
+        target.diagnostico = source.diagnostico;
 
         // =====================================================
         // NEUROLÓGICO

@@ -115,8 +115,15 @@ private static RuntimeEntry CreateEntry(
     PatientData clone = UnityEngine.Object.Instantiate(source);
     clone.name = source.name + "_Runtime_Day_" + day;
 
-    RandomizeVitals(clone);
-    RandomizeFood(clone);
+    // No primeiro dia, o clone mantém os valores definidos no PatientData.
+    // A aleatorização começa somente a partir do segundo dia.
+    NormalizeTemperature(clone);
+
+    if (day > 1)
+    {
+        RandomizeVitals(clone);
+        RandomizeFood(clone);
+    }
 
     RuntimeEntry entry = new RuntimeEntry
     {
@@ -172,6 +179,19 @@ private static RuntimeEntry CreateEntry(
         data.food = UnityEngine.Random.Range(1, 4);
     }
 
+
+    private static void NormalizeTemperature(PatientData data)
+    {
+        if (data == null || !TryParseDecimal(data.temperatura, out float temperature))
+            return;
+
+        data.temperatura = Mathf.Clamp(
+            Mathf.RoundToInt(temperature),
+            34,
+            42
+        ).ToString(CultureInfo.InvariantCulture);
+    }
+
     private static void RandomizeVitals(PatientData data)
     {
         if (int.TryParse(data.frequenciaCardiaca, NumberStyles.Integer, CultureInfo.InvariantCulture, out int heartRate))
@@ -182,9 +202,16 @@ private static RuntimeEntry CreateEntry(
 
         if (TryParseDecimal(data.temperatura, out float temperature))
         {
-            float delta = UnityEngine.Random.Range(1, 6) / 10f * (UnityEngine.Random.value < 0.5f ? -1f : 1f);
-            float randomized = Mathf.Clamp(temperature + delta, 34f, 42f);
-            data.temperatura = randomized.ToString("0.0", CultureInfo.InvariantCulture);
+            int delta = UnityEngine.Random.Range(1, 4) *
+                (UnityEngine.Random.value < 0.5f ? -1 : 1);
+
+            int randomized = Mathf.Clamp(
+                Mathf.RoundToInt(temperature) + delta,
+                34,
+                42
+            );
+
+            data.temperatura = randomized.ToString(CultureInfo.InvariantCulture);
         }
 
         // Pressão arterial: os dois campos representam os valores sistólico e diastólico.

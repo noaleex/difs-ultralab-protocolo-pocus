@@ -1,7 +1,7 @@
-using System.Collections;
-using TMPro;
+
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 using FMODUnity;
 
 public sealed class FoodDeliveryButton : MonoBehaviour
@@ -15,13 +15,17 @@ public sealed class FoodDeliveryButton : MonoBehaviour
     [Header("Áudio")]
     public EventReference ClickSound;
 
-    [Header("Feedback")]
-    [SerializeField, Min(0.1f)]
-    private float feedbackDuration = 3f;
+    [Header("Fade do feedback")]
+    [SerializeField, Min(0.01f)] private float fadeInDuration = 0.25f;
+    [SerializeField, Min(0.1f)] private float messageDuration = 2f;
+    [SerializeField, Min(0.01f)] private float fadeOutDuration = 0.35f;
 
     private Button button;
-    private Coroutine feedbackCoroutine;
+    private FoodFeedbackCoroutineRunner feedbackRunner;
+
     private bool initialized;
+    private Color feedbackOriginalColor = Color.white;
+    private bool deliveryInProgress;
 
     public void Initialize(
         ChoiceFood food,
@@ -45,37 +49,145 @@ public sealed class FoodDeliveryButton : MonoBehaviour
                 "[FoodDeliveryButton] Não foi encontrado um componente Button.",
                 this
             );
+
             return;
         }
 
         button.onClick.RemoveListener(DeliverFood);
         button.onClick.AddListener(DeliverFood);
 
+        if (feedbackText != null)
+        {
+            feedbackOriginalColor = feedbackText.color;
+
+            Color color = feedbackOriginalColor;
+            color.a = 0f;
+
+            feedbackText.color = color;
+            feedbackText.gameObject.SetActive(false);
+
+            InitializeFeedbackRunner();
+        }
+
         initialized = true;
+
         RefreshRequiredFood();
+        RefreshDeliveryButton();
     }
 
     private void OnEnable()
     {
-        CurrentPatient.Changed += RefreshRequiredFood;
+        CurrentPatient.Changed += OnPatientChanged;
+        GameSession.DayChanged += OnDayChanged;
+
         RefreshRequiredFood();
+        RefreshDeliveryButton();
     }
 
     private void OnDisable()
     {
-        CurrentPatient.Changed -= RefreshRequiredFood;
+        CurrentPatient.Changed -= OnPatientChanged;
+        GameSession.DayChanged -= OnDayChanged;
 
-        if (feedbackCoroutine != null)
-        {
-            StopCoroutine(feedbackCoroutine);
-            feedbackCoroutine = null;
-        }
+        // Não interrompemos o feedback aqui.
+        // A Coroutine pertence ao Canvas, não ao botão.
     }
 
     private void OnDestroy()
     {
         if (button != null)
             button.onClick.RemoveListener(DeliverFood);
+    }
+
+    // =====================================================
+    // FEEDBACK
+    // =====================================================
+
+    private void InitializeFeedbackRunner()
+    {
+        if (feedbackText == null)
+            return;
+
+        Transform canvasRoot = feedbackText.transform.root;
+
+        if (canvasRoot == null)
+            return;
+
+        // O feedback precisa estar fora do painel que será fechado.
+        if (panelExam != null &&
+            feedbackText.transform.IsChildOf(panelExam.transform))
+        {
+            Debug.LogError(
+                "[FoodDeliveryButton] O FeedbackText está dentro do " +
+                "panelExam. Coloque-o como objeto separado no Canvas.",
+                feedbackText
+            );
+
+            return;
+        }
+
+        feedbackRunner =
+            canvasRoot.GetComponent<FoodFeedbackCoroutineRunner>();
+
+        if (feedbackRunner == null)
+        {
+            feedbackRunner =
+                canvasRoot.gameObject.AddComponent<FoodFeedbackCoroutineRunner>();
+        }
+    }
+
+    private void ShowMessage(string message)
+    {
+        Debug.Log(message, this);
+
+        if (feedbackText == null)
+        {
+            Debug.LogError(
+                "[FoodDeliveryButton] FeedbackText não foi atribuído.",
+                this
+            );
+
+            return;
+        }
+
+        if (feedbackRunner == null)
+            InitializeFeedbackRunner();
+
+        if (feedbackRunner == null)
+        {
+            Debug.LogError(
+                "[FoodDeliveryButton] Não foi possível inicializar " +
+                "o controlador de feedback.",
+                this
+            );
+
+            return;
+        }
+
+        feedbackRunner.ShowMessage(
+            feedbackText,
+            message,
+            feedbackOriginalColor,
+            fadeInDuration,
+            messageDuration,
+            fadeOutDuration
+        );
+    }
+
+    // =====================================================
+    // PACIENTE E DIA
+    // =====================================================
+
+    private void OnPatientChanged()
+    {
+        RefreshRequiredFood();
+        RefreshDeliveryButton();
+    }
+
+    private void OnDayChanged(int day)
+    {
+        RefreshRequiredFood();
+        RefreshDeliveryButton();
     }
 
     public void RefreshRequiredFood()
@@ -96,9 +208,28 @@ public sealed class FoodDeliveryButton : MonoBehaviour
         PatientData clinical =
             PatientDailyState.GetClinicalData(CurrentPatient.Data, day);
 
-        requiredFoodText.text = clinical == null
-            ? "Alimentação indisponível"
-            : FoodName(clinical.food);
+        requiredFoodText.text =
+            clinical == null
+                ? "Alimentação indisponível"
+                : FoodName(clinical.food);
+    }
+
+    private void RefreshDeliveryButton()
+    {
+        if (button == null || !initialized)
+            return;
+
+        bool hasPatient = CurrentPatient.Data != null;
+
+        int day = Timer.Instance != null
+            ? Mathf.Max(1, Timer.Instance.CurrentDay)
+            : 1;
+
+        bool alreadyDelivered =
+            hasPatient &&
+            PatientDailyState.HasDeliveredFood(CurrentPatient.Data, day);
+
+        button.interactable = hasPatient && !alreadyDelivered;
     }
 
     private static string FoodName(int food)
@@ -119,6 +250,10 @@ public sealed class FoodDeliveryButton : MonoBehaviour
         }
     }
 
+    // =====================================================
+    // ENTREGA DE COMIDA
+    // =====================================================
+
     public void DeliverFood()
     {
         if (!initialized)
@@ -127,21 +262,30 @@ public sealed class FoodDeliveryButton : MonoBehaviour
                 "[FoodDeliveryButton] O botão ainda não foi inicializado pelo host.",
                 this
             );
+
             return;
         }
 
-        PlayClickSound();
+        if (deliveryInProgress)
+            return;
 
-        ChoiceFood.TipoComida selected = choiceFood != null
-            ? choiceFood.ComidaSelecionada
-            : ChoiceFood.TipoComida.Nenhuma;
+        deliveryInProgress = true;
 
-        if (choiceFood != null)
+        if (CurrentPatient.Object == null || CurrentPatient.Data == null)
         {
-            choiceFood.FecharPainel();
+            deliveryInProgress = false;
+            ShowMessage("Interaja com um paciente antes de entregar.");
+            return;
+        }
 
-            if (selected != ChoiceFood.TipoComida.Nenhuma)
-                choiceFood.ConsumirComida();
+        int day = Timer.Instance != null
+            ? Mathf.Max(1, Timer.Instance.CurrentDay)
+            : 1;
+
+        if (PatientDailyState.HasDeliveredFood(CurrentPatient.Data, day))
+        {
+            RefreshDeliveryButton();
+            return;
         }
 
         if (choiceFood == null)
@@ -150,74 +294,70 @@ public sealed class FoodDeliveryButton : MonoBehaviour
             return;
         }
 
+        ChoiceFood.TipoComida selected =
+            choiceFood.ComidaSelecionada;
+
         if (selected == ChoiceFood.TipoComida.Nenhuma)
         {
-            ShowMessage("Selecione uma comida antes de entregar.");
+            ShowMessage("Selecione uma comida.");
             return;
         }
 
-        if (CurrentPatient.Object == null || CurrentPatient.Data == null)
-        {
-            ShowMessage("Interaja com um paciente antes de entregar.");
-            return;
-        }
+        PlayClickSound();
+
+        choiceFood.FecharPainel();
 
         bool correct;
         bool alreadyDelivered;
 
-        bool attempted = CurrentPatient.Object.TryDeliverFood(
-            selected,
-            out correct,
-            out alreadyDelivered
-        );
-
-        if (!attempted && alreadyDelivered)
-        {
-            ShowMessage("Este paciente já recebeu comida hoje.");
-            return;
-        }
+        bool attempted =
+            CurrentPatient.Object.TryDeliverFood(
+                selected,
+                out correct,
+                out alreadyDelivered
+            );
 
         if (!attempted)
         {
-            ShowMessage("Não foi possível entregar a comida.");
+            if (alreadyDelivered)
+            {
+                RefreshDeliveryButton();
+            }
+            else
+            {
+                ShowMessage("Não foi possível entregar a comida.");
+            }
+
             return;
         }
 
-        ShowMessage(correct
-            ? $"Comida correta entregue a {CurrentPatient.Data.patientName}! Welfare +1."
-            : $"Comida incorreta para {CurrentPatient.Data.patientName}. Welfare -1.");
+        choiceFood.ConsumirComida();
 
+        // Bloqueia novas entregas.
+        if (button != null)
+            button.interactable = false;
+
+        // Mostra o feedback no Canvas, fora do painel do paciente.
+        ShowMessage(
+            correct
+                ? "Paciente alimentado, opção correta."
+                : "Paciente alimentado, opção errada."
+        );
+
+        // Fecha o painel sem interromper o feedback.
         if (CurrentPatient.Object != null)
+        {
             CurrentPatient.Object.ClosePanel();
+        }
         else if (panelExam != null)
+        {
             panelExam.SetActive(false);
+        }
     }
 
-    private void ShowMessage(string message)
-    {
-        Debug.Log(message, this);
-
-        if (feedbackText == null)
-            return;
-
-        feedbackText.text = message;
-        feedbackText.gameObject.SetActive(true);
-
-        if (feedbackCoroutine != null)
-            StopCoroutine(feedbackCoroutine);
-
-        feedbackCoroutine = StartCoroutine(HideFeedbackAfterDelay());
-    }
-
-    private IEnumerator HideFeedbackAfterDelay()
-    {
-        yield return new WaitForSecondsRealtime(feedbackDuration);
-
-        if (feedbackText != null)
-            feedbackText.gameObject.SetActive(false);
-
-        feedbackCoroutine = null;
-    }
+    // =====================================================
+    // ÁUDIO
+    // =====================================================
 
     private void PlayClickSound()
     {
@@ -228,5 +368,134 @@ public sealed class FoodDeliveryButton : MonoBehaviour
                 transform.position
             );
         }
+    }
+}
+
+
+// =========================================================
+// CONTROLADOR INDEPENDENTE DO FEEDBACK
+// =========================================================
+
+public sealed class FoodFeedbackCoroutineRunner : MonoBehaviour
+{
+    private Coroutine currentCoroutine;
+
+    public void ShowMessage(
+        TMP_Text text,
+        string message,
+        Color originalColor,
+        float fadeInDuration,
+        float messageDuration,
+        float fadeOutDuration)
+    {
+        if (text == null)
+            return;
+
+        if (currentCoroutine != null)
+        {
+            StopCoroutine(currentCoroutine);
+            currentCoroutine = null;
+        }
+
+        currentCoroutine = StartCoroutine(
+            PlayFeedback(
+                text,
+                message,
+                originalColor,
+                fadeInDuration,
+                messageDuration,
+                fadeOutDuration
+            )
+        );
+    }
+
+    private System.Collections.IEnumerator PlayFeedback(
+        TMP_Text text,
+        string message,
+        Color originalColor,
+        float fadeInDuration,
+        float messageDuration,
+        float fadeOutDuration)
+    {
+        text.text = message;
+        text.gameObject.SetActive(true);
+
+        SetAlpha(text, originalColor, 0f);
+
+        yield return Fade(
+            text,
+            originalColor,
+            0f,
+            1f,
+            fadeInDuration
+        );
+
+        yield return new WaitForSecondsRealtime(messageDuration);
+
+        yield return Fade(
+            text,
+            originalColor,
+            1f,
+            0f,
+            fadeOutDuration
+        );
+
+        if (text != null)
+        {
+            SetAlpha(text, originalColor, 0f);
+            text.gameObject.SetActive(false);
+        }
+
+        currentCoroutine = null;
+    }
+
+    private System.Collections.IEnumerator Fade(
+        TMP_Text text,
+        Color originalColor,
+        float from,
+        float to,
+        float duration)
+    {
+        if (duration <= 0f)
+        {
+            SetAlpha(text, originalColor, to);
+            yield break;
+        }
+
+        float elapsed = 0f;
+
+        while (elapsed < duration)
+        {
+            if (text == null)
+                yield break;
+
+            elapsed += Time.unscaledDeltaTime;
+
+            float alpha = Mathf.Lerp(
+                from,
+                to,
+                Mathf.Clamp01(elapsed / duration)
+            );
+
+            SetAlpha(text, originalColor, alpha);
+
+            yield return null;
+        }
+
+        SetAlpha(text, originalColor, to);
+    }
+
+    private void SetAlpha(
+        TMP_Text text,
+        Color originalColor,
+        float alpha)
+    {
+        if (text == null)
+            return;
+
+        Color color = originalColor;
+        color.a = alpha;
+
+        text.color = color;
     }
 }

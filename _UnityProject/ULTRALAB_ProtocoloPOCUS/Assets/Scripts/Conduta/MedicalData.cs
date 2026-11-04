@@ -57,6 +57,13 @@ public class MedicalData : MonoBehaviour
     // AVALIAÇÃO NEUROLÓGICA
     // =====================================================
 
+    [Header("Diagnóstico")]
+    public TMP_Dropdown diagnosticoInput;
+
+    // =====================================================
+    // AVALIAÇÃO NEUROLÓGICA
+    // =====================================================
+
     [Header("Avaliação Neurológica")]
     public TMP_Dropdown nivelConscienciaDropdown;
 
@@ -314,7 +321,7 @@ private void TocarSomDigitacao()
     }
 
     // =====================================================
-    // TEMPERATURA: aceita casas decimais (ex.: 36.8 ou 36,8)
+    // TEMPERATURA: somente números inteiros
     // =====================================================
 
     private void SetupTemperatureInput(TMP_InputField inputField)
@@ -322,14 +329,15 @@ private void TocarSomDigitacao()
         if (inputField == null)
             return;
 
-        inputField.contentType = TMP_InputField.ContentType.DecimalNumber;
-        inputField.characterLimit = 5;
+        inputField.contentType = TMP_InputField.ContentType.IntegerNumber;
+        inputField.characterLimit = 2;
         inputField.onEndEdit.AddListener(value =>
         {
-            if (float.TryParse(value.Replace(',', '.'), System.Globalization.NumberStyles.Float,
-                System.Globalization.CultureInfo.InvariantCulture, out float temperature))
+            if (int.TryParse(value, out int temperature))
             {
-                inputField.SetTextWithoutNotify(Mathf.Clamp(temperature, 34f, 42f).ToString("0.0", System.Globalization.CultureInfo.InvariantCulture));
+                inputField.SetTextWithoutNotify(
+                    Mathf.Clamp(temperature, 34, 42).ToString()
+                );
             }
             else
             {
@@ -346,7 +354,6 @@ private void TocarSomDigitacao()
     {
         bool valid = true;
 
-        // Todos os campos de texto avaliados pela conduta precisam ter conteúdo.
         valid &= ValidateRequiredInput(frequenciaInput, "Frequência respiratória");
         valid &= ValidateRequiredInput(saturationInput, "Saturação");
         valid &= ValidateRequiredInput(oxigenoterapiaFluxoInput, "Fluxo de oxigenoterapia");
@@ -357,8 +364,7 @@ private void TocarSomDigitacao()
         valid &= ValidateRequiredInput(temperaturaInput, "Temperatura");
         valid &= ValidateRequiredInput(dorEscalaInput, "Escala de dor");
 
-        // Os dropdowns também precisam existir e ter uma opção selecionável.
-        // Quando a primeira opção é um placeholder como "Selecione...", ela não conta como resposta.
+        valid &= ValidateRequiredDropdown(diagnosticoInput, "Diagnóstico");
         valid &= ValidateRequiredDropdown(permeabilidadeDropdown, "Permeabilidade da via aérea");
         valid &= ValidateRequiredDropdown(presencaDropdown, "Presença na via aérea");
         valid &= ValidateRequiredDropdown(intervencaoDropdown, "Intervenção na via aérea");
@@ -510,6 +516,10 @@ private void TocarSomDigitacao()
         state.temperatura =
             temperaturaInput.text;
 
+        state.diagnostico =
+            diagnosticoInput.value;
+            
+
         // -------------------------------------------------
         // NEUROLÓGICO
         // -------------------------------------------------
@@ -638,6 +648,10 @@ private void TocarSomDigitacao()
             state.temperatura
         );
 
+        diagnosticoInput.SetValueWithoutNotify(
+            state.diagnostico
+        );
+
         // -------------------------------------------------
         // NEUROLÓGICO
         // -------------------------------------------------
@@ -713,6 +727,9 @@ private void TocarSomDigitacao()
 
         temperaturaInput.SetTextWithoutNotify("");
 
+        
+        diagnosticoInput.SetValueWithoutNotify(0);
+
         // -------------------------------------------------
         // NEUROLÓGICO
         // -------------------------------------------------
@@ -783,5 +800,8 @@ private void TocarSomDigitacao()
 
         if (presencaPeleDropdown != null)
             presencaPeleDropdown.RefreshShownValue();
+
+        if (diagnosticoInput != null)
+            diagnosticoInput.RefreshShownValue();
     }
 }

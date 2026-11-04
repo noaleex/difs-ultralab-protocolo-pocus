@@ -29,6 +29,9 @@ public class ConductState
     public int edema;
     public string temperatura;
 
+    // DIAGNÓSTICO
+    public int diagnostico;
+
     // NEUROLÓGICO
     public int nivelConsciencia;
 
@@ -68,6 +71,9 @@ public class ConductState
         edema = 0;
 
         temperatura = "";
+
+        // DIAGNÓSTICO
+        diagnostico = 0;
 
         // NEUROLÓGICO
         nivelConsciencia = 0;
