@@ -14,6 +14,7 @@ public class PatientProgressionManager : MonoBehaviour
     [SerializeField] private GameObject patient2Prefab;
     [SerializeField] private GameObject patient3Prefab;
     [SerializeField] private Transform spawnParent;
+    [SerializeField] private Transform spawnParentPatient3;
 
     [Header("Limites de Welfare")]
     [SerializeField, Min(0)] private int spawnPatient2At = 50;
@@ -155,10 +156,10 @@ public class PatientProgressionManager : MonoBehaviour
             return;
 
         if (GameSession.GetPatientWelfare(patient1Data) <= 0 ||
-            (GameSession.IsPatient2Unlocked &&
-             GameSession.GetPatientWelfare(patient2Data) <= 0) ||
-            (GameSession.IsPatient3Unlocked &&
-             GameSession.GetPatientWelfare(patient3Data) <= 0))
+        (GameSession.IsPatient2Unlocked &&
+        GameSession.GetPatientWelfare(patient2Data) <= 0) ||
+        (GameSession.IsPatient3Unlocked &&
+        GameSession.GetPatientWelfare(patient3Data) <= 0))
         {
             GameEndingManager.FinishGame(
                 GameEndingManager.EndingType.Negative
@@ -256,7 +257,8 @@ public class PatientProgressionManager : MonoBehaviour
                     patient3Data,
                     patient3Prefab,
                     patient3Instance,
-                    "Paciente 3"
+                    "Paciente 3",
+                    spawnParentPatient3
                 );
             }
         }
@@ -279,8 +281,8 @@ public class PatientProgressionManager : MonoBehaviour
         // =================================================
 
         if (GameSession.IsPatientDischarged(patient1Data) &&
-            GameSession.IsPatientDischarged(patient2Data) &&
-            GameSession.IsPatientDischarged(patient3Data))
+        GameSession.IsPatientDischarged(patient2Data) &&
+        GameSession.IsPatientDischarged(patient3Data))
         {
             GameEndingManager.FinishGame(
                 GameEndingManager.EndingType.Positive
@@ -334,7 +336,8 @@ public class PatientProgressionManager : MonoBehaviour
         PatientData data,
         GameObject prefab,
         OpenExams cached,
-        string label)
+        string label,
+        Transform customSpawnParent = null)
     {
         if (cached != null)
             return cached;
@@ -357,8 +360,12 @@ public class PatientProgressionManager : MonoBehaviour
         if (prefab == null)
             return null;
 
-        GameObject instance = spawnParent != null
-            ? Instantiate(prefab, spawnParent, false)
+        Transform targetSpawn = customSpawnParent != null
+        ? customSpawnParent
+        : spawnParent;
+
+        GameObject instance = targetSpawn != null
+            ? Instantiate(prefab, targetSpawn, false)
             : Instantiate(prefab);
 
         OpenExams spawned = instance.GetComponent<OpenExams>();

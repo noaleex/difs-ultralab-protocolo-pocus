@@ -171,17 +171,17 @@ public static class GameSession
     int day,
     int hour,
     int minute)
-{
-    int previousDay = CurrentDay;
-    CurrentDay = day;
-    CurrentHour = hour;
-    CurrentMinute = minute;
+    {
+        int previousDay = CurrentDay;
+        CurrentDay = day;
+        CurrentHour = hour;
+        CurrentMinute = minute;
 
-    HasSavedTime = true;
+        HasSavedTime = true;
 
-    if (CurrentDay != previousDay)
-        DayChanged?.Invoke(CurrentDay);
-}
+        if (CurrentDay != previousDay)
+            DayChanged?.Invoke(CurrentDay);
+    }
 
     public static void LoadTime(
         out int day,
@@ -315,11 +315,6 @@ public static class GameSession
 
         if (previousValue != currentValue)
             PatientWelfareChanged?.Invoke(patient, previousValue, currentValue);
-
-        if (currentValue <= 0)
-            GameEndingManager.FinishGame(GameEndingManager.EndingType.Negative);
-        else if (AreConfiguredPatientsDischarged())
-            GameEndingManager.FinishGame(GameEndingManager.EndingType.Positive);
     }
 
 
@@ -377,9 +372,6 @@ public static class GameSession
             $"[GameSession] " +
             $"{patient.patientName} recebeu alta."
         );
-
-        if (AreConfiguredPatientsDischarged())
-            GameEndingManager.FinishGame(GameEndingManager.EndingType.Positive);
     }
 
     public static bool IsPatientDischarged(

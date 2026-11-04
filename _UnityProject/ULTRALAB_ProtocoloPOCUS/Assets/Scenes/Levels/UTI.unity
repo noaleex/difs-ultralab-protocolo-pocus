@@ -28198,6 +28198,7 @@ MonoBehaviour:
   patient2Prefab: {fileID: 2645341003691389877, guid: 767961e28ae96c547af4eb4959dfe8c8, type: 3}
   patient3Prefab: {fileID: 2645341003691389877, guid: a30837a5c1ba9cb40b30ebb0ca0e46a5, type: 3}
   spawnParent: {fileID: 887197777}
+  spawnParentPatient3: {fileID: 741329188}
   spawnPatient2At: 50
   dischargeAt: 74
 --- !u!114 &589486356
@@ -31214,6 +31215,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 737628932}
   m_CullTransparentMesh: 1
+--- !u!1 &741329187
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 741329188}
+  m_Layer: 0
+  m_Name: SpawnPaciente3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &741329188
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 741329187}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 13, y: -0.11, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &744857965
 GameObject:
   m_ObjectHideFlags: 0
@@ -35041,7 +35073,7 @@ GameObject:
   m_Component:
   - component: {fileID: 887197777}
   m_Layer: 0
-  m_Name: SpawnPacientes
+  m_Name: SpawnPaciente2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35056,7 +35088,7 @@ Transform:
   m_GameObject: {fileID: 887197776}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7, y: 0.229, z: 0}
+  m_LocalPosition: {x: 7, y: -0.11, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -75277,5 +75309,6 @@ SceneRoots:
   - {fileID: 589486354}
   - {fileID: 1259649969}
   - {fileID: 887197777}
+  - {fileID: 741329188}
   - {fileID: 387724350}
   - {fileID: 272037317}
