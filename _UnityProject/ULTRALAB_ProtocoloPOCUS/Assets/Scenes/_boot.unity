@@ -1027,8 +1027,8 @@ MonoBehaviour:
   gameplayTutorialSceneName: gameplay_tutorial
   cutscenes:
   - stepId: intro
-    maleSceneName: PF0_Intro
-    femaleSceneName: PM0_Intro
+    maleSceneName: PM0_Intro
+    femaleSceneName: PF0_Intro
 --- !u!1 &106824515
 GameObject:
   m_ObjectHideFlags: 0
@@ -5377,7 +5377,7 @@ Transform:
   m_GameObject: {fileID: 463444158}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1091.9839, y: -655.0453, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -20992,6 +20992,7 @@ MonoBehaviour:
   ritmoCardiacoDropdown: {fileID: 1562818396}
   edemaDropdown: {fileID: 2141569014}
   temperaturaInput: {fileID: 1472120525}
+  diagnosticoInput: {fileID: 0}
   nivelConscienciaDropdown: {fileID: 2075148721}
   avalicaoPeleDropdown: {fileID: 1634311303}
   presencaPeleDropdown: {fileID: 1560535123}
