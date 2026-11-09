@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public sealed class PatientPanelUIHost : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public sealed class PatientPanelUIHost : MonoBehaviour
     [SerializeField] private ChoiceFood choiceFood;
     [SerializeField] private TMP_Text feedbackText;
     [SerializeField] private TMP_Text requiredFoodText;
+    [SerializeField] private Image bgFeedbackImage;
 
     private OpenExams currentOwner;
     private GameObject currentPanel;
@@ -102,6 +104,7 @@ public sealed class PatientPanelUIHost : MonoBehaviour
         {
             foodButton.Initialize(
                 choiceFood,
+                bgFeedbackImage,
                 feedbackText,
                 requiredFoodText,
                 currentPanel

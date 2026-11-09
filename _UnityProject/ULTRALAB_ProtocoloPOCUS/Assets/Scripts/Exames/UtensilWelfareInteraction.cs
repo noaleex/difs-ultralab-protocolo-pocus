@@ -28,6 +28,7 @@ public sealed class UtensilWelfareInteraction : MonoBehaviour, IInteractable
     [SerializeField, Min(1)] private int minutesBetweenIvStandRewards = 60;
 
     [Header("Feedback opcional")]
+    private GameObject feedbackBackground;
     [SerializeField] private TMP_Text feedbackText;
     [SerializeField, Min(0.1f)] private float feedbackDuration = 2.5f;
 
@@ -121,17 +122,35 @@ public sealed class UtensilWelfareInteraction : MonoBehaviour, IInteractable
     private void ShowFeedback(string message)
     {
         Debug.Log(message, this);
-        if (feedbackText == null) return;
-        if (feedbackCoroutine != null) StopCoroutine(feedbackCoroutine);
+
+        if (feedbackText == null)
+            return;
+
+        if (feedbackCoroutine != null)
+            StopCoroutine(feedbackCoroutine);
+
+        InitializeFeedbackBackground();
+
         feedbackText.text = message;
+
+        if (feedbackBackground != null)
+            feedbackBackground.SetActive(true);
+
         feedbackText.gameObject.SetActive(true);
+
         feedbackCoroutine = StartCoroutine(HideFeedback());
     }
 
     private System.Collections.IEnumerator HideFeedback()
     {
         yield return new WaitForSecondsRealtime(feedbackDuration);
-        if (feedbackText != null) feedbackText.gameObject.SetActive(false);
+
+        if (feedbackText != null)
+            feedbackText.gameObject.SetActive(false);
+
+        if (feedbackBackground != null)
+            feedbackBackground.SetActive(false);
+
         feedbackCoroutine = null;
     }
 
@@ -142,5 +161,18 @@ public sealed class UtensilWelfareInteraction : MonoBehaviour, IInteractable
             StopCoroutine(feedbackCoroutine);
             feedbackCoroutine = null;
         }
+    }
+
+    private void InitializeFeedbackBackground()
+    {
+        if (feedbackText == null)
+            return;
+
+        Transform parent = feedbackText.transform.parent;
+
+        if (parent == null)
+            return;
+
+        feedbackBackground = parent.gameObject;
     }
 }

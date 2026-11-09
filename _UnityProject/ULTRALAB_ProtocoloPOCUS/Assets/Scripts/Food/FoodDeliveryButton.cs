@@ -1,4 +1,3 @@
-
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -11,6 +10,7 @@ public sealed class FoodDeliveryButton : MonoBehaviour
     [SerializeField] private TMP_Text feedbackText;
     [SerializeField] private TMP_Text requiredFoodText;
     [SerializeField] private GameObject panelExam;
+    [SerializeField] private Image bgFeedbackImage;
 
     [Header("Áudio")]
     public EventReference ClickSound;
@@ -28,12 +28,14 @@ public sealed class FoodDeliveryButton : MonoBehaviour
     private bool deliveryInProgress;
 
     public void Initialize(
-        ChoiceFood food,
-        TMP_Text feedback,
-        TMP_Text requiredFood,
-        GameObject runtimePanel)
+       ChoiceFood food,
+       Image bgImage,
+       TMP_Text feedback,
+       TMP_Text requiredFood,
+       GameObject runtimePanel)
     {
         choiceFood = food;
+        bgFeedbackImage = bgImage;
         feedbackText = feedback;
         requiredFoodText = requiredFood;
         panelExam = runtimePanel;
@@ -49,7 +51,6 @@ public sealed class FoodDeliveryButton : MonoBehaviour
                 "[FoodDeliveryButton] Não foi encontrado um componente Button.",
                 this
             );
-
             return;
         }
 
@@ -67,6 +68,15 @@ public sealed class FoodDeliveryButton : MonoBehaviour
             feedbackText.gameObject.SetActive(false);
 
             InitializeFeedbackRunner();
+        }
+
+        if (bgFeedbackImage != null)
+        {
+            Color color = bgFeedbackImage.color;
+            color.a = 0f;
+
+            bgFeedbackImage.color = color;
+            bgFeedbackImage.gameObject.SetActive(false);
         }
 
         initialized = true;
@@ -165,13 +175,14 @@ public sealed class FoodDeliveryButton : MonoBehaviour
         }
 
         feedbackRunner.ShowMessage(
-            feedbackText,
-            message,
-            feedbackOriginalColor,
-            fadeInDuration,
-            messageDuration,
-            fadeOutDuration
-        );
+    feedbackText,
+    bgFeedbackImage,
+    message,
+    feedbackOriginalColor,
+    fadeInDuration,
+    messageDuration,
+    fadeOutDuration
+);
     }
 
     // =====================================================
@@ -376,12 +387,14 @@ public sealed class FoodDeliveryButton : MonoBehaviour
 // CONTROLADOR INDEPENDENTE DO FEEDBACK
 // =========================================================
 
+
 public sealed class FoodFeedbackCoroutineRunner : MonoBehaviour
 {
     private Coroutine currentCoroutine;
 
     public void ShowMessage(
         TMP_Text text,
+        Image background,
         string message,
         Color originalColor,
         float fadeInDuration,
@@ -400,6 +413,7 @@ public sealed class FoodFeedbackCoroutineRunner : MonoBehaviour
         currentCoroutine = StartCoroutine(
             PlayFeedback(
                 text,
+                background,
                 message,
                 originalColor,
                 fadeInDuration,
@@ -411,6 +425,7 @@ public sealed class FoodFeedbackCoroutineRunner : MonoBehaviour
 
     private System.Collections.IEnumerator PlayFeedback(
         TMP_Text text,
+        Image background,
         string message,
         Color originalColor,
         float fadeInDuration,
@@ -418,32 +433,51 @@ public sealed class FoodFeedbackCoroutineRunner : MonoBehaviour
         float fadeOutDuration)
     {
         text.text = message;
+
         text.gameObject.SetActive(true);
+
+        if (background != null)
+            background.gameObject.SetActive(true);
 
         SetAlpha(text, originalColor, 0f);
 
+        if (background != null)
+            SetBackgroundAlpha(background, 0f);
+
+        // FADE IN
         yield return Fade(
             text,
             originalColor,
             0f,
             1f,
-            fadeInDuration
+            fadeInDuration,
+            background
         );
 
+        // TEMPO VISÍVEL
         yield return new WaitForSecondsRealtime(messageDuration);
 
+        // FADE OUT
         yield return Fade(
             text,
             originalColor,
             1f,
             0f,
-            fadeOutDuration
+            fadeOutDuration,
+            background
         );
 
+        // DESATIVA AMBOS
         if (text != null)
         {
             SetAlpha(text, originalColor, 0f);
             text.gameObject.SetActive(false);
+        }
+
+        if (background != null)
+        {
+            SetBackgroundAlpha(background, 0f);
+            background.gameObject.SetActive(false);
         }
 
         currentCoroutine = null;
@@ -454,11 +488,16 @@ public sealed class FoodFeedbackCoroutineRunner : MonoBehaviour
         Color originalColor,
         float from,
         float to,
-        float duration)
+        float duration,
+        Image background)
     {
         if (duration <= 0f)
         {
             SetAlpha(text, originalColor, to);
+
+            if (background != null)
+                SetBackgroundAlpha(background, to);
+
             yield break;
         }
 
@@ -479,10 +518,16 @@ public sealed class FoodFeedbackCoroutineRunner : MonoBehaviour
 
             SetAlpha(text, originalColor, alpha);
 
+            if (background != null)
+                SetBackgroundAlpha(background, alpha);
+
             yield return null;
         }
 
         SetAlpha(text, originalColor, to);
+
+        if (background != null)
+            SetBackgroundAlpha(background, to);
     }
 
     private void SetAlpha(
@@ -498,4 +543,18 @@ public sealed class FoodFeedbackCoroutineRunner : MonoBehaviour
 
         text.color = color;
     }
+
+    private void SetBackgroundAlpha(
+        Image background,
+        float alpha)
+    {
+        if (background == null)
+            return;
+
+        Color color = background.color;
+        color.a = alpha;
+
+        background.color = color;
+    }
 }
+
