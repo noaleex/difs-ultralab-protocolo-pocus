@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using UnityEngine.InputSystem; // <- Adicionado o novo Input System
+using UnityEngine.InputSystem;
 
 [System.Serializable]
 public class CutsceneLine
@@ -26,6 +26,10 @@ public class CutsceneSlide
     [Header("Imagem de Fundo")]
     public Texture slideImage; 
     
+    [Header("Atores e Animações (Opcional)")]
+    [Tooltip("Arraste aqui o GameObject vazio que agrupa os personagens/balões deste slide. Ele será ligado e desligado automaticamente.")]
+    public GameObject slideActors; 
+
     [Header("Falas deste Slide")]
     public List<CutsceneLine> lines;
 }
@@ -60,6 +64,15 @@ public class CutsceneController : MonoBehaviour
         narratorPanel.SetActive(false);
         characterPanel.SetActive(false);
         
+        // Garante que todos os grupos de atores comecem desligados para não sobrepor nada
+        foreach (var slide in slides)
+        {
+            if (slide.slideActors != null)
+            {
+                slide.slideActors.SetActive(false);
+            }
+        }
+
         StartCoroutine(PlayCutscene());
     }
 
@@ -72,7 +85,6 @@ public class CutsceneController : MonoBehaviour
         }
     }
 
-    // Função auxiliar para checar o clique/espaço/E no Novo Input System
     private bool WasInputPressedThisFrame()
     {
         bool pressed = false;
@@ -97,6 +109,12 @@ public class CutsceneController : MonoBehaviour
             
             backgroundImage.texture = currentSlide.slideImage;
             
+            // Liga os atores (personagens, balões, animações) relativos a este slide
+            if (currentSlide.slideActors != null)
+            {
+                currentSlide.slideActors.SetActive(true);
+            }
+
             yield return FadeBlackScreen(1, 0);
 
             foreach (CutsceneLine line in currentSlide.lines)
@@ -105,7 +123,6 @@ public class CutsceneController : MonoBehaviour
                 
                 skipTyping = false;
                 
-                // Espera pelo input do jogador para passar o texto
                 while (!WasInputPressedThisFrame())
                 {
                     yield return null;
@@ -120,6 +137,12 @@ public class CutsceneController : MonoBehaviour
             if (i < slides.Count - 1)
             {
                 yield return FadeBlackScreen(0, 1);
+            }
+
+            // Desliga os atores do slide que acabou de passar enquanto a tela está preta
+            if (currentSlide.slideActors != null)
+            {
+                currentSlide.slideActors.SetActive(false);
             }
         }
 
