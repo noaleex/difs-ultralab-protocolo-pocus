@@ -101,6 +101,7 @@ GameObject:
   - component: {fileID: 6143076234983789047}
   - component: {fileID: 4413795837784688550}
   - component: {fileID: 1180989916771578914}
+  - component: {fileID: -8520081158886598850}
   m_Layer: 0
   m_Name: PlayerMale
   m_TagString: Player
@@ -487,6 +488,20 @@ MonoBehaviour:
   interactionDetector: {fileID: 3554129526055558895}
   playerMovement: {fileID: 6151928438866318164}
   playerNavMesh: {fileID: 0}
+--- !u!114 &-8520081158886598850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1561545956832956884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 009151d9e03171b46b35d30686f14210, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerDepthSorting2D
+  baseOrder: 0
+  orderPerWorldUnit: 100
 --- !u!1 &3582078887113947399
 GameObject:
   m_ObjectHideFlags: 0

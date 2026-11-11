@@ -11,7 +11,7 @@ public class CharacterController2D : MonoBehaviour
     Vector2 motionVector;
     PlayerAction controls;
     Animator animator;
-    
+
     public EventReference FoodStep;
     private EventInstance footstepInstance;
     private bool isWalking = false;
@@ -21,26 +21,35 @@ public class CharacterController2D : MonoBehaviour
     void Awake()
     {
         rigidbody2d = GetComponent<Rigidbody2D>();
+        EnsureControls();
+        animator = GetComponent<Animator>();
+    }
+
+    private void EnsureControls()
+    {
+        if (controls != null)
+            return;
 
         controls = new PlayerAction();
 
         controls.Player.Move.performed += ctx => motionVector = ctx.ReadValue<Vector2>();
         controls.Player.Move.canceled += ctx => motionVector = Vector2.zero;
-
-        animator = GetComponent<Animator>();
     }
 
     void OnEnable()
     {
+        EnsureControls();
         controls.Enable();
     }
 
     void OnDisable()
     {
-        controls.Disable();
+        if (controls != null)
+            controls.Disable();
+
         StopFootstepSound();
     }
-    
+
     void OnDestroy()
     {
         StopFootstepSound();
@@ -52,24 +61,29 @@ public class CharacterController2D : MonoBehaviour
 
     void Update()
     {
-        animator.SetFloat("horizontal", motionVector.x);
-        animator.SetFloat("vertical", motionVector.y);
+        if (animator != null)
+        {
+            animator.SetFloat("horizontal", motionVector.x);
+            animator.SetFloat("vertical", motionVector.y);
+        }
+
         UpdateFootstepSound();
     }
 
     void FixedUpdate()
     {
         if (PauseController.IsGamePaused)
-        return;
+            return;
 
         Move();
     }
 
     void Move()
     {
-        rigidbody2d.linearVelocity = motionVector * speed;
+        if (rigidbody2d != null)
+            rigidbody2d.linearVelocity = motionVector * speed;
     }
-    
+
     private void UpdateFootstepSound()
     {
         bool shouldWalk = motionVector.sqrMagnitude > 0.01f;
@@ -94,13 +108,13 @@ public class CharacterController2D : MonoBehaviour
             }
         }
     }
-    
+
     private void PlayFootstepSound()
     {
         if (!FoodStep.IsNull)
         {
             if (PauseController.IsGamePaused)
-            return;
+                return;
 
             footstepInstance = RuntimeManager.CreateInstance(FoodStep);
             footstepInstance.set3DAttributes(RuntimeUtils.To3DAttributes(gameObject));
@@ -108,7 +122,7 @@ public class CharacterController2D : MonoBehaviour
             isWalking = true;
         }
     }
-    
+
     private void StopFootstepSound()
     {
         if (footstepInstance.isValid())

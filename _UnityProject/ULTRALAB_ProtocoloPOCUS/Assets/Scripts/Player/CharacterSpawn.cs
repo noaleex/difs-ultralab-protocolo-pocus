@@ -16,6 +16,17 @@ public class CharacterSpawn : MonoBehaviour
 
     public void SpawnPlayer()
     {
+        if (boot_manager.instance != null && boot_manager.instance.activePlayer != null)
+        {
+            GameManager.Instance.RegisterPlayer(boot_manager.instance.activePlayer);
+
+            if (cinemachineCamera != null)
+                cinemachineCamera.Follow = boot_manager.instance.activePlayer.transform;
+
+            return;
+        }
+
+        
         if (GameManager.Instance.HasPlayer())
         {
             if (cinemachineCamera != null)

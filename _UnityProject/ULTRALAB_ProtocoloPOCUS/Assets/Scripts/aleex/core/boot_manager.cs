@@ -56,6 +56,26 @@ public class boot_manager : MonoBehaviour
         LoadInitialScene();
     }
 
+    private void LateUpdate()
+    {
+        if (persistentCamera == null ||
+            activePlayer == null ||
+            !activePlayer.activeInHierarchy)
+        {
+            return;
+        }
+
+        if (FindAnyObjectByType<CinemachineCamera>() != null)
+        {
+            return;
+        }
+
+        Vector3 cameraPosition = persistentCamera.transform.position;
+        cameraPosition.x = activePlayer.transform.position.x;
+        cameraPosition.y = activePlayer.transform.position.y;
+        persistentCamera.transform.position = cameraPosition;
+    }
+
     private void LoadInitialScene()
     {
         SceneManager.LoadScene(initialSceneName, LoadSceneMode.Additive);
@@ -155,7 +175,6 @@ public class boot_manager : MonoBehaviour
         storedPositionScene = sceneName;
     }
 
-
     public void PrepareForNewGame(string selectedGender)
     {
         // A nova partida começa com o personagem escolhido no menu.
@@ -237,8 +256,6 @@ public class boot_manager : MonoBehaviour
         }
     }
 
-
-
     public void RegisterPlayer(GameObject player)
     {
         activePlayer = player;
@@ -250,7 +267,6 @@ public class boot_manager : MonoBehaviour
                 save_manager.instance.currentData.characterGender;
         }
     }
-
 
     public bool HasPlayer()
     {
