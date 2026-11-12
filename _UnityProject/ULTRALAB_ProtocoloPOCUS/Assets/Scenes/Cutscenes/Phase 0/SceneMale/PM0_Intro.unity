@@ -2677,11 +2677,13 @@ MonoBehaviour:
     slideActors: {fileID: 1171575155}
     lines:
     - isNarrator: 1
+      isPlayerCharacter: 0
       characterName: 
       characterPortrait: {fileID: 0}
       text: "O dia da formatura... O fim de uma jornada \xE1rdua e o come\xE7o de
         um grande sonho."
     - isNarrator: 1
+      isPlayerCharacter: 0
       characterName: 
       characterPortrait: {fileID: 0}
       text: "Ali, com o diploma em m\xE3os e ao lado dos meus amigos, eu acreditava
@@ -2690,21 +2692,25 @@ MonoBehaviour:
     slideActors: {fileID: 1895029348}
     lines:
     - isNarrator: 1
+      isPlayerCharacter: 0
       characterName: 
       characterPortrait: {fileID: 0}
       text: "Tr\xEAs anos se passaram desde aquele dia."
     - isNarrator: 1
+      isPlayerCharacter: 0
       characterName: 
       characterPortrait: {fileID: 0}
       text: "Hoje, atuo em uma UTI de alta complexidade. Todos os dias enfrento situa\xE7\xF5es
         desafiadoras, tomo decis\xF5es r\xE1pidas e cuido de pacientes em estado
         cr\xEDtico."
     - isNarrator: 0
-      characterName: Enfermeiro
+      isPlayerCharacter: 1
+      characterName: 
       characterPortrait: {fileID: 21300000, guid: 7c4e79cad17da5345b8c039f314e2642, type: 3}
       text: "A gente d\xE1 o nosso melhor, mas \xE0s vezes sinto que estamos lutando
         no escuro contra o rel\xF3gio..."
     - isNarrator: 1
+      isPlayerCharacter: 0
       characterName: 
       characterPortrait: {fileID: 0}
       text: "Apesar de toda a experi\xEAncia adquirida, percebi algo ineg\xE1vel:
@@ -2713,40 +2719,48 @@ MonoBehaviour:
     slideActors: {fileID: 1474229604}
     lines:
     - isNarrator: 1
+      isPlayerCharacter: 0
       characterName: 
       characterPortrait: {fileID: 0}
       text: "A virada de chave aconteceu durante um plant\xE3o ca\xF3tico."
     - isNarrator: 0
-      characterName: Enfermeiro
+      isPlayerCharacter: 1
+      characterName: 
       characterPortrait: {fileID: 21300000, guid: 7c4e79cad17da5345b8c039f314e2642, type: 3}
       text: "Adrian, o paciente do leito 4 descompensou! A press\xE3o est\xE1 caindo
         r\xE1pido e ele apresenta dispneia severa. Precisamos de um acesso venoso
         profundo e descobrir a causa agora!"
     - isNarrator: 0
+      isPlayerCharacter: 0
       characterName: Adrian
       characterPortrait: {fileID: 21300000, guid: 929eb7b431c8f7a41b90123c3b521011, type: 3}
       text: "Calma. Tentar um acesso \xE0s cegas ou adivinhar a origem do choque
         vai custar um tempo que ele n\xE3o tem. Traz o ultrassom."
     - isNarrator: 0
-      characterName: Enfermeiro
+      isPlayerCharacter: 1
+      characterName: 
       characterPortrait: {fileID: 21300000, guid: 7c4e79cad17da5345b8c039f314e2642, type: 3}
       text: O ultrassom? Mas a equipe da radiologia vai demorar muito para descer!
     - isNarrator: 0
+      isPlayerCharacter: 0
       characterName: Adrian
       characterPortrait: {fileID: 21300000, guid: 929eb7b431c8f7a41b90123c3b521011, type: 3}
       text: "N\xE3o eles. N\xF3s. Vamos usar o POCUS. \xC9 r\xE1pido, seguro e nos
         d\xE1 as respostas que precisamos aqui, \xE0 beira-leito."
     - isNarrator: 1
+      isPlayerCharacter: 0
       characterName: 
       characterPortrait: {fileID: 0}
       text: "Fiquei impressionado com a rapidez e a precis\xE3o daquela ferramenta
         nas m\xE3os dele."
     - isNarrator: 0
-      characterName: Enfermeiro
+      isPlayerCharacter: 1
+      characterName: 
       characterPortrait: {fileID: 21300000, guid: 7c4e79cad17da5345b8c039f314e2642, type: 3}
       text: "Isso foi incr\xEDvel... Como eu n\xE3o aprendi a fazer isso antes? Onde
         voc\xEA se capacitou?"
     - isNarrator: 0
+      isPlayerCharacter: 0
       characterName: Adrian
       characterPortrait: {fileID: 21300000, guid: 929eb7b431c8f7a41b90123c3b521011, type: 3}
       text: "Procura pelo projeto Ultralab. Vai mudar completamente a forma como
@@ -2755,11 +2769,13 @@ MonoBehaviour:
     slideActors: {fileID: 312570841}
     lines:
     - isNarrator: 1
+      isPlayerCharacter: 0
       characterName: 
       characterPortrait: {fileID: 0}
       text: "N\xE3o perdi tempo. Naquela mesma noite, encontrei o Ultralab e decidi
         buscar a minha capacita\xE7\xE3o especializada."
     - isNarrator: 1
+      isPlayerCharacter: 0
       characterName: 
       characterPortrait: {fileID: 0}
       text: "Foram meses intensos de muito estudo. Aulas te\xF3ricas, simula\xE7\xF5es
@@ -2769,6 +2785,7 @@ MonoBehaviour:
     slideActors: {fileID: 0}
     lines:
     - isNarrator: 1
+      isPlayerCharacter: 0
       characterName: 
       characterPortrait: {fileID: 0}
       text: "At\xE9 que o grande dia chegou: a prova pr\xE1tica para a obten\xE7\xE3o

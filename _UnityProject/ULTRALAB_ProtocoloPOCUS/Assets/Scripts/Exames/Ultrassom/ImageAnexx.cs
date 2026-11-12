@@ -1,4 +1,3 @@
-
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -21,7 +20,9 @@ public class ImageAnexx : MonoBehaviour
     [SerializeField] private Sprite tutorialHeartImage;
 
     [Header("Cena")]
-    [SerializeField] private string uti;
+    [SerializeField] private string uti = "UTI";
+    [SerializeField] private string cenaAprovado = "aprovado";
+    [SerializeField] private string cenaReprovado = "reprovado";
     [SerializeField] private Timer timerReference;
 
     private void OnEnable()
@@ -106,18 +107,14 @@ public class ImageAnexx : MonoBehaviour
 
             if (!validHeart)
             {
-                Debug.LogWarning(
-                    "No tutorial, anexe o resultado correto do ultrassom do coração."
-                );
-
-                UpdateUI();
+                Debug.LogWarning("Tutorial: Exame incorreto. Carregando cena de reprovação.");
+                LoadSpecificScene(cenaReprovado);
                 return;
             }
 
             approved = true;
-            Debug.Log("Tutorial: ultrassom do coração validado.");
-
-            LoadUTIScene();
+            Debug.Log("Tutorial: ultrassom do coração validado. Carregando aprovação.");
+            LoadSpecificScene(cenaAprovado);
             return;
         }
 
@@ -126,16 +123,12 @@ public class ImageAnexx : MonoBehaviour
 
         if (patient == null)
         {
-            Debug.LogWarning(
-                "Não há paciente selecionado para validar o prontuário."
-            );
+            Debug.LogWarning("Não há paciente selecionado para validar o prontuário.");
             return;
         }
 
         int day = GetCurrentDay();
-
-        BodyArea.BodyRegion requiredRegion =
-            PatientDailyState.GetUltrasoundRegion(patient, day);
+        BodyArea.BodyRegion requiredRegion = PatientDailyState.GetUltrasoundRegion(patient, day);
 
         bool hasCurrentAttachment =
             ExamsSaveData.SavedImage != null &&
@@ -146,21 +139,14 @@ public class ImageAnexx : MonoBehaviour
         {
             if (hasCurrentAttachment)
             {
-                Debug.LogWarning(
-                    "Nenhum ultrassom foi solicitado. " +
-                    "Remova o exame anexado antes de confirmar."
-                );
-
+                Debug.LogWarning("Nenhum ultrassom foi solicitado. Remova o exame anexado antes de confirmar.");
                 UpdateUI();
                 return;
             }
 
             approved = true;
-            Debug.Log(
-                "Prontuário validado: nenhum ultrassom solicitado."
-            );
-
-            LoadUTIScene();
+            Debug.Log("Prontuário validado: nenhum ultrassom solicitado.");
+            LoadSpecificScene(uti);
             return;
         }
 
@@ -168,17 +154,12 @@ public class ImageAnexx : MonoBehaviour
             ExamsSaveData.IsDefaultUltrasoundImage ||
             !ExamsSaveData.SavedExam.HasValue)
         {
-            Debug.LogWarning(
-                "Anexe o resultado do ultrassom solicitado " +
-                "para o paciente e dia atuais."
-            );
-
+            Debug.LogWarning("Anexe o resultado do ultrassom solicitado para o paciente e dia atuais.");
             UpdateUI();
             return;
         }
 
-        Sprite requiredImage =
-            PatientDailyState.GetUltrasoundImage(patient, day);
+        Sprite requiredImage = PatientDailyState.GetUltrasoundImage(patient, day);
 
         bool correct =
             requiredImage != null &&
@@ -187,54 +168,36 @@ public class ImageAnexx : MonoBehaviour
 
         if (!correct)
         {
-            Debug.LogWarning(
-                "Exame incorreto. Confira a imagem salva " +
-                "e a região anatômica."
-            );
-
+            Debug.LogWarning("Exame incorreto. Confira a imagem salva e a região anatômica.");
             UpdateUI();
             return;
         }
 
         approved = true;
-        Debug.Log(
-            "Ultrassom validado para o paciente e dia atuais."
-        );
-
-        LoadUTIScene();
+        Debug.Log("Ultrassom validado para o paciente e dia atuais.");
+        LoadSpecificScene(uti);
     }
 
     private string GetRegionName(BodyArea.BodyRegion region)
     {
         switch (region)
         {
-            case BodyArea.BodyRegion.Heart:
-                return "Coração";
-
+            case BodyArea.BodyRegion.Heart: return "Coração";
             case BodyArea.BodyRegion.Lung1:
-            case BodyArea.BodyRegion.Lung2:
-                return "Pulmão";
-
-            case BodyArea.BodyRegion.Bladder:
-                return "Bexiga";
-
-            default:
-                return "Vazio";
+            case BodyArea.BodyRegion.Lung2: return "Pulmão";
+            case BodyArea.BodyRegion.Bladder: return "Bexiga";
+            default: return "Vazio";
         }
     }
 
     private int GetCurrentDay()
     {
-        Timer activeTimer = timerReference != null
-            ? timerReference
-            : Timer.Instance;
-
-        return activeTimer != null
-            ? Mathf.Max(1, activeTimer.CurrentDay)
-            : 1;
+        Timer activeTimer = timerReference != null ? timerReference : Timer.Instance;
+        return activeTimer != null ? Mathf.Max(1, activeTimer.CurrentDay) : 1;
     }
 
-    private void LoadUTIScene()
+    // Função auxiliar que limpa o estado e carrega a cena solicitada
+    private void LoadSpecificScene(string sceneName)
     {
         PauseController.SetPause(false);
 
@@ -245,8 +208,8 @@ public class ImageAnexx : MonoBehaviour
         }
 
         if (loading_manager.instance != null)
-            loading_manager.instance.SwitchScene(uti);
+            loading_manager.instance.SwitchScene(sceneName);
         else
-            SceneManager.LoadScene(uti);
+            SceneManager.LoadScene(sceneName);
     }
 }

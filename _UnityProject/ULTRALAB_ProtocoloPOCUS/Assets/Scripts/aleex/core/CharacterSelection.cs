@@ -1,16 +1,19 @@
 using UnityEngine;
+using TMPro; // Necessário para acessar os campos de texto do TextMeshPro
 
 public class CharacterSelection : MonoBehaviour
 {
+    [Header("Configuração de UI")]
+    [Tooltip("Arraste aqui o TMP_InputField onde o jogador digita o nome.")]
+    public TMP_InputField inputNomeJogador;
+
     private string cenaParaCarregar = "";
 
     // Botão Feminino
     public void SelecionarPersonagemFeminino()
     {
         PlayerPrefs.SetString("PlayerGender", "Female");
-        PlayerPrefs.Save();
-        
-        cenaParaCarregar = "PF0_Intro"; // Apenas guarda o nome da cena
+        cenaParaCarregar = "PF0_Intro"; 
         Debug.Log("[SISTEMA] Personagem Feminina selecionada. Aguardando Iniciar.");
     }
 
@@ -18,9 +21,7 @@ public class CharacterSelection : MonoBehaviour
     public void SelecionarPersonagemMasculino()
     {
         PlayerPrefs.SetString("PlayerGender", "Male");
-        PlayerPrefs.Save();
-        
-        cenaParaCarregar = "PM0_Intro"; // Apenas guarda o nome da cena
+        cenaParaCarregar = "PM0_Intro"; 
         Debug.Log("[SISTEMA] Personagem Masculino selecionado. Aguardando Iniciar.");
     }
 
@@ -30,8 +31,22 @@ public class CharacterSelection : MonoBehaviour
         if (string.IsNullOrEmpty(cenaParaCarregar))
         {
             Debug.LogWarning("[SISTEMA] O jogador tentou iniciar sem escolher um personagem!");
-            return; // Impede de iniciar se não escolheu ninguém
+            return; 
         }
+
+        // Verifica se o campo de input existe e se o jogador digitou algo
+        if (inputNomeJogador != null && !string.IsNullOrWhiteSpace(inputNomeJogador.text))
+        {
+            // Salva o nome digitado
+            PlayerPrefs.SetString("PlayerName", inputNomeJogador.text.Trim());
+        }
+        else
+        {
+            // Nome padrão de segurança caso o jogador deixe o campo em branco
+            PlayerPrefs.SetString("PlayerName", "Enfermeiro(a)");
+        }
+        
+        PlayerPrefs.Save(); // Salva tanto o nome quanto o gênero definitivamente
 
         if (loading_manager.instance != null)
         {

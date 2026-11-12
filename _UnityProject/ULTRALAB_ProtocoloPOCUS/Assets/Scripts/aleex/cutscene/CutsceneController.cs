@@ -12,6 +12,8 @@ public class CutsceneLine
     public bool isNarrator = true; 
     
     [Header("Dados do Personagem (Ignorado se for Narrador)")]
+    [Tooltip("Marque se esta fala for do protagonista. Ele vai puxar o nome salvo do jogador.")]
+    public bool isPlayerCharacter = false; // <-- NOVA OPÇÃO AQUI
     public string characterName;
     public Sprite characterPortrait; 
     
@@ -27,7 +29,6 @@ public class CutsceneSlide
     public Texture slideImage; 
     
     [Header("Atores e Animações (Opcional)")]
-    [Tooltip("Arraste aqui o GameObject vazio que agrupa os personagens/balões deste slide. Ele será ligado e desligado automaticamente.")]
     public GameObject slideActors; 
 
     [Header("Falas deste Slide")]
@@ -56,6 +57,9 @@ public class CutsceneController : MonoBehaviour
     public TMP_Text characterNameText;
     public Image characterPortrait;
 
+    // Chave onde o nome do jogador é salvo ao criar o personagem
+    private string chaveNomeJogador = "PlayerName"; 
+
     private bool isTyping = false;
     private bool skipTyping = false;
 
@@ -64,7 +68,6 @@ public class CutsceneController : MonoBehaviour
         narratorPanel.SetActive(false);
         characterPanel.SetActive(false);
         
-        // Garante que todos os grupos de atores comecem desligados para não sobrepor nada
         foreach (var slide in slides)
         {
             if (slide.slideActors != null)
@@ -88,13 +91,8 @@ public class CutsceneController : MonoBehaviour
     private bool WasInputPressedThisFrame()
     {
         bool pressed = false;
-        
-        if (Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame)
-            pressed = true;
-            
-        if (Keyboard.current != null && (Keyboard.current.spaceKey.wasPressedThisFrame || Keyboard.current.eKey.wasPressedThisFrame))
-            pressed = true;
-            
+        if (Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame) pressed = true;
+        if (Keyboard.current != null && (Keyboard.current.spaceKey.wasPressedThisFrame || Keyboard.current.eKey.wasPressedThisFrame)) pressed = true;
         return pressed;
     }
 
@@ -109,11 +107,7 @@ public class CutsceneController : MonoBehaviour
             
             backgroundImage.texture = currentSlide.slideImage;
             
-            // Liga os atores (personagens, balões, animações) relativos a este slide
-            if (currentSlide.slideActors != null)
-            {
-                currentSlide.slideActors.SetActive(true);
-            }
+            if (currentSlide.slideActors != null) currentSlide.slideActors.SetActive(true);
 
             yield return FadeBlackScreen(1, 0);
 
@@ -122,40 +116,22 @@ public class CutsceneController : MonoBehaviour
                 yield return PlayLine(line);
                 
                 skipTyping = false;
-                
-                while (!WasInputPressedThisFrame())
-                {
-                    yield return null;
-                }
-                
+                while (!WasInputPressedThisFrame()) yield return null;
                 yield return new WaitForSeconds(0.1f);
             }
 
             narratorPanel.SetActive(false);
             characterPanel.SetActive(false);
 
-            if (i < slides.Count - 1)
-            {
-                yield return FadeBlackScreen(0, 1);
-            }
+            if (i < slides.Count - 1) yield return FadeBlackScreen(0, 1);
 
-            // Desliga os atores do slide que acabou de passar enquanto a tela está preta
-            if (currentSlide.slideActors != null)
-            {
-                currentSlide.slideActors.SetActive(false);
-            }
+            if (currentSlide.slideActors != null) currentSlide.slideActors.SetActive(false);
         }
 
         yield return FadeBlackScreen(0, 1);
         
-        if (loading_manager.instance != null)
-        {
-            loading_manager.instance.SwitchScene(nextSceneName);
-        }
-        else
-        {
-            Debug.LogWarning("[CUTSCENE] Fim da cena! (loading_manager não encontrado para carregar " + nextSceneName + ")");
-        }
+        if (loading_manager.instance != null) loading_manager.instance.SwitchScene(nextSceneName);
+        else Debug.LogWarning("[CUTSCENE] loading_manager não encontrado!");
     }
 
     private IEnumerator PlayLine(CutsceneLine line)
@@ -174,7 +150,18 @@ public class CutsceneController : MonoBehaviour
             characterPanel.SetActive(true);
             activeTextUI = characterText;
             
-            if (characterNameText != null) characterNameText.text = line.characterName;
+            if (characterNameText != null) 
+            {
+                // Se for o player, puxa o nome do save. Se não, usa o nome escrito no Inspector.
+                if (line.isPlayerCharacter)
+                {
+                    characterNameText.text = PlayerPrefs.GetString(chaveNomeJogador, "Enfermeiro(a)");
+                }
+                else
+                {
+                    characterNameText.text = line.characterName;
+                }
+            }
             if (characterPortrait != null) characterPortrait.sprite = line.characterPortrait;
         }
 

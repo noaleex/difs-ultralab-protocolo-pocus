@@ -8887,6 +8887,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d6e94d2e49d9054e8efe8d09056ab84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CharacterSelection
+  inputNomeJogador: {fileID: 871833293}
 --- !u!1 &1557393238
 GameObject:
   m_ObjectHideFlags: 0
