@@ -177,11 +177,26 @@ public class boot_manager : MonoBehaviour
 
     public void PrepareForNewGame(string selectedGender)
     {
+        if (selectedGender != "Feminino" && selectedGender != "Masculino")
+        {
+            Debug.LogWarning($"Gênero inválido para uma nova partida: '{selectedGender}'.");
+            return;
+        }
+
         // A nova partida começa com o personagem escolhido no menu.
         if (activePlayer != null)
         {
+            if (GameManager.Instance != null && GameManager.Instance.Player == activePlayer)
+            {
+                GameManager.Instance.RegisterPlayer(null);
+            }
+
             Destroy(activePlayer);
             activePlayer = null;
+        }
+        else if (GameManager.Instance != null)
+        {
+            GameManager.Instance.RegisterPlayer(null);
         }
 
         activePlayerGender = "";
@@ -190,12 +205,19 @@ public class boot_manager : MonoBehaviour
         storedPosition = null;
         storedPositionScene = "";
 
+        PlayerPrefs.SetString("Character", selectedGender);
+        PlayerPrefs.SetString(
+            "PlayerGender",
+            selectedGender == "Feminino" ? "Female" : "Male");
+
         if (save_manager.instance != null &&
             save_manager.instance.currentData != null)
         {
             save_manager.instance.currentData.characterGender = selectedGender;
             save_manager.instance.SaveGame();
         }
+
+        PlayerPrefs.Save();
     }
 
     public void EnsurePlayerInstantiated()

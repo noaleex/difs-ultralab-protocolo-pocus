@@ -65,6 +65,9 @@ TagManager:
   - name: interactables
     uniqueID: 2862543663
     locked: 0
+  - name: Bancada
+    uniqueID: 512741183
+    locked: 0
   - name: Player
     uniqueID: 767058695
     locked: 0

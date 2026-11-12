@@ -8,24 +8,29 @@ public class CharacterSelection : MonoBehaviour
     public TMP_InputField inputNomeJogador;
 
     private string cenaParaCarregar = "";
+    private string generoSelecionado = "";
 
     public void SelecionarPersonagemFeminino()
     {
+        generoSelecionado = "Feminino";
         PlayerPrefs.SetString("PlayerGender", "Female");
+        PlayerPrefs.SetString("Character", generoSelecionado);
         cenaParaCarregar = "PF0_Intro"; 
         Debug.Log("[SISTEMA] Personagem Feminina selecionada.");
     }
 
     public void SelecionarPersonagemMasculino()
     {
+        generoSelecionado = "Masculino";
         PlayerPrefs.SetString("PlayerGender", "Male");
+        PlayerPrefs.SetString("Character", generoSelecionado);
         cenaParaCarregar = "PM0_Intro"; 
         Debug.Log("[SISTEMA] Personagem Masculino selecionado.");
     }
 
     public void ConfirmarEIniciar()
     {
-        if (string.IsNullOrEmpty(cenaParaCarregar))
+        if (string.IsNullOrEmpty(cenaParaCarregar) || string.IsNullOrEmpty(generoSelecionado))
         {
             Debug.LogWarning("[SISTEMA] O jogador tentou iniciar sem escolher um personagem!");
             return; 
@@ -44,6 +49,16 @@ public class CharacterSelection : MonoBehaviour
             PlayerPrefs.SetString("PlayerName", "Enfermeiro(a)");
         }
         
+        if (boot_manager.instance != null)
+        {
+            boot_manager.instance.PrepareForNewGame(generoSelecionado);
+        }
+        else if (save_manager.instance != null && save_manager.instance.currentData != null)
+        {
+            save_manager.instance.currentData.characterGender = generoSelecionado;
+            save_manager.instance.SaveGame();
+        }
+
         PlayerPrefs.Save();
 
         // 3. Carrega a cena

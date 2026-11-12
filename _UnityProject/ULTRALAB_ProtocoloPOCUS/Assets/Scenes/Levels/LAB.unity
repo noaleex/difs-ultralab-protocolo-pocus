@@ -1297,10 +1297,6 @@ MonoBehaviour:
   isInterfaceCharacter: 0
   startDialogueOnTrigger: 0
   triggerOnlyOnce: 1
-  sonar: {fileID: 487279050}
-  sonarFeedback: {fileID: 11400000, guid: 393ce39f6668bfe40b07f13e247bfed2, type: 2}
-  feedbackInicialExams: 0
-  objetoSonarParaDesativar: {fileID: 0}
 --- !u!95 &233699015
 Animator:
   serializedVersion: 7
@@ -1681,10 +1677,6 @@ MonoBehaviour:
   isInterfaceCharacter: 1
   startDialogueOnTrigger: 1
   triggerOnlyOnce: 1
-  sonar: {fileID: 0}
-  sonarFeedback: {fileID: 0}
-  feedbackInicialExams: 0
-  objetoSonarParaDesativar: {fileID: 0}
 --- !u!61 &367795110
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2561,10 +2553,6 @@ MonoBehaviour:
   isInterfaceCharacter: 1
   startDialogueOnTrigger: 0
   triggerOnlyOnce: 1
-  sonar: {fileID: 0}
-  sonarFeedback: {fileID: 0}
-  feedbackInicialExams: 0
-  objetoSonarParaDesativar: {fileID: 0}
 --- !u!1 &511557021
 GameObject:
   m_ObjectHideFlags: 0
@@ -2816,10 +2804,6 @@ MonoBehaviour:
   isInterfaceCharacter: 0
   startDialogueOnTrigger: 0
   triggerOnlyOnce: 1
-  sonar: {fileID: 487279050}
-  sonarFeedback: {fileID: 11400000, guid: c077bbcfe412b8040bfa61cdde4e35ec, type: 2}
-  feedbackInicialExams: 0
-  objetoSonarParaDesativar: {fileID: 0}
 --- !u!61 &536115206
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8680,10 +8664,6 @@ MonoBehaviour:
   isInterfaceCharacter: 0
   startDialogueOnTrigger: 0
   triggerOnlyOnce: 1
-  sonar: {fileID: 0}
-  sonarFeedback: {fileID: 0}
-  feedbackInicialExams: 0
-  objetoSonarParaDesativar: {fileID: 0}
 --- !u!61 &645863879
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10201,7 +10181,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: -138874241
+  m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
@@ -11111,7 +11091,7 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-  - first: {x: -12, y: -5, z: 0}
+  - first: {x: -8, y: -5, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 33
@@ -11121,21 +11101,11 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-  - first: {x: -11, y: -5, z: 0}
+  - first: {x: -7, y: -5, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 34
       m_TileSpriteIndex: 33
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
-  - first: {x: -7, y: -5, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 31
-      m_TileSpriteIndex: 29
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -12355,7 +12325,7 @@ Tilemap:
     m_Data: {fileID: 2518286748918869645, guid: bae978355dc34994dbb5d8a404f8ef14, type: 3}
   - m_RefCount: 5
     m_Data: {fileID: 7522759266919767437, guid: bae978355dc34994dbb5d8a404f8ef14, type: 3}
-  - m_RefCount: 5
+  - m_RefCount: 4
     m_Data: {fileID: 7546523667679956963, guid: bae978355dc34994dbb5d8a404f8ef14, type: 3}
   - m_RefCount: 4
     m_Data: {fileID: -5379657802452293454, guid: bae978355dc34994dbb5d8a404f8ef14, type: 3}
@@ -12492,7 +12462,7 @@ Tilemap:
     m_Data: {fileID: -97906899151776901, guid: bae978355dc34994dbb5d8a404f8ef14, type: 3}
   - m_RefCount: 6
     m_Data: {fileID: 30289275973679025, guid: bae978355dc34994dbb5d8a404f8ef14, type: 3}
-  - m_RefCount: 5
+  - m_RefCount: 4
     m_Data: {fileID: -5193472038135231788, guid: bae978355dc34994dbb5d8a404f8ef14, type: 3}
   - m_RefCount: 5
     m_Data: {fileID: -2109258239010492501, guid: bae978355dc34994dbb5d8a404f8ef14, type: 3}
@@ -12575,7 +12545,7 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: 7211200563696635801, guid: bae978355dc34994dbb5d8a404f8ef14, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 207
+  - m_RefCount: 206
     m_Data:
       e00: 1
       e01: 0
@@ -12594,7 +12564,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 207
+  - m_RefCount: 206
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   - m_RefCount: 0
     m_Data: {r: 1.67e-43, g: 1.67e-43, b: 1.67e-43, a: 1.67e-43}
@@ -12732,7 +12702,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 3
+  orthographic size: 8
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -12757,7 +12727,7 @@ Transform:
   m_GameObject: {fileID: 930131942}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.349279, y: 3.2196703, z: -10}
+  m_LocalPosition: {x: -12.94944, y: 4.18414, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -14971,8 +14941,8 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: -905532613
-  m_SortingLayer: 7
+  m_SortingLayerID: 767058695
+  m_SortingLayer: 9
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
@@ -14980,7 +14950,7 @@ TilemapRenderer:
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
   m_SortOrder: 0
-  m_Mode: 0
+  m_Mode: 1
   m_DetectChunkCullingBounds: 0
 --- !u!1839735485 &1094953293
 Tilemap:
@@ -16654,10 +16624,6 @@ MonoBehaviour:
   isInterfaceCharacter: 0
   startDialogueOnTrigger: 0
   triggerOnlyOnce: 1
-  sonar: {fileID: 0}
-  sonarFeedback: {fileID: 0}
-  feedbackInicialExams: 0
-  objetoSonarParaDesativar: {fileID: 0}
 --- !u!1 &1115960576
 GameObject:
   m_ObjectHideFlags: 0
@@ -16997,7 +16963,7 @@ TilemapRenderer:
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
   m_SortOrder: 0
-  m_Mode: 0
+  m_Mode: 1
   m_DetectChunkCullingBounds: 0
 --- !u!1839735485 &1146595893
 Tilemap:
@@ -17851,10 +17817,6 @@ MonoBehaviour:
   isInterfaceCharacter: 0
   startDialogueOnTrigger: 0
   triggerOnlyOnce: 1
-  sonar: {fileID: 0}
-  sonarFeedback: {fileID: 0}
-  feedbackInicialExams: 0
-  objetoSonarParaDesativar: {fileID: 0}
 --- !u!61 &1186090020
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -18435,7 +18397,7 @@ TilemapRenderer:
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
   m_SortOrder: 0
-  m_Mode: 0
+  m_Mode: 1
   m_DetectChunkCullingBounds: 0
 --- !u!1839735485 &1269156759
 Tilemap:
@@ -19067,7 +19029,7 @@ TilemapRenderer:
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
   m_SortOrder: 0
-  m_Mode: 0
+  m_Mode: 1
   m_DetectChunkCullingBounds: 0
 --- !u!1839735485 &1312763284
 Tilemap:
@@ -20357,10 +20319,6 @@ MonoBehaviour:
   isInterfaceCharacter: 0
   startDialogueOnTrigger: 0
   triggerOnlyOnce: 1
-  sonar: {fileID: 487279050}
-  sonarFeedback: {fileID: 11400000, guid: 09f92975b0e81fc438d10ff8b447f72a, type: 2}
-  feedbackInicialExams: 0
-  objetoSonarParaDesativar: {fileID: 0}
 --- !u!61 &1430539770
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -26507,10 +26465,6 @@ MonoBehaviour:
   isInterfaceCharacter: 0
   startDialogueOnTrigger: 0
   triggerOnlyOnce: 1
-  sonar: {fileID: 0}
-  sonarFeedback: {fileID: 0}
-  feedbackInicialExams: 0
-  objetoSonarParaDesativar: {fileID: 0}
 --- !u!61 &1628495552
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -26709,7 +26663,11 @@ MonoBehaviour:
   anexxImage: {fileID: 1646161807}
   requestedRegionText: {fileID: 0}
   approved: 0
+  tutorialMode: 0
+  tutorialHeartImage: {fileID: 0}
   uti: UTI
+  cenaAprovado: aprovado
+  cenaReprovado: reprovado
   timerReference: {fileID: 0}
 --- !u!1 &1647699219
 GameObject:
@@ -27123,10 +27081,6 @@ MonoBehaviour:
   isInterfaceCharacter: 0
   startDialogueOnTrigger: 0
   triggerOnlyOnce: 1
-  sonar: {fileID: 487279050}
-  sonarFeedback: {fileID: 11400000, guid: d7887136f605a0440a7df109f3331d3e, type: 2}
-  feedbackInicialExams: 0
-  objetoSonarParaDesativar: {fileID: 0}
 --- !u!61 &1671777924
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -28072,6 +28026,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PauseController
   imageAnexx: {fileID: 1646161809}
   pausePanel: {fileID: 387607649}
+  prontuarioPanel: {fileID: 0}
+  learningPanel: {fileID: 0}
+  mainMenuSceneName: main_menu
 --- !u!114 &1866819039
 MonoBehaviour:
   m_ObjectHideFlags: 0

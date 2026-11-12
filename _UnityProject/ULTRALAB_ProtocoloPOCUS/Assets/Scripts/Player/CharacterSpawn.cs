@@ -16,14 +16,19 @@ public class CharacterSpawn : MonoBehaviour
 
     public void SpawnPlayer()
     {
-        if (boot_manager.instance != null && boot_manager.instance.activePlayer != null)
+        if (boot_manager.instance != null)
         {
-            GameManager.Instance.RegisterPlayer(boot_manager.instance.activePlayer);
+            boot_manager.instance.EnsurePlayerInstantiated();
 
-            if (cinemachineCamera != null)
-                cinemachineCamera.Follow = boot_manager.instance.activePlayer.transform;
+            if (boot_manager.instance.activePlayer != null)
+            {
+                GameManager.Instance.RegisterPlayer(boot_manager.instance.activePlayer);
 
-            return;
+                if (cinemachineCamera != null)
+                    cinemachineCamera.Follow = boot_manager.instance.activePlayer.transform;
+
+                return;
+            }
         }
 
         
@@ -37,6 +42,12 @@ public class CharacterSpawn : MonoBehaviour
         }
 
         string characterEscolhido = PlayerPrefs.GetString("Character", "");
+        if (string.IsNullOrEmpty(characterEscolhido) &&
+            save_manager.instance != null &&
+            save_manager.instance.currentData != null)
+        {
+            characterEscolhido = save_manager.instance.currentData.characterGender;
+        }
 
         GameObject prefabParaInstanciar = null;
 
@@ -47,6 +58,12 @@ public class CharacterSpawn : MonoBehaviour
         else if (characterEscolhido == "Feminino" || characterEscolhido == "")
         {
             prefabParaInstanciar = prefabFeminino;
+        }
+
+        if (prefabParaInstanciar == null || spawnPoint == null)
+        {
+            Debug.LogError("Não foi possível criar o jogador: prefab ou ponto de spawn não configurado.");
+            return;
         }
 
         GameObject novoPersonagem = Instantiate(
@@ -68,6 +85,11 @@ public class CharacterSpawn : MonoBehaviour
         }
 
         GameManager.Instance.RegisterPlayer(novoPersonagem);
+
+        if (boot_manager.instance != null)
+        {
+            boot_manager.instance.RegisterPlayer(novoPersonagem);
+        }
 
         if (cinemachineCamera != null)
         {
