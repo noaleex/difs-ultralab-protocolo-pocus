@@ -228,12 +228,12 @@ public class UltrasoundManager : MonoBehaviour
         switch (region)
         {
             case BodyArea.BodyRegion.Heart:
-                return currentProbe == TransdutorSelected.ProbeType.Linear;
+                return currentProbe == TransdutorSelected.ProbeType.Setorial;
             case BodyArea.BodyRegion.Lung1:
             case BodyArea.BodyRegion.Lung2:
-                return currentProbe == TransdutorSelected.ProbeType.Setorial;
-            case BodyArea.BodyRegion.Bladder:
                 return currentProbe == TransdutorSelected.ProbeType.Convex;
+            case BodyArea.BodyRegion.Bladder:
+                return currentProbe == TransdutorSelected.ProbeType.Linear;
             default:
                 return false;
         }
