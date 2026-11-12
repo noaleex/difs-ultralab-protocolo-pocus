@@ -12,24 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd81a6fe40be39c4e83a96c320938fd9, type: 3}
   m_Name: Gabriel
   m_EditorClassIdentifier: Assembly-CSharp::NPCdialogue
-  npcName: Avaliador Gabriel
-  npcPortrait: {fileID: 21300000, guid: 16b071238dabf504db4d8f14956e24a1, type: 3}
+  npcName: Gabriel
+  npcPortrait: {fileID: 21300000, guid: f12a116532eff5443aee3bf50c41d378, type: 3}
   dialogueLines:
-  - "Bom dia, futuros colegas. Chegamos ao momento decisivo. Hoje, o laborat\xF3rio
-    deixa de ser um espa\xE7o de treino para se tornar o palco da sua \xFAltima avalia\xE7\xE3o
-    pr\xE1tica antes da formatura."
-  - "A din\xE2mica ser\xE1 em duplas. Enquanto um assume a responsabilidade assistencial,
-    o outro atuar\xE1 como paciente simulado. Voc\xEAs se revezar\xE3o. O objetivo
-    n\xE3o \xE9 apenas realizar o procedimento, mas demonstrar o racioc\xEDnio cl\xEDnico
-    sob o olhar da banca."
-  - "O Enf. Adrian j\xE1 est\xE1 posicionado no leito de simula\xE7\xE3o. Ele reporta
-    um quadro de desconforto precordial (dor no peito). Sua miss\xE3o \xE9 realizar
-    a proped\xEAutica completa e utilizar o POCUS para uma varredura card\xEDaca
-    focada."
-  - "Aten\xE7\xE3o ao crit\xE9rio de corte: para valida\xE7\xE3o da prova, a imagem
-    no monitor deve apresentar fidelidade anat\xF4mica e nitidez. Se o ganho estiver
-    ruidoso ou a profundidade inadequada, voc\xEAs n\xE3o conseguir\xE3o visualizar
-    as janelas card\xEDacas. Podem come\xE7ar."
+  - "Sua dupla para a prova ser\xE1 o Adrian. Ele ja est\xE1 no Leito 01 te esperando."
+  - "Como requisito de conclus\xE3o deste curso, voc\xEA precisa capturar uma imagem
+    n\xEDtida do cora\xE7\xE3o do paciente e anex\xE1-la ao prontu\xE1rio."
+  - "N\xE3o perca mais tempo. V\xE1 encontrar Adrian"
   typingSpeed: 0.05
   voiceEvent:
     Guid:

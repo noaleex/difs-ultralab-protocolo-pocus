@@ -1,5 +1,5 @@
 using UnityEngine;
-using TMPro; // Necessário para acessar os campos de texto do TextMeshPro
+using TMPro;
 
 public class CharacterSelection : MonoBehaviour
 {
@@ -9,23 +9,20 @@ public class CharacterSelection : MonoBehaviour
 
     private string cenaParaCarregar = "";
 
-    // Botão Feminino
     public void SelecionarPersonagemFeminino()
     {
         PlayerPrefs.SetString("PlayerGender", "Female");
         cenaParaCarregar = "PF0_Intro"; 
-        Debug.Log("[SISTEMA] Personagem Feminina selecionada. Aguardando Iniciar.");
+        Debug.Log("[SISTEMA] Personagem Feminina selecionada.");
     }
 
-    // Botão Masculino
     public void SelecionarPersonagemMasculino()
     {
         PlayerPrefs.SetString("PlayerGender", "Male");
         cenaParaCarregar = "PM0_Intro"; 
-        Debug.Log("[SISTEMA] Personagem Masculino selecionado. Aguardando Iniciar.");
+        Debug.Log("[SISTEMA] Personagem Masculino selecionado.");
     }
 
-    // Botão "Começar" / "Jogar"
     public void ConfirmarEIniciar()
     {
         if (string.IsNullOrEmpty(cenaParaCarregar))
@@ -34,23 +31,41 @@ public class CharacterSelection : MonoBehaviour
             return; 
         }
 
-        // Verifica se o campo de input existe e se o jogador digitou algo
+        // 1. Limpa o histórico de falas do tutorial para o Sonar voltar a falar no Novo Jogo!
+        LimparDadosDoTutorial();
+
+        // 2. Salva o nome
         if (inputNomeJogador != null && !string.IsNullOrWhiteSpace(inputNomeJogador.text))
         {
-            // Salva o nome digitado
             PlayerPrefs.SetString("PlayerName", inputNomeJogador.text.Trim());
         }
         else
         {
-            // Nome padrão de segurança caso o jogador deixe o campo em branco
             PlayerPrefs.SetString("PlayerName", "Enfermeiro(a)");
         }
         
-        PlayerPrefs.Save(); // Salva tanto o nome quanto o gênero definitivamente
+        PlayerPrefs.Save();
 
+        // 3. Carrega a cena
         if (loading_manager.instance != null)
         {
             loading_manager.instance.SwitchScene(cenaParaCarregar);
         }
+    }
+
+    // Método que formata (apaga) as chaves de memória do Sonar
+    private void LimparDadosDoTutorial()
+    {
+        // Apaga a chave da primeira cena do tutorial
+        PlayerPrefs.DeleteKey("Tutorial_Intro_Sonar");
+        
+        // Apaga a chave da cena de exames
+        PlayerPrefs.DeleteKey("Exames_Intro_Tutorial");
+        
+        // Se você tiver criado outras chaves com nomes diferentes nos seus testes, 
+        // basta adicionar uma linha igual a essa abaixo com o nome da chave:
+        // PlayerPrefs.DeleteKey("Nome_Da_Sua_Chave_Aqui");
+
+        Debug.Log("[SISTEMA] Memória do tutorial limpa. O Sonar falará normalmente.");
     }
 }

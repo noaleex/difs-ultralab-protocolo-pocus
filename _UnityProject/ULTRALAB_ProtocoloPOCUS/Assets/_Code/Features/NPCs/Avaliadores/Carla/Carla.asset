@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd81a6fe40be39c4e83a96c320938fd9, type: 3}
   m_Name: Carla
   m_EditorClassIdentifier: Assembly-CSharp::NPCdialogue
-  npcName: Avaliadora Carla
-  npcPortrait: {fileID: 21300000, guid: 3630dc55654200448802d4574541a79e, type: 3}
+  npcName: Carla
+  npcPortrait: {fileID: 21300000, guid: d47d8a5f76b32844d99571acab378f23, type: 3}
   dialogueLines:
   - "Respire fundo. Voc\xEA se preparou para este momento e a t\xE9cnica est\xE1
     correta. Concentre-se na prova."

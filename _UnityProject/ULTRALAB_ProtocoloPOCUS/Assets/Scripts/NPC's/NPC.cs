@@ -5,7 +5,6 @@ using UnityEngine.UI;
 using FMODUnity;
 using FMOD.Studio;
 using UnityEngine.InputSystem;
-using UnityEngine.SceneManagement;
 
 public class NPC : MonoBehaviour, IInteractable
 {
@@ -19,25 +18,10 @@ public class NPC : MonoBehaviour, IInteractable
     public bool startDialogueOnTrigger;
     public bool triggerOnlyOnce = true;
 
-    [Header("Feedback do Sonar")]
-    public NPC sonar;
-    public NPCdialogue sonarFeedback;
-
-
-    [Header("Feedback inicial da cena Exams")]
-public bool feedbackInicialExams;
-
-public GameObject objetoSonarParaDesativar;
-
-private const string CHAVE_FEEDBACK_EXAMS =
-    "Exams_SonarFeedbackMostrado";
-
     private EventInstance dialogueVoiceInstance;
-
     private int dialogueIndex;
     private bool isTyping, isDialogueActive;
     private bool hasTriggeredDialogue;
-    private bool sonarFeedbackJaExibido;
     private bool dialogoJaConcluido;
 
     public bool IsDialogueActive => isDialogueActive;
@@ -45,63 +29,19 @@ private const string CHAVE_FEEDBACK_EXAMS =
 
     private static System.Collections.Generic.HashSet<string> completedDialogues = new System.Collections.Generic.HashSet<string>();
 
-    
-void Start()
-{
-    if (feedbackInicialExams &&
-        SceneManager.GetActiveScene().name == "Exams")
+    void Start()
     {
-        if (PlayerPrefs.GetInt(CHAVE_FEEDBACK_EXAMS, 0) == 0)
+        if (startDialogueOnStart)
         {
-            StartCoroutine(IniciarFeedbackExams());
+            // Verifica se já falou isso antes em algum momento do jogo (Sistema de Memória)
+            if (triggerOnlyOnce && !string.IsNullOrEmpty(uniqueId) && completedDialogues.Contains(uniqueId))
+            {
+                return; 
+            }
+
+            StartDialogueExternally();
         }
-
-        return;
     }
-
-    if (startDialogueOnStart)
-    {
-        StartDialogueExternally();
-    }
-}
-
-private IEnumerator IniciarFeedbackExams()
-{
-    // Espera o HUD e suas referências estarem disponíveis.
-    while (dialogue_hud.instance == null ||
-           dialogue_hud.instance.dialoguePanel == null ||
-           dialogue_hud.instance.dialogueText == null ||
-           dialogue_hud.instance.nameText == null ||
-           dialogue_hud.instance.portraitImage == null)
-    {
-        yield return null;
-    }
-
-    if (dialogueData == null ||
-        dialogueData.dialogueLines == null ||
-        dialogueData.dialogueLines.Length == 0)
-    {
-        Debug.LogError(
-            "O feedback inicial de Exams está sem falas!",
-            this
-        );
-        yield break;
-    }
-
-    // Desativa o objeto escolhido, se houver.
-    if (objetoSonarParaDesativar != null &&
-        objetoSonarParaDesativar != gameObject)
-    {
-        objetoSonarParaDesativar.SetActive(false);
-    }
-
-    // Registra que o feedback foi iniciado.
-    PlayerPrefs.SetInt(CHAVE_FEEDBACK_EXAMS, 1);
-    PlayerPrefs.Save();
-
-    StartDialogueExternally();
-}
-
 
     void Update()
     {
@@ -121,8 +61,7 @@ private IEnumerator IniciarFeedbackExams()
 
     public void Interact()
     {
-        if (dialogueData == null ||
-            (pause_manager.isGamePaused && !isDialogueActive))
+        if (dialogueData == null || (pause_manager.isGamePaused && !isDialogueActive))
             return;
 
         // Não permite reiniciar o diálogo já concluído
@@ -149,7 +88,6 @@ private IEnumerator IniciarFeedbackExams()
         }
     }
 
-    // Usado para iniciar o diálogo sem precisar interagir com o NPC
     public void StartDialogueExternally()
     {
         if (dialogueData == null || isDialogueActive)
@@ -160,8 +98,6 @@ private IEnumerator IniciarFeedbackExams()
             gameObject.SetActive(true);
         }
 
-        // NPCs normais podem ser forçados pelo detector.
-        // O Sonar não precisa disso.
         if (!isInterfaceCharacter)
         {
             if (PlayerReferences.Instance?.InteractionDetector != null)
@@ -174,7 +110,6 @@ private IEnumerator IniciarFeedbackExams()
         StartDialogue();
     }
 
-    // Permite iniciar um diálogo específico no Sonar
     public void StartDialogue(NPCdialogue newDialogue)
     {
         if (newDialogue == null || isDialogueActive)
@@ -239,22 +174,16 @@ private IEnumerator IniciarFeedbackExams()
         {
             dialogue_hud.instance.dialogueText.text += letter;
 
-            yield return new WaitForSecondsRealtime(
-                dialogueData.typingSpeed
-            );
+            yield return new WaitForSecondsRealtime(dialogueData.typingSpeed);
         }
 
         StopVoice();
 
         isTyping = false;
 
-        if (dialogueData.autoProgressLines.Length > dialogueIndex &&
-            dialogueData.autoProgressLines[dialogueIndex])
+        if (dialogueData.autoProgressLines.Length > dialogueIndex && dialogueData.autoProgressLines[dialogueIndex])
         {
-            yield return new WaitForSecondsRealtime(
-                dialogueData.autoProgressDelay
-            );
-
+            yield return new WaitForSecondsRealtime(dialogueData.autoProgressDelay);
             NextLine();
         }
     }
@@ -266,9 +195,7 @@ private IEnumerator IniciarFeedbackExams()
 
         StopVoice();
 
-        dialogueVoiceInstance =
-            RuntimeManager.CreateInstance(dialogueData.voiceEvent);
-
+        dialogueVoiceInstance = RuntimeManager.CreateInstance(dialogueData.voiceEvent);
         dialogueVoiceInstance.start();
     }
 
@@ -325,24 +252,6 @@ private IEnumerator IniciarFeedbackExams()
                 PlayerReferences.Instance.EnablePlayer();
             }
         }
-
-        if (!isInterfaceCharacter && !sonarFeedbackJaExibido && sonar != null && sonarFeedback != null)
-        {
-            sonarFeedbackJaExibido = true;
-            NPCdialogue feedback = sonarFeedback;
-            sonarFeedback = null;
-            sonar.StartDialogue(feedback);
-        }
-
-        // Reativa o objeto quando o diálogo termina.
-if (feedbackInicialExams &&
-    SceneManager.GetActiveScene().name == "Exams" &&
-    objetoSonarParaDesativar != null)
-{
-    objetoSonarParaDesativar.SetActive(true);
-}
-
-
     }
 
     private void OnTriggerEnter2D(Collider2D other)

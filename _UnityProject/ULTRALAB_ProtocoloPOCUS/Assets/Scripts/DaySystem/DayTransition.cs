@@ -94,9 +94,10 @@ public class DayTransition : MonoBehaviour
     {
         PauseController.SetPause(true);
 
-        // Garantir que começa transparente
+        // Garantir que começa transparente, mas ativo
         if (blackPanel != null)
         {
+            blackPanel.gameObject.SetActive(true);
             Color color = blackPanel.color;
             color.a = 0f;
             blackPanel.color = color;
@@ -105,10 +106,29 @@ public class DayTransition : MonoBehaviour
         // Fade para preto
         yield return Fade(1f);
 
-        // Mostrar dia
+        // =================================================
+        // LÓGICA DO TÍTULO DO PLANTÃO
+        // =================================================
         if (dayText != null)
         {
-            dayText.text = $"Dia {day}. . .";
+            string plantaoNome = "Plantão de Integração"; // Padrão
+            
+            // Verifica o número de pacientes na cena para definir o título
+            if (PatientManager.Instance != null)
+            {
+                int qtdPacientes = PatientManager.Instance.GetPatients().Count;
+                
+                if (qtdPacientes == 2)
+                {
+                    plantaoNome = "Plantão Assistencial";
+                }
+                else if (qtdPacientes >= 3)
+                {
+                    plantaoNome = "Plantão Emergencial";
+                }
+            }
+
+            dayText.text = $"{plantaoNome} - Dia {day}";
             dayText.gameObject.SetActive(true);
         }
 
@@ -120,6 +140,11 @@ public class DayTransition : MonoBehaviour
         if (dayText != null)
         {
             dayText.gameObject.SetActive(false);
+        }
+        
+        if (blackPanel != null)
+        {
+            blackPanel.gameObject.SetActive(false);
         }
 
         PauseController.SetPause(false);

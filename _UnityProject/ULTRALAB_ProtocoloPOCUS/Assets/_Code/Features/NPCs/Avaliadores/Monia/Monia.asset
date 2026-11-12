@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd81a6fe40be39c4e83a96c320938fd9, type: 3}
   m_Name: Monia
   m_EditorClassIdentifier: Assembly-CSharp::NPCdialogue
-  npcName: "Avaliadora M\xF4nia"
-  npcPortrait: {fileID: 21300000, guid: 3f57267a6e50318468df9e5b74b74bcc, type: 3}
+  npcName: "M\xF4nia"
+  npcPortrait: {fileID: 21300000, guid: f3dfa4a2a089f2c45978067bc92116a6, type: 3}
   dialogueLines:
   - "Observe bem a angula\xE7\xE3o do transdutor. O detalhe \xE9 o que define a qualidade
     t\xE9cnica. Concentre-se na prova."

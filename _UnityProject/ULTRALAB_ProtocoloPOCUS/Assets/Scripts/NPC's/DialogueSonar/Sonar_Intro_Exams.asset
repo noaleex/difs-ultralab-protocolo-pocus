@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bd81a6fe40be39c4e83a96c320938fd9, type: 3}
-  m_Name: Sonar_Feedback_Gabriel
+  m_Name: Sonar_Intro_Exams
   m_EditorClassIdentifier: Assembly-CSharp::NPCdialogue
   npcName: Sonar
   npcPortrait: {fileID: 21300000, guid: 3a3d32b07deae594dbbe1db16cdf0ad0, type: 3}
   dialogueLines:
-  - "Aten\xE7\xE3o: para passar de fase, voc\xEA dever\xE1 ir at\xE9 o enfermario
-    adrian, utilizar o pocus como auxiliar no diagnostico. "
-  - "Voc\xEA precisar\xE1 ajustar a imagem que ser\xE1 anexada no prontuario ela
-    tem que ser nitida e voc\xEA conseguir prosseguir."
+  - "Bem-vindo ao seu primeiro teste pr\xE1tico! Este \xE9 o ambiente onde voc\xEA
+    far\xE1 suas avalia\xE7\xF5es \xE0 beira-leito."
+  - "Voc\xEA pode interagir com o paciente, com o monitor e com o aparelho de ultrassom.
+    Explore os equipamentos para entender o que cada um faz!"
   typingSpeed: 0.05
   voiceEvent:
     Guid:

@@ -10,15 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bd81a6fe40be39c4e83a96c320938fd9, type: 3}
-  m_Name: Sonar_Feedback_Denise
+  m_Name: Sonar_PocusIntro
   m_EditorClassIdentifier: Assembly-CSharp::NPCdialogue
   npcName: Sonar
   npcPortrait: {fileID: 21300000, guid: 3a3d32b07deae594dbbe1db16cdf0ad0, type: 3}
   dialogueLines:
-  - "Fique tranquilo, essa pr\xE1tica que iremos fazer \xE9 para voc\xEA se sentir
-    confiante usando o dispositivo."
-  - "Com a seguran\xE7a de que ir\xE1 fazer o procedimento corretamente, voc\xEA
-    conseguir\xE1 lidar melhor com os pacientes reais."
+  - "O aparelho de ultrassom POCUS ser\xE1 sua principal ferramenta de tomada de
+    decis\xE3o r\xE1pida. Ele permite enxergar al\xE9m da superf\xEDcie."
+  - "Logo mais te derei mais informa\xE7\xF5es sobre cada um. "
+  - "Agora vamos treinar sobre o procedimento.  V\xE1 para a primeira mesa no lado
+    esquerdo para come\xE7armos o tutorial"
   typingSpeed: 0.05
   voiceEvent:
     Guid:
