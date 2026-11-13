@@ -18,7 +18,6 @@ public class RandomSceneWalker2D : MonoBehaviour
     private BoxCollider2D boxCollider;
     private Animator animator;
     private SpriteRenderer spriteRenderer;
-    private NPC npc;
     private readonly List<Vector2> path = new List<Vector2>();
 
     private Vector2 currentWaypoint;
@@ -27,6 +26,7 @@ public class RandomSceneWalker2D : MonoBehaviour
     private float lastInputX;
     private float lastInputY;
     private int originalSortingOrder;
+    private bool initialPathAttempted;
 
     private void Awake()
     {
@@ -34,7 +34,6 @@ public class RandomSceneWalker2D : MonoBehaviour
         boxCollider = ownCollider as BoxCollider2D;
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        npc = GetComponent<NPC>();
         originalSortingOrder = spriteRenderer != null ? spriteRenderer.sortingOrder : 0;
 
         if (walkArea == null)
@@ -45,9 +44,7 @@ public class RandomSceneWalker2D : MonoBehaviour
     {
         UpdateDepthOrdering();
 
-        if (PauseController.IsGamePaused ||
-            pause_manager.isGamePaused ||
-            (npc != null && npc.IsDialogueActive))
+        if (PauseController.IsGamePaused || pause_manager.isGamePaused)
         {
             StopAtCurrentPosition();
             return;
@@ -59,11 +56,21 @@ public class RandomSceneWalker2D : MonoBehaviour
             return;
         }
 
-        if (!hasPath && !TryChoosePath())
+        if (!hasPath)
         {
-            pauseUntil = Time.time + 0.5f;
-            StopAtCurrentPosition();
-            return;
+            bool firstPathAttempt = !initialPathAttempted;
+            initialPathAttempted = true;
+
+            if (!TryChoosePath())
+            {
+                // Do not add the normal retry pause to the first search after
+                // the scene loads. Subsequent failed searches still back off.
+                if (!firstPathAttempt)
+                    pauseUntil = Time.time + 0.5f;
+
+                StopAtCurrentPosition();
+                return;
+            }
         }
 
         Vector2 current = transform.position;

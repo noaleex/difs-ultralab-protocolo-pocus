@@ -71,7 +71,45 @@ public class ChoiceFood : MonoBehaviour, IInteractable
         }
 
         // Mantém a interface sincronizada com a escolha atual.
+        VincularBotoesDaInterface();
         AtualizarImagemPrincipal();
+    }
+
+    private void VincularBotoesDaInterface()
+    {
+        if (opcoes != null)
+        {
+            for (int i = 0; i < opcoes.Length; i++)
+            {
+                OpcaoComida opcao = opcoes[i];
+                if (opcao == null || opcao.botao == null ||
+                    PossuiChamadaPersistente(opcao.botao, nameof(SelecionarComida)))
+                    continue;
+
+                int indice = i;
+                opcao.botao.onClick.AddListener(() => SelecionarComida(indice));
+            }
+        }
+
+        if (painelComida == null)
+            return;
+
+        Transform voltar = painelComida.transform.Find("Back");
+        Button botaoVoltar = voltar != null ? voltar.GetComponent<Button>() : null;
+        if (botaoVoltar != null && !PossuiChamadaPersistente(botaoVoltar, nameof(FecharPainel)))
+            botaoVoltar.onClick.AddListener(FecharPainel);
+    }
+
+    private bool PossuiChamadaPersistente(Button botao, string metodo)
+    {
+        for (int i = 0; i < botao.onClick.GetPersistentEventCount(); i++)
+        {
+            if (botao.onClick.GetPersistentTarget(i) == this &&
+                botao.onClick.GetPersistentMethodName(i) == metodo)
+                return true;
+        }
+
+        return false;
     }
 
     public void AbrirPainel()
