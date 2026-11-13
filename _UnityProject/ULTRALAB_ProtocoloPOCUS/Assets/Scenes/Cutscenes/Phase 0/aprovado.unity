@@ -1591,6 +1591,13 @@ MonoBehaviour:
       text: "Parab\xE9ns, voc\xEA encontrou e anexou corretamente a imagem do cora\xE7\xE3o.
         Agora, com o curso conclu\xEDdo, voc\xEA est\xE1 pronto para come\xE7ar seu
         trabalho da UTI."
+    slideSound:
+      Guid:
+        Data1: 1573486562
+        Data2: 1191570240
+        Data3: -964828995
+        Data4: 861158029
+      Path: event:/Cutscene/videoplayback
   nextSceneName: UTI
   backgroundImage: {fileID: 858372491}
   blackScreen: {fileID: 159079949}

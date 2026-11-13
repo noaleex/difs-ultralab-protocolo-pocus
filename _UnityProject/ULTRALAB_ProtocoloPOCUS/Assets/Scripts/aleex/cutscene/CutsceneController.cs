@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.InputSystem;
+using FMODUnity;
+using FMOD.Studio;
 
 [System.Serializable]
 public class CutsceneLine
@@ -33,6 +35,8 @@ public class CutsceneSlide
 
     [Header("Falas deste Slide")]
     public List<CutsceneLine> lines;
+
+    public EventReference slideSound;
 }
 
 public class CutsceneController : MonoBehaviour
@@ -62,6 +66,8 @@ public class CutsceneController : MonoBehaviour
 
     private bool isTyping = false;
     private bool skipTyping = false;
+    private EventInstance slideSoundInstance;
+    private Coroutine slideSoundCoroutine;
 
     private void Start()
     {
@@ -88,6 +94,11 @@ public class CutsceneController : MonoBehaviour
         }
     }
 
+    private void OnDestroy()
+    {
+        StopSlideSound();
+    }
+
     private bool WasInputPressedThisFrame()
     {
         bool pressed = false;
@@ -109,6 +120,7 @@ public class CutsceneController : MonoBehaviour
             
             if (currentSlide.slideActors != null) currentSlide.slideActors.SetActive(true);
 
+            StartSlideSound(currentSlide.slideSound);
             yield return FadeBlackScreen(1, 0);
 
             foreach (CutsceneLine line in currentSlide.lines)
@@ -123,6 +135,8 @@ public class CutsceneController : MonoBehaviour
             narratorPanel.SetActive(false);
             characterPanel.SetActive(false);
 
+            StopSlideSound();
+
             if (i < slides.Count - 1) yield return FadeBlackScreen(0, 1);
 
             if (currentSlide.slideActors != null) currentSlide.slideActors.SetActive(false);
@@ -132,6 +146,68 @@ public class CutsceneController : MonoBehaviour
         
         if (loading_manager.instance != null) loading_manager.instance.SwitchScene(nextSceneName);
         else Debug.LogWarning("[CUTSCENE] loading_manager não encontrado!");
+    }
+
+    private void StartSlideSound(EventReference sound)
+    {
+        StopSlideSound();
+
+        if (sound.IsNull)
+            return;
+
+        slideSoundInstance = RuntimeManager.CreateInstance(sound);
+        FMOD.RESULT result = slideSoundInstance.start();
+        if (result != FMOD.RESULT.OK)
+        {
+            Debug.LogError($"[CUTSCENE] Falha ao iniciar áudio do slide: {result}", this);
+            slideSoundInstance.release();
+            slideSoundInstance.clearHandle();
+            return;
+        }
+
+        slideSoundCoroutine = StartCoroutine(ReplaySlideSoundWhenFinished());
+    }
+
+    private IEnumerator ReplaySlideSoundWhenFinished()
+    {
+        while (slideSoundInstance.isValid())
+        {
+            PLAYBACK_STATE playbackState;
+            FMOD.RESULT result = slideSoundInstance.getPlaybackState(out playbackState);
+            if (result != FMOD.RESULT.OK)
+            {
+                Debug.LogError($"[CUTSCENE] Falha ao consultar áudio do slide: {result}", this);
+                yield break;
+            }
+
+            if (playbackState == PLAYBACK_STATE.STOPPED)
+            {
+                result = slideSoundInstance.start();
+                if (result != FMOD.RESULT.OK)
+                {
+                    Debug.LogError($"[CUTSCENE] Falha ao reiniciar áudio do slide: {result}", this);
+                    yield break;
+                }
+            }
+
+            yield return null;
+        }
+    }
+
+    private void StopSlideSound()
+    {
+        if (slideSoundCoroutine != null)
+        {
+            StopCoroutine(slideSoundCoroutine);
+            slideSoundCoroutine = null;
+        }
+
+        if (slideSoundInstance.isValid())
+        {
+            slideSoundInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+            slideSoundInstance.release();
+            slideSoundInstance.clearHandle();
+        }
     }
 
     private IEnumerator PlayLine(CutsceneLine line)
