@@ -5,10 +5,6 @@ using UnityEngine;
 public static class GameSession
 {
 
-    // =========================================================
-    // RESULTADOS DIÁRIOS (FICAM PENDENTES ATÉ O NPC SER CONSULTADO)
-    // =========================================================
-
     public sealed class DailyEvaluationResult
     {
         public PatientData Patient { get; private set; }
@@ -94,10 +90,6 @@ public static class GameSession
                IsPatientDischarged(progressionPatient3);
     }
 
-    // =========================================================
-    // TEMPO
-    // =========================================================
-
     public static bool HasSavedTime { get; private set; }
 
     public static int CurrentDay { get; private set; } = 1;
@@ -106,10 +98,6 @@ public static class GameSession
 
     public static string OriginalSceneName { get; private set; }
 
-
-    // =========================================================
-    // ESTADO DOS PACIENTES
-    // =========================================================
 
     private class PatientState
     {
@@ -125,11 +113,10 @@ public static class GameSession
         patientStates =
             new Dictionary<PatientData, PatientState>();
 
-    // Progressão dos três pacientes. Esses dados ficam na sessão ao trocar de cena.
     private static PatientData progressionPatient1;
     private static PatientData progressionPatient2;
     private static PatientData progressionPatient3;
-    // Unlocks are scheduled for the next in-game day, never during the current day.
+
     private static int patient2UnlockDay = -1;
     private static int patient3UnlockDay = -1;
     private static int progressionSpawnThreshold = 50;
@@ -162,11 +149,6 @@ public static class GameSession
         }
     }
 
-
-    // =========================================================
-    // TEMPO
-    // =========================================================
-
     public static void SaveTime(
     int day,
     int hour,
@@ -180,7 +162,46 @@ public static class GameSession
         HasSavedTime = true;
 
         if (CurrentDay != previousDay)
+        {
+            CommitDayEndProgression();
+
             DayChanged?.Invoke(CurrentDay);
+        }
+    }
+
+    private static void CommitDayEndProgression()
+    {
+        if (progressionPatient1 == null ||
+            progressionPatient2 == null ||
+            progressionPatient3 == null)
+            return;
+
+        int patient1Welfare = GetPatientWelfare(progressionPatient1);
+        int patient2Welfare = GetPatientWelfare(progressionPatient2);
+        int patient3Welfare = GetPatientWelfare(progressionPatient3);
+        if (patient1Welfare >= 74)
+        {
+            MarkPatientAsDischarged(progressionPatient1);
+
+            if (patient2UnlockDay < 0)
+                patient2UnlockDay = CurrentDay;
+        }
+        else if (patient1Welfare >= progressionSpawnThreshold &&
+                 patient2UnlockDay < 0)
+        {
+            patient2UnlockDay = CurrentDay;
+        }
+
+        if (IsPatient2Unlocked && patient2Welfare >= 74)
+        {
+            MarkPatientAsDischarged(progressionPatient2);
+
+            if (patient3UnlockDay < 0)
+                patient3UnlockDay = CurrentDay;
+        }
+
+        if (IsPatient3Unlocked && patient3Welfare >= 74)
+            MarkPatientAsDischarged(progressionPatient3);
     }
 
     public static void LoadTime(
@@ -193,22 +214,12 @@ public static class GameSession
         minute = CurrentMinute;
     }
 
-
-    // =========================================================
-    // CENA ORIGINAL
-    // =========================================================
-
     public static void SetOriginalScene(
         string sceneName)
     {
         OriginalSceneName = sceneName;
 
     }
-
-
-    // =========================================================
-    // ESTADO DO PACIENTE
-    // =========================================================
 
     private static PatientState GetOrCreatePatientState(
         PatientData patient)
@@ -245,11 +256,6 @@ public static class GameSession
         return state;
     }
 
-
-    // =========================================================
-    // WELFARE - OBTER VALOR ATUAL
-    // =========================================================
-
     public static int GetPatientWelfare(
         PatientData patient)
     {
@@ -268,11 +274,6 @@ public static class GameSession
 
         return state.welfareScore;
     }
-
-
-    // =========================================================
-    // WELFARE - ALTERAR VALOR ATUAL
-    // =========================================================
 
     public static void SetPatientWelfare(
         PatientData patient,
@@ -295,32 +296,10 @@ public static class GameSession
         state.welfareScore = Mathf.Clamp(value, 0, 74);
         int currentValue = state.welfareScore;
 
-        if (patient == progressionPatient1 && patient2UnlockDay < 0 &&
-            (currentValue >= progressionSpawnThreshold || currentValue >= 74))
-        {
-            patient2UnlockDay = CurrentDay + 1;
-            Debug.Log($"[GameSession] Paciente 2 liberado para o dia {patient2UnlockDay}; não aparecerá hoje.");
-        }
-
-        if (currentValue >= 74)
-        {
-            PatientState currentState = GetOrCreatePatientState(patient);
-            currentState.discharged = true;
-            if (patient == progressionPatient2 && patient3UnlockDay < 0)
-            {
-                patient3UnlockDay = CurrentDay + 1;
-                Debug.Log($"[GameSession] Paciente 3 liberado para o dia {patient3UnlockDay}; não aparecerá hoje.");
-            }
-        }
-
         if (previousValue != currentValue)
             PatientWelfareChanged?.Invoke(patient, previousValue, currentValue);
     }
 
-
-    // =========================================================
-    // SALVAR PACIENTE
-    // =========================================================
 
     public static void SavePatient(
         PatientData patient)
@@ -331,11 +310,6 @@ public static class GameSession
         PatientState state =
             GetOrCreatePatientState(patient);
     }
-
-
-    // =========================================================
-    // CARREGAR PACIENTE
-    // =========================================================
 
     public static void LoadPatient(
         PatientData patient)
@@ -348,11 +322,6 @@ public static class GameSession
 
     }
 
-
-    // =========================================================
-    // ALTA
-    // =========================================================
-
     public static void MarkPatientAsDischarged(
         PatientData patient)
     {
@@ -363,10 +332,6 @@ public static class GameSession
             GetOrCreatePatientState(patient);
 
         state.discharged = true;
-        if (patient == progressionPatient1 && patient2UnlockDay < 0)
-            patient2UnlockDay = CurrentDay + 1;
-        if (patient == progressionPatient2 && patient3UnlockDay < 0)
-            patient3UnlockDay = CurrentDay + 1;
 
         Debug.Log(
             $"[GameSession] " +
@@ -389,11 +354,6 @@ public static class GameSession
 
         return false;
     }
-
-
-    // =========================================================
-    // CONDUTA
-    // =========================================================
 
     public static void SaveConduct(
         PatientData patient,
@@ -425,11 +385,7 @@ public static class GameSession
         );
     }
 
-
-    // =========================================================
     // CARREGAR CONDUTA
-    // =========================================================
-
     public static bool LoadConduct(
         PatientData patient,
         ConductState targetState,
@@ -473,10 +429,6 @@ public static class GameSession
     }
 
 
-    // =========================================================
-    // COPIAR CONDUCT STATE
-    // =========================================================
-
     private static ConductState CopyConductState(
         ConductState source)
     {
@@ -505,10 +457,6 @@ public static class GameSession
             return;
         }
 
-        // =====================================================
-        // VIA AÉREA
-        // =====================================================
-
         target.permeabilidade =
             source.permeabilidade;
 
@@ -517,11 +465,6 @@ public static class GameSession
 
         target.intervencao =
             source.intervencao;
-
-
-        // =====================================================
-        // RESPIRAÇÃO
-        // =====================================================
 
         target.frequencia =
             source.frequencia;
@@ -546,11 +489,6 @@ public static class GameSession
 
         target.oxigenoterapiaFluxo =
             source.oxigenoterapiaFluxo;
-
-
-        // =====================================================
-        // CIRCULAÇÃO
-        // =====================================================
 
         target.frequenciaCardiaca =
             source.frequenciaCardiaca;
@@ -581,18 +519,8 @@ public static class GameSession
 
         // DIAGNÓSTICO
         target.diagnostico = source.diagnostico;
-
-        // =====================================================
-        // NEUROLÓGICO
-        // =====================================================
-
         target.nivelConsciencia =
             source.nivelConsciencia;
-
-
-        // =====================================================
-        // EXPOSIÇÃO
-        // =====================================================
 
         target.avalicaoPele =
             source.avalicaoPele;
@@ -603,11 +531,6 @@ public static class GameSession
         target.dorEscala =
             source.dorEscala;
     }
-
-
-    // =========================================================
-    // NOVO JOGO
-    // =========================================================
 
     public static void ResetSession(
         int startHour = 8)

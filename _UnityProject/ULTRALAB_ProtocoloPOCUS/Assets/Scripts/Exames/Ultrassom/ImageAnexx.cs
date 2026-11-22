@@ -199,6 +199,13 @@ public class ImageAnexx : MonoBehaviour
     // Função auxiliar que limpa o estado e carrega a cena solicitada
     private void LoadSpecificScene(string sceneName)
     {
+        if (tutorialMode &&
+        sceneName == cenaAprovado &&
+        boot_manager.instance != null)
+        {
+            boot_manager.instance.PrepareTutorialExitSpawn(sceneName);
+        }
+        
         PauseController.SetPause(false);
 
         if (PlayerReferences.Instance != null)

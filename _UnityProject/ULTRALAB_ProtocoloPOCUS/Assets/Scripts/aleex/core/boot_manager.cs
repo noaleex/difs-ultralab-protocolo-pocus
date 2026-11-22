@@ -18,6 +18,8 @@ public class boot_manager : MonoBehaviour
     private string storedPositionScene = "";
     private string activePlayerGender = "";
 
+    private string pendingTutorialSpawnScene = "";
+
     private void Awake()
     {
         if (instance == null)
@@ -84,7 +86,7 @@ public class boot_manager : MonoBehaviour
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         CleanupDuplicateCameras();
-        HandleGameplayStateForScene(scene.name);
+        HandleGameplayStateForScene(scene);
     }
 
     private void CleanupDuplicateCameras()
@@ -104,22 +106,27 @@ public class boot_manager : MonoBehaviour
         }
     }
 
-    private void HandleGameplayStateForScene(string sceneName)
+    private void HandleGameplayStateForScene(Scene scene)
     {
-        bool isMenu = string.Equals(sceneName, initialSceneName, System.StringComparison.OrdinalIgnoreCase);
-        bool isCutscene = game_flow_manager.instance != null && game_flow_manager.instance.IsCutsceneScene(sceneName);
+        string sceneName = scene.name;
+
+        bool isMenu = string.Equals(
+            sceneName,
+            initialSceneName,
+            System.StringComparison.OrdinalIgnoreCase);
+
+        bool isCutscene =
+            game_flow_manager.instance != null &&
+            game_flow_manager.instance.IsCutsceneScene(sceneName);
 
         if (isMenu || isCutscene)
         {
             if (activePlayer != null)
-            {
                 activePlayer.SetActive(false);
-            }
 
             if (hud_manager.instance != null)
-            {
                 hud_manager.instance.SetHudVisibility(false);
-            }
+
             return;
         }
 
@@ -129,25 +136,48 @@ public class boot_manager : MonoBehaviour
         {
             activePlayer.SetActive(true);
 
-            PlayerReferences refs = activePlayer.GetComponent<PlayerReferences>();
-            if (refs != null)
-            {
-                refs.EnablePlayer();
-            }
+            PlayerReferences refs =
+                activePlayer.GetComponent<PlayerReferences>();
 
-            if (storedPosition.HasValue && storedPositionScene == sceneName)
+            if (refs != null)
+                refs.EnablePlayer();
+
+            // Prioridade: ponto de saída do tutorial.
+            if (pendingTutorialSpawnScene == sceneName)
+            {
+                TutorialExitSpawn tutorialSpawn =
+                    GetTutorialSpawnFromScene(scene);
+
+                if (tutorialSpawn != null)
+                {
+                    activePlayer.transform.SetPositionAndRotation(
+                        tutorialSpawn.transform.position,
+                        tutorialSpawn.transform.rotation);
+                }
+                else
+                {
+                    Debug.LogWarning(
+                        "TutorialExitSpawn não encontrado na cena " + sceneName);
+                }
+
+                pendingTutorialSpawnScene = "";
+                storedPosition = null;
+                storedPositionScene = "";
+            }
+            else if (storedPosition.HasValue &&
+                     storedPositionScene == sceneName)
             {
                 activePlayer.transform.position = storedPosition.Value;
+
                 storedPosition = null;
                 storedPositionScene = "";
             }
             else
             {
                 GameObject spawnPoint = GameObject.FindWithTag("Respawn");
+
                 if (spawnPoint != null)
-                {
                     activePlayer.transform.position = spawnPoint.transform.position;
-                }
             }
 
             BindCameraToPlayer(activePlayer.transform);
@@ -293,5 +323,36 @@ public class boot_manager : MonoBehaviour
     public bool HasPlayer()
     {
         return activePlayer != null;
+    }
+
+    public void PrepareTutorialExitSpawn(string destinationSceneName)
+    {
+        if (string.IsNullOrWhiteSpace(destinationSceneName))
+        {
+            Debug.LogWarning("Cena de destino do tutorial não configurada.");
+            return;
+        }
+
+        pendingTutorialSpawnScene = destinationSceneName;
+
+        // Impede que uma posição anterior sobrescreva o spawn do tutorial.
+        storedPosition = null;
+        storedPositionScene = "";
+    }
+
+    private TutorialExitSpawn GetTutorialSpawnFromScene(Scene scene)
+    {
+        GameObject[] roots = scene.GetRootGameObjects();
+
+        foreach (GameObject root in roots)
+        {
+            TutorialExitSpawn spawn =
+                root.GetComponentInChildren<TutorialExitSpawn>(true);
+
+            if (spawn != null)
+                return spawn;
+        }
+
+        return null;
     }
 }
