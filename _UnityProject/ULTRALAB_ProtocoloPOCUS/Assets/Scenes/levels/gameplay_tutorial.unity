@@ -29761,7 +29761,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1141175264
 RectTransform:
   m_ObjectHideFlags: 0
@@ -29798,6 +29798,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TutorialPrompt
   acaoParaSumir: 1
+  uniqueId: Tutorial_Controls_Movement
 --- !u!1 &1146595889
 GameObject:
   m_ObjectHideFlags: 0
@@ -48221,7 +48222,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AutoStartSonar
   falaDeBoasVindas: {fileID: 11400000, guid: 11d194bb0f75bcf4cb11583480817af0, type: 2}
   tempoDeEspera: 1.5
-  uniqueId: Tutorial_Teste_3
+  uniqueId: Tutorial_Intro_Sonar
 --- !u!4 &1921964836
 Transform:
   m_ObjectHideFlags: 0

@@ -2142,6 +2142,13 @@ MonoBehaviour:
       characterPortrait: {fileID: 0}
       text: "Ali, com o diploma em m\xE3os e ao lado dos meus amigos, eu acreditava
         estar pronto para salvar o mundo."
+    slideSound:
+      Guid:
+        Data1: 264116068
+        Data2: 1162413079
+        Data3: 1753278654
+        Data4: 1995430900
+      Path: event:/Cutscene/mx_feliz
   - slideImage: {fileID: 2800000, guid: dcba5984a9286d548bd8584f610b887e, type: 3}
     slideActors: {fileID: 1895029348}
     lines:
@@ -2169,6 +2176,13 @@ MonoBehaviour:
       characterPortrait: {fileID: 0}
       text: "Apesar de toda a experi\xEAncia adquirida, percebi algo ineg\xE1vel:
         a sa\xFAde evolui todos os dias... e eu preciso evoluir junto."
+    slideSound:
+      Guid:
+        Data1: 1944020180
+        Data2: 1144808290
+        Data3: -1063811182
+        Data4: -1254410107
+      Path: event:/Cutscene/room
   - slideImage: {fileID: 2800000, guid: a2b4cf05b2ff0b64a82fc2677a2bef8f, type: 3}
     slideActors: {fileID: 1474229604}
     lines:
@@ -2219,6 +2233,13 @@ MonoBehaviour:
       characterPortrait: {fileID: 21300000, guid: 929eb7b431c8f7a41b90123c3b521011, type: 3}
       text: "Procura pelo projeto Ultralab. Vai mudar completamente a forma como
         voc\xEA enxerga a enfermagem."
+    slideSound:
+      Guid:
+        Data1: 208683514
+        Data2: 1238074979
+        Data3: 827034766
+        Data4: 349545489
+      Path: event:/Cutscene/fx_ambienciaC3
   - slideImage: {fileID: 2800000, guid: 3ec333b612e765047b584594fbc26a43, type: 3}
     slideActors: {fileID: 312570841}
     lines:
@@ -2235,6 +2256,13 @@ MonoBehaviour:
       text: "Foram meses intensos de muito estudo. Aulas te\xF3ricas, simula\xE7\xF5es
         de laborat\xF3rio e in\xFAmeras pr\xE1ticas de ultrassom \xE0 beira-leito
         sob a supervis\xE3o dos professores."
+    slideSound:
+      Guid:
+        Data1: 185013489
+        Data2: 1084049428
+        Data3: -1257323087
+        Data4: 85906626
+      Path: event:/Cutscene/fx_ambienceC4
   - slideImage: {fileID: 2800000, guid: 2bb0070476ad15946979798edcac8ae4, type: 3}
     slideActors: {fileID: 0}
     lines:
@@ -2244,6 +2272,13 @@ MonoBehaviour:
       characterPortrait: {fileID: 0}
       text: "At\xE9 que o grande dia chegou: a prova pr\xE1tica para a obten\xE7\xE3o
         do meu certificado."
+    slideSound:
+      Guid:
+        Data1: 1944020180
+        Data2: 1144808290
+        Data3: -1063811182
+        Data4: -1254410107
+      Path: event:/Cutscene/room
   nextSceneName: gameplay_tutorial
   backgroundImage: {fileID: 858372491}
   blackScreen: {fileID: 159079949}
@@ -2255,6 +2290,34 @@ MonoBehaviour:
   characterText: {fileID: 1745630455}
   characterNameText: {fileID: 1767201614}
   characterPortrait: {fileID: 862442560}
+  typingSound:
+    Guid:
+      Data1: 336788591
+      Data2: 1233888843
+      Data3: 1089802149
+      Data4: 1523917127
+    Path: event:/Cutscene/fx_digitacao
+  femaleNurseDialogueSound:
+    Guid:
+      Data1: -1158635385
+      Data2: 1079365293
+      Data3: -963294557
+      Data4: -1252902628
+    Path: event:/Falas/wa_mulher
+  maleNurseDialogueSound:
+    Guid:
+      Data1: 1848629510
+      Data2: 1242921189
+      Data3: 842444204
+      Data4: -862761648
+    Path: event:/Falas/wa_homem2
+  adrianDialogueSound:
+    Guid:
+      Data1: -23663592
+      Data2: 1306142978
+      Data3: -1714698314
+      Data4: 1623501387
+    Path: event:/Falas/wa_alexandre
 --- !u!1 &1346596130
 GameObject:
   m_ObjectHideFlags: 0

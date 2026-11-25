@@ -42,11 +42,21 @@ public class loading_manager : MonoBehaviour
 
     public void SwitchScene(string sceneToLoad)
     {
+        if (SonarController.Instance != null)
+            SonarController.Instance.EncerrarFala();
+        if (dialogue_hud.instance != null)
+            dialogue_hud.instance.CloseDialogue();
+
         StartCoroutine(LoadSceneCoroutine(sceneToLoad, true));
     }
 
     public void SwitchSceneWithoutUpdatingSave(string sceneToLoad)
     {
+        if (SonarController.Instance != null)
+            SonarController.Instance.EncerrarFala();
+        if (dialogue_hud.instance != null)
+            dialogue_hud.instance.CloseDialogue();
+
         StartCoroutine(LoadSceneCoroutine(sceneToLoad, false));
     }
 
@@ -119,6 +129,12 @@ public class loading_manager : MonoBehaviour
             {
                 SceneManager.SetActiveScene(newScene);
             }
+
+            // Alguns objetos da cena destino inicializam a UI depois do
+            // callback sceneLoaded. Garante que nenhum balão de diálogo vazio
+            // da cena anterior permaneça visível após a transição.
+            if (dialogue_hud.instance != null)
+                dialogue_hud.instance.CloseDialogue();
 
             if (updateSavedScene && save_manager.instance != null && save_manager.instance.currentData != null)
             {

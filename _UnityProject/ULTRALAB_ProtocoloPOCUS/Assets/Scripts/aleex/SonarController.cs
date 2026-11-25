@@ -4,6 +4,7 @@ using System.Collections;
 using FMODUnity;
 using FMOD.Studio;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI; // Necessário para Image
 
 public class SonarController : MonoBehaviour
@@ -36,11 +37,27 @@ public class SonarController : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
+            SceneManager.sceneLoaded += OnSceneLoaded;
         }
         else
         {
             Destroy(gameObject);
         }
+    }
+
+    private void OnDestroy()
+    {
+        if (Instance == this)
+        {
+            SceneManager.sceneLoaded -= OnSceneLoaded;
+            StopVoice();
+        }
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (isDialogueActive)
+            EndDialogue();
     }
 
     private void Start()
@@ -105,6 +122,23 @@ public class SonarController : MonoBehaviour
         else
         {
             EndDialogue();
+        }
+    }
+
+    public void EncerrarFala()
+    {
+        if (isDialogueActive)
+            EndDialogue();
+        else
+        {
+            StopAllCoroutines();
+            StopVoice();
+            if (sonarDialogueText != null)
+                sonarDialogueText.SetText(string.Empty);
+            if (speakingPanel != null)
+                speakingPanel.SetActive(false);
+            if (idlePanel != null)
+                idlePanel.SetActive(true);
         }
     }
 

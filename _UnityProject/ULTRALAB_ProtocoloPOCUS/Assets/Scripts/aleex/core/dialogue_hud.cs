@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class dialogue_hud : MonoBehaviour
 {
@@ -18,10 +19,32 @@ public class dialogue_hud : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
+            SceneManager.sceneLoaded += OnSceneLoaded;
         }
         else
         {
             Destroy(gameObject);
         }
+    }
+
+    private void OnDestroy()
+    {
+        if (instance == this)
+            SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        CloseDialogue();
+    }
+
+    public void CloseDialogue()
+    {
+        if (dialogueText != null)
+            dialogueText.SetText(string.Empty);
+        if (nameText != null)
+            nameText.SetText(string.Empty);
+        if (dialoguePanel != null)
+            dialoguePanel.SetActive(false);
     }
 }

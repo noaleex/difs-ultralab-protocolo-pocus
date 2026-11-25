@@ -1609,6 +1609,41 @@ MonoBehaviour:
   characterText: {fileID: 1745630455}
   characterNameText: {fileID: 1767201614}
   characterPortrait: {fileID: 862442560}
+  typingSound:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  femaleNurseDialogueSound:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  maleNurseDialogueSound:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  adrianDialogueSound:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  sonarDialogueSound:
+    Guid:
+      Data1: -355241531
+      Data2: 1255865929
+      Data3: -907916883
+      Data4: 863556038
+    Path: event:/Falas/wa_morcego
 --- !u!1 &1346596130
 GameObject:
   m_ObjectHideFlags: 0

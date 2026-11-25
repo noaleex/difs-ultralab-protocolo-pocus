@@ -61,6 +61,17 @@ public class CutsceneController : MonoBehaviour
     public TMP_Text characterNameText;
     public Image characterPortrait;
 
+    [Header("Sons das Falas (FMOD)")]
+    [Tooltip("Evento FMOD em loop/sustentado usado enquanto as letras da fala são reveladas.")]
+    public EventReference typingSound;
+    [Tooltip("Evento FMOD usado durante as falas do enfermeiro na cutscene feminina.")]
+    public EventReference femaleNurseDialogueSound;
+    [Tooltip("Evento FMOD usado durante as falas do enfermeiro na cutscene masculina.")]
+    public EventReference maleNurseDialogueSound;
+    [Tooltip("Evento FMOD usado durante as falas de Adrian.")]
+    public EventReference adrianDialogueSound;
+    public EventReference sonarDialogueSound;
+
     // Chave onde o nome do jogador é salvo ao criar o personagem
     private string chaveNomeJogador = "PlayerName"; 
 
@@ -68,6 +79,8 @@ public class CutsceneController : MonoBehaviour
     private bool skipTyping = false;
     private EventInstance slideSoundInstance;
     private Coroutine slideSoundCoroutine;
+    private EventInstance lineSoundInstance;
+    private bool transitionStarted;
 
     private void Start()
     {
@@ -87,16 +100,42 @@ public class CutsceneController : MonoBehaviour
 
     private void Update()
     {
+        if (Keyboard.current != null && Keyboard.current.pKey.wasPressedThisFrame)
+        {
+            SkipCutscene();
+            return;
+        }
+
         if (WasInputPressedThisFrame())
         {
             if (isTyping)
+            {
                 skipTyping = true; 
+                StopLineSound();
+            }
         }
     }
 
     private void OnDestroy()
     {
         StopSlideSound();
+        StopLineSound();
+    }
+
+    private void SkipCutscene()
+    {
+        if (transitionStarted)
+            return;
+
+        StopAllCoroutines();
+        isTyping = false;
+        skipTyping = true;
+        narratorPanel.SetActive(false);
+        characterPanel.SetActive(false);
+        SetSonarIdlePanelVisible(true);
+        StopSlideSound();
+        StopLineSound();
+        TransitionToNextScene();
     }
 
     private bool WasInputPressedThisFrame()
@@ -134,6 +173,7 @@ public class CutsceneController : MonoBehaviour
 
             narratorPanel.SetActive(false);
             characterPanel.SetActive(false);
+            SetSonarIdlePanelVisible(true);
 
             StopSlideSound();
 
@@ -144,8 +184,20 @@ public class CutsceneController : MonoBehaviour
 
         yield return FadeBlackScreen(0, 1);
         
-        if (loading_manager.instance != null) loading_manager.instance.SwitchScene(nextSceneName);
-        else Debug.LogWarning("[CUTSCENE] loading_manager não encontrado!");
+        TransitionToNextScene();
+    }
+
+    private void TransitionToNextScene()
+    {
+        if (transitionStarted)
+            return;
+
+        transitionStarted = true;
+
+        if (loading_manager.instance != null)
+            loading_manager.instance.SwitchScene(nextSceneName);
+        else
+            Debug.LogWarning("[CUTSCENE] loading_manager não encontrado!");
     }
 
     private void StartSlideSound(EventReference sound)
@@ -219,6 +271,7 @@ public class CutsceneController : MonoBehaviour
             narratorPanel.SetActive(true);
             characterPanel.SetActive(false);
             activeTextUI = narratorText;
+            SetSonarIdlePanelVisible(true);
         }
         else
         {
@@ -239,11 +292,14 @@ public class CutsceneController : MonoBehaviour
                 }
             }
             if (characterPortrait != null) characterPortrait.sprite = line.characterPortrait;
+            SetSonarIdlePanelVisible(!IsSonarLine(line));
+
         }
 
         activeTextUI.text = "";
         isTyping = true;
         skipTyping = false;
+        StartLineSound(line);
 
         foreach (char letter in line.text)
         {
@@ -258,6 +314,103 @@ public class CutsceneController : MonoBehaviour
         }
 
         isTyping = false;
+        StopLineSound();
+    }
+
+    private void StartLineSound(CutsceneLine line)
+    {
+        StopLineSound();
+
+        if (string.IsNullOrEmpty(line.text))
+            return;
+
+        EventReference sound = line.isNarrator
+            ? typingSound
+            : GetCharacterDialogueSound(line);
+
+        if (sound.IsNull)
+            return;
+
+        lineSoundInstance = RuntimeManager.CreateInstance(sound);
+        FMOD.RESULT result = lineSoundInstance.start();
+        if (result != FMOD.RESULT.OK)
+        {
+            Debug.LogError($"[CUTSCENE] Falha ao iniciar som da fala: {result}", this);
+            lineSoundInstance.release();
+            lineSoundInstance.clearHandle();
+        }
+    }
+
+    private EventReference GetCharacterDialogueSound(CutsceneLine line)
+    {
+        string characterName = line.characterName ?? string.Empty;
+
+        if (characterName.IndexOf("adrian", System.StringComparison.OrdinalIgnoreCase) >= 0)
+            return adrianDialogueSound;
+
+        if (characterName.IndexOf("sonar", System.StringComparison.OrdinalIgnoreCase) >= 0)
+            return sonarDialogueSound;
+
+        bool isNurse = line.isPlayerCharacter ||
+            characterName.IndexOf("enfermeiro", System.StringComparison.OrdinalIgnoreCase) >= 0 ||
+            characterName.IndexOf("enfermeira", System.StringComparison.OrdinalIgnoreCase) >= 0;
+
+        if (!isNurse)
+            return default;
+
+        return IsFemalePlayerSelected()
+            ? femaleNurseDialogueSound
+            : maleNurseDialogueSound;
+    }
+
+    private bool IsFemalePlayerSelected()
+    {
+        // A partida preparada pelo boot_manager atualiza este estado antes de
+        // carregar a cutscene. PlayerPrefs fica apenas como fallback para
+        // execuÃ§Ãµes antigas ou abertura direta da cena no Editor.
+        string selectedGender = string.Empty;
+        if (save_manager.instance != null &&
+            save_manager.instance.currentData != null)
+        {
+            selectedGender = save_manager.instance.currentData.characterGender;
+        }
+
+        if (string.IsNullOrEmpty(selectedGender))
+            selectedGender = PlayerPrefs.GetString("Character", string.Empty);
+
+        if (string.IsNullOrEmpty(selectedGender))
+            selectedGender = PlayerPrefs.GetString("PlayerGender", string.Empty);
+
+        return string.Equals(selectedGender, "Female", System.StringComparison.OrdinalIgnoreCase) ||
+            string.Equals(selectedGender, "Feminino", System.StringComparison.OrdinalIgnoreCase);
+    }
+
+    private void StopLineSound()
+    {
+        if (!lineSoundInstance.isValid())
+            return;
+
+        lineSoundInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        lineSoundInstance.release();
+        lineSoundInstance.clearHandle();
+    }
+
+    private bool IsSonarLine(CutsceneLine line)
+    {
+        return line != null && !line.isNarrator &&
+            (line.characterName ?? string.Empty).IndexOf(
+                "sonar", System.StringComparison.OrdinalIgnoreCase) >= 0;
+    }
+
+    private void SetSonarIdlePanelVisible(bool visible)
+    {
+        if (SonarController.Instance != null && SonarController.Instance.idlePanel != null)
+            SonarController.Instance.idlePanel.SetActive(visible);
+    }
+
+    private void OnDisable()
+    {
+        SetSonarIdlePanelVisible(true);
     }
 
     private IEnumerator FadeBlackScreen(float startAlpha, float targetAlpha)
