@@ -73,8 +73,6 @@ public class CharacterSelection : MonoBehaviour
     {
         // Apaga a chave da primeira cena do tutorial
         PlayerPrefs.DeleteKey("Tutorial_Intro_Sonar");
-        PlayerPrefs.DeleteKey("Tutorial_Controls_Movement");
-        ChoiceFood.LimparAlimentoCarregado();
         
         // Apaga a chave da cena de exames
         PlayerPrefs.DeleteKey("Exames_Intro_Tutorial");

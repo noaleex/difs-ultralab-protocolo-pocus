@@ -36,12 +36,6 @@ public class ChoiceFood : MonoBehaviour, IInteractable
         = TipoComida.Nenhuma;
 
     public Sprite SpriteSelecionado { get; private set; }
-    private static TipoComida alimentoCarregado = TipoComida.Nenhuma;
-
-    public static void LimparAlimentoCarregado()
-    {
-        alimentoCarregado = TipoComida.Nenhuma;
-    }
 
     private TipoComida selecaoProvisoria = TipoComida.Nenhuma;
     private bool painelAberto;
@@ -77,8 +71,6 @@ public class ChoiceFood : MonoBehaviour, IInteractable
         }
 
         // Mantém a interface sincronizada com a escolha atual.
-        ComidaSelecionada = alimentoCarregado;
-        SpriteSelecionado = EncontrarSprite(ComidaSelecionada);
         VincularBotoesDaInterface();
         AtualizarImagemPrincipal();
     }
@@ -157,7 +149,6 @@ public class ChoiceFood : MonoBehaviour, IInteractable
         // Segundo clique na mesma opção: confirma.
         ComidaSelecionada = opcao.tipo;
         SpriteSelecionado = opcao.sprite;
-        alimentoCarregado = ComidaSelecionada;
 
         AtualizarImagemPrincipal();
 
@@ -221,18 +212,9 @@ public class ChoiceFood : MonoBehaviour, IInteractable
     {
         ComidaSelecionada = TipoComida.Nenhuma;
         SpriteSelecionado = null;
-        alimentoCarregado = TipoComida.Nenhuma;
         selecaoProvisoria = TipoComida.Nenhuma;
         AtualizarImagemPrincipal();
         RestaurarCores();
-    }
-
-    private Sprite EncontrarSprite(TipoComida tipo)
-    {
-        if (opcoes == null) return null;
-        foreach (OpcaoComida opcao in opcoes)
-            if (opcao != null && opcao.tipo == tipo) return opcao.sprite;
-        return null;
     }
 
     public void Voltar()
