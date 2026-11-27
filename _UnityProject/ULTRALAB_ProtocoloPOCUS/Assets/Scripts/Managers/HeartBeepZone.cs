@@ -2,37 +2,39 @@ using UnityEngine;
 using FMODUnity;
 using FMOD.Studio;
 
-[RequireComponent(typeof(Collider2D))]
 public class HeartBeepZone : MonoBehaviour
 {
-    [Header("FMOD - Batimento da zona_bip")]
-    [Tooltip("Evento sustentado enquanto o jogador estiver dentro da zona.")]
+    [Header("FMOD - Batimento")]
     [SerializeField] private EventReference heartBeep;
 
     private EventInstance heartInstance;
-    private bool playerInside;
+    private bool playerInside = false;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (!other.CompareTag("Player") || playerInside || heartInstance.isValid())
+        Debug.Log("ENTROU ALGO NA ÁREA: " + other.gameObject.name);
+
+        if (!other.CompareTag("Player"))
             return;
+
+        if (playerInside)
+            return;
+
+        Debug.Log("PLAYER ENTROU! TOCANDO BATIMENTO.");
+
+        playerInside = true;
 
         if (heartBeep.IsNull)
         {
-            Debug.LogError("[HeartBeepZone] O evento FMOD não foi atribuído no Inspector.", this);
+            Debug.LogError("ERRO: Heart Beep não foi colocado no Inspector!");
             return;
         }
 
         heartInstance = RuntimeManager.CreateInstance(heartBeep);
-        FMOD.RESULT result = heartInstance.start();
-        if (result != FMOD.RESULT.OK)
-        {
-            heartInstance.release();
-            heartInstance.clearHandle();
-            return;
-        }
 
-        playerInside = true;
+        FMOD.RESULT resultado = heartInstance.start();
+
+        Debug.Log("FMOD START RESULT: " + resultado);
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -40,28 +42,13 @@ public class HeartBeepZone : MonoBehaviour
         if (!other.CompareTag("Player"))
             return;
 
+        Debug.Log("PLAYER SAIU DA ÁREA.");
+
         playerInside = false;
-        StopHeart();
-    }
-
-    private void OnDisable()
-    {
-        playerInside = false;
-        StopHeart();
-    }
-
-    private void OnDestroy()
-    {
-        StopHeart();
-    }
-
-    private void StopHeart()
-    {
-        if (!heartInstance.isValid())
-            return;
 
         heartInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
         heartInstance.release();
-        heartInstance.clearHandle();
+
+        Debug.Log("BATIMENTO PARADO.");
     }
 }

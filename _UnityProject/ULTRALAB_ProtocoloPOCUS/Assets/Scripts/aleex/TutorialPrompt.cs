@@ -8,32 +8,11 @@ public class TutorialPrompt : MonoBehaviour
     [Header("Configuração")]
     [Tooltip("Escolha o que o jogador precisa apertar para este aviso sumir.")]
     public TipoTutorial acaoParaSumir = TipoTutorial.Interagir;
-    public string uniqueId = "Tutorial_Controls_Movement";
-
-    private void Awake()
-    {
-        if (!string.IsNullOrWhiteSpace(uniqueId) && PlayerPrefs.GetInt(uniqueId, 0) == 1)
-            gameObject.SetActive(false);
-    }
-
-    private void Start()
-    {
-        if (!string.IsNullOrWhiteSpace(uniqueId))
-        {
-            PlayerPrefs.SetInt(uniqueId, 1);
-            PlayerPrefs.Save();
-        }
-    }
 
     private void Update()
     {
         if (VerificarInput())
         {
-            if (!string.IsNullOrWhiteSpace(uniqueId))
-            {
-                PlayerPrefs.SetInt(uniqueId, 1);
-                PlayerPrefs.Save();
-            }
             // Desativa o objeto inteiro (assim não pesa na cena e some da tela)
             gameObject.SetActive(false); 
             
