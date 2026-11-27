@@ -1,9 +1,11 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
 /// Controla a progressão e a invocação dos três pacientes.
+/// A alta e a destruição acontecem somente após a passagem do dia.
 /// </summary>
 public class PatientProgressionManager : MonoBehaviour
 {
@@ -18,7 +20,6 @@ public class PatientProgressionManager : MonoBehaviour
 
     [Header("Limites de Welfare")]
     [SerializeField, Min(0)] private int spawnPatient2At = 50;
-    [SerializeField, Min(1)] private int dischargeAt = 74;
 
     private PatientData patient1Data;
     private PatientData patient2Data;
@@ -29,10 +30,6 @@ public class PatientProgressionManager : MonoBehaviour
 
     private bool reconcileAfterDestroyQueued;
 
-    // =====================================================
-    // EVENTOS
-    // =====================================================
-
     private void OnEnable()
     {
         GameSession.DayChanged += OnDayChanged;
@@ -42,10 +39,6 @@ public class PatientProgressionManager : MonoBehaviour
     {
         GameSession.DayChanged -= OnDayChanged;
     }
-
-    // =====================================================
-    // START
-    // =====================================================
 
     private void Start()
     {
@@ -94,13 +87,10 @@ public class PatientProgressionManager : MonoBehaviour
             spawnPatient2At
         );
 
-        // A progressão dos pacientes ocorre somente quando o dia muda.
-        // Não reconciliar aqui para evitar alta/destruição durante a inicialização.
-    }
+        ReconcileSceneObjects(false);
 
-    // =====================================================
-    // OBTER PATIENT DATA
-    // =====================================================
+        // Não realiza progressão ou destruição no Start.
+    }
 
     private static PatientData GetPatientDataFromPrefab(
         GameObject prefab,
@@ -115,8 +105,7 @@ public class PatientProgressionManager : MonoBehaviour
             return null;
         }
 
-        OpenExams openExams =
-            prefab.GetComponent<OpenExams>();
+        OpenExams openExams = prefab.GetComponent<OpenExams>();
 
         if (openExams == null)
         {
@@ -133,19 +122,19 @@ public class PatientProgressionManager : MonoBehaviour
     }
 
     // =====================================================
-    // EVENTOS DE DIA E WELFARE
+    // EVENTO DE MUDANÇA DE DIA
     // =====================================================
 
     private void OnDayChanged(int day)
     {
-        ReconcileSceneObjects();
+        ReconcileSceneObjects(true);
     }
 
     // =====================================================
     // RECONCILIAR PACIENTES
     // =====================================================
 
-    private void ReconcileSceneObjects()
+    private void ReconcileSceneObjects(bool evaluateGameOver)
     {
         if (GameEndingManager.IsEnding)
             return;
@@ -155,17 +144,20 @@ public class PatientProgressionManager : MonoBehaviour
             patient3Data == null)
             return;
 
-        if (GameSession.GetPatientWelfare(patient1Data) <= 0 ||
-        (GameSession.IsPatient2Unlocked &&
-        GameSession.GetPatientWelfare(patient2Data) <= 0) ||
-        (GameSession.IsPatient3Unlocked &&
-        GameSession.GetPatientWelfare(patient3Data) <= 0))
+        if (evaluateGameOver)
         {
-            GameEndingManager.FinishGame(
-                GameEndingManager.EndingType.Negative
-            );
+            if (GameSession.GetPatientWelfare(patient1Data) <= 0 ||
+                (GameSession.IsPatient2Unlocked &&
+                 GameSession.GetPatientWelfare(patient2Data) <= 0) ||
+                (GameSession.IsPatient3Unlocked &&
+                 GameSession.GetPatientWelfare(patient3Data) <= 0))
+            {
+                GameEndingManager.FinishGame(
+                    GameEndingManager.EndingType.Negative
+                );
 
-            return;
+                return;
+            }
         }
 
         bool requestedDestroy = false;
@@ -173,12 +165,6 @@ public class PatientProgressionManager : MonoBehaviour
         // =================================================
         // PACIENTE 1
         // =================================================
-
-        if (GameSession.GetPatientWelfare(patient1Data) >= dischargeAt &&
-            !GameSession.IsPatientDischarged(patient1Data))
-        {
-            GameSession.MarkPatientAsDischarged(patient1Data);
-        }
 
         if (GameSession.IsPatientDischarged(patient1Data))
         {
@@ -188,7 +174,8 @@ public class PatientProgressionManager : MonoBehaviour
                 requestedDestroy = true;
 
                 Debug.Log(
-                    "[PatientProgression] Paciente 1 recebeu alta e será destruído."
+                    "[PatientProgression] " +
+                    "Paciente 1 recebeu alta e será destruído."
                 );
             }
         }
@@ -200,19 +187,12 @@ public class PatientProgressionManager : MonoBehaviour
         if (GameSession.IsPatient2Unlocked &&
             !GameSession.IsPatientDischarged(patient2Data))
         {
-            if (GameSession.GetPatientWelfare(patient2Data) >= dischargeAt)
-            {
-                GameSession.MarkPatientAsDischarged(patient2Data);
-            }
-            else
-            {
-                patient2Instance = EnsurePatientExists(
-                    patient2Data,
-                    patient2Prefab,
-                    patient2Instance,
-                    "Paciente 2"
-                );
-            }
+            patient2Instance = EnsurePatientExists(
+                patient2Data,
+                patient2Prefab,
+                patient2Instance,
+                "Paciente 2"
+            );
         }
 
         if (GameSession.IsPatientDischarged(patient2Data))
@@ -225,7 +205,8 @@ public class PatientProgressionManager : MonoBehaviour
                 requestedDestroy = true;
 
                 Debug.Log(
-                    "[PatientProgression] Paciente 2 recebeu alta e será destruído."
+                    "[PatientProgression] " +
+                    "Paciente 2 recebeu alta e será destruído."
                 );
             }
         }
@@ -247,33 +228,33 @@ public class PatientProgressionManager : MonoBehaviour
             firstTwoDestroyed &&
             !GameSession.IsPatientDischarged(patient3Data))
         {
-            if (GameSession.GetPatientWelfare(patient3Data) >= dischargeAt)
-            {
-                GameSession.MarkPatientAsDischarged(patient3Data);
-            }
-            else
-            {
-                patient3Instance = EnsurePatientExists(
-                    patient3Data,
-                    patient3Prefab,
-                    patient3Instance,
-                    "Paciente 3",
-                    spawnParentPatient3
-                );
-            }
+            patient3Instance = EnsurePatientExists(
+                patient3Data,
+                patient3Prefab,
+                patient3Instance,
+                "Paciente 3",
+                spawnParentPatient3
+            );
         }
 
         // =================================================
         // DESTRUIR PACIENTE 3 APÓS ALTA
         // =================================================
 
-        if (GameSession.IsPatientDischarged(patient3Data) &&
-            patient3Instance != null)
+        if (GameSession.IsPatientDischarged(patient3Data))
         {
-            Destroy(patient3Instance.gameObject);
-            patient3Instance = null;
+            if (patient3Instance != null)
+            {
+                Destroy(patient3Instance.gameObject);
+                patient3Instance = null;
 
-            requestedDestroy = true;
+                requestedDestroy = true;
+
+                Debug.Log(
+                    "[PatientProgression] " +
+                    "Paciente 3 recebeu alta e será destruído."
+                );
+            }
         }
 
         // =================================================
@@ -281,8 +262,8 @@ public class PatientProgressionManager : MonoBehaviour
         // =================================================
 
         if (GameSession.IsPatientDischarged(patient1Data) &&
-        GameSession.IsPatientDischarged(patient2Data) &&
-        GameSession.IsPatientDischarged(patient3Data))
+            GameSession.IsPatientDischarged(patient2Data) &&
+            GameSession.IsPatientDischarged(patient3Data))
         {
             GameEndingManager.FinishGame(
                 GameEndingManager.EndingType.Positive
@@ -317,14 +298,13 @@ public class PatientProgressionManager : MonoBehaviour
 
     private IEnumerator ReconcileAfterDestroy()
     {
-        // Espera o Unity efetivar Destroy().
         yield return null;
 
         reconcileAfterDestroyQueued = false;
 
         if (this != null && isActiveAndEnabled)
         {
-            ReconcileSceneObjects();
+            ReconcileSceneObjects(false);
         }
     }
 
@@ -361,8 +341,8 @@ public class PatientProgressionManager : MonoBehaviour
             return null;
 
         Transform targetSpawn = customSpawnParent != null
-        ? customSpawnParent
-        : spawnParent;
+            ? customSpawnParent
+            : spawnParent;
 
         GameObject instance = targetSpawn != null
             ? Instantiate(prefab, targetSpawn, false)

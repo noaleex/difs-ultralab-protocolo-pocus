@@ -169,6 +169,7 @@ public static class GameSession
         }
     }
 
+
     private static void CommitDayEndProgression()
     {
         if (progressionPatient1 == null ||
@@ -179,6 +180,8 @@ public static class GameSession
         int patient1Welfare = GetPatientWelfare(progressionPatient1);
         int patient2Welfare = GetPatientWelfare(progressionPatient2);
         int patient3Welfare = GetPatientWelfare(progressionPatient3);
+
+        // PACIENTE 1
         if (patient1Welfare >= 74)
         {
             MarkPatientAsDischarged(progressionPatient1);
@@ -192,6 +195,7 @@ public static class GameSession
             patient2UnlockDay = CurrentDay;
         }
 
+        // PACIENTE 2
         if (IsPatient2Unlocked && patient2Welfare >= 74)
         {
             MarkPatientAsDischarged(progressionPatient2);
@@ -200,8 +204,13 @@ public static class GameSession
                 patient3UnlockDay = CurrentDay;
         }
 
-        if (IsPatient3Unlocked && patient3Welfare >= 74)
+        // PACIENTE 3
+        if (IsPatient3Unlocked &&
+            patient3Welfare >= 74 &&
+            !IsPatientDischarged(progressionPatient3))
+        {
             MarkPatientAsDischarged(progressionPatient3);
+        }
     }
 
     public static void LoadTime(
@@ -560,4 +569,12 @@ public static class GameSession
             "[GameSession] Nova partida iniciada."
         );
     }
+
+    public static bool CanDischargePatient3()
+    {
+        return IsPatient3Unlocked &&
+               CurrentDay != 0 &&
+               GetPatientWelfare(progressionPatient3) >= 74;
+    }
+
 }

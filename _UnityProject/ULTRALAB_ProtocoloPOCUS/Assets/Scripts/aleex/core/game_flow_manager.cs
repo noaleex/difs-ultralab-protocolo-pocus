@@ -15,6 +15,7 @@ public class game_flow_manager : MonoBehaviour
     public static game_flow_manager instance { get; private set; }
 
     [SerializeField] private string gameplayTutorialSceneName = "gameplay_tutorial";
+    [SerializeField] private string endGameSceneName = "EndGame";
     [SerializeField] private List<cutscene_entry> cutscenes = new List<cutscene_entry>();
 
     private void Awake()
@@ -65,6 +66,14 @@ public class game_flow_manager : MonoBehaviour
         if (loading_manager.instance != null)
         {
             loading_manager.instance.SwitchScene(gameplayTutorialSceneName);
+        }
+    }
+
+    public void LoadEndGame()
+    {
+        if (!string.IsNullOrEmpty(endGameSceneName) && loading_manager.instance != null)
+        {
+            loading_manager.instance.SwitchSceneWithoutUpdatingSave(endGameSceneName);
         }
     }
 

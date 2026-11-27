@@ -247,23 +247,6 @@ public class PatientDayValidator : MonoBehaviour
             }
         }
 
-
-        // =================================================
-        // REMOVER PACIENTES QUE TIVERAM ALTA
-        // =================================================
-
-        foreach (OpenExams patient
-                 in patientsToDischarge)
-        {
-            if (patient != null)
-            {
-                Destroy(
-                    patient.gameObject
-                );
-            }
-        }
-
-
         // =================================================
         // GAME OVER
         // =================================================
