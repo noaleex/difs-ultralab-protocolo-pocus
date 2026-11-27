@@ -48220,8 +48220,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AutoStartSonar
   falaDeBoasVindas: {fileID: 11400000, guid: 11d194bb0f75bcf4cb11583480817af0, type: 2}
+  tutorialTeclas: {fileID: 1141175263}
   tempoDeEspera: 1.5
-  uniqueId: Tutorial_Teste_3
+  uniqueId: Tutorial_Intro_Sonar
 --- !u!4 &1921964836
 Transform:
   m_ObjectHideFlags: 0

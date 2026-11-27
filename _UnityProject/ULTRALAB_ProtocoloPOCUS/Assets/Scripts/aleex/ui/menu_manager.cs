@@ -239,6 +239,11 @@ public class menu_manager : MonoBehaviour
             save_manager.instance.SaveGame();
         }
 
+        // Uma nova partida deve reapresentar o tutorial inicial exatamente uma vez.
+        PlayerPrefs.DeleteKey("Tutorial_Intro_Sonar");
+        PlayerPrefs.DeleteKey("Exames_Intro_Tutorial");
+        PlayerPrefs.Save();
+
         // Informa ao gerenciador que será iniciada uma nova partida.
         if (boot_manager.instance != null)
         {

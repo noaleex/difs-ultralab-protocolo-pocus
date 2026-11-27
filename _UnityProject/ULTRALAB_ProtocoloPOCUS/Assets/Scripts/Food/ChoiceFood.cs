@@ -72,7 +72,36 @@ public class ChoiceFood : MonoBehaviour, IInteractable
 
         // Mantém a interface sincronizada com a escolha atual.
         VincularBotoesDaInterface();
+        SincronizarComInventario();
+    }
+
+    private void SincronizarComInventario()
+    {
+        ComidaSelecionada = FoodInventory.SelectedFood;
+        SpriteSelecionado = EncontrarSprite(ComidaSelecionada);
+
+        // Se a cena não tiver uma opção correspondente, não exiba um item inválido.
+        if (ComidaSelecionada != TipoComida.Nenhuma && SpriteSelecionado == null)
+        {
+            ComidaSelecionada = TipoComida.Nenhuma;
+            FoodInventory.Clear();
+        }
+
         AtualizarImagemPrincipal();
+    }
+
+    private Sprite EncontrarSprite(TipoComida tipo)
+    {
+        if (tipo == TipoComida.Nenhuma || opcoes == null)
+            return null;
+
+        foreach (OpcaoComida opcao in opcoes)
+        {
+            if (opcao != null && opcao.tipo == tipo)
+                return opcao.sprite;
+        }
+
+        return null;
     }
 
     private void VincularBotoesDaInterface()
@@ -149,6 +178,7 @@ public class ChoiceFood : MonoBehaviour, IInteractable
         // Segundo clique na mesma opção: confirma.
         ComidaSelecionada = opcao.tipo;
         SpriteSelecionado = opcao.sprite;
+        FoodInventory.Set(ComidaSelecionada);
 
         AtualizarImagemPrincipal();
 
@@ -212,6 +242,7 @@ public class ChoiceFood : MonoBehaviour, IInteractable
     {
         ComidaSelecionada = TipoComida.Nenhuma;
         SpriteSelecionado = null;
+        FoodInventory.Clear();
         selecaoProvisoria = TipoComida.Nenhuma;
         AtualizarImagemPrincipal();
         RestaurarCores();

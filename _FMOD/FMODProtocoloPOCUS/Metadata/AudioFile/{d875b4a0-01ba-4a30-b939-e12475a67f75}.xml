@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{d875b4a0-01ba-4a30-b939-e12475a67f75}">
+		<property name="assetPath">
+			<value>fx_digitacao.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>23.135999999999999</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{b786b97f-2102-419b-857c-bcc952133b01}</destination>
+		</relationship>
+	</object>
+</objects>

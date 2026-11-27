@@ -289,6 +289,21 @@ MonoBehaviour:
   messageText: {fileID: 0}
   finalBom: {fileID: 1640714689}
   finalRuim: {fileID: 1383487390}
+  finalPositiveSound:
+    Guid:
+      Data1: 1573486562
+      Data2: 1191570240
+      Data3: -964828995
+      Data4: 861158029
+    Path: event:/Cutscene/videoplayback
+  finalNegativeSound:
+    Guid:
+      Data1: 825895125
+      Data2: 1313187696
+      Data3: 1658690946
+      Data4: 2110357163
+    Path: event:/Cutscene/fx_triste (2)
+  finalNegativeEventPath: event:/Cutscene/fx_triste (2)
 --- !u!4 &60845202
 Transform:
   m_ObjectHideFlags: 0

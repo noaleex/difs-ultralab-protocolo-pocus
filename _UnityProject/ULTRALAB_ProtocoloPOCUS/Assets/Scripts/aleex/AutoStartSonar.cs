@@ -6,6 +6,9 @@ public class AutoStartSonar : MonoBehaviour
     [Header("Configuração")]
     [Tooltip("Arraste o ScriptableObject com a fala de boas-vindas do Sonar.")]
     public NPCdialogue falaDeBoasVindas;
+
+    [Tooltip("Aviso visual que mostra as teclas de movimentação durante a primeira fala.")]
+    public GameObject tutorialTeclas;
     
     [Tooltip("Tempo para esperar o fade da tela terminar antes de falar.")]
     public float tempoDeEspera = 1.5f;
@@ -24,12 +27,19 @@ public class AutoStartSonar : MonoBehaviour
     private IEnumerator ChamarSonarComAtraso()
     {
         // Espera o tempo do fade da sua tela de loading
-        yield return new WaitForSeconds(tempoDeEspera);
+        yield return new WaitForSecondsRealtime(tempoDeEspera);
 
-        if (SonarController.Instance != null && falaDeBoasVindas != null)
+        if (SonarController.Instance != null && falaDeBoasVindas != null && !SonarController.Instance.isDialogueActive)
         {
             SonarController.Instance.Falar(falaDeBoasVindas);
-            
+
+            // Falar pode recusar a chamada caso outro diálogo esteja ativo.
+            if (!SonarController.Instance.isDialogueActive)
+                yield break;
+
+            if (tutorialTeclas != null)
+                tutorialTeclas.SetActive(true);
+
             // Grava que ele já falou para não repetir
             PlayerPrefs.SetInt(uniqueId, 1);
             PlayerPrefs.Save();

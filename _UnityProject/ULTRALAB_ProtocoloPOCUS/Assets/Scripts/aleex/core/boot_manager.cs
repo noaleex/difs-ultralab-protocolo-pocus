@@ -174,10 +174,14 @@ public class boot_manager : MonoBehaviour
             }
             else
             {
-                GameObject spawnPoint = GameObject.FindWithTag("Respawn");
+                Transform spawnPoint = GetRespawnFromScene(scene);
 
                 if (spawnPoint != null)
-                    activePlayer.transform.position = spawnPoint.transform.position;
+                {
+                    activePlayer.transform.SetPositionAndRotation(
+                        spawnPoint.position,
+                        spawnPoint.rotation);
+                }
             }
 
             BindCameraToPlayer(activePlayer.transform);
@@ -212,6 +216,9 @@ public class boot_manager : MonoBehaviour
             Debug.LogWarning($"Gênero inválido para uma nova partida: '{selectedGender}'.");
             return;
         }
+
+        // O alimento pertence à partida atual e não pode vazar para uma nova.
+        FoodInventory.Clear();
 
         // A nova partida começa com o personagem escolhido no menu.
         if (activePlayer != null)
@@ -252,72 +259,62 @@ public class boot_manager : MonoBehaviour
 
     public void EnsurePlayerInstantiated()
     {
-        if (save_manager.instance == null ||
-            save_manager.instance.currentData == null)
+        string selectedGender = GetSelectedGender();
+
+        if (string.IsNullOrEmpty(selectedGender))
         {
+            Debug.LogWarning(
+                "Não foi possível criar o jogador: nenhum personagem foi selecionado.",
+                this);
             return;
         }
 
-        string savedGender =
-            save_manager.instance.currentData.characterGender;
+        // Reaproveita primeiro qualquer jogador que já tenha sobrevivido à troca
+        // de cena, inclusive quando o boot_manager foi recriado.
+        if (activePlayer == null)
+            activePlayer = FindExistingPlayer();
 
-        if (string.IsNullOrEmpty(savedGender))
-        {
-            return;
-        }
-
-        // Se o personagem atual corresponde à seleção, não recria.
-        if (activePlayer != null && activePlayerGender == savedGender)
-        {
-            return;
-        }
-
-        // Se o gênero mudou, descarta o personagem anterior.
         if (activePlayer != null)
         {
-            Destroy(activePlayer);
-            activePlayer = null;
+            // Se o jogador persistente já representa a escolha atual, não cria
+            // outro objeto. Caso o gênero conhecido seja diferente, substitui-o.
+            if (!PlayerMatchesGender(activePlayer, selectedGender))
+            {
+                Destroy(activePlayer);
+                activePlayer = null;
+            }
+            else
+            {
+                activePlayerGender = selectedGender;
+                RegisterActivePlayer(selectedGender);
+                return;
+            }
         }
 
-        GameObject selectedPrefab =
-            savedGender == "Feminino" ? femalePlayerPrefab : malePlayerPrefab;
+        GameObject selectedPrefab = selectedGender == "Feminino"
+            ? femalePlayerPrefab
+            : malePlayerPrefab;
 
         if (selectedPrefab == null)
         {
             Debug.LogError(
-                $"Prefab do personagem '{savedGender}' não foi configurado no boot_manager.");
+                $"Prefab do personagem '{selectedGender}' não foi configurado no boot_manager.");
             return;
         }
 
         activePlayer = Instantiate(selectedPrefab);
-        activePlayerGender = savedGender;
+        activePlayerGender = selectedGender;
 
         DontDestroyOnLoad(activePlayer);
-
-        PlayerReferences references = activePlayer.GetComponent<PlayerReferences>();
-
-        if (references != null)
-        {
-            references.RefreshReferences();
-
-            if (AndroidControl.Instance != null)
-            {
-                AndroidControl.Instance.SetPlayerInteraction(
-                    references.InteractionDetector);
-            }
-        }
+        RegisterActivePlayer(selectedGender);
     }
 
     public void RegisterPlayer(GameObject player)
     {
         activePlayer = player;
 
-        if (save_manager.instance != null &&
-            save_manager.instance.currentData != null)
-        {
-            activePlayerGender =
-                save_manager.instance.currentData.characterGender;
-        }
+        activePlayerGender = GetSelectedGender();
+        RegisterActivePlayer(activePlayerGender);
     }
 
     public bool HasPlayer()
@@ -351,6 +348,135 @@ public class boot_manager : MonoBehaviour
 
             if (spawn != null)
                 return spawn;
+        }
+
+        return null;
+    }
+
+    private string GetSelectedGender()
+    {
+        string selectedGender = NormalizeGender(
+            PlayerPrefs.GetString("Character", ""));
+
+        if (string.IsNullOrEmpty(selectedGender) &&
+            save_manager.instance != null &&
+            save_manager.instance.currentData != null)
+        {
+            selectedGender = NormalizeGender(
+                save_manager.instance.currentData.characterGender);
+        }
+
+        if (string.IsNullOrEmpty(selectedGender))
+        {
+            selectedGender = NormalizeGender(
+                PlayerPrefs.GetString("PlayerGender", ""));
+        }
+
+        return selectedGender;
+    }
+
+    private string NormalizeGender(string value)
+    {
+        if (string.Equals(value, "Feminino", System.StringComparison.OrdinalIgnoreCase) ||
+            string.Equals(value, "Female", System.StringComparison.OrdinalIgnoreCase))
+        {
+            return "Feminino";
+        }
+
+        if (string.Equals(value, "Masculino", System.StringComparison.OrdinalIgnoreCase) ||
+            string.Equals(value, "Male", System.StringComparison.OrdinalIgnoreCase))
+        {
+            return "Masculino";
+        }
+
+        return "";
+    }
+
+    private GameObject FindExistingPlayer()
+    {
+        if (GameManager.Instance != null &&
+            GameManager.Instance.Player != null)
+        {
+            return GameManager.Instance.Player;
+        }
+
+        PlayerReferences[] references = FindObjectsByType<PlayerReferences>(
+            FindObjectsInactive.Include,
+            FindObjectsSortMode.None);
+
+        foreach (PlayerReferences reference in references)
+        {
+            if (reference != null && reference.gameObject != null)
+                return reference.gameObject;
+        }
+
+        return null;
+    }
+
+    private bool PlayerMatchesGender(GameObject player, string selectedGender)
+    {
+        if (player == null)
+            return false;
+
+        if (!string.IsNullOrEmpty(activePlayerGender))
+            return activePlayerGender == selectedGender;
+
+        string playerName = player.name;
+
+        if (playerName.IndexOf("Female", System.StringComparison.OrdinalIgnoreCase) >= 0)
+            return selectedGender == "Feminino";
+
+        if (playerName.IndexOf("Male", System.StringComparison.OrdinalIgnoreCase) >= 0)
+            return selectedGender == "Masculino";
+
+        // Prefabs personalizados sem o gênero no nome continuam sendo
+        // reaproveitados para evitar a criação de uma segunda instância.
+        return true;
+    }
+
+    private void RegisterActivePlayer(string selectedGender)
+    {
+        if (activePlayer == null)
+            return;
+
+        DontDestroyOnLoad(activePlayer);
+
+        if (GameManager.Instance != null &&
+            GameManager.Instance.Player != activePlayer)
+        {
+            GameManager.Instance.RegisterPlayer(activePlayer);
+        }
+
+        PlayerReferences references =
+            activePlayer.GetComponent<PlayerReferences>();
+
+        if (references != null)
+        {
+            references.RefreshReferences();
+
+            if (AndroidControl.Instance != null)
+            {
+                AndroidControl.Instance.SetPlayerInteraction(
+                    references.InteractionDetector);
+            }
+        }
+
+        activePlayerGender = selectedGender;
+    }
+
+    private Transform GetRespawnFromScene(Scene scene)
+    {
+        GameObject[] roots = scene.GetRootGameObjects();
+
+        foreach (GameObject root in roots)
+        {
+            Transform[] transforms = root.GetComponentsInChildren<Transform>(true);
+
+            foreach (Transform candidate in transforms)
+            {
+                if (candidate.CompareTag("Respawn"))
+                    return candidate;
+            }
         }
 
         return null;

@@ -5,6 +5,7 @@ using FMODUnity;
 using FMOD.Studio;
 using UnityEngine.InputSystem;
 using UnityEngine.UI; // Necessário para Image
+using UnityEngine.SceneManagement;
 
 public class SonarController : MonoBehaviour
 {
@@ -43,11 +44,62 @@ public class SonarController : MonoBehaviour
         }
     }
 
+    private void OnEnable()
+    {
+        SceneManager.sceneUnloaded += HandleSceneUnloaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneUnloaded -= HandleSceneUnloaded;
+    }
+
     private void Start()
     {
         // Garante o estado inicial correto ao abrir o jogo
-        if (idlePanel != null) idlePanel.SetActive(true);
-        if (speakingPanel != null) speakingPanel.SetActive(false);
+        SetSonarVisualState(false);
+    }
+
+    private void SetSonarVisualState(bool speaking)
+    {
+        if (idlePanel != null) idlePanel.SetActive(!speaking);
+        if (speakingPanel != null) speakingPanel.SetActive(speaking);
+    }
+
+    public void SetIdleIconVisible(bool visible)
+    {
+        if (idlePanel == null)
+            return;
+
+        idlePanel.SetActive(visible && !isDialogueActive);
+    }
+
+    public void RestoreIdleIcon()
+    {
+        SetSonarVisualState(isDialogueActive);
+    }
+
+    private void HandleSceneUnloaded(Scene scene)
+    {
+        // O Sonar permanece entre cenas; nunca deixe o painel de fala
+        // persistir quando a cena que iniciou a fala foi descarregada.
+        StopAllCoroutines();
+        StopVoice();
+
+        isTyping = false;
+        isDialogueActive = false;
+        currentDialogue = null;
+        dialogueIndex = 0;
+
+        if (sonarDialogueText != null) sonarDialogueText.SetText("");
+
+        SetSonarVisualState(false);
+        pause_manager.SetPause(false);
+
+        if (PlayerReferences.Instance != null && PlayerReferences.Instance.playerMovement != null)
+        {
+            PlayerReferences.Instance.EnablePlayer();
+        }
     }
 
     private void Update()
@@ -73,9 +125,8 @@ public class SonarController : MonoBehaviour
         isDialogueActive = true;
         dialogueIndex = 0;
 
-        // Troca os painéis
-        if (idlePanel != null) idlePanel.SetActive(false);
-        if (speakingPanel != null) speakingPanel.SetActive(true);
+        // O painel de fala substitui o ícone de fundo enquanto o Sonar fala.
+        SetSonarVisualState(true);
 
         if (sonarPortraitImage != null) sonarPortraitImage.sprite = currentDialogue.npcPortrait;
 
@@ -106,6 +157,22 @@ public class SonarController : MonoBehaviour
         {
             EndDialogue();
         }
+    }
+
+    public void CancelDialogueForSceneTransition()
+    {
+        StopAllCoroutines();
+        StopVoice();
+
+        isTyping = false;
+        isDialogueActive = false;
+        currentDialogue = null;
+        dialogueIndex = 0;
+
+        if (sonarDialogueText != null)
+            sonarDialogueText.SetText("");
+
+        SetSonarVisualState(false);
     }
 
     private IEnumerator TypeLine()
@@ -155,9 +222,8 @@ public class SonarController : MonoBehaviour
 
         if (sonarDialogueText != null) sonarDialogueText.SetText("");
         
-        // Inverte os painéis novamente
-        if (speakingPanel != null) speakingPanel.SetActive(false);
-        if (idlePanel != null) idlePanel.SetActive(true);
+        // Ao terminar, o ícone com imagem e nome do Sonar volta a aparecer.
+        SetSonarVisualState(false);
 
         pause_manager.SetPause(false);
 

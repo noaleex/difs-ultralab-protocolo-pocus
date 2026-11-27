@@ -37,8 +37,13 @@ public class pause_manager : MonoBehaviour
     private void Update()
     {
         // Leitura direta do hardware: ignora configurações quebradas do PlayerInput
+        bool pPressedForPause = Keyboard.current != null &&
+                                Keyboard.current.pKey.wasPressedThisFrame &&
+                                !CutsceneController.IsSkipKeyReserved &&
+                                !SkipTutorial.IsSkipKeyReserved;
+
         if (Keyboard.current != null &&
-            (Keyboard.current.escapeKey.wasPressedThisFrame || Keyboard.current.pKey.wasPressedThisFrame))
+            (Keyboard.current.escapeKey.wasPressedThisFrame || pPressedForPause))
         {
             TriggerPauseAction();
         }

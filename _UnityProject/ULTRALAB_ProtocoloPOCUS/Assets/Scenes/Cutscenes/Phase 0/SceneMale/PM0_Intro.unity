@@ -440,6 +440,7 @@ RectTransform:
   m_Children:
   - {fileID: 738249405}
   - {fileID: 1169425053}
+  - {fileID: 2011948262}
   - {fileID: 1198737971}
   - {fileID: 1979368438}
   - {fileID: 1676756364}
@@ -1049,10 +1050,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 256262563}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0.29000002}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -163, y: 0}
-  m_SizeDelta: {x: 32, y: 32}
+  m_AnchoredPosition: {x: -713, y: 10.5}
+  m_SizeDelta: {x: -18, y: 11}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &738249406
 MonoBehaviour:
@@ -1789,7 +1790,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -35.11002, y: 0}
+  m_AnchoredPosition: {x: -622, y: 0}
   m_SizeDelta: {x: 32, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1169425054
@@ -1906,7 +1907,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -235.51984, y: 1.8774}
+  m_AnchoredPosition: {x: -799, y: -2}
   m_SizeDelta: {x: 57.9473, y: 38.6005}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1198737972
@@ -2212,6 +2213,43 @@ MonoBehaviour:
   blackScreen: {fileID: 159079949}
   fadeSpeed: 1.5
   typingSpeed: 0.03
+  doubleTapInterval: 0.3
+  doubleTapMaxDistance: 120
+  typingSound:
+    Guid:
+      Data1: 10704098
+      Data2: 1319404869
+      Data3: 832160391
+      Data4: -360150316
+    Path: event:/Interagir/fx_digitacao
+  enfermeiroFemininoDialogueSound:
+    Guid:
+      Data1: -1158635385
+      Data2: 1079365293
+      Data3: -963294557
+      Data4: -1252902628
+    Path: event:/Falas/wa_mulher
+  enfermeiroMasculinoDialogueSound:
+    Guid:
+      Data1: 1848629510
+      Data2: 1242921189
+      Data3: 842444204
+      Data4: -862761648
+    Path: event:/Falas/wa_homem2
+  adrianDialogueSound:
+    Guid:
+      Data1: -23663592
+      Data2: 1306142978
+      Data3: -1714698314
+      Data4: 1623501387
+    Path: event:/Falas/wa_alexandre
+  sonarDialogueSound:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
   narratorPanel: {fileID: 1055020529}
   narratorText: {fileID: 1107657346}
   characterPanel: {fileID: 273110823}
@@ -2463,7 +2501,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 145.26393, y: 0}
+  m_AnchoredPosition: {x: -448, y: 0}
   m_SizeDelta: {x: 270.0391, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1676756365
@@ -2486,7 +2524,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: PARA INTERAGIR
+  m_text: PARA INTERAGIR. SE DESEJAR PULAR A CENA OU O TUTORIAL APERTE "P" OU 2X
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7ae4e632612f0c54b80a1122b781df6d, type: 2}
   m_sharedMaterial: {fileID: -179420769915780814, guid: 7ae4e632612f0c54b80a1122b781df6d, type: 2}
@@ -2552,7 +2590,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: -1078.1705, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -3308,7 +3346,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -98.030045, y: 0}
+  m_AnchoredPosition: {x: -677, y: 0}
   m_SizeDelta: {x: 38.2611, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1979368439
@@ -3410,6 +3448,81 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1979368437}
+  m_CullTransparentMesh: 1
+--- !u!1 &2011948261
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2011948262}
+  - component: {fileID: 2011948264}
+  - component: {fileID: 2011948263}
+  m_Layer: 5
+  m_Name: click (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2011948262
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011948261}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 256262563}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 803, y: 0}
+  m_SizeDelta: {x: 32, y: 32}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2011948263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011948261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 3aebd06747c7a9c4abab2e5e2dcf3083, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &2011948264
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011948261}
   m_CullTransparentMesh: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

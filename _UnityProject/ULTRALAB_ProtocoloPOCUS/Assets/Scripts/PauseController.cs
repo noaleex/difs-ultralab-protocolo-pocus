@@ -35,8 +35,13 @@ public class PauseController : MonoBehaviour
 
     private void Update()
     {
+        bool pPressedForPause = Keyboard.current != null &&
+                                Keyboard.current.pKey.wasPressedThisFrame &&
+                                !CutsceneController.IsSkipKeyReserved &&
+                                !SkipTutorial.IsSkipKeyReserved;
+
         if (Keyboard.current != null &&
-            (Keyboard.current.escapeKey.wasPressedThisFrame || Keyboard.current.pKey.wasPressedThisFrame))
+            (Keyboard.current.escapeKey.wasPressedThisFrame || pPressedForPause))
         {
             TogglePause();
         }

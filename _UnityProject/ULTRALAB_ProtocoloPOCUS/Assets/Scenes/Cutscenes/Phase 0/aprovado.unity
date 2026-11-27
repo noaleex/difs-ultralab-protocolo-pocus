@@ -1603,6 +1603,41 @@ MonoBehaviour:
   blackScreen: {fileID: 159079949}
   fadeSpeed: 1.5
   typingSpeed: 0.03
+  typingSound:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  enfermeiroFemininoDialogueSound:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  enfermeiroMasculinoDialogueSound:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  adrianDialogueSound:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  sonarDialogueSound:
+    Guid:
+      Data1: -355241531
+      Data2: 1255865929
+      Data3: -907916883
+      Data4: 863556038
+    Path: event:/Falas/wa_morcego
   narratorPanel: {fileID: 1055020529}
   narratorText: {fileID: 1107657346}
   characterPanel: {fileID: 273110823}

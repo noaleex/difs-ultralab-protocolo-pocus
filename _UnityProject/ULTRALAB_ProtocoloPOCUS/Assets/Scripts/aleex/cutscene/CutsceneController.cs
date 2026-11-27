@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 using UnityEngine.InputSystem;
 using FMODUnity;
@@ -41,6 +42,8 @@ public class CutsceneSlide
 
 public class CutsceneController : MonoBehaviour
 {
+    public static bool IsSkipKeyReserved { get; private set; }
+
     [Header("Sequência da Cutscene")]
     public List<CutsceneSlide> slides;
     public string nextSceneName = "gameplay_tutorial"; 
@@ -50,6 +53,26 @@ public class CutsceneController : MonoBehaviour
     public RawImage blackScreen; 
     public float fadeSpeed = 1.5f;
     public float typingSpeed = 0.03f;
+
+    [Header("Gesto Android")]
+    [Tooltip("Tempo mÃ¡ximo entre os dois toques para considerar toque duplo.")]
+    [SerializeField, Min(0.05f)] private float doubleTapInterval = 0.3f;
+    [Tooltip("DistÃ¢ncia mÃ¡xima, em pixels, entre os dois toques.")]
+    [SerializeField, Min(0f)] private float doubleTapMaxDistance = 120f;
+
+    [Header("Som de DigitaÃ§Ã£o")]
+    [Tooltip("Evento FMOD mantido enquanto as letras da fala estao sendo reveladas.")]
+    [SerializeField] private EventReference typingSound;
+
+    [Header("Sons de Fala de Personagem")]
+    [Tooltip("Evento FMOD usado pela fala do enfermeiro na cutscene feminina.")]
+    [SerializeField] private EventReference enfermeiroFemininoDialogueSound;
+    [Tooltip("Evento FMOD usado pela fala do enfermeiro na cutscene masculina.")]
+    [SerializeField] private EventReference enfermeiroMasculinoDialogueSound;
+    [Tooltip("Evento FMOD usado pelas falas de Adrian.")]
+    [SerializeField] private EventReference adrianDialogueSound;
+    [Tooltip("Evento FMOD usado pelas falas do Sonar.")]
+    [SerializeField] private EventReference sonarDialogueSound;
 
     [Header("UI do Narrador")]
     public GameObject narratorPanel;
@@ -68,6 +91,15 @@ public class CutsceneController : MonoBehaviour
     private bool skipTyping = false;
     private EventInstance slideSoundInstance;
     private Coroutine slideSoundCoroutine;
+    private EventInstance textSoundInstance;
+    private Coroutine textSoundCoroutine;
+    private bool transitionStarted;
+
+    private void OnEnable()
+    {
+        IsSkipKeyReserved = true;
+        SkipTouchInput.Reset();
+    }
 
     private void Start()
     {
@@ -87,6 +119,17 @@ public class CutsceneController : MonoBehaviour
 
     private void Update()
     {
+        bool skipByKey = SkipKeyInput.WasPressedThisFrame();
+        bool skipByDoubleTap = SkipTouchInput.WasDoubleTapThisFrame(
+            doubleTapInterval,
+            doubleTapMaxDistance);
+
+        if (skipByKey || skipByDoubleTap)
+        {
+            TransitionToNextScene();
+            return;
+        }
+
         if (WasInputPressedThisFrame())
         {
             if (isTyping)
@@ -96,7 +139,16 @@ public class CutsceneController : MonoBehaviour
 
     private void OnDestroy()
     {
+        IsSkipKeyReserved = false;
+        StopAllCoroutines();
+        StopTextSound();
         StopSlideSound();
+    }
+
+    private void OnDisable()
+    {
+        IsSkipKeyReserved = false;
+        SkipTouchInput.Reset();
     }
 
     private bool WasInputPressedThisFrame()
@@ -135,6 +187,7 @@ public class CutsceneController : MonoBehaviour
             narratorPanel.SetActive(false);
             characterPanel.SetActive(false);
 
+            StopTextSound();
             StopSlideSound();
 
             if (i < slides.Count - 1) yield return FadeBlackScreen(0, 1);
@@ -144,8 +197,42 @@ public class CutsceneController : MonoBehaviour
 
         yield return FadeBlackScreen(0, 1);
         
-        if (loading_manager.instance != null) loading_manager.instance.SwitchScene(nextSceneName);
-        else Debug.LogWarning("[CUTSCENE] loading_manager não encontrado!");
+        TransitionToNextScene();
+    }
+
+    private void TransitionToNextScene()
+    {
+        if (transitionStarted)
+            return;
+
+        transitionStarted = true;
+        isTyping = false;
+        skipTyping = true;
+
+        StopTextSound();
+        StopSlideSound();
+        StopAllCoroutines();
+
+        if (narratorPanel != null)
+            narratorPanel.SetActive(false);
+
+        if (characterPanel != null)
+            characterPanel.SetActive(false);
+
+        foreach (CutsceneSlide slide in slides)
+        {
+            if (slide.slideActors != null)
+                slide.slideActors.SetActive(false);
+        }
+
+        if (loading_manager.instance != null)
+        {
+            loading_manager.instance.SwitchScene(nextSceneName);
+        }
+        else
+        {
+            Debug.LogWarning("[CUTSCENE] loading_manager não encontrado!");
+        }
     }
 
     private void StartSlideSound(EventReference sound)
@@ -214,6 +301,8 @@ public class CutsceneController : MonoBehaviour
     {
         TMP_Text activeTextUI;
 
+        StopTextSound();
+
         if (line.isNarrator)
         {
             narratorPanel.SetActive(true);
@@ -239,11 +328,16 @@ public class CutsceneController : MonoBehaviour
                 }
             }
             if (characterPortrait != null) characterPortrait.sprite = line.characterPortrait;
+
         }
 
         activeTextUI.text = "";
         isTyping = true;
         skipTyping = false;
+        EventReference textSound = line.isNarrator
+            ? typingSound
+            : GetCharacterDialogueSound(line);
+        StartTextSound(textSound);
 
         foreach (char letter in line.text)
         {
@@ -258,6 +352,138 @@ public class CutsceneController : MonoBehaviour
         }
 
         isTyping = false;
+        StopTextSound();
+    }
+
+    private EventReference GetCharacterDialogueSound(CutsceneLine line)
+    {
+        string characterName = line.isPlayerCharacter
+            ? PlayerPrefs.GetString(chaveNomeJogador, "Enfermeiro(a)")
+            : line.characterName;
+        characterName = characterName ?? string.Empty;
+
+        if (!line.isPlayerCharacter &&
+            characterName.IndexOf("Adrian", System.StringComparison.OrdinalIgnoreCase) >= 0)
+        {
+            return adrianDialogueSound;
+        }
+
+        if (!line.isPlayerCharacter &&
+            characterName.IndexOf("Sonar", System.StringComparison.OrdinalIgnoreCase) >= 0)
+        {
+            return sonarDialogueSound;
+        }
+
+        // "Enfermeiro" aparece nas duas versões; o nome sozinho não decide o áudio.
+        if (line.isPlayerCharacter ||
+            characterName.IndexOf("enfermeiro", System.StringComparison.OrdinalIgnoreCase) >= 0)
+        {
+            return IsFemaleCharacterSelected()
+                ? enfermeiroFemininoDialogueSound
+                : enfermeiroMasculinoDialogueSound;
+        }
+
+        return default;
+    }
+
+    private bool IsFemaleCharacterSelected()
+    {
+        // A escolha feita no menu Ã© salva imediatamente em PlayerPrefs("Character")
+        // e Ã© a mesma fonte usada por CharacterSpawn para criar o jogador correto.
+        // O save JSON Ã© apenas fallback, pois pode conter o gÃªnero da partida anterior
+        // durante a transiÃ§Ã£o para a cutscene.
+        string selectedGender = PlayerPrefs.GetString("Character", "");
+
+        if (string.IsNullOrEmpty(selectedGender))
+        {
+            selectedGender = PlayerPrefs.GetString("PlayerGender", "");
+        }
+
+        if (string.IsNullOrEmpty(selectedGender) &&
+            save_manager.instance != null &&
+            save_manager.instance.currentData != null)
+        {
+            selectedGender = save_manager.instance.currentData.characterGender;
+        }
+
+        if (string.Equals(selectedGender, "Feminino", System.StringComparison.OrdinalIgnoreCase) ||
+            string.Equals(selectedGender, "Female", System.StringComparison.OrdinalIgnoreCase))
+        {
+            return true;
+        }
+
+        if (string.Equals(selectedGender, "Masculino", System.StringComparison.OrdinalIgnoreCase) ||
+            string.Equals(selectedGender, "Male", System.StringComparison.OrdinalIgnoreCase))
+        {
+            return false;
+        }
+
+        // Fallback apenas para testar a cena isoladamente, sem o boot persistente.
+        return SceneManager.GetActiveScene().name == "PF0_Intro";
+    }
+
+    private void StartTextSound(EventReference sound)
+    {
+        StopTextSound();
+
+        if (sound.IsNull)
+            return;
+
+        textSoundInstance = RuntimeManager.CreateInstance(sound);
+        FMOD.RESULT result = textSoundInstance.start();
+        if (result != FMOD.RESULT.OK)
+        {
+            Debug.LogError($"[CUTSCENE] Falha ao iniciar som da fala: {result}", this);
+            textSoundInstance.release();
+            textSoundInstance.clearHandle();
+            return;
+        }
+
+        textSoundCoroutine = StartCoroutine(ReplayTextSoundWhenFinished());
+    }
+
+    private IEnumerator ReplayTextSoundWhenFinished()
+    {
+        while (textSoundInstance.isValid() && isTyping)
+        {
+            PLAYBACK_STATE playbackState;
+            FMOD.RESULT result = textSoundInstance.getPlaybackState(out playbackState);
+            if (result != FMOD.RESULT.OK)
+            {
+                Debug.LogError($"[CUTSCENE] Falha ao consultar som da fala: {result}", this);
+                yield break;
+            }
+
+            if (playbackState == PLAYBACK_STATE.STOPPED)
+            {
+                result = textSoundInstance.start();
+                if (result != FMOD.RESULT.OK)
+                {
+                    Debug.LogError($"[CUTSCENE] Falha ao reiniciar som da fala: {result}", this);
+                    yield break;
+                }
+            }
+
+            yield return null;
+        }
+
+        textSoundCoroutine = null;
+    }
+
+    private void StopTextSound()
+    {
+        if (textSoundCoroutine != null)
+        {
+            StopCoroutine(textSoundCoroutine);
+            textSoundCoroutine = null;
+        }
+
+        if (!textSoundInstance.isValid())
+            return;
+
+        textSoundInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        textSoundInstance.release();
+        textSoundInstance.clearHandle();
     }
 
     private IEnumerator FadeBlackScreen(float startAlpha, float targetAlpha)

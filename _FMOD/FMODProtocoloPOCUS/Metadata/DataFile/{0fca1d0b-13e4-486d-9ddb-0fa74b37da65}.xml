@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="DataFile" id="{0fca1d0b-13e4-486d-9ddb-0fa74b37da65}">
+		<property name="assetPath">
+			<value>fx_triste.mp3</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{b786b97f-2102-419b-857c-bcc952133b01}</destination>
+		</relationship>
+	</object>
+</objects>
