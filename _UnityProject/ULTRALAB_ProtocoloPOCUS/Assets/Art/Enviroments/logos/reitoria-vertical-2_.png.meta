@@ -1,0 +1,962 @@
+fileFormatVersion: 2
+guid: 74b93376933b2db4d97b5b566a0724b0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5598793963336325117
+    second: reitoria-vertical-2__0
+  - first:
+      213: 1266412244054003136
+    second: reitoria-vertical-2__1
+  - first:
+      213: 3143548995414860564
+    second: reitoria-vertical-2__2
+  - first:
+      213: 5195736274807594532
+    second: reitoria-vertical-2__3
+  - first:
+      213: 2888968299105516680
+    second: reitoria-vertical-2__4
+  - first:
+      213: -44610767417180947
+    second: reitoria-vertical-2__5
+  - first:
+      213: -7550594684655637616
+    second: reitoria-vertical-2__6
+  - first:
+      213: 3457350813810260809
+    second: reitoria-vertical-2__7
+  - first:
+      213: -4552623876451037469
+    second: reitoria-vertical-2__8
+  - first:
+      213: -5136148311244753159
+    second: reitoria-vertical-2__9
+  - first:
+      213: 687725117968731919
+    second: reitoria-vertical-2__10
+  - first:
+      213: -2513235428391388925
+    second: reitoria-vertical-2__11
+  - first:
+      213: -8000695011081413345
+    second: reitoria-vertical-2__12
+  - first:
+      213: 3018324706555066296
+    second: reitoria-vertical-2__13
+  - first:
+      213: 2698785542044165660
+    second: reitoria-vertical-2__14
+  - first:
+      213: 7745102066718936554
+    second: reitoria-vertical-2__15
+  - first:
+      213: -1887577625747857011
+    second: reitoria-vertical-2__16
+  - first:
+      213: -3861700492112025584
+    second: reitoria-vertical-2__17
+  - first:
+      213: 5682979395278256717
+    second: reitoria-vertical-2__18
+  - first:
+      213: -1406622558138912104
+    second: reitoria-vertical-2__19
+  - first:
+      213: -1651882354092006988
+    second: reitoria-vertical-2__20
+  - first:
+      213: 6099933649639801127
+    second: reitoria-vertical-2__21
+  - first:
+      213: 4404870637473900970
+    second: reitoria-vertical-2__22
+  - first:
+      213: -5394289734425878601
+    second: reitoria-vertical-2__23
+  - first:
+      213: 2645262071493449126
+    second: reitoria-vertical-2__24
+  - first:
+      213: 5369044122794561665
+    second: reitoria-vertical-2__25
+  - first:
+      213: -4669343961036262043
+    second: reitoria-vertical-2__26
+  - first:
+      213: 8206283383957808538
+    second: reitoria-vertical-2__27
+  - first:
+      213: 9215848084239286097
+    second: reitoria-vertical-2__28
+  - first:
+      213: -1476804719627840474
+    second: reitoria-vertical-2__29
+  - first:
+      213: 5838803418038785081
+    second: reitoria-vertical-2__30
+  - first:
+      213: 5870111062626707937
+    second: reitoria-vertical-2__31
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: reitoria-vertical-2__0
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 387
+        width: 54
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 308acb4dd861d42b0800000000000000
+      internalID: -5598793963336325117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reitoria-vertical-2__1
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 390
+        width: 50
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0cd4b0ae933339110800000000000000
+      internalID: 1266412244054003136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reitoria-vertical-2__2
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 390
+        width: 49
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4132db5f72120ab20800000000000000
+      internalID: 3143548995414860564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reitoria-vertical-2__3
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 333
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42e948e1d96fa1840800000000000000
+      internalID: 5195736274807594532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reitoria-vertical-2__4
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 333
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88c7c839c5da71820800000000000000
+      internalID: 2888968299105516680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reitoria-vertical-2__5
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 277
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: decf0fe4eb2816ff0800000000000000
+      internalID: -44610767417180947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reitoria-vertical-2__6
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 277
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09be52a9326e63790800000000000000
+      internalID: -7550594684655637616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reitoria-vertical-2__7
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 277
+        width: 49
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94b71115f3afaff20800000000000000
+      internalID: 3457350813810260809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reitoria-vertical-2__8
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 221
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ee8c2884b4d1d0c0800000000000000
+      internalID: -4552623876451037469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reitoria-vertical-2__9
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 221
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f6b88ac25cb8b8b0800000000000000
+      internalID: -5136148311244753159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reitoria-vertical-2__10
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 142
+        width: 13
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0fc3afd95a4b8900800000000000000
+      internalID: 687725117968731919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reitoria-vertical-2__11
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 142
+        width: 44
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 309fdcd81b13f1dd0800000000000000
+      internalID: -2513235428391388925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reitoria-vertical-2__12
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 141
+        width: 33
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1d9044e642d7f090800000000000000
+      internalID: -8000695011081413345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reitoria-vertical-2__13
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 142
+        width: 38
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b7fffe245e33e920800000000000000
+      internalID: 3018324706555066296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reitoria-vertical-2__14
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 142
+        width: 13
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c16a086d623047520800000000000000
+      internalID: 2698785542044165660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reitoria-vertical-2__15
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 142
+        width: 38
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aed0deb5b412c7b60800000000000000
+      internalID: 7745102066718936554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reitoria-vertical-2__16
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 141
+        width: 41
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d81e253762afdc5e0800000000000000
+      internalID: -1887577625747857011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reitoria-vertical-2__17
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 142
+        width: 38
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01826b2dcdb786ac0800000000000000
+      internalID: -3861700492112025584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reitoria-vertical-2__18
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 141
+        width: 47
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4abc6976affdde40800000000000000
+      internalID: 5682979395278256717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reitoria-vertical-2__19
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 86
+        width: 29
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89234196c3caa7ce0800000000000000
+      internalID: -1406622558138912104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reitoria-vertical-2__20
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 86
+        width: 30
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b12c9140c55319e0800000000000000
+      internalID: -1651882354092006988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reitoria-vertical-2__21
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 86
+        width: 42
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7218b34e55157a450800000000000000
+      internalID: 6099933649639801127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reitoria-vertical-2__22
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 86
+        width: 30
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa92e2cb18e312d30800000000000000
+      internalID: 4404870637473900970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reitoria-vertical-2__23
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 86
+        width: 86
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7bf52041112a325b0800000000000000
+      internalID: -5394289734425878601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reitoria-vertical-2__24
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 86
+        width: 32
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a55e2db6dbd5b420800000000000000
+      internalID: 2645262071493449126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reitoria-vertical-2__25
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 30
+        width: 25
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 180919aee2da28a40800000000000000
+      internalID: 5369044122794561665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reitoria-vertical-2__26
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 30
+        width: 24
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 565715c1868233fb0800000000000000
+      internalID: -4669343961036262043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reitoria-vertical-2__27
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 30
+        width: 18
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a95eefa424392e170800000000000000
+      internalID: 8206283383957808538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reitoria-vertical-2__28
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 30
+        width: 24
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15ffb05410545ef70800000000000000
+      internalID: 9215848084239286097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reitoria-vertical-2__29
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 30
+        width: 25
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62456f39ee5518be0800000000000000
+      internalID: -1476804719627840474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reitoria-vertical-2__30
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 30
+        width: 24
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 934d98df5c8970150800000000000000
+      internalID: 5838803418038785081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reitoria-vertical-2__31
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 60
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e9a4f709e2d67150800000000000000
+      internalID: 5870111062626707937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      reitoria-vertical-2__0: -5598793963336325117
+      reitoria-vertical-2__1: 1266412244054003136
+      reitoria-vertical-2__10: 687725117968731919
+      reitoria-vertical-2__11: -2513235428391388925
+      reitoria-vertical-2__12: -8000695011081413345
+      reitoria-vertical-2__13: 3018324706555066296
+      reitoria-vertical-2__14: 2698785542044165660
+      reitoria-vertical-2__15: 7745102066718936554
+      reitoria-vertical-2__16: -1887577625747857011
+      reitoria-vertical-2__17: -3861700492112025584
+      reitoria-vertical-2__18: 5682979395278256717
+      reitoria-vertical-2__19: -1406622558138912104
+      reitoria-vertical-2__2: 3143548995414860564
+      reitoria-vertical-2__20: -1651882354092006988
+      reitoria-vertical-2__21: 6099933649639801127
+      reitoria-vertical-2__22: 4404870637473900970
+      reitoria-vertical-2__23: -5394289734425878601
+      reitoria-vertical-2__24: 2645262071493449126
+      reitoria-vertical-2__25: 5369044122794561665
+      reitoria-vertical-2__26: -4669343961036262043
+      reitoria-vertical-2__27: 8206283383957808538
+      reitoria-vertical-2__28: 9215848084239286097
+      reitoria-vertical-2__29: -1476804719627840474
+      reitoria-vertical-2__3: 5195736274807594532
+      reitoria-vertical-2__30: 5838803418038785081
+      reitoria-vertical-2__31: 5870111062626707937
+      reitoria-vertical-2__4: 2888968299105516680
+      reitoria-vertical-2__5: -44610767417180947
+      reitoria-vertical-2__6: -7550594684655637616
+      reitoria-vertical-2__7: 3457350813810260809
+      reitoria-vertical-2__8: -4552623876451037469
+      reitoria-vertical-2__9: -5136148311244753159
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

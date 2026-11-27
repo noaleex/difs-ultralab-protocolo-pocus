@@ -1,0 +1,2132 @@
+fileFormatVersion: 2
+guid: da35da9f61b9fae46aa8321581ffdab6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7344397193687336626
+    second: Agrupar 29_0
+  - first:
+      213: 5652972920708097404
+    second: Agrupar 29_1
+  - first:
+      213: -631938524673951683
+    second: Agrupar 29_2
+  - first:
+      213: -1169886273960393572
+    second: Agrupar 29_3
+  - first:
+      213: -8463844071454600308
+    second: Agrupar 29_4
+  - first:
+      213: -4575843299386409644
+    second: Agrupar 29_5
+  - first:
+      213: -2676197114458529494
+    second: Agrupar 29_6
+  - first:
+      213: -7708515580698624136
+    second: Agrupar 29_7
+  - first:
+      213: 55730786490749142
+    second: Agrupar 29_8
+  - first:
+      213: -5206799631047941018
+    second: Agrupar 29_9
+  - first:
+      213: -4823939274589220254
+    second: Agrupar 29_10
+  - first:
+      213: -8304827861259308495
+    second: Agrupar 29_11
+  - first:
+      213: 2363280549940777647
+    second: Agrupar 29_12
+  - first:
+      213: -4084834026119491255
+    second: Agrupar 29_13
+  - first:
+      213: 7150052677339349210
+    second: Agrupar 29_14
+  - first:
+      213: 5928226451276334640
+    second: Agrupar 29_15
+  - first:
+      213: 1274927648797966837
+    second: Agrupar 29_16
+  - first:
+      213: 4052860340088446121
+    second: Agrupar 29_17
+  - first:
+      213: 5077217937068387578
+    second: Agrupar 29_18
+  - first:
+      213: 2849013816378955272
+    second: Agrupar 29_19
+  - first:
+      213: -4912709335580747547
+    second: Agrupar 29_20
+  - first:
+      213: 6663740451751386077
+    second: Agrupar 29_21
+  - first:
+      213: -1544162422799608247
+    second: Agrupar 29_22
+  - first:
+      213: -7236737749907132263
+    second: Agrupar 29_23
+  - first:
+      213: -8125609604457746846
+    second: Agrupar 29_24
+  - first:
+      213: -8864125141057552370
+    second: Agrupar 29_25
+  - first:
+      213: 3464252619170166724
+    second: Agrupar 29_26
+  - first:
+      213: -8145054700419153740
+    second: Agrupar 29_27
+  - first:
+      213: 7721767596412051011
+    second: Agrupar 29_28
+  - first:
+      213: 4252223796489988102
+    second: Agrupar 29_29
+  - first:
+      213: -6287653224922591672
+    second: Agrupar 29_30
+  - first:
+      213: -2260289624192150344
+    second: Agrupar 29_31
+  - first:
+      213: -3377608630601410312
+    second: Agrupar 29_32
+  - first:
+      213: 1375288611097621273
+    second: Agrupar 29_33
+  - first:
+      213: -673610419830099030
+    second: Agrupar 29_34
+  - first:
+      213: -4253650580264657824
+    second: Agrupar 29_35
+  - first:
+      213: -1706996253406737858
+    second: Agrupar 29_36
+  - first:
+      213: 2562274065816242862
+    second: Agrupar 29_37
+  - first:
+      213: 2396932450811047028
+    second: Agrupar 29_38
+  - first:
+      213: -6663798636277133134
+    second: Agrupar 29_39
+  - first:
+      213: -2990427507637905020
+    second: Agrupar 29_40
+  - first:
+      213: 2303979735625353787
+    second: Agrupar 29_41
+  - first:
+      213: 1551207953724370242
+    second: Agrupar 29_42
+  - first:
+      213: -912898734318316099
+    second: Agrupar 29_43
+  - first:
+      213: -3047848935158713994
+    second: Agrupar 29_44
+  - first:
+      213: 8734720088389139677
+    second: Agrupar 29_45
+  - first:
+      213: 8660700185350269523
+    second: Agrupar 29_46
+  - first:
+      213: 7371085811442188827
+    second: Agrupar 29_47
+  - first:
+      213: 4929399951444107114
+    second: Agrupar 29_48
+  - first:
+      213: -272787714542506616
+    second: Agrupar 29_49
+  - first:
+      213: 3834165871081252724
+    second: Agrupar 29_50
+  - first:
+      213: 3787587210294899079
+    second: Agrupar 29_51
+  - first:
+      213: -2104382479846407961
+    second: Agrupar 29_52
+  - first:
+      213: 913650303449913795
+    second: Agrupar 29_53
+  - first:
+      213: -3211878643208509321
+    second: Agrupar 29_54
+  - first:
+      213: -800696380708926310
+    second: Agrupar 29_55
+  - first:
+      213: 4819206918314262661
+    second: Agrupar 29_56
+  - first:
+      213: 3204770529769067473
+    second: Agrupar 29_57
+  - first:
+      213: -6044276099363024615
+    second: Agrupar 29_58
+  - first:
+      213: 1885542939018485817
+    second: Agrupar 29_59
+  - first:
+      213: -6228422770310176592
+    second: Agrupar 29_60
+  - first:
+      213: 7986773297685577366
+    second: Agrupar 29_61
+  - first:
+      213: -159099508645398406
+    second: Agrupar 29_62
+  - first:
+      213: 5757966801030520859
+    second: Agrupar 29_63
+  - first:
+      213: -2517298651127558886
+    second: Agrupar 29_64
+  - first:
+      213: -3023091874499231850
+    second: Agrupar 29_65
+  - first:
+      213: 4899886672210708341
+    second: Agrupar 29_66
+  - first:
+      213: -4508985111932458996
+    second: Agrupar 29_67
+  - first:
+      213: 3509889745181720425
+    second: Agrupar 29_68
+  - first:
+      213: -307185820289518628
+    second: Agrupar 29_69
+  - first:
+      213: 7685730024667346261
+    second: Agrupar 29_70
+  - first:
+      213: -4094552600361170555
+    second: Agrupar 29_71
+  - first:
+      213: 6349764261921136555
+    second: Agrupar 29_72
+  - first:
+      213: 2859774883585146836
+    second: Agrupar 29_73
+  - first:
+      213: 5560013850465376735
+    second: Agrupar 29_74
+  - first:
+      213: 5458353849147094352
+    second: Agrupar 29_75
+  - first:
+      213: -3898601150155596299
+    second: Agrupar 29_76
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Agrupar 29_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 81
+        width: 535
+        height: 781
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e49f3e42aa5731a90800000000000000
+      internalID: -7344397193687336626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Agrupar 29_1
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 704
+        width: 368
+        height: 364
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7565bfabe4637e40800000000000000
+      internalID: 5652972920708097404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Agrupar 29_2
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 703
+        width: 272
+        height: 273
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d38bcec8247ea37f0800000000000000
+      internalID: -631938524673951683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Agrupar 29_3
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 757
+        width: 73
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c944cf4d1aab3cfe0800000000000000
+      internalID: -1169886273960393572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Agrupar 29_4
+      rect:
+        serializedVersion: 2
+        x: 917
+        y: 758
+        width: 60
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8317ae09a26a8a80800000000000000
+      internalID: -8463844071454600308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Agrupar 29_5
+      rect:
+        serializedVersion: 2
+        x: 991
+        y: 757
+        width: 68
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45db83853c65f70c0800000000000000
+      internalID: -4575843299386409644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Agrupar 29_6
+      rect:
+        serializedVersion: 2
+        x: 1070
+        y: 758
+        width: 62
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2126cb47ec3cdad0800000000000000
+      internalID: -2676197114458529494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Agrupar 29_7
+      rect:
+        serializedVersion: 2
+        x: 1147
+        y: 758
+        width: 64
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87ff4eabbe9d50590800000000000000
+      internalID: -7708515580698624136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Agrupar 29_8
+      rect:
+        serializedVersion: 2
+        x: 1223
+        y: 757
+        width: 81
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d095d3eadef5c000800000000000000
+      internalID: 55730786490749142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Agrupar 29_9
+      rect:
+        serializedVersion: 2
+        x: 1352
+        y: 759
+        width: 71
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 664a0c6825bbdb7b0800000000000000
+      internalID: -5206799631047941018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Agrupar 29_10
+      rect:
+        serializedVersion: 2
+        x: 1438
+        y: 758
+        width: 59
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 262dd00c9cced0db0800000000000000
+      internalID: -4823939274589220254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Agrupar 29_11
+      rect:
+        serializedVersion: 2
+        x: 1544
+        y: 758
+        width: 61
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1323fd0af035fbc80800000000000000
+      internalID: -8304827861259308495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Agrupar 29_12
+      rect:
+        serializedVersion: 2
+        x: 1617
+        y: 758
+        width: 59
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa25fc3932f0cc020800000000000000
+      internalID: 2363280549940777647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Agrupar 29_13
+      rect:
+        serializedVersion: 2
+        x: 1686
+        y: 757
+        width: 60
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94118ba7811cf47c0800000000000000
+      internalID: -4084834026119491255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Agrupar 29_14
+      rect:
+        serializedVersion: 2
+        x: 1757
+        y: 757
+        width: 81
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad0842607071a3360800000000000000
+      internalID: 7150052677339349210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Agrupar 29_15
+      rect:
+        serializedVersion: 2
+        x: 1853
+        y: 757
+        width: 66
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03686606c8a454250800000000000000
+      internalID: 5928226451276334640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Agrupar 29_16
+      rect:
+        serializedVersion: 2
+        x: 1938
+        y: 758
+        width: 10
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f14de411f371b110800000000000000
+      internalID: 1274927648797966837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Agrupar 29_17
+      rect:
+        serializedVersion: 2
+        x: 1962
+        y: 757
+        width: 61
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ac9d3f9107ae3830800000000000000
+      internalID: 4052860340088446121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Agrupar 29_18
+      rect:
+        serializedVersion: 2
+        x: 2030
+        y: 757
+        width: 78
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afce33240d6e57640800000000000000
+      internalID: 5077217937068387578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Agrupar 29_19
+      rect:
+        serializedVersion: 2
+        x: 836
+        y: 620
+        width: 11
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8069275a8fab98720800000000000000
+      internalID: 2849013816378955272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Agrupar 29_20
+      rect:
+        serializedVersion: 2
+        x: 866
+        y: 619
+        width: 68
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e8d6ff43ec82dbb0800000000000000
+      internalID: -4912709335580747547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Agrupar 29_21
+      rect:
+        serializedVersion: 2
+        x: 946
+        y: 619
+        width: 65
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ddbda0682ac5a7c50800000000000000
+      internalID: 6663740451751386077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Agrupar 29_22
+      rect:
+        serializedVersion: 2
+        x: 1022
+        y: 620
+        width: 59
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 946d5813578029ae0800000000000000
+      internalID: -1544162422799608247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Agrupar 29_23
+      rect:
+        serializedVersion: 2
+        x: 1096
+        y: 619
+        width: 64
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 990302cbb51f19b90800000000000000
+      internalID: -7236737749907132263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Agrupar 29_24
+      rect:
+        serializedVersion: 2
+        x: 1176
+        y: 620
+        width: 59
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26e2bc6bd190c3f80800000000000000
+      internalID: -8125609604457746846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Agrupar 29_25
+      rect:
+        serializedVersion: 2
+        x: 1248
+        y: 619
+        width: 64
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e00c7aaf52d4cf480800000000000000
+      internalID: -8864125141057552370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Agrupar 29_26
+      rect:
+        serializedVersion: 2
+        x: 1324
+        y: 618
+        width: 81
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c7bad9176f731030800000000000000
+      internalID: 3464252619170166724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Agrupar 29_27
+      rect:
+        serializedVersion: 2
+        x: 1421
+        y: 618
+        width: 59
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b0046187e3f6fe80800000000000000
+      internalID: -8145054700419153740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Agrupar 29_28
+      rect:
+        serializedVersion: 2
+        x: 1493
+        y: 618
+        width: 8
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34e134e97ba392b60800000000000000
+      internalID: 7721767596412051011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Agrupar 29_29
+      rect:
+        serializedVersion: 2
+        x: 1518
+        y: 619
+        width: 59
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 608af3f730fe20b30800000000000000
+      internalID: 4252223796489988102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Agrupar 29_30
+      rect:
+        serializedVersion: 2
+        x: 1588
+        y: 619
+        width: 59
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84e46a194b4cdb8a0800000000000000
+      internalID: -6287653224922591672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Agrupar 29_31
+      rect:
+        serializedVersion: 2
+        x: 1662
+        y: 618
+        width: 8
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b49684ff86d1a0e0800000000000000
+      internalID: -2260289624192150344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Agrupar 29_32
+      rect:
+        serializedVersion: 2
+        x: 1688
+        y: 618
+        width: 81
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f895b688d25021d0800000000000000
+      internalID: -3377608630601410312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Agrupar 29_33
+      rect:
+        serializedVersion: 2
+        x: 1784
+        y: 619
+        width: 68
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9133d1884b1061310800000000000000
+      internalID: 1375288611097621273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Agrupar 29_34
+      rect:
+        serializedVersion: 2
+        x: 1865
+        y: 618
+        width: 79
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa3760164ead6a6f0800000000000000
+      internalID: -673610419830099030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Agrupar 29_35
+      rect:
+        serializedVersion: 2
+        x: 1958
+        y: 619
+        width: 56
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06cd0b4855ff7f4c0800000000000000
+      internalID: -4253650580264657824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Agrupar 29_36
+      rect:
+        serializedVersion: 2
+        x: 2058
+        y: 620
+        width: 59
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3ac4ca93f78f48e0800000000000000
+      internalID: -1706996253406737858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Agrupar 29_37
+      rect:
+        serializedVersion: 2
+        x: 2131
+        y: 619
+        width: 75
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eaa4c26ffa60f8320800000000000000
+      internalID: 2562274065816242862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Agrupar 29_38
+      rect:
+        serializedVersion: 2
+        x: 834
+        y: 483
+        width: 67
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47ce2315d5d934120800000000000000
+      internalID: 2396932450811047028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Agrupar 29_39
+      rect:
+        serializedVersion: 2
+        x: 919
+        y: 484
+        width: 57
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b018f5527e6583a0800000000000000
+      internalID: -6663798636277133134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Agrupar 29_40
+      rect:
+        serializedVersion: 2
+        x: 970
+        y: 485
+        width: 64
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4899fa8960edf76d0800000000000000
+      internalID: -2990427507637905020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Agrupar 29_41
+      rect:
+        serializedVersion: 2
+        x: 1047
+        y: 483
+        width: 64
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3ac5afcc5169ff10800000000000000
+      internalID: 2303979735625353787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Agrupar 29_42
+      rect:
+        serializedVersion: 2
+        x: 1122
+        y: 483
+        width: 78
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24d608e4a6ff68510800000000000000
+      internalID: 1551207953724370242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Agrupar 29_43
+      rect:
+        serializedVersion: 2
+        x: 1208
+        y: 484
+        width: 58
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db59d09107bb453f0800000000000000
+      internalID: -912898734318316099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Agrupar 29_44
+      rect:
+        serializedVersion: 2
+        x: 1274
+        y: 483
+        width: 61
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 671ffcaaa8dd3b5d0800000000000000
+      internalID: -3047848935158713994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Agrupar 29_45
+      rect:
+        serializedVersion: 2
+        x: 1346
+        y: 483
+        width: 81
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ddc37e054a5f73970800000000000000
+      internalID: 8734720088389139677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Agrupar 29_46
+      rect:
+        serializedVersion: 2
+        x: 1443
+        y: 483
+        width: 68
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35a66f5aeecf03870800000000000000
+      internalID: 8660700185350269523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Agrupar 29_47
+      rect:
+        serializedVersion: 2
+        x: 1525
+        y: 482
+        width: 82
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b120fe7ed7b5b4660800000000000000
+      internalID: 7371085811442188827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Agrupar 29_48
+      rect:
+        serializedVersion: 2
+        x: 1619
+        y: 483
+        width: 73
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6f57a5832fb86440800000000000000
+      internalID: 4929399951444107114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Agrupar 29_49
+      rect:
+        serializedVersion: 2
+        x: 1708
+        y: 484
+        width: 64
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88d6a97d40dd63cf0800000000000000
+      internalID: -272787714542506616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Agrupar 29_50
+      rect:
+        serializedVersion: 2
+        x: 1783
+        y: 484
+        width: 78
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47769b3ab81b53530800000000000000
+      internalID: 3834165871081252724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Agrupar 29_51
+      rect:
+        serializedVersion: 2
+        x: 1874
+        y: 483
+        width: 58
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 781b0711086309430800000000000000
+      internalID: 3787587210294899079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Agrupar 29_52
+      rect:
+        serializedVersion: 2
+        x: 1947
+        y: 483
+        width: 10
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e00339b84bbbc2e0800000000000000
+      internalID: -2104382479846407961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Agrupar 29_53
+      rect:
+        serializedVersion: 2
+        x: 1971
+        y: 484
+        width: 78
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c95f0a3c10fdac00800000000000000
+      internalID: 913650303449913795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Agrupar 29_54
+      rect:
+        serializedVersion: 2
+        x: 835
+        y: 345
+        width: 62
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 778a4e9246d1d63d0800000000000000
+      internalID: -3211878643208509321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Agrupar 29_55
+      rect:
+        serializedVersion: 2
+        x: 905
+        y: 345
+        width: 81
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9c47ee42ea53e4f0800000000000000
+      internalID: -800696380708926310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Agrupar 29_56
+      rect:
+        serializedVersion: 2
+        x: 1003
+        y: 346
+        width: 10
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5800a31b82341e240800000000000000
+      internalID: 4819206918314262661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Agrupar 29_57
+      rect:
+        serializedVersion: 2
+        x: 1032
+        y: 345
+        width: 69
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d3968531d1a97c20800000000000000
+      internalID: 3204770529769067473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Agrupar 29_58
+      rect:
+        serializedVersion: 2
+        x: 1111
+        y: 346
+        width: 66
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 911551d59ea6e1ca0800000000000000
+      internalID: -6044276099363024615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Agrupar 29_59
+      rect:
+        serializedVersion: 2
+        x: 1175
+        y: 375
+        width: 36
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93061f0205bca2a10800000000000000
+      internalID: 1885542939018485817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Agrupar 29_60
+      rect:
+        serializedVersion: 2
+        x: 1221
+        y: 344
+        width: 80
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b025b07d723099a0800000000000000
+      internalID: -6228422770310176592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Agrupar 29_61
+      rect:
+        serializedVersion: 2
+        x: 1317
+        y: 345
+        width: 58
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69ebf1e9ff7b6de60800000000000000
+      internalID: 7986773297685577366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Agrupar 29_62
+      rect:
+        serializedVersion: 2
+        x: 1384
+        y: 375
+        width: 35
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a78704ff6d3cacdf0800000000000000
+      internalID: -159099508645398406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Agrupar 29_63
+      rect:
+        serializedVersion: 2
+        x: 1430
+        y: 345
+        width: 73
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b10aaeb6c4868ef40800000000000000
+      internalID: 5757966801030520859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Agrupar 29_64
+      rect:
+        serializedVersion: 2
+        x: 1508
+        y: 346
+        width: 79
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1dc8f9c632c01dd0800000000000000
+      internalID: -2517298651127558886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Agrupar 29_65
+      rect:
+        serializedVersion: 2
+        x: 1601
+        y: 345
+        width: 65
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69f7a1905f1db06d0800000000000000
+      internalID: -3023091874499231850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Agrupar 29_66
+      rect:
+        serializedVersion: 2
+        x: 1680
+        y: 346
+        width: 60
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5774ac8b7f4eff340800000000000000
+      internalID: 4899886672210708341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Agrupar 29_67
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 0
+        width: 212
+        height: 284
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c08adb92eeddc61c0800000000000000
+      internalID: -4508985111932458996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Agrupar 29_68
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 0
+        width: 177
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96fb7568022a5b030800000000000000
+      internalID: 3509889745181720425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Agrupar 29_69
+      rect:
+        serializedVersion: 2
+        x: 651
+        y: 5
+        width: 192
+        height: 275
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd33b9dbf18acbbf0800000000000000
+      internalID: -307185820289518628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Agrupar 29_70
+      rect:
+        serializedVersion: 2
+        x: 862
+        y: 5
+        width: 82
+        height: 275
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 555f9d79cb239aa60800000000000000
+      internalID: 7685730024667346261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Agrupar 29_71
+      rect:
+        serializedVersion: 2
+        x: 966
+        y: 91
+        width: 91
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58902559a1a3d27c0800000000000000
+      internalID: -4094552600361170555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Agrupar 29_72
+      rect:
+        serializedVersion: 2
+        x: 1077
+        y: 5
+        width: 193
+        height: 275
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: baf974724f4ee1850800000000000000
+      internalID: 6349764261921136555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Agrupar 29_73
+      rect:
+        serializedVersion: 2
+        x: 1286
+        y: 0
+        width: 254
+        height: 283
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4df3da9da16ffa720800000000000000
+      internalID: 2859774883585146836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Agrupar 29_74
+      rect:
+        serializedVersion: 2
+        x: 1561
+        y: 0
+        width: 211
+        height: 284
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd99d378323292d40800000000000000
+      internalID: 5560013850465376735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Agrupar 29_75
+      rect:
+        serializedVersion: 2
+        x: 1788
+        y: 0
+        width: 238
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0557cccf7e7ffbb40800000000000000
+      internalID: 5458353849147094352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Agrupar 29_76
+      rect:
+        serializedVersion: 2
+        x: 2050
+        y: 3
+        width: 169
+        height: 281
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fddb0cd8e265e9c0800000000000000
+      internalID: -3898601150155596299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Agrupar 29_0: -7344397193687336626
+      Agrupar 29_1: 5652972920708097404
+      Agrupar 29_10: -4823939274589220254
+      Agrupar 29_11: -8304827861259308495
+      Agrupar 29_12: 2363280549940777647
+      Agrupar 29_13: -4084834026119491255
+      Agrupar 29_14: 7150052677339349210
+      Agrupar 29_15: 5928226451276334640
+      Agrupar 29_16: 1274927648797966837
+      Agrupar 29_17: 4052860340088446121
+      Agrupar 29_18: 5077217937068387578
+      Agrupar 29_19: 2849013816378955272
+      Agrupar 29_2: -631938524673951683
+      Agrupar 29_20: -4912709335580747547
+      Agrupar 29_21: 6663740451751386077
+      Agrupar 29_22: -1544162422799608247
+      Agrupar 29_23: -7236737749907132263
+      Agrupar 29_24: -8125609604457746846
+      Agrupar 29_25: -8864125141057552370
+      Agrupar 29_26: 3464252619170166724
+      Agrupar 29_27: -8145054700419153740
+      Agrupar 29_28: 7721767596412051011
+      Agrupar 29_29: 4252223796489988102
+      Agrupar 29_3: -1169886273960393572
+      Agrupar 29_30: -6287653224922591672
+      Agrupar 29_31: -2260289624192150344
+      Agrupar 29_32: -3377608630601410312
+      Agrupar 29_33: 1375288611097621273
+      Agrupar 29_34: -673610419830099030
+      Agrupar 29_35: -4253650580264657824
+      Agrupar 29_36: -1706996253406737858
+      Agrupar 29_37: 2562274065816242862
+      Agrupar 29_38: 2396932450811047028
+      Agrupar 29_39: -6663798636277133134
+      Agrupar 29_4: -8463844071454600308
+      Agrupar 29_40: -2990427507637905020
+      Agrupar 29_41: 2303979735625353787
+      Agrupar 29_42: 1551207953724370242
+      Agrupar 29_43: -912898734318316099
+      Agrupar 29_44: -3047848935158713994
+      Agrupar 29_45: 8734720088389139677
+      Agrupar 29_46: 8660700185350269523
+      Agrupar 29_47: 7371085811442188827
+      Agrupar 29_48: 4929399951444107114
+      Agrupar 29_49: -272787714542506616
+      Agrupar 29_5: -4575843299386409644
+      Agrupar 29_50: 3834165871081252724
+      Agrupar 29_51: 3787587210294899079
+      Agrupar 29_52: -2104382479846407961
+      Agrupar 29_53: 913650303449913795
+      Agrupar 29_54: -3211878643208509321
+      Agrupar 29_55: -800696380708926310
+      Agrupar 29_56: 4819206918314262661
+      Agrupar 29_57: 3204770529769067473
+      Agrupar 29_58: -6044276099363024615
+      Agrupar 29_59: 1885542939018485817
+      Agrupar 29_6: -2676197114458529494
+      Agrupar 29_60: -6228422770310176592
+      Agrupar 29_61: 7986773297685577366
+      Agrupar 29_62: -159099508645398406
+      Agrupar 29_63: 5757966801030520859
+      Agrupar 29_64: -2517298651127558886
+      Agrupar 29_65: -3023091874499231850
+      Agrupar 29_66: 4899886672210708341
+      Agrupar 29_67: -4508985111932458996
+      Agrupar 29_68: 3509889745181720425
+      Agrupar 29_69: -307185820289518628
+      Agrupar 29_7: -7708515580698624136
+      Agrupar 29_70: 7685730024667346261
+      Agrupar 29_71: -4094552600361170555
+      Agrupar 29_72: 6349764261921136555
+      Agrupar 29_73: 2859774883585146836
+      Agrupar 29_74: 5560013850465376735
+      Agrupar 29_75: 5458353849147094352
+      Agrupar 29_76: -3898601150155596299
+      Agrupar 29_8: 55730786490749142
+      Agrupar 29_9: -5206799631047941018
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

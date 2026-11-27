@@ -1,0 +1,624 @@
+fileFormatVersion: 2
+guid: c94e496a6fadcdf409c306125afd55cd
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2844631019877407044
+    second: Objeto Inteligente de Vetor_0
+  - first:
+      213: -7538464712646120719
+    second: Objeto Inteligente de Vetor_1
+  - first:
+      213: -1164363631071747771
+    second: Objeto Inteligente de Vetor_2
+  - first:
+      213: -7665329065052472256
+    second: Objeto Inteligente de Vetor_3
+  - first:
+      213: -5304993844501074246
+    second: Objeto Inteligente de Vetor_4
+  - first:
+      213: 2476238318905410948
+    second: Objeto Inteligente de Vetor_5
+  - first:
+      213: -430505782307312609
+    second: Objeto Inteligente de Vetor_6
+  - first:
+      213: 8489692611660116527
+    second: Objeto Inteligente de Vetor_7
+  - first:
+      213: 5231665454039634835
+    second: Objeto Inteligente de Vetor_8
+  - first:
+      213: -8347848171672892187
+    second: Objeto Inteligente de Vetor_9
+  - first:
+      213: -8147732650973309079
+    second: Objeto Inteligente de Vetor_10
+  - first:
+      213: -7124499179589215648
+    second: Objeto Inteligente de Vetor_11
+  - first:
+      213: -549398039424265958
+    second: Objeto Inteligente de Vetor_12
+  - first:
+      213: -5246150157856422234
+    second: Objeto Inteligente de Vetor_13
+  - first:
+      213: 1206644243237087883
+    second: Objeto Inteligente de Vetor_14
+  - first:
+      213: 3752278496061613882
+    second: Objeto Inteligente de Vetor_15
+  - first:
+      213: -8926992482360376706
+    second: Objeto Inteligente de Vetor_16
+  - first:
+      213: -623550808384251209
+    second: Objeto Inteligente de Vetor_17
+  - first:
+      213: -5031541555002884779
+    second: Objeto Inteligente de Vetor_18
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Objeto Inteligente de Vetor_0
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 415
+        width: 195
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb6662fa827d588d0800000000000000
+      internalID: -2844631019877407044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Objeto Inteligente de Vetor_1
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 414
+        width: 104
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1fa29eac84ef16790800000000000000
+      internalID: -7538464712646120719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Objeto Inteligente de Vetor_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 214
+        width: 210
+        height: 175
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 541a594527957dfe0800000000000000
+      internalID: -1164363631071747771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Objeto Inteligente de Vetor_3
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 214
+        width: 40
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04cf117f3d74f9590800000000000000
+      internalID: -7665329065052472256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Objeto Inteligente de Vetor_4
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 214
+        width: 196
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: abe21ea9430e066b0800000000000000
+      internalID: -5304993844501074246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Objeto Inteligente de Vetor_5
+      rect:
+        serializedVersion: 2
+        x: 535
+        y: 214
+        width: 195
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4854191a1ad5d5220800000000000000
+      internalID: 2476238318905410948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Objeto Inteligente de Vetor_6
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 153
+        width: 91
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1c22db9549860af0800000000000000
+      internalID: -430505782307312609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Objeto Inteligente de Vetor_7
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 146
+        width: 21
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f227242337271d570800000000000000
+      internalID: 8489692611660116527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Objeto Inteligente de Vetor_8
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 146
+        width: 22
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39317bb030c9a9840800000000000000
+      internalID: 5231665454039634835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Objeto Inteligente de Vetor_9
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 146
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ec0b80115c762c80800000000000000
+      internalID: -8347848171672892187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Objeto Inteligente de Vetor_10
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 146
+        width: 15
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96752ed82507dee80800000000000000
+      internalID: -8147732650973309079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Objeto Inteligente de Vetor_11
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 146
+        width: 17
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06ad50e4eb1b02d90800000000000000
+      internalID: -7124499179589215648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Objeto Inteligente de Vetor_12
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 146
+        width: 19
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1112dbd4652068f0800000000000000
+      internalID: -549398039424265958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Objeto Inteligente de Vetor_13
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 146
+        width: 19
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a6cb9a0a3ee137b0800000000000000
+      internalID: -5246150157856422234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Objeto Inteligente de Vetor_14
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 146
+        width: 52
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8aaa60db8cdeb010800000000000000
+      internalID: 1206644243237087883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Objeto Inteligente de Vetor_15
+      rect:
+        serializedVersion: 2
+        x: 574
+        y: 146
+        width: 23
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a37e6186965c21430800000000000000
+      internalID: 3752278496061613882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Objeto Inteligente de Vetor_16
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 153
+        width: 91
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e72c35072a3fc1480800000000000000
+      internalID: -8926992482360376706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Objeto Inteligente de Vetor_17
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 78
+        width: 63
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ba59dee7d3b857f0800000000000000
+      internalID: -623550808384251209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Objeto Inteligente de Vetor_18
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 0
+        width: 194
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55dbf6d2d9f5c2ab0800000000000000
+      internalID: -5031541555002884779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Objeto Inteligente de Vetor_0: -2844631019877407044
+      Objeto Inteligente de Vetor_1: -7538464712646120719
+      Objeto Inteligente de Vetor_10: -8147732650973309079
+      Objeto Inteligente de Vetor_11: -7124499179589215648
+      Objeto Inteligente de Vetor_12: -549398039424265958
+      Objeto Inteligente de Vetor_13: -5246150157856422234
+      Objeto Inteligente de Vetor_14: 1206644243237087883
+      Objeto Inteligente de Vetor_15: 3752278496061613882
+      Objeto Inteligente de Vetor_16: -8926992482360376706
+      Objeto Inteligente de Vetor_17: -623550808384251209
+      Objeto Inteligente de Vetor_18: -5031541555002884779
+      Objeto Inteligente de Vetor_2: -1164363631071747771
+      Objeto Inteligente de Vetor_3: -7665329065052472256
+      Objeto Inteligente de Vetor_4: -5304993844501074246
+      Objeto Inteligente de Vetor_5: 2476238318905410948
+      Objeto Inteligente de Vetor_6: -430505782307312609
+      Objeto Inteligente de Vetor_7: 8489692611660116527
+      Objeto Inteligente de Vetor_8: 5231665454039634835
+      Objeto Inteligente de Vetor_9: -8347848171672892187
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
