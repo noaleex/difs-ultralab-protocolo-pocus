@@ -56,7 +56,16 @@ public class NPC : MonoBehaviour, IInteractable
 
     public bool CanInteract()
     {
-        return !isDialogueActive;
+        if (isDialogueActive)
+            return false;
+
+        if (dialogoJaConcluido && !isInterfaceCharacter)
+            return false;
+
+        if (triggerOnlyOnce && !string.IsNullOrEmpty(uniqueId) && completedDialogues.Contains(uniqueId))
+            return false;
+
+        return true;
     }
 
     public void Interact()
@@ -245,7 +254,10 @@ public class NPC : MonoBehaviour, IInteractable
 
         if (PlayerReferences.Instance != null)
         {
-            PlayerReferences.Instance.InteractIcon.SetActive(true);
+            if (PlayerReferences.Instance.InteractIcon != null)
+            {
+                PlayerReferences.Instance.InteractIcon.SetActive(CanInteract());
+            }
 
             if (PlayerReferences.Instance.playerMovement != null)
             {

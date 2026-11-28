@@ -14,15 +14,15 @@ PlayerSettings:
   accelerometerFrequency: 60
   companyName: DIFS
   productName: 'ULTRALAB: ProtocoloPOCUS'
-  defaultCursor: {fileID: 0}
+  defaultCursor: {fileID: 2800000, guid: d2c658e9a2940374cbf1357cdc66ed63, type: 3}
   cursorHotspot: {x: 0, y: 0}
-  m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
+  m_SplashScreenBackgroundColor: {r: 0, g: 0, b: 0, a: 1}
   m_ShowUnitySplashScreen: 1
   m_ShowUnitySplashLogo: 1
   m_SplashScreenOverlayOpacity: 1
   m_SplashScreenAnimation: 1
   m_SplashScreenLogoStyle: 1
-  m_SplashScreenDrawMode: 0
+  m_SplashScreenDrawMode: 1
   m_SplashScreenBackgroundAnimationZoom: 1
   m_SplashScreenLogoAnimationZoom: 1
   m_SplashScreenBackgroundLandscapeAspect: 1
@@ -39,7 +39,21 @@ PlayerSettings:
     y: 0
     width: 1
     height: 1
-  m_SplashScreenLogos: []
+  m_SplashScreenLogos:
+  - logo: {fileID: 10404, guid: 0000000000000000f000000000000000, type: 0}
+    duration: 2
+  - logo: {fileID: 21300000, guid: bdef5adc0a650f14aa73ff16a87b2e75, type: 3}
+    duration: 2
+  - logo: {fileID: 21300000, guid: bf27228083f3dcf42bc6fe4dc52a8de1, type: 3}
+    duration: 2
+  - logo: {fileID: 21300000, guid: 57f11acfe192ea34493387f8272b92ae, type: 3}
+    duration: 2
+  - logo: {fileID: 21300000, guid: 02b83af71c7ff1c4da459df3dd5a21ed, type: 3}
+    duration: 2
+  - logo: {fileID: 21300000, guid: 025451f5ed8bf0d45bc6fb2ef63046ac, type: 3}
+    duration: 2
+  - logo: {fileID: 21300000, guid: 5618f369e24bce245819048860c2c10c, type: 3}
+    duration: 2
   m_VirtualRealitySplashScreen: {fileID: 0}
   m_HolographicTrackingLossScreen: {fileID: 0}
   defaultScreenWidth: 1920
@@ -295,7 +309,14 @@ PlayerSettings:
   AndroidAppBundleSizeToValidate: 150
   AndroidReportGooglePlayAppDependencies: 1
   androidSymbolsSizeThreshold: 800
-  m_BuildTargetIcons: []
+  m_BuildTargetIcons:
+  - m_BuildTarget: 
+    m_Icons:
+    - serializedVersion: 2
+      m_Icon: {fileID: 2800000, guid: e02fa380be8647145a194fd1ebe1434c, type: 3}
+      m_Width: 128
+      m_Height: 128
+      m_Kind: 0
   m_BuildTargetPlatformIcons:
   - m_BuildTarget: Android
     m_Icons:

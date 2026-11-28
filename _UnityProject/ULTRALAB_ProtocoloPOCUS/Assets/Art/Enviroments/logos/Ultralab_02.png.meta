@@ -1,0 +1,2106 @@
+fileFormatVersion: 2
+guid: 025451f5ed8bf0d45bc6fb2ef63046ac
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3636648655631715241
+    second: Ultralab_02_0
+  - first:
+      213: -4823237130619515807
+    second: Ultralab_02_1
+  - first:
+      213: -1547613387294167733
+    second: Ultralab_02_2
+  - first:
+      213: 2120751143803137221
+    second: Ultralab_02_3
+  - first:
+      213: 2502523156450018179
+    second: Ultralab_02_4
+  - first:
+      213: 2080439716976671524
+    second: Ultralab_02_5
+  - first:
+      213: -8654136891292649235
+    second: Ultralab_02_6
+  - first:
+      213: 2398561970930826070
+    second: Ultralab_02_7
+  - first:
+      213: -1235245056814802144
+    second: Ultralab_02_8
+  - first:
+      213: 5367011857178138368
+    second: Ultralab_02_9
+  - first:
+      213: -582636643247319259
+    second: Ultralab_02_10
+  - first:
+      213: -2720421377222978234
+    second: Ultralab_02_11
+  - first:
+      213: -6710170688588404655
+    second: Ultralab_02_12
+  - first:
+      213: 4025270564277696189
+    second: Ultralab_02_13
+  - first:
+      213: -4512245167580626584
+    second: Ultralab_02_14
+  - first:
+      213: -3790041095819185528
+    second: Ultralab_02_15
+  - first:
+      213: 1549699056433324811
+    second: Ultralab_02_16
+  - first:
+      213: -2737706168466360637
+    second: Ultralab_02_17
+  - first:
+      213: 5554606868889684698
+    second: Ultralab_02_18
+  - first:
+      213: -5610195958500562582
+    second: Ultralab_02_19
+  - first:
+      213: 6319766380828995794
+    second: Ultralab_02_20
+  - first:
+      213: 3718868546058184760
+    second: Ultralab_02_21
+  - first:
+      213: 1298792756291809994
+    second: Ultralab_02_22
+  - first:
+      213: 3127303957359594232
+    second: Ultralab_02_23
+  - first:
+      213: 741926529251220287
+    second: Ultralab_02_24
+  - first:
+      213: -6351906264948648125
+    second: Ultralab_02_25
+  - first:
+      213: 2400883414124910691
+    second: Ultralab_02_26
+  - first:
+      213: -8156903740868437506
+    second: Ultralab_02_27
+  - first:
+      213: -4819366760667198699
+    second: Ultralab_02_28
+  - first:
+      213: 5648399712988833913
+    second: Ultralab_02_29
+  - first:
+      213: -9171173697655595291
+    second: Ultralab_02_30
+  - first:
+      213: 7872201578993173312
+    second: Ultralab_02_31
+  - first:
+      213: 5064071875596585195
+    second: Ultralab_02_32
+  - first:
+      213: 7624289086556307565
+    second: Ultralab_02_33
+  - first:
+      213: -6973564349756093499
+    second: Ultralab_02_34
+  - first:
+      213: 749265910642175970
+    second: Ultralab_02_35
+  - first:
+      213: 4623266737277439561
+    second: Ultralab_02_36
+  - first:
+      213: -5611460142730228512
+    second: Ultralab_02_37
+  - first:
+      213: 5812477898735164341
+    second: Ultralab_02_38
+  - first:
+      213: 8281650885086523085
+    second: Ultralab_02_39
+  - first:
+      213: -8248233706817694521
+    second: Ultralab_02_40
+  - first:
+      213: 2563411923674216922
+    second: Ultralab_02_41
+  - first:
+      213: -4417258969246771214
+    second: Ultralab_02_42
+  - first:
+      213: 5392671639553592560
+    second: Ultralab_02_43
+  - first:
+      213: -5573841490988295020
+    second: Ultralab_02_44
+  - first:
+      213: 8337494749010663022
+    second: Ultralab_02_45
+  - first:
+      213: 1243247215331715894
+    second: Ultralab_02_46
+  - first:
+      213: -7721082043740956829
+    second: Ultralab_02_47
+  - first:
+      213: -7660025103006377526
+    second: Ultralab_02_48
+  - first:
+      213: -2062867290882330870
+    second: Ultralab_02_49
+  - first:
+      213: -1241037572770647618
+    second: Ultralab_02_50
+  - first:
+      213: 4427618898192159946
+    second: Ultralab_02_51
+  - first:
+      213: 1437995904482141613
+    second: Ultralab_02_52
+  - first:
+      213: 7229640879888776247
+    second: Ultralab_02_53
+  - first:
+      213: 132642407243669076
+    second: Ultralab_02_54
+  - first:
+      213: 9139631928339726263
+    second: Ultralab_02_55
+  - first:
+      213: -4332261235698770763
+    second: Ultralab_02_56
+  - first:
+      213: 3898989017709563684
+    second: Ultralab_02_57
+  - first:
+      213: 8981468218941199603
+    second: Ultralab_02_58
+  - first:
+      213: -9073468419504091121
+    second: Ultralab_02_59
+  - first:
+      213: 6118824462202369645
+    second: Ultralab_02_60
+  - first:
+      213: -7720354868623929554
+    second: Ultralab_02_61
+  - first:
+      213: -8569027597492427481
+    second: Ultralab_02_62
+  - first:
+      213: -1516079254488697703
+    second: Ultralab_02_63
+  - first:
+      213: -4303070086153823311
+    second: Ultralab_02_64
+  - first:
+      213: -15739477958817049
+    second: Ultralab_02_65
+  - first:
+      213: 6153681205856987332
+    second: Ultralab_02_66
+  - first:
+      213: 7981703026827251296
+    second: Ultralab_02_67
+  - first:
+      213: -7630126777237897688
+    second: Ultralab_02_68
+  - first:
+      213: 2241993813854989031
+    second: Ultralab_02_69
+  - first:
+      213: 2058724635736145633
+    second: Ultralab_02_70
+  - first:
+      213: -8697479200019766460
+    second: Ultralab_02_71
+  - first:
+      213: 8441837616837278335
+    second: Ultralab_02_72
+  - first:
+      213: 4165792242670946736
+    second: Ultralab_02_73
+  - first:
+      213: -6139256982790596744
+    second: Ultralab_02_74
+  - first:
+      213: 6834562375748927271
+    second: Ultralab_02_75
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Ultralab_02_0
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 322
+        width: 258
+        height: 376
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ab84db3fa8f77230800000000000000
+      internalID: 3636648655631715241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultralab_02_1
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 621
+        width: 178
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16c03f1626b601db0800000000000000
+      internalID: -4823237130619515807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultralab_02_2
+      rect:
+        serializedVersion: 2
+        x: 826
+        y: 646
+        width: 37
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4d21b8e2d5c58ae0800000000000000
+      internalID: -1547613387294167733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultralab_02_3
+      rect:
+        serializedVersion: 2
+        x: 867
+        y: 646
+        width: 30
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5cca367ddeb6e6d10800000000000000
+      internalID: 2120751143803137221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultralab_02_4
+      rect:
+        serializedVersion: 2
+        x: 902
+        y: 646
+        width: 35
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38384664d8fbab220800000000000000
+      internalID: 2502523156450018179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultralab_02_5
+      rect:
+        serializedVersion: 2
+        x: 940
+        y: 647
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42b320366e43fdc10800000000000000
+      internalID: 2080439716976671524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultralab_02_6
+      rect:
+        serializedVersion: 2
+        x: 977
+        y: 646
+        width: 33
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de8f5e4595456e780800000000000000
+      internalID: -8654136891292649235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultralab_02_7
+      rect:
+        serializedVersion: 2
+        x: 1014
+        y: 646
+        width: 40
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65bb7198767694120800000000000000
+      internalID: 2398561970930826070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultralab_02_8
+      rect:
+        serializedVersion: 2
+        x: 1076
+        y: 647
+        width: 35
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02b1ff95a278bdee0800000000000000
+      internalID: -1235245056814802144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultralab_02_9
+      rect:
+        serializedVersion: 2
+        x: 1116
+        y: 646
+        width: 31
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 007996439d47b7a40800000000000000
+      internalID: 5367011857178138368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultralab_02_10
+      rect:
+        serializedVersion: 2
+        x: 1168
+        y: 647
+        width: 30
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5271e165f0f0ae7f0800000000000000
+      internalID: -582636643247319259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultralab_02_11
+      rect:
+        serializedVersion: 2
+        x: 1202
+        y: 647
+        width: 31
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 645de3bbb2f1f3ad0800000000000000
+      internalID: -2720421377222978234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultralab_02_12
+      rect:
+        serializedVersion: 2
+        x: 1235
+        y: 646
+        width: 31
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 158237c8f4fa0e2a0800000000000000
+      internalID: -6710170688588404655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultralab_02_13
+      rect:
+        serializedVersion: 2
+        x: 1270
+        y: 646
+        width: 40
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db6bb9c5042acd730800000000000000
+      internalID: 4025270564277696189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultralab_02_14
+      rect:
+        serializedVersion: 2
+        x: 1315
+        y: 646
+        width: 34
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86142ee4de84161c0800000000000000
+      internalID: -4512245167580626584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultralab_02_15
+      rect:
+        serializedVersion: 2
+        x: 1356
+        y: 646
+        width: 7
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 882b09f24b1176bc0800000000000000
+      internalID: -3790041095819185528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultralab_02_16
+      rect:
+        serializedVersion: 2
+        x: 1368
+        y: 646
+        width: 31
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b036777c413a18510800000000000000
+      internalID: 1549699056433324811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultralab_02_17
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 646
+        width: 40
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c6ba29aeb6b10ad0800000000000000
+      internalID: -2737706168466360637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultralab_02_18
+      rect:
+        serializedVersion: 2
+        x: 828
+        y: 580
+        width: 7
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ada4d17848de51d40800000000000000
+      internalID: 5554606868889684698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultralab_02_19
+      rect:
+        serializedVersion: 2
+        x: 842
+        y: 580
+        width: 34
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a69ed35ff749422b0800000000000000
+      internalID: -5610195958500562582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultralab_02_20
+      rect:
+        serializedVersion: 2
+        x: 881
+        y: 580
+        width: 33
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d0b4c03a0254b750800000000000000
+      internalID: 6319766380828995794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultralab_02_21
+      rect:
+        serializedVersion: 2
+        x: 917
+        y: 580
+        width: 30
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 838eb2e3d331c9330800000000000000
+      internalID: 3718868546058184760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultralab_02_22
+      rect:
+        serializedVersion: 2
+        x: 953
+        y: 580
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac2bf9b612d360210800000000000000
+      internalID: 1298792756291809994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultralab_02_23
+      rect:
+        serializedVersion: 2
+        x: 991
+        y: 580
+        width: 30
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fa871b416a666b20800000000000000
+      internalID: 3127303957359594232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultralab_02_24
+      rect:
+        serializedVersion: 2
+        x: 1025
+        y: 580
+        width: 33
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3b15795f3adb4a00800000000000000
+      internalID: 741926529251220287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultralab_02_25
+      rect:
+        serializedVersion: 2
+        x: 1062
+        y: 580
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3475827e7ee79d7a0800000000000000
+      internalID: -6351906264948648125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultralab_02_26
+      rect:
+        serializedVersion: 2
+        x: 1108
+        y: 579
+        width: 31
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 368da06aeb6a15120800000000000000
+      internalID: 2400883414124910691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultralab_02_27
+      rect:
+        serializedVersion: 2
+        x: 1143
+        y: 580
+        width: 6
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef95b7ac34bdcce80800000000000000
+      internalID: -8156903740868437506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultralab_02_28
+      rect:
+        serializedVersion: 2
+        x: 1155
+        y: 580
+        width: 30
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51b4b1c177b2e1db0800000000000000
+      internalID: -4819366760667198699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultralab_02_29
+      rect:
+        serializedVersion: 2
+        x: 1189
+        y: 580
+        width: 29
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9782e1acc95236e40800000000000000
+      internalID: 5648399712988833913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultralab_02_30
+      rect:
+        serializedVersion: 2
+        x: 1224
+        y: 580
+        width: 6
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ee15d9ec1279b080800000000000000
+      internalID: -9171173697655595291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultralab_02_31
+      rect:
+        serializedVersion: 2
+        x: 1236
+        y: 579
+        width: 41
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 043482c90adaf3d60800000000000000
+      internalID: 7872201578993173312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultralab_02_32
+      rect:
+        serializedVersion: 2
+        x: 1283
+        y: 580
+        width: 34
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be80bfd4a82374640800000000000000
+      internalID: 5064071875596585195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultralab_02_33
+      rect:
+        serializedVersion: 2
+        x: 1321
+        y: 579
+        width: 40
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d60831d678aeec960800000000000000
+      internalID: 7624289086556307565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultralab_02_34
+      rect:
+        serializedVersion: 2
+        x: 1366
+        y: 580
+        width: 28
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5cbc572eb2ce83f90800000000000000
+      internalID: -6973564349756093499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultralab_02_35
+      rect:
+        serializedVersion: 2
+        x: 1414
+        y: 580
+        width: 30
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2efe22e306de56a00800000000000000
+      internalID: 749265910642175970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultralab_02_36
+      rect:
+        serializedVersion: 2
+        x: 1449
+        y: 580
+        width: 38
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94e0d493a94292040800000000000000
+      internalID: 4623266737277439561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultralab_02_37
+      rect:
+        serializedVersion: 2
+        x: 827
+        y: 515
+        width: 34
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ec4d412bb61022b0800000000000000
+      internalID: -5611460142730228512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultralab_02_38
+      rect:
+        serializedVersion: 2
+        x: 868
+        y: 515
+        width: 29
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bb1be26ad11aa050800000000000000
+      internalID: 5812477898735164341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultralab_02_39
+      rect:
+        serializedVersion: 2
+        x: 892
+        y: 515
+        width: 33
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dcea1671a955ee270800000000000000
+      internalID: 8281650885086523085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultralab_02_40
+      rect:
+        serializedVersion: 2
+        x: 929
+        y: 515
+        width: 32
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c45ab80523688d80800000000000000
+      internalID: -8248233706817694521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultralab_02_41
+      rect:
+        serializedVersion: 2
+        x: 965
+        y: 514
+        width: 39
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad93a932091139320800000000000000
+      internalID: 2563411923674216922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultralab_02_42
+      rect:
+        serializedVersion: 2
+        x: 1006
+        y: 515
+        width: 30
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f753210f5eb2b2c0800000000000000
+      internalID: -4417258969246771214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultralab_02_43
+      rect:
+        serializedVersion: 2
+        x: 1038
+        y: 515
+        width: 31
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0fc4ae9d84e96da40800000000000000
+      internalID: 5392671639553592560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultralab_02_44
+      rect:
+        serializedVersion: 2
+        x: 1072
+        y: 514
+        width: 41
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49c1f4702bcb5a2b0800000000000000
+      internalID: -5573841490988295020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultralab_02_45
+      rect:
+        serializedVersion: 2
+        x: 1119
+        y: 515
+        width: 34
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e66177fdc4bb4b370800000000000000
+      internalID: 8337494749010663022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultralab_02_46
+      rect:
+        serializedVersion: 2
+        x: 1158
+        y: 514
+        width: 41
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63b27dd51c6e04110800000000000000
+      internalID: 1243247215331715894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultralab_02_47
+      rect:
+        serializedVersion: 2
+        x: 1203
+        y: 515
+        width: 37
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3675c2d0ac439d490800000000000000
+      internalID: -7721082043740956829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultralab_02_48
+      rect:
+        serializedVersion: 2
+        x: 1246
+        y: 515
+        width: 32
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac9dabcd0cf12b590800000000000000
+      internalID: -7660025103006377526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultralab_02_49
+      rect:
+        serializedVersion: 2
+        x: 1282
+        y: 515
+        width: 39
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0faf24e0293f53e0800000000000000
+      internalID: -2062867290882330870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultralab_02_50
+      rect:
+        serializedVersion: 2
+        x: 1326
+        y: 515
+        width: 29
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb1b71227e2f6cee0800000000000000
+      internalID: -1241037572770647618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultralab_02_51
+      rect:
+        serializedVersion: 2
+        x: 1361
+        y: 515
+        width: 6
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac4dc8bedef027d30800000000000000
+      internalID: 4427618898192159946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultralab_02_52
+      rect:
+        serializedVersion: 2
+        x: 1372
+        y: 515
+        width: 39
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da5ef1308a9c4f310800000000000000
+      internalID: 1437995904482141613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultralab_02_53
+      rect:
+        serializedVersion: 2
+        x: 828
+        y: 449
+        width: 31
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73cb9637318d45460800000000000000
+      internalID: 7229640879888776247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultralab_02_54
+      rect:
+        serializedVersion: 2
+        x: 861
+        y: 448
+        width: 41
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45e59ed019d37d100800000000000000
+      internalID: 132642407243669076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultralab_02_55
+      rect:
+        serializedVersion: 2
+        x: 908
+        y: 449
+        width: 6
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7bff182a0de76de70800000000000000
+      internalID: 9139631928339726263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultralab_02_56
+      rect:
+        serializedVersion: 2
+        x: 922
+        y: 449
+        width: 35
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bcdaf30c57b0e3c0800000000000000
+      internalID: -4332261235698770763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultralab_02_57
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 449
+        width: 33
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42f4ab79addfb1630800000000000000
+      internalID: 3898989017709563684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultralab_02_58
+      rect:
+        serializedVersion: 2
+        x: 991
+        y: 463
+        width: 18
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f4537f52c594ac70800000000000000
+      internalID: 8981468218941199603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultralab_02_59
+      rect:
+        serializedVersion: 2
+        x: 1012
+        y: 448
+        width: 41
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f00dbb6bb80941280800000000000000
+      internalID: -9073468419504091121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultralab_02_60
+      rect:
+        serializedVersion: 2
+        x: 1059
+        y: 449
+        width: 29
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d66fa80fd6e6ae450800000000000000
+      internalID: 6118824462202369645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultralab_02_61
+      rect:
+        serializedVersion: 2
+        x: 1091
+        y: 463
+        width: 18
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2f86b3b62acbd490800000000000000
+      internalID: -7720354868623929554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultralab_02_62
+      rect:
+        serializedVersion: 2
+        x: 1113
+        y: 448
+        width: 36
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 725e1fcfcc2b41980800000000000000
+      internalID: -8569027597492427481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultralab_02_63
+      rect:
+        serializedVersion: 2
+        x: 1150
+        y: 449
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 994bcd853fdc5fae0800000000000000
+      internalID: -1516079254488697703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultralab_02_64
+      rect:
+        serializedVersion: 2
+        x: 1195
+        y: 448
+        width: 33
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1bb11372e8c6844c0800000000000000
+      internalID: -4303070086153823311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultralab_02_65
+      rect:
+        serializedVersion: 2
+        x: 1232
+        y: 449
+        width: 31
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ea8057370518cff0800000000000000
+      internalID: -15739477958817049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultralab_02_66
+      rect:
+        serializedVersion: 2
+        x: 535
+        y: 283
+        width: 103
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c86a100474466550800000000000000
+      internalID: 6153681205856987332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultralab_02_67
+      rect:
+        serializedVersion: 2
+        x: 643
+        y: 283
+        width: 86
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06ec2b03d94b4ce60800000000000000
+      internalID: 7981703026827251296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultralab_02_68
+      rect:
+        serializedVersion: 2
+        x: 740
+        y: 286
+        width: 93
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82ef98b4f185c1690800000000000000
+      internalID: -7630126777237897688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultralab_02_69
+      rect:
+        serializedVersion: 2
+        x: 841
+        y: 286
+        width: 40
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ea237fbe792d1f10800000000000000
+      internalID: 2241993813854989031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultralab_02_70
+      rect:
+        serializedVersion: 2
+        x: 890
+        y: 327
+        width: 46
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1eef56b062f029c10800000000000000
+      internalID: 2058724635736145633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultralab_02_71
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 286
+        width: 94
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4432971bfb85c4780800000000000000
+      internalID: -8697479200019766460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultralab_02_72
+      rect:
+        serializedVersion: 2
+        x: 1044
+        y: 283
+        width: 123
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7abd13f59e672570800000000000000
+      internalID: 8441837616837278335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultralab_02_73
+      rect:
+        serializedVersion: 2
+        x: 1176
+        y: 283
+        width: 103
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b9ca7039fddfc930800000000000000
+      internalID: 4165792242670946736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultralab_02_74
+      rect:
+        serializedVersion: 2
+        x: 1284
+        y: 283
+        width: 116
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8771ee32d4afccaa0800000000000000
+      internalID: -6139256982790596744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultralab_02_75
+      rect:
+        serializedVersion: 2
+        x: 1410
+        y: 285
+        width: 83
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72fb3c9054e39de50800000000000000
+      internalID: 6834562375748927271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Ultralab_02_0: 3636648655631715241
+      Ultralab_02_1: -4823237130619515807
+      Ultralab_02_10: -582636643247319259
+      Ultralab_02_11: -2720421377222978234
+      Ultralab_02_12: -6710170688588404655
+      Ultralab_02_13: 4025270564277696189
+      Ultralab_02_14: -4512245167580626584
+      Ultralab_02_15: -3790041095819185528
+      Ultralab_02_16: 1549699056433324811
+      Ultralab_02_17: -2737706168466360637
+      Ultralab_02_18: 5554606868889684698
+      Ultralab_02_19: -5610195958500562582
+      Ultralab_02_2: -1547613387294167733
+      Ultralab_02_20: 6319766380828995794
+      Ultralab_02_21: 3718868546058184760
+      Ultralab_02_22: 1298792756291809994
+      Ultralab_02_23: 3127303957359594232
+      Ultralab_02_24: 741926529251220287
+      Ultralab_02_25: -6351906264948648125
+      Ultralab_02_26: 2400883414124910691
+      Ultralab_02_27: -8156903740868437506
+      Ultralab_02_28: -4819366760667198699
+      Ultralab_02_29: 5648399712988833913
+      Ultralab_02_3: 2120751143803137221
+      Ultralab_02_30: -9171173697655595291
+      Ultralab_02_31: 7872201578993173312
+      Ultralab_02_32: 5064071875596585195
+      Ultralab_02_33: 7624289086556307565
+      Ultralab_02_34: -6973564349756093499
+      Ultralab_02_35: 749265910642175970
+      Ultralab_02_36: 4623266737277439561
+      Ultralab_02_37: -5611460142730228512
+      Ultralab_02_38: 5812477898735164341
+      Ultralab_02_39: 8281650885086523085
+      Ultralab_02_4: 2502523156450018179
+      Ultralab_02_40: -8248233706817694521
+      Ultralab_02_41: 2563411923674216922
+      Ultralab_02_42: -4417258969246771214
+      Ultralab_02_43: 5392671639553592560
+      Ultralab_02_44: -5573841490988295020
+      Ultralab_02_45: 8337494749010663022
+      Ultralab_02_46: 1243247215331715894
+      Ultralab_02_47: -7721082043740956829
+      Ultralab_02_48: -7660025103006377526
+      Ultralab_02_49: -2062867290882330870
+      Ultralab_02_5: 2080439716976671524
+      Ultralab_02_50: -1241037572770647618
+      Ultralab_02_51: 4427618898192159946
+      Ultralab_02_52: 1437995904482141613
+      Ultralab_02_53: 7229640879888776247
+      Ultralab_02_54: 132642407243669076
+      Ultralab_02_55: 9139631928339726263
+      Ultralab_02_56: -4332261235698770763
+      Ultralab_02_57: 3898989017709563684
+      Ultralab_02_58: 8981468218941199603
+      Ultralab_02_59: -9073468419504091121
+      Ultralab_02_6: -8654136891292649235
+      Ultralab_02_60: 6118824462202369645
+      Ultralab_02_61: -7720354868623929554
+      Ultralab_02_62: -8569027597492427481
+      Ultralab_02_63: -1516079254488697703
+      Ultralab_02_64: -4303070086153823311
+      Ultralab_02_65: -15739477958817049
+      Ultralab_02_66: 6153681205856987332
+      Ultralab_02_67: 7981703026827251296
+      Ultralab_02_68: -7630126777237897688
+      Ultralab_02_69: 2241993813854989031
+      Ultralab_02_7: 2398561970930826070
+      Ultralab_02_70: 2058724635736145633
+      Ultralab_02_71: -8697479200019766460
+      Ultralab_02_72: 8441837616837278335
+      Ultralab_02_73: 4165792242670946736
+      Ultralab_02_74: -6139256982790596744
+      Ultralab_02_75: 6834562375748927271
+      Ultralab_02_8: -1235245056814802144
+      Ultralab_02_9: 5367011857178138368
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

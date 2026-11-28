@@ -1,0 +1,962 @@
+fileFormatVersion: 2
+guid: 57f11acfe192ea34493387f8272b92ae
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7418459494699646411
+    second: IFPR_0
+  - first:
+      213: -9161575320225369482
+    second: IFPR_1
+  - first:
+      213: -4221598266670691204
+    second: IFPR_2
+  - first:
+      213: 1758088149992990834
+    second: IFPR_3
+  - first:
+      213: -1385622457645194975
+    second: IFPR_4
+  - first:
+      213: 1594220044856440319
+    second: IFPR_5
+  - first:
+      213: 6911802778476157378
+    second: IFPR_6
+  - first:
+      213: 7020270632579517899
+    second: IFPR_7
+  - first:
+      213: 144086146446990511
+    second: IFPR_8
+  - first:
+      213: -1354954124955438384
+    second: IFPR_9
+  - first:
+      213: 156236217596815092
+    second: IFPR_10
+  - first:
+      213: 438620398335690950
+    second: IFPR_11
+  - first:
+      213: -346791474648856243
+    second: IFPR_12
+  - first:
+      213: -6674089143080838643
+    second: IFPR_13
+  - first:
+      213: -7577366774828515434
+    second: IFPR_14
+  - first:
+      213: 7659448609596626392
+    second: IFPR_15
+  - first:
+      213: -7068075380806007373
+    second: IFPR_16
+  - first:
+      213: -4814195703126099256
+    second: IFPR_17
+  - first:
+      213: -8410746933047607635
+    second: IFPR_18
+  - first:
+      213: -6995928396958298555
+    second: IFPR_19
+  - first:
+      213: -2187856663744127998
+    second: IFPR_20
+  - first:
+      213: 2577294702790109198
+    second: IFPR_21
+  - first:
+      213: -1646626094691908687
+    second: IFPR_22
+  - first:
+      213: -338567353003061464
+    second: IFPR_23
+  - first:
+      213: -2948786521261273605
+    second: IFPR_24
+  - first:
+      213: 1831096965530876222
+    second: IFPR_25
+  - first:
+      213: -5525763495762838455
+    second: IFPR_26
+  - first:
+      213: -4775422752612977259
+    second: IFPR_27
+  - first:
+      213: -173892793666980840
+    second: IFPR_28
+  - first:
+      213: -3931665418905474300
+    second: IFPR_29
+  - first:
+      213: 7034147352278996559
+    second: IFPR_30
+  - first:
+      213: -2742128659719222889
+    second: IFPR_31
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: IFPR_0
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 729
+        width: 68
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bcd32321b99a3f660800000000000000
+      internalID: 7418459494699646411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IFPR_1
+      rect:
+        serializedVersion: 2
+        x: 930
+        y: 733
+        width: 63
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6723bfe49cb8bd080800000000000000
+      internalID: -9161575320225369482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IFPR_2
+      rect:
+        serializedVersion: 2
+        x: 1001
+        y: 733
+        width: 62
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7c40b25ebed965c0800000000000000
+      internalID: -4221598266670691204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IFPR_3
+      rect:
+        serializedVersion: 2
+        x: 860
+        y: 662
+        width: 63
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 278e7209bdbf56810800000000000000
+      internalID: 1758088149992990834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IFPR_4
+      rect:
+        serializedVersion: 2
+        x: 930
+        y: 662
+        width: 63
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 121214357b745cce0800000000000000
+      internalID: -1385622457645194975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IFPR_5
+      rect:
+        serializedVersion: 2
+        x: 860
+        y: 592
+        width: 63
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff5b97b2faecf1610800000000000000
+      internalID: 1594220044856440319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IFPR_6
+      rect:
+        serializedVersion: 2
+        x: 930
+        y: 592
+        width: 63
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c911a8b108abef50800000000000000
+      internalID: 6911802778476157378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IFPR_7
+      rect:
+        serializedVersion: 2
+        x: 1001
+        y: 592
+        width: 62
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bcd420202f20d6160800000000000000
+      internalID: 7020270632579517899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IFPR_8
+      rect:
+        serializedVersion: 2
+        x: 860
+        y: 522
+        width: 63
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fac17083695eff100800000000000000
+      internalID: 144086146446990511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IFPR_9
+      rect:
+        serializedVersion: 2
+        x: 930
+        y: 522
+        width: 63
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d2b417f66c323de0800000000000000
+      internalID: -1354954124955438384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IFPR_10
+      rect:
+        serializedVersion: 2
+        x: 748
+        y: 423
+        width: 16
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f6a8ea13001b2200800000000000000
+      internalID: 156236217596815092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IFPR_11
+      rect:
+        serializedVersion: 2
+        x: 775
+        y: 423
+        width: 56
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c80a0aadea461600800000000000000
+      internalID: 438620398335690950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IFPR_12
+      rect:
+        serializedVersion: 2
+        x: 838
+        y: 422
+        width: 42
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d49cb6ebdf2ff2bf0800000000000000
+      internalID: -346791474648856243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IFPR_13
+      rect:
+        serializedVersion: 2
+        x: 881
+        y: 423
+        width: 48
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0a1063094fd063a0800000000000000
+      internalID: -6674089143080838643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IFPR_14
+      rect:
+        serializedVersion: 2
+        x: 933
+        y: 423
+        width: 17
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69fbf7d9019c7d690800000000000000
+      internalID: -7577366774828515434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IFPR_15
+      rect:
+        serializedVersion: 2
+        x: 955
+        y: 423
+        width: 48
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d5dd5ecde3db4a60800000000000000
+      internalID: 7659448609596626392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IFPR_16
+      rect:
+        serializedVersion: 2
+        x: 1008
+        y: 422
+        width: 52
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b5cf51b3e629ed90800000000000000
+      internalID: -7068075380806007373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IFPR_17
+      rect:
+        serializedVersion: 2
+        x: 1064
+        y: 423
+        width: 49
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8caf4f3c38a803db0800000000000000
+      internalID: -4814195703126099256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IFPR_18
+      rect:
+        serializedVersion: 2
+        x: 1114
+        y: 423
+        width: 59
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: daebdf7f936074b80800000000000000
+      internalID: -8410746933047607635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IFPR_19
+      rect:
+        serializedVersion: 2
+        x: 788
+        y: 353
+        width: 38
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54e8b31603879ee90800000000000000
+      internalID: -6995928396958298555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IFPR_20
+      rect:
+        serializedVersion: 2
+        x: 833
+        y: 353
+        width: 38
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20c5f02c4fb23a1e0800000000000000
+      internalID: -2187856663744127998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IFPR_21
+      rect:
+        serializedVersion: 2
+        x: 878
+        y: 353
+        width: 54
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e08ec4980e364c320800000000000000
+      internalID: 2577294702790109198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IFPR_22
+      rect:
+        serializedVersion: 2
+        x: 939
+        y: 353
+        width: 39
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b300048a420629e0800000000000000
+      internalID: -1646626094691908687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IFPR_23
+      rect:
+        serializedVersion: 2
+        x: 985
+        y: 353
+        width: 107
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82f45b749ca2d4bf0800000000000000
+      internalID: -338567353003061464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IFPR_24
+      rect:
+        serializedVersion: 2
+        x: 1095
+        y: 353
+        width: 41
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfd03c1484ec317d0800000000000000
+      internalID: -2948786521261273605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IFPR_25
+      rect:
+        serializedVersion: 2
+        x: 862
+        y: 283
+        width: 32
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3973c31dfc596910800000000000000
+      internalID: 1831096965530876222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IFPR_26
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 283
+        width: 31
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94c3c3a906b8053b0800000000000000
+      internalID: -5525763495762838455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IFPR_27
+      rect:
+        serializedVersion: 2
+        x: 933
+        y: 283
+        width: 23
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5957f2ace4a4abdb0800000000000000
+      internalID: -4775422752612977259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IFPR_28
+      rect:
+        serializedVersion: 2
+        x: 956
+        y: 283
+        width: 31
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 814ba7cec65369df0800000000000000
+      internalID: -173892793666980840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IFPR_29
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 283
+        width: 32
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40ba372e12bef69c0800000000000000
+      internalID: -3931665418905474300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IFPR_30
+      rect:
+        serializedVersion: 2
+        x: 1027
+        y: 283
+        width: 31
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4618569fbf4e9160800000000000000
+      internalID: 7034147352278996559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IFPR_31
+      rect:
+        serializedVersion: 2
+        x: 1038
+        y: 321
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 799840d238002f9d0800000000000000
+      internalID: -2742128659719222889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      IFPR_0: 7418459494699646411
+      IFPR_1: -9161575320225369482
+      IFPR_10: 156236217596815092
+      IFPR_11: 438620398335690950
+      IFPR_12: -346791474648856243
+      IFPR_13: -6674089143080838643
+      IFPR_14: -7577366774828515434
+      IFPR_15: 7659448609596626392
+      IFPR_16: -7068075380806007373
+      IFPR_17: -4814195703126099256
+      IFPR_18: -8410746933047607635
+      IFPR_19: -6995928396958298555
+      IFPR_2: -4221598266670691204
+      IFPR_20: -2187856663744127998
+      IFPR_21: 2577294702790109198
+      IFPR_22: -1646626094691908687
+      IFPR_23: -338567353003061464
+      IFPR_24: -2948786521261273605
+      IFPR_25: 1831096965530876222
+      IFPR_26: -5525763495762838455
+      IFPR_27: -4775422752612977259
+      IFPR_28: -173892793666980840
+      IFPR_29: -3931665418905474300
+      IFPR_3: 1758088149992990834
+      IFPR_30: 7034147352278996559
+      IFPR_31: -2742128659719222889
+      IFPR_4: -1385622457645194975
+      IFPR_5: 1594220044856440319
+      IFPR_6: 6911802778476157378
+      IFPR_7: 7020270632579517899
+      IFPR_8: 144086146446990511
+      IFPR_9: -1354954124955438384
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

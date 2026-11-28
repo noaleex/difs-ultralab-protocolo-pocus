@@ -298,8 +298,8 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 767058695
-  m_SortingLayer: 10
+  m_SortingLayerID: -967424793
+  m_SortingLayer: 13
   m_SortingOrder: 1
   m_MaskInteraction: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
@@ -837,8 +837,8 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 767058695
-  m_SortingLayer: 10
+  m_SortingLayerID: -967424793
+  m_SortingLayer: 13
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
@@ -31124,6 +31124,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SkipTutorial
   nextSceneName: UTI
+  doubleTapInterval: 0.3
+  doubleTapMaxDistance: 120
 --- !u!1 &1244255427
 GameObject:
   m_ObjectHideFlags: 0
